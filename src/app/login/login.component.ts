@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
+import {Test} from "../bean/test";
 
 
 declare var SlidingVerificationCode: any;
@@ -11,6 +12,8 @@ declare var SlidingVerificationCode: any;
 })
 export class LoginComponent implements OnInit {
 
+
+  HttpData: Test;
 
   constructor() {
   }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
-const homeRouter: Routes =[
+const homeRouter: Routes = [
   {
     path: '', // 路径名称
     // component: '',  // 组件 <---

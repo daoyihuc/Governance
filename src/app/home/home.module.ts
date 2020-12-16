@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index/index.component';
 import {RouterModule} from '@angular/router';
 import {HomeRouterModule} from './home-router.module';
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import {IonicModule} from '@ionic/angular';
 
 
 
@@ -11,10 +13,13 @@ import {HomeRouterModule} from './home-router.module';
   imports: [
     CommonModule,
     RouterModule,
-    HomeRouterModule, // 主页路由
+    HomeRouterModule,
+    IonicModule,
+    // 主页路由
   ],
   declarations: [
-    IndexComponent, // 主页
+    IndexComponent,
+    HomeHeaderComponent, // 主页
   ],
 })
 export class HomeModule { }
