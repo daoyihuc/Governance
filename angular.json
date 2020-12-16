@@ -62,7 +62,8 @@
                 "input": "src/theme/variables.css"
               }
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {

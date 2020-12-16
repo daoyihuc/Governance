@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import {IonicModule} from '@ionic/angular';
 import {RouterModule, Routes} from '@angular/router';
+import {SlideVerifyComponent} from './slide-verify/slide-verify.component';
 
 // 路由
 const appRoute: Routes = [
@@ -23,7 +24,8 @@ const appRoute: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SlideVerifyComponent
   ],
   imports: [
     BrowserModule,
