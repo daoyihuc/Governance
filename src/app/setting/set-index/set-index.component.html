@@ -1,1 +1,31 @@
-<p>set-index works!</p>
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Header</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-box">
+        <div class="page-card">
+          <div class="page-card-header">
+            <p>个人信息</p>
+          </div>
+          <div class="page-card-section">
+            <div class="page-card-section-li" *ngFor="let item of lists">
+              <p class="p1">{{item.name}}</p>
+              <p class="p2">{{item.text}}</p>
+            </div>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+        <div class="page-btn" [class.page-clibtn]="item.text == clickBtn" *ngFor="let item of btns" (click)="onBtn(item)">{{item.text}}</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
