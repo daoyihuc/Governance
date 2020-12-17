@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {SetIndexComponent} from './set-index/set-index.component';
+import {ChangePasswordComponent} from './change-password/change-password.component';
 
 const settingRouter: Routes = [
   {
@@ -12,10 +13,14 @@ const settingRouter: Routes = [
         path: 'setIndex',
         component: SetIndexComponent,  // 组件 <---
       },
-      { path: '', redirectTo: 'setIndex', pathMatch: 'full' },
-      { path: '**', redirectTo: 'setIndex' },
     ],
   },
+  { path: 'changepassword',
+    component: ChangePasswordComponent,
+    data: {animation: 'login'}
+  },
+  { path: '', redirectTo: 'setIndex', pathMatch: 'full' },
+  { path: '**', redirectTo: 'setIndex' },
 ];
 
 @NgModule({

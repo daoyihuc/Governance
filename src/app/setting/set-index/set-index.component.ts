@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {log} from "util";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-set-index',
@@ -8,7 +8,9 @@ import {log} from "util";
 })
 export class SetIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) {
+
+  }
   lists = [
       {name: '用户名', text: 'xa548153'},
       {name: '姓名', text: '徐璈'},
@@ -26,6 +28,7 @@ export class SetIndexComponent implements OnInit {
   onBtn(data): void {
     console.log(data);
     this.clickBtn = data.text;
+    this.route.navigate(['/setting/changepassword'] );
   }
 
 }
