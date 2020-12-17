@@ -18,6 +18,10 @@ const appRoute: Routes = [
     loadChildren: () => import('./home/home.module')
       .then(m => m.HomeModule)
   },
+  {path: 'setIndex', // 主页路由
+    loadChildren: () => import('./setting/setting.module')
+      .then(m => m.SettingModule)
+  },
   { path: '',  redirectTo: '/login', pathMatch: 'full', data: {animation: 'login'} },
 ];
 
