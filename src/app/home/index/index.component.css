@@ -1,51 +1,48 @@
+.maxbox {
+  background: url("../../../assets/img/login-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 30px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
 .toolbar {
   --background: #0A0E2E;
   --color: #fff; }
   .toolbar .title {
-    --color: #fff; }
+    --color: #fff;
+    text-align: center; }
   .toolbar img {
     width: 21px;
     height: 21px; }
 
 .labelbox {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px; }
+  justify-content: space-around; }
   .labelbox .labelbox2 {
     background: rgba(81, 125, 213, 0.4);
     border-radius: 15px; }
     .labelbox .labelbox2 .label1 {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 200px;
       border-radius: 15px;
       display: flex;
       align-items: flex-end;
       background: url("../../../assets/img/yunxingjiance.png");
-      background-size: 100% 100%; }
+      background-size: 100% 100%;
+      padding-bottom: 10px; }
     .labelbox .labelbox2 .label2 {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 200px;
       border-radius: 15px;
       display: flex;
       align-items: flex-end;
       background: url("../../../assets/img/yuantou.png");
-      background-size: 100% 100%; }
-    .labelbox .labelbox2 .label3 {
-      width: 150px;
-      height: 150px;
-      border-radius: 15px;
-      display: flex;
-      align-items: flex-end;
-      background: url("../../../assets/img/zhidiaodu.png");
-      background-size: 100% 100%; }
-    .labelbox .labelbox2 .label4 {
-      width: 150px;
-      height: 150px;
-      border-radius: 15px;
-      display: flex;
-      align-items: flex-end;
-      background: url("../../../assets/img/zongsearch.png");
-      background-size: 100% 100%; }
+      background-size: 100% 100%;
+      padding-bottom: 10px; }
     .labelbox .labelbox2 .text {
       width: 100%;
       font-size: 18px;
@@ -53,5 +50,52 @@
       font-weight: 400;
       color: #FFFFFF;
       text-align: center; }
+
+.labelbox3 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px; }
+  .labelbox3 .labelbox2 {
+    background: rgba(81, 125, 213, 0.4);
+    border-radius: 15px; }
+    .labelbox3 .labelbox2 .label3 {
+      width: 180px;
+      height: 200px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/zhidiaodu.png");
+      background-size: 100% 100%;
+      padding-bottom: 10px; }
+    .labelbox3 .labelbox2 .label4 {
+      width: 180px;
+      height: 200px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/zongsearch.png");
+      background-size: 100% 100%;
+      padding-bottom: 10px; }
+    .labelbox3 .labelbox2 .text {
+      width: 100%;
+      font-size: 18px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #FFFFFF;
+      text-align: center; }
+
+.footer_box {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(270deg, #091220, #5481DC, #091220); }
+
+.imgButton {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 10px; }
 
 /*# sourceMappingURL=index.component.css.map */
