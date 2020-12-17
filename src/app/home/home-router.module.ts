@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
+import {IndexComponent} from './index/index.component';
 
 const homeRouter: Routes = [
   {
     path: '', // 路径名称
-    // component: '',  // 组件 <---
+    component: IndexComponent,  // 组件 <---
     children: [
       {
-        // path: 'login',
-        // component: LoginComponent, // <---
+        path: 'home',
+        component: IndexComponent, // <---
       },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: '**', redirectTo: 'login' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'home' },
     ],
   }
 ];

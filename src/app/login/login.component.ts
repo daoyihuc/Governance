@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
-import {Test} from "../bean/test";
+import {LoginConst} from '../constans/LoginConst';
+import {Router} from '@angular/router';
 
 
 declare var SlidingVerificationCode: any;
@@ -13,26 +14,42 @@ declare var SlidingVerificationCode: any;
 export class LoginComponent implements OnInit {
 
 
-  HttpData: Test;
+  data = {
+    username: '',
+    password: '',
+    isCode: false,
+    isSessison: false
+  };
+  LoginConsts = LoginConst;
 
-  constructor() {
+  constructor(
+    private route: Router
+  ) {
   }
 
   ngOnInit(): void {
-    this.inits();
-  }
 
-  public inits(): void {
-    const that = this;
-    console.log($('div:hidden').find('#captcha').get(0));
-    console.log($('div').find('#captcha').get(0));
-    const eles = ($('div:hidden').find('#captcha').length > 0) ? $('div:hidden').find('#captcha').get(0) : $('div').find('#captcha').get(0);
-    SlidingVerificationCode.init(eles, () => {
-      document.getElementById('msg').innerHTML = '初始化成功！';
-    }, () => {
-      document.getElementById('msg').innerHTML = '初始化失败！';
-    });
   }
+  judgment(): void{
+    if (this.data.username === null || this.data.username === ''){
+      // @ts-ignore
+      return '账号不能为空';
+    }
+    if (this.data.password === null || this.data.password === ''){
+      // @ts-ignore
+      return '密码不能为空';
+    }
+    if (this.data.isCode){
+      // @ts-ignore
+      return '还没有验证哦';
+    }
+
+  }
+  goHome(): void{
+    this.route.navigate(['/home']);
+  }
+  // 执行登录
+
 }
 
 

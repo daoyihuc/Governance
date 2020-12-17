@@ -1,0 +1,69 @@
+.toolbar{
+  --background: #0A0E2E;
+  --color: #fff;
+  .title{
+    --color: #fff;
+  }
+  img{
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.labelbox{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  .labelbox2{
+    background: rgba(81, 125, 213, 0.4);
+    border-radius: 15px;
+    .label1{ // 运营
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/yunxingjiance.png");
+      background-size: 100% 100%;
+
+    }
+    .label2{ // 源头
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/yuantou.png");
+      background-size: 100% 100%;
+    }
+    .label3{ // 源头
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/zhidiaodu.png");
+      background-size: 100% 100%;
+    }
+    .label4{ // 源头
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      background: url("../../../assets/img/zongsearch.png");
+      background-size: 100% 100%;
+    }
+    .text{
+      width: 100%;
+      font-size: 18px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+  }
+
+
+}

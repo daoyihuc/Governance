@@ -1,11 +1,16 @@
+html body {
+  width: 100%;
+  height: 100%; }
+
 .content {
   padding: 0 !important; }
 
 .maxBox {
-  background: black;
+  background: url("../../assets/img/login-bg.png") no-repeat;
+  background-size: 100% 100%;
   width: 100%;
-  height: 100%;
-  padding-top: 70px; }
+  padding-top: 70px;
+  padding-bottom: 20px; }
   .maxBox .title {
     margin: 0;
     text-align: center;
@@ -81,8 +86,7 @@
           --background: #1DDEFB; }
 
 .footer_box {
-  background: black;
-  padding-bottom: 15px; }
+  margin-top: 200px; }
   .footer_box p {
     text-align: center;
     font-size: 12px;

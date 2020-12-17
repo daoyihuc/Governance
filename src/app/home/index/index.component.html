@@ -1,5 +1,48 @@
-<app-home-header></app-home-header>
-
-<router-outlet></router-outlet>
 
 
+<ion-app>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button >
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        {{datas.name}}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button >
+          <img src="./assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <section class="labelbox">
+      <div class="labelbox2">
+        <div class="label1">
+          <p class="text">{{datas.lable1}}</p>
+        </div>
+      </div>
+      <div class="labelbox2">
+        <div class="label2">
+          <p class="text">{{datas.lable2}}</p>
+        </div>
+      </div>
+
+    </section>
+    <section class="labelbox">
+      <div class="labelbox2">
+        <div class="label3">
+          <p class="text">{{datas.lable3}}</p>
+        </div>
+      </div>
+      <div class="labelbox2">
+        <div class="label4">
+          <p class="text">{{datas.lable5}}</p>
+        </div>
+      </div>
+    </section>
+  </ion-content>
+</ion-app>

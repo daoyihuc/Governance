@@ -1,48 +1,47 @@
 
 <ion-app>
-  <ion-content color="bg">
-    <div class="maxBox">
-      <h1 class="title">科技治超综合应用</h1>
-      <ion-card class="card">
-        <ion-header>
-          <ion-title class="login_title">
-            用户登录
-          </ion-title>
-          <div class="input_box">
-            <div class="usernameBox">
-              <label>
-                <img src="./assets/img/login-user.png" alt="" class="">
-              </label>
-              <input placeholder="请输入账号"/>
-            </div>
+    <ion-content color="bg">
+      <div class="maxBox">
+        <h1 class="title">{{LoginConsts.title}}</h1>
+        <ion-card class="card">
+          <ion-header>
 
-            <div class="passwordBox">
-              <label>
-                <img src="./assets/img/login-pw.png" alt="" class="">
-              </label>
-              <input placeholder="请输入密码" type="password"/>
+            <p class="login_title">
+                 {{LoginConsts.label1}}
+            </p>
+            <div class="input_box">
+              <div class="usernameBox">
+                <label>
+                  <img src="./assets/img/login-user.png" alt="" class="">
+                </label>
+                <input placeholder="请输入账号"/>
+              </div>
+
+              <div class="passwordBox">
+                <label>
+                  <img src="./assets/img/login-pw.png" alt="" class="">
+                </label>
+                <input placeholder="请输入密码" type="password"/>
+              </div>
+              <div style="margin-top: 20px">
+                <com-slide-verify #slideVerifier1 [initText]="'向右滑动滑块完成验证'" [sucessText]="'验证完成'"></com-slide-verify>
+              </div>
+              <div class="orCheck">
+                <ion-checkbox class="checkbox" value="记住密码" name="记住密码">
+                </ion-checkbox>
+                <span>记住密码</span>
+              </div>
+              <div class="Login_box" >
+                <!-- Round -->
+                <ion-button expand="block" fill="solid" (click)="goHome()">立即登录</ion-button>
+              </div>
             </div>
-            <div style="margin-top: 20px">
-              <com-slide-verify #slideVerifier1 [initText]="'向右滑动滑块完成验证'" [sucessText]="'验证完成'"></com-slide-verify>
-            </div>
-            <div class="orCheck">
-              <ion-checkbox class="checkbox" value="记住密码" name="记住密码">
-              </ion-checkbox>
-              <span>记住密码</span>
-            </div>
-            <div class="Login_box" >
-              <!-- Round -->
-              <ion-button expand="block" fill="solid">立即登录</ion-button>
-            </div>
+          </ion-header>
+        </ion-card>
+          <div class="footer_box">
+            <p>{{LoginConsts.footerLabel}}</p>
           </div>
-        </ion-header>
-      </ion-card>
-    </div>
-  </ion-content>
-  <ion-footer >
-    <div class="footer_box">
-      <p>Copyright © 湖南网讯电子科技有限公司</p>
-    </div>
-  </ion-footer>
+      </div>
+    </ion-content>
 </ion-app>
 
