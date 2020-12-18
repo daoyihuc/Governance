@@ -24,7 +24,8 @@
           <span class="flex-span3"></span>
           <span class="flex-span4"></span>
         </div>
-        <div class="page-btn" [class.page-clibtn]="item.text == clickBtn" *ngFor="let item of btns" (click)="onBtn(item)">{{item.text}}</div>
+        <div class="page-btn" [class.page-clibtn]="item.text == clickBtn"
+             *ngFor="let item of btns" (click)="onBtn(item)">{{item.text}}</div>
       </div>
     </div>
   </ion-content>

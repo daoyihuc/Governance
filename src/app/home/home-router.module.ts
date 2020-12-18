@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from './index/index.component';
+import {InformationComponent} from './information/information.component';
 
 const homeRouter: Routes = [
   {
@@ -12,10 +13,12 @@ const homeRouter: Routes = [
         path: 'home',
         component: IndexComponent, // <---
       },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home' },
     ],
-  }
+  },
+  { path: 'entry', // 录入信息
+    component: InformationComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
