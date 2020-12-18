@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {SetIndexComponent} from './set-index/set-index.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
+import {InformationComponent} from "./information/information.component";
 
 const settingRouter: Routes = [
   {
@@ -17,6 +18,10 @@ const settingRouter: Routes = [
   },
   { path: 'changepassword',
     component: ChangePasswordComponent,
+    data: {animation: 'login'}
+  },
+  { path: 'information',
+    component: InformationComponent,
     data: {animation: 'login'}
   },
   { path: '', redirectTo: 'setIndex', pathMatch: 'full' },

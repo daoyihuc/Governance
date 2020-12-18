@@ -11,23 +11,18 @@
       <div class="page-box">
         <div class="page-card">
           <div class="page-card-header">
-            <p>修改密码</p>
+            <p>系统信息</p>
           </div>
           <div class="page-card-section">
             <div class="page-card-section-li" *ngFor="let item of lists">
               <p class="p1">{{item.name}}</p>
-              <input class="input" type="password" [placeholder]="item.text" [(ngModel)]="item.value">
+              <p class="p2">{{item.text}}</p>
             </div>
           </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>
           <span class="flex-span4"></span>
-        </div>
-        <!--    btn    -->
-        <div class="page-btn">
-          <div (click)="jump()" class="btn1">取消</div>
-          <div (click)="jump()" class="btn1 btn2">保存</div>
         </div>
       </div>
     </div>

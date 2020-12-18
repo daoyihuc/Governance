@@ -17,9 +17,9 @@ export class SetIndexComponent implements OnInit {
       {name: '所属单位', text: '第二机动大队'}
       ];
   btns = [
-    {text: '修改密码'},
-    {text: '系统信息'},
-    {text: '注销账号'}
+    {text: '修改密码', url: '/setting/changepassword'},
+    {text: '系统信息', url: '/setting/information'},
+    {text: '注销账号', url: '/setting/information'}
   ];
   clickBtn = '';
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class SetIndexComponent implements OnInit {
   onBtn(data): void {
     console.log(data);
     this.clickBtn = data.text;
-    this.route.navigate(['/setting/changepassword'] );
+    this.route.navigate([data.url] );
   }
 
 }
