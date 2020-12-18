@@ -22,6 +22,10 @@ const appRoute: Routes = [
     loadChildren: () => import('./setting/setting.module')
       .then(m => m.SettingModule)
   },
+  {path: 'command', // 主页路由
+    loadChildren: () => import('./command/command.module')
+      .then(m => m.CommandModule)
+  },
   { path: '',  redirectTo: '/login', pathMatch: 'full', data: {animation: 'login'} },
 ];
 
