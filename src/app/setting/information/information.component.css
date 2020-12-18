@@ -1,3 +1,6 @@
+div{
+  box-sizing: border-box;
+}
 .page-content{
   height: 100%;
   background: url("../../../assets/img/login-bg.png") no-repeat ;
@@ -9,13 +12,13 @@
   height: 100%;
   background: rgba(31, 57, 122, 0.2);
   border: 1px solid #5481DC;
-  padding: 13px 13px 0;
+  padding: 13px 13px;
 }
 
 /*card*/
 .page-card {
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: rgba(84, 129, 220, 0.2);
   border: 0 solid #5481DC;
   position: relative;
@@ -79,7 +82,7 @@
   margin: 13px 0;
 }
 .page-card-section-li .p1{
-  width: 108px;
+  min-width: 108px;
   font-size: 9px;
   font-weight: normal;
   color: #1DDEFB;
@@ -90,34 +93,6 @@
   font-weight: normal;
   color: #FFFFFF;
 }
-.page-card-section-li .input{
-  flex-grow: 1;
-  background: rgba(0,0,0,0);
-  border: none;
-  border-bottom: 1px solid #5088F9;
-  font-size: 9px;
-  font-weight: normal;
-  color: #FFFFFF;
-}
-/*card end*/
 
-.page-btn{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 11px;
-}
-.page-btn .btn1{
-  width: 73px;
-  height: 24px;
-  background: #1F397A;
-  border-radius: 7px;
-  font-size: 11px;
-  font-weight: normal;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 24px;
-}
-.page-btn .btn2{
-  background: #5481DC;
-  margin-left: 11px;
-}
+/*section end*/
+/*card end*/
