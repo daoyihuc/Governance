@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {CommandIndexComponent} from "./command-index/command-index.component";
+import {BasicInformationComponent} from "./basic-information/basic-information.component";
 
 const commandRouter: Routes = [
   {
@@ -14,6 +15,7 @@ const commandRouter: Routes = [
       },
     ],
   },
+  {path: 'basicInformation', component: BasicInformationComponent},
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

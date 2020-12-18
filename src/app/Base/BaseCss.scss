@@ -1,1 +1,102 @@
+div{
+  box-sizing: border-box;
+}
+//最外层背景盒子
+.page-content{
+  height: 100%;
+  background: url("../../assets/img/login-bg.png") no-repeat ;
+  background-size: 100% 100%;
+  padding: 13px 14px 24px;
+}
+//外层 带border盒子
+.page-box {
+  width: 100%;
+  height: 100%;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #5481DC;
+  padding: 13px 13px 0;
+}
+//角标 盒子
+.page-card {
+  width: 100%;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #5481DC;
+  position: relative;
+}
 
+//角标 盒子 头部信息盒子
+.page-card-header {
+  padding: 7px 10px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #5481DC;
+}
+
+.page-card-header p {
+  font-size: 11px;
+  font-weight: normal;
+  color: #1DDEFB;
+}
+
+//角标
+.page-card span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #1DDEFB;
+}
+
+.page-card .flex-span1 {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+.page-card .flex-span2 {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+.page-card .flex-span3 {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+.page-card .flex-span4 {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+//详细信息排序 盒子
+.page-card-section{//红色
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid #F45B5B;
+  margin-top: 11px;
+}
+.page-card2-section{//蓝色
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+  margin-top: 11px;
+}
+
+/*详细信息排序 盒子 content*/
+.section-card-section-content{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px;
+}
+.section-card-section-content .p1{
+  width: 50%;
+  font-size: 8px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 11px;
+}
+.section-card-section-content .p1 span{
+  min-width: 34px;
+  text-align: left;
+}

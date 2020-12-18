@@ -5,11 +5,12 @@ import {IonicModule} from "@ionic/angular";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { CommandIndexComponent } from './command-index/command-index.component';
+import { BasicInformationComponent } from './basic-information/basic-information.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent],
   imports: [
     CommonModule,
     CommandRouterModule,
