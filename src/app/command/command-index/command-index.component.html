@@ -1,1 +1,41 @@
-<p>command-index works!</p>
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Header</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-content-header">
+
+      </div>
+
+      <div class="page-content-section">
+        <div class="section-title">任务列表</div>
+        <div class="section-card" *ngFor="let item of cardData" [class.section-card2]="item.class == 2">
+          <div class="section-card-title">
+            <p class="p1">{{item.id}}</p>
+            <p class="p1">{{item.name}}</p>
+          </div>
+          <div class="section-card-content">
+            <p class="p1" *ngFor="let itemP of item.list">
+              <span>{{itemP.span}}</span>{{itemP.p}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer class="demo">
+    <ion-toolbar>
+      <div class="page-footer">
+        <div class="page-footer-box">
+          <img src="../../../assets/img/all-back.png" alt="">
+          <p>运行监测</p>
+        </div>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

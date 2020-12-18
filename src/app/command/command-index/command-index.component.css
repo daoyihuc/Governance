@@ -1,0 +1,118 @@
+.page-content{
+  min-height: 100%;
+  background: #000;
+}
+
+/* header */
+.page-content-header{
+  width: 100%;
+  height: 335px;
+  background: rgba(255,255,255,.4);
+}
+
+/* section */
+.page-content-section{
+  margin: 0 15px;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #5481DC;
+  padding: 0 8px 11px;
+  transform: translateY(-34px);
+}
+.page-content-section .section-title{
+  margin: 0 auto;
+  width: 83px;
+  height: 23px;
+  background: rgba(84, 129, 220, 0.5);
+  box-shadow: 0 1px 3px 0 rgba(10, 165, 180, 0.6);
+  text-align: center;
+  line-height: 23px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+/*card*/
+.page-content-section .section-card{
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid #F45B5B;
+  margin-top: 11px;
+}
+.page-content-section .section-card2{
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+}
+/*card title*/
+.page-content-section .section-card2 .section-card-title{
+  background: rgba(16, 207, 226, 0.2) !important;
+}
+
+.page-content-section .section-card .section-card-title{
+  display: flex;
+  padding: 7px 0;
+  background: rgba(244, 91, 91, 0.2);
+}
+.page-content-section .section-card .section-card-title p{
+  width: 50%;
+  font-size: 11px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+}
+/*card content*/
+.page-content-section .section-card .section-card-content{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px;
+}
+.page-content-section .section-card .section-card-content .p1{
+  width: 50%;
+  font-size: 8px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 11px;
+}
+.page-content-section .section-card .section-card-content .p1 span{
+  min-width: 34px;
+  text-align: left;
+}
+
+/*footer*/
+.demo{
+  background: rgba(0,0,0,0);
+}
+.page-footer{
+  background: #000;
+  height: 100%;
+}
+.page-footer .page-footer-box{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-footer .page-footer-box img{
+  width: 24px;
+  height: 23px;
+}
+.page-footer .page-footer-box p{
+  font-size: 11px;
+  font-weight: 400;
+  color: #F5F5F5;
+  margin-top: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
