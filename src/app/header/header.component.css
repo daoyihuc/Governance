@@ -1,66 +1,99 @@
-/*
-Error: Invalid GBK character "\xE6"
-        on line 4 of ../Base/BaseCss.scss
-        from line 2 of header.component.scss
+@charset "UTF-8";
+div {
+  box-sizing: border-box; }
 
-1: div{
-2:   box-sizing: border-box;
-3: }
-4: //最外层背景盒子
-5: .page-content{
-6:   //height: 100%;
-7:   background: url("../../assets/img/login-bg.png") no-repeat ;
-8:   background-size: 100% 100%;
-9:   padding: 13px 14px 24px;
+.page-content {
+  background-size: 100% 100%;
+  padding: 13px 14px 24px; }
 
-Backtrace:
-../Base/BaseCss.scss:4
-header.component.scss:2
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1090:in `rescue in block in find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1087:in `block in find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each_with_index'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:820:in `rescue in check_sass_encoding'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:816:in `check_sass_encoding'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:444:in `check_encoding!'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:400:in `_to_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:321:in `to_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:88:in `block in with_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:88:in `with_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `load'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE6\"\A         on line 4 of ../Base/BaseCss.scss\A         from line 2 of header.component.scss\A \A 1: div{\A 2:   box-sizing: border-box;\A 3: }\A 4: //最外层背景盒子\A 5: .page-content{\A 6:   //height: 100%;\A 7:   background: url(\"../../assets/img/login-bg.png\") no-repeat ;\A 8:   background-size: 100% 100%;\A 9:   padding: 13px 14px 24px;"; }
+.page-box {
+  width: 100%;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #5481DC;
+  padding: 13px 13px 0; }
+
+.page-card {
+  width: 100%;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #5481DC;
+  position: relative; }
+
+.page-card-header {
+  padding: 7px 10px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #5481DC; }
+
+.toolbar {
+  --background: #0A0E2E;
+  --color: #fff; }
+  .toolbar .title {
+    --color: #fff;
+    text-align: center; }
+  .toolbar img {
+    width: 21px;
+    height: 21px; }
+
+.page-card-header p {
+  font-size: 11px;
+  font-weight: normal;
+  color: #1DDEFB; }
+
+.page-card span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #1DDEFB; }
+
+.page-card .flex-span1 {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none; }
+
+.page-card .flex-span2 {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none; }
+
+.page-card .flex-span3 {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none; }
+
+.page-card .flex-span4 {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none; }
+
+.page-card-section {
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid #F45B5B;
+  margin-top: 11px; }
+
+.page-card2-section {
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+  margin-top: 11px; }
+
+/*详细信息排序 盒子 content*/
+.section-card-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px; }
+
+.section-card-section-content .p1 {
+  width: 50%;
+  font-size: 8px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 11px; }
+
+.section-card-section-content .p1 span {
+  min-width: 34px;
+  text-align: left; }
+
+/*# sourceMappingURL=header.component.css.map */

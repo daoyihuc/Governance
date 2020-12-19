@@ -6,11 +6,12 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import { CommandIndexComponent } from './command-index/command-index.component';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent, BasicInformationComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent],
   imports: [
     CommonModule,
     CommandRouterModule,

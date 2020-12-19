@@ -1,66 +1,88 @@
 /*
-Error: Invalid GBK character "\xE6"
-        on line 4 of ../../Base/BaseCss.scss
-        from line 1 of information.component.scss
+Error: Can't extend .imgUp
+       : can't extend nested selectors
+        on line 75 of information.component.scss
 
-1: div{
-2:   box-sizing: border-box;
-3: }
-4: //最外层背景盒子
-5: .page-content{
-6:   //height: 100%;
-7:   background: url("../../assets/img/login-bg.png") no-repeat ;
-8:   background-size: 100% 100%;
-9:   padding: 13px 14px 24px;
+70:     .imgUp1  {
+71:       @extend .imgUp;
+72:       margin-left: 10px;
+73:     }
+74:     .imgUp2  {
+75:       @extend .imgUp
+76:     //margin-left: 10px;
+77:   }
+78:     .imgUp3  {
+79:       @extend .imgUp;
+80:     margin-left: 10px;
 
 Backtrace:
-../../Base/BaseCss.scss:4
-information.component.scss:1
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1090:in `rescue in block in find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1087:in `block in find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `each_with_index'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:1086:in `find_encoding_error'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:820:in `rescue in check_sass_encoding'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/util.rb:816:in `check_sass_encoding'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:444:in `check_encoding!'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:400:in `_to_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:321:in `to_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:88:in `block in with_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:88:in `with_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `load'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `<main>'
+information.component.scss:75
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:108:in `block in populate_extends'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `each'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `populate_extends'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:115:in `visit_extend'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:64:in `visit_root'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:24:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:6:in `visit'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:38:in `css_tree'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:338:in `watch_or_update'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/scss:13:in `<top (required)>'
+D:/DevelopmentEnvironment/Ruby27-x64/bin/scss:23:in `load'
+D:/DevelopmentEnvironment/Ruby27-x64/bin/scss:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE6\"\A         on line 4 of ../../Base/BaseCss.scss\A         from line 1 of information.component.scss\A \A 1: div{\A 2:   box-sizing: border-box;\A 3: }\A 4: //最外层背景盒子\A 5: .page-content{\A 6:   //height: 100%;\A 7:   background: url(\"../../assets/img/login-bg.png\") no-repeat ;\A 8:   background-size: 100% 100%;\A 9:   padding: 13px 14px 24px;"; }
+  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 75 of information.component.scss\A \A 70:     .imgUp1  {\A 71:       @extend .imgUp;\A 72:       margin-left: 10px;\A 73:     }\A 74:     .imgUp2  {\A 75:       @extend .imgUp\A 76:     //margin-left: 10px;\A 77:   }\A 78:     .imgUp3  {\A 79:       @extend .imgUp;\A 80:     margin-left: 10px;"; }

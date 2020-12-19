@@ -103,6 +103,22 @@ div {
   background: rgba(84, 129, 220, 0.2);
   border: 1px solid #5481DC; }
 
+.basic-page {
+  height: 80px; }
+
+.basic-page2 .p1 {
+  width: 100%;
+  font-size: 9px; }
+.basic-page2 .basic-section {
+  padding-bottom: 13px; }
+
+.page-card .flex-img {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100px;
+  height: 4px; }
+
 .page-box {
   padding: 13px 13px 25px; }
 
@@ -137,48 +153,9 @@ div {
     text-align: center;
     line-height: 20px; }
 
-.basic-page .basic-section .p1:first-child {
-  width: 100%; }
-
-.basic-page3 {
-  border: none;
-  border-radius: 5px; }
-
-.basic-section3 {
-  padding-bottom: 8px; }
-  .basic-section3 .p1 {
-    margin-top: 8px; }
-
-.basic-section span {
-  border: none;
-  width: auto;
-  height: auto;
-  position: inherit; }
-
-.basic-page4 {
-  background: rgba(84, 129, 220, 0.2);
-  margin-top: 13px; }
-  .basic-page4 .basic-page4-header {
-    padding: 7px 0;
-    background: rgba(84, 129, 220, 0.4);
-    display: flex; }
-    .basic-page4 .basic-page4-header p {
-      font-size: 9px;
-      font-weight: normal;
-      color: #FFFFFF; }
-    .basic-page4 .basic-page4-header .p1 {
-      width: 40%;
-      padding-left: 13px;
-      text-align: left; }
-    .basic-page4 .basic-page4-header .p2 {
-      width: 20%;
-      text-align: center; }
-  .basic-page4 .basic-page4-section-box {
-    background: rgba(0, 0, 0, 0); }
-
 .page-footer-btn {
   border-top: 1px solid #5481DC;
-  margin-top: 34px;
+  margin-top: 94px;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -198,14 +175,43 @@ div {
     text-stroke: 1px #5481DB;
     margin: 0 5px; }
   .page-footer-btn .right {
-    background: rgba(244, 91, 91, 0.2);
+    background: rgba(84, 129, 220, 0.2);
     border-radius: 5px;
     font-size: 9px;
     font-weight: normal;
     color: #FFFFFF;
     line-height: 16px;
-    padding: 5px 9px; }
+    padding: 13px 9px; }
     .page-footer-btn .right p {
       white-space: nowrap; }
 
-/*# sourceMappingURL=basic-information.component.css.map */
+.imgUp {
+  display: flex;
+  margin: 13px auto 0;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 63px;
+  min-height: 63px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #5481DC;
+  position: relative; }
+
+.add {
+  width: 27px;
+  height: 27px; }
+
+.my-input {
+  --padding-end:10px;
+  --padding-bottom:0;
+  --padding-start:10px;
+  --padding-top:0;
+  --font-size: 9px;
+  --color: #FFFFFF;
+  height: 70px; }
+
+textarea {
+  height: 70px; }
+
+/*# sourceMappingURL=feedback.component.css.map */
