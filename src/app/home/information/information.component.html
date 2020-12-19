@@ -27,31 +27,39 @@
             <p>{{datas.name}}</p>
           </div>
           <div class="page-card-section">
-            <ion-item class="items" *ngFor="let item of InputDatas;index as i" [lines]="'none'"  >
+            <ion-item class="items" *ngFor="let item of InputDatas; index as i" [lines]="'none'" (click)="onClick(item.id, index)" >
               <ion-label class="labels" >
                 {{item.name}}
               </ion-label>
-              <ion-input [type]="'text'" [slot]="'end'" [placeholder]="item.placName" class="input" [maxlength]="12" [readonly]="item.isRead"  >
+              <ion-input [type]="'text'" [slot]="'end'" [placeholder]="item.placName" class="input" [(ngModel)]="item.value" [maxlength]="12" [readonly]="item.isRead"  >
               </ion-input>
             </ion-item>
             <div class="imgMax">
               <div class="imgbox">
                 <p>{{datas.inforlabel1}}</p>
                 <div class="imgUp">
+                  <img [src]="imgsPreview.header" alt="" class="imgs">
                   <img src="./assets/img/all-img.png" alt="" class="add">
                   <div class="name">车头</div>
+                  <input type="file" class="file" (change)="onSelectFile($event,0)" accept="image/*"/>
                 </div>
                 <div class="imgUp1">
+                  <img [src]="imgsPreview.section" alt="" class="imgs">
                   <img src="./assets/img/all-img.png" alt="" class="add">
                   <div class="name">车身</div>
+                  <input type="file" class="file" (change)="onSelectFile($event,1)" accept="image/*"/>
                 </div>
                 <div class="imgUp">
+                  <img [src]="imgsPreview.footer" alt="" class="imgs">
                   <img src="./assets/img/all-img.png" alt="" class="add">
                   <div class="name">车尾</div>
+                  <input type="file" class="file" (change)="onSelectFile($event,2)" accept="image/*"/>
                 </div>
                 <div class="imgUp3">
+                  <img [src]="imgsPreview.WeighingList" alt="" class="imgs">
                   <img src="./assets/img/all-img.png" alt="" class="add">
                   <div class="name">过磅单</div>
+                  <input type="file" class="file" (change)="onSelectFile($event,3)" accept="image/*"/>
                 </div>
               </div>
             </div>
@@ -62,7 +70,13 @@
               <ion-button class="ok">确认录入</ion-button>
             </ion-buttons>
           </footer>
-
+          <ion-datetime id="times"
+                        displayFormat="YYYY/MM/DD/HH/mm"
+                        pickerFormat="YYYY MM DD HH mm"
+                        [pickerOptions]="customPickerOptions"
+                        [(ngModel)]="ValueTime"
+                        (ionChange)="timeChange($event)"
+                        [min]="minTime" [hidden]="true"></ion-datetime>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>
@@ -73,3 +87,4 @@
     </div>
   </ion-content>
 </ion-app>
+
