@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {ToastController} from "@ionic/angular";
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,20 @@ import { Injectable } from '@angular/core';
 * */
 export class WindowService {
 
-  constructor() { }
+  constructor(
+    public toastController: ToastController
+  ) { }
 
   // 返回上一级
   public onBack(): void{
     window.history.back();
+  }
+
+  async presentToast(message) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000
+    });
+    toast.present();
   }
 }
