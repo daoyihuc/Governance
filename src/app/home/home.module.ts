@@ -11,13 +11,13 @@ import { InformationComponent } from './information/information.component';
 
 @NgModule({
 
-  imports: [
-    CommonModule,
-    RouterModule,
-    HomeRouterModule,
-    IonicModule,
-    // 主页路由
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        HomeRouterModule,
+        IonicModule,
+        // 主页路由
+    ],
   declarations: [
     IndexComponent,
     HomeHeaderComponent,

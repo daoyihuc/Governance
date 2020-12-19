@@ -25,6 +25,35 @@ export class IndexComponent implements OnInit, Baseinterface {
   onBack(): void {
     this.window.onBack();
   }
+  // 路由跳转
+  GoRouter(index): void{
+    switch (index){
+      case 0:
+
+        break;
+      case 1:
+
+        break
+      case 2:
+
+        break;
+      case 3:
+
+        break
+      case 4: // 信息录入
+        this.route.navigate(['/home/entry']);
+        break;
+
+    }
+  }
+
+  onHome(): void {
+
+  }
+
+  onSetting(): void {
+    this.route.navigate(['/setting']);
+  }
 
 
 }

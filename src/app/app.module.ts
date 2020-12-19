@@ -10,6 +10,7 @@ import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import {IonicModule} from '@ionic/angular';
 import {RouterModule, Routes} from '@angular/router';
 import {SlideVerifyComponent} from './slide-verify/slide-verify.component';
+import { HeaderComponent } from './header/header.component';
 
 // 路由
 const appRoute: Routes = [
@@ -18,7 +19,7 @@ const appRoute: Routes = [
     loadChildren: () => import('./home/home.module')
       .then(m => m.HomeModule)
   },
-  {path: 'setting', // 主页路由
+  {path: 'setting', // 个人中心
     loadChildren: () => import('./setting/setting.module')
       .then(m => m.SettingModule)
   },
@@ -33,7 +34,8 @@ const appRoute: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    SlideVerifyComponent
+    SlideVerifyComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,9 @@ const appRoute: Routes = [
     RouterModule.forRoot(appRoute),
   ],
   providers: [],
+  exports: [
+    HeaderComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

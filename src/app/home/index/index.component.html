@@ -13,7 +13,7 @@
           {{datas.name}}
         </ion-title>
         <ion-buttons slot="end">
-          <ion-button >
+          <ion-button (click)="onSetting()" >
             <img src="./assets/img/login-set.png" >
           </ion-button>
         </ion-buttons>
@@ -48,8 +48,7 @@
         </section>
 
         <div class="footer_box"></div>
-        <img src="./assets/img/zhifa.png" alt="" class="imgButton">
-
+        <img src="./assets/img/zhifa.png" alt="" class="imgButton" (click)="GoRouter(4)">
       </div>
     </ion-content>
   </ion-app>
