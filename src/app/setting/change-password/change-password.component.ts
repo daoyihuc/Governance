@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Baseinterface} from "../../interface/baseinterface";
+import {WindowService} from "../../utils/window.service";
 
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css']
+  styleUrls: ['./change-password.component.scss']
 })
-export class ChangePasswordComponent implements OnInit {
-
-  constructor(private route: Router) { }
+export class ChangePasswordComponent implements OnInit,Baseinterface {
+  name = '密码修改';
+  constructor(
+    private route: Router,
+    private windowUntils: WindowService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +25,17 @@ export class ChangePasswordComponent implements OnInit {
   jump(): void {
     console.log(this.lists);
     this.route.navigate(['/setting/setIndex'] );
+  }
+
+  onBack(): void {
+    this.windowUntils.onBack();
+  }
+
+  onHome(): void {
+    this.route.navigate(['/home']);
+  }
+
+  onSetting(): void { // 个人中心
+    this.route.navigate(['/setting']);
   }
 }

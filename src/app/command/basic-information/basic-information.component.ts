@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {WindowService} from '../../utils/window.service';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Baseinterface} from "../../interface/baseinterface";
 
 @Component({
   selector: 'app-basic-information',
   templateUrl: './basic-information.component.html',
   styleUrls: ['./basic-information.component.css']
 })
-export class BasicInformationComponent implements OnInit {
+export class BasicInformationComponent implements OnInit,Baseinterface {
 
   constructor(
     private route: Router, // 路由传递

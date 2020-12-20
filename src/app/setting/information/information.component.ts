@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {WindowService} from "../../utils/window.service";
+import {Baseinterface} from "../../interface/baseinterface";
 
 @Component({
   selector: 'app-information',
   templateUrl: './information.component.html',
   styleUrls: ['./information.component.css']
 })
-export class InformationComponent implements OnInit {
-
-  constructor(private route: Router) { }
+export class InformationComponent implements OnInit,Baseinterface {
+  name = '版本信息';
+  constructor(
+    private route: Router,
+    private windowUntils: WindowService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -25,4 +30,16 @@ export class InformationComponent implements OnInit {
         'TEL： 0731-88889996\n' +
         '                            '}
   ];
+
+  onBack(): void {
+    this.windowUntils.onBack();
+  }
+
+  onHome(): void {
+    this.route.navigate(['/home']);
+  }
+
+  onSetting(): void { // 个人中心
+    this.route.navigate(['/setting']);
+  }
 }
