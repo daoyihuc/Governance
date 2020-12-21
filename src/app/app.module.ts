@@ -27,6 +27,10 @@ const appRoute: Routes = [
     loadChildren: () => import('./command/command.module')
       .then(m => m.CommandModule)
   },
+  {path: 'queryAll', // 综合查询
+    loadChildren: () => import('./Integratedquery/integrated-index.module')
+      .then(m => m.IntegratedIndexModule)
+  },
   { path: '',  redirectTo: '/login', pathMatch: 'full', data: {animation: 'login'} },
 ];
 
