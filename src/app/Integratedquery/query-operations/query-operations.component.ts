@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {OperationConstans, OperationInfoConstans, OperationTitle} from '../constans/queryConst';
 
 @Component({
-  selector: 'app-query-operation',
-  templateUrl: './query-operation.component.html',
-  styleUrls: ['./query-operation.component.scss']
+  selector: 'app-query-operations',
+  templateUrl: './query-operations.component.html',
+  styleUrls: ['./query-operations.component.css']
 })
-export class QueryOperationComponent implements OnInit {
+export class QueryOperationsComponent implements OnInit {
   name = OperationTitle;
   serachData = OperationConstans;
   resultData = OperationInfoConstans;
-
   constructor() { }
 
   ngOnInit(): void {

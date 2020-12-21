@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {IndexComponent} from '../index/index.component';
 import {QueryIndexComponent} from '../query-index/query-index.component';
-import {QueryOperationComponent} from '../query-operation/query-operation.component';
 import {QueryenterpriseComponent} from '../queryenterprise/queryenterprise.component';
 import {QueryVehicleComponent} from '../query-vehicle/query-vehicle.component';
+import {QueryOperationsComponent} from '../query-operations/query-operations.component';
+import {QueryPassingCarComponent} from '../query-passing-car/query-passing-car.component';
 
 
 const Router: Routes = [
@@ -20,12 +21,12 @@ const Router: Routes = [
     ],
   },
   {
-    path: 'queryIndex',
+    path: 'queryIndex', // 运营信息查询
     component: QueryIndexComponent,
     children: [
       {
         path: 'operation',
-        component: QueryOperationComponent,
+        component: QueryOperationsComponent,
       },
       {
         path: 'enterprise',
@@ -37,6 +38,10 @@ const Router: Routes = [
       },
       { path: '', redirectTo: 'operation', pathMatch: 'full' },
     ],
+  },
+  {
+    path: 'passingCar', // 过车记录查询
+    component: QueryPassingCarComponent,
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: '**', redirectTo: 'index' },

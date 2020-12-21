@@ -44,7 +44,7 @@ export class IndexComponent implements OnInit, Baseinterface {
         this.route.navigate(['/queryAll/queryIndex']);
         break;
       case 1:
-        this.route.navigate(['/queryAll/queryIndex']);
+        this.route.navigate(['/queryAll/passingCar']);
         break;
       case 2:
         this.route.navigate(['/queryAll/queryIndex']);

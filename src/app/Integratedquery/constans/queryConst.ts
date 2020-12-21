@@ -284,3 +284,39 @@ export  const vehicleInfoConstans = [
     value: '暂无数据',
   },
 ];
+
+// 过车记录
+export  const passingCarName = '过车记录查询';
+export  const PassingCarConstans = [
+  {
+    id: 0,
+    name: '站点名称',
+    placName: '请选择站点',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  },
+  {
+    id: 1,
+    name: '车牌号码',
+    placName: '请输入车牌号码',
+    isRead: false,
+    isIcon: false,
+    value: '',
+  },
+  {
+    id: 1,
+    name: '开始时间',
+    placName: '请选择开始时间',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  }, {
+    id: 1,
+    name: '结束时间',
+    placName: '请选择结束时间',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  },
+];

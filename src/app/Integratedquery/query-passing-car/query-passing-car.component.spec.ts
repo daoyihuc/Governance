@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QueryOperationComponent } from './query-operation.component';
+import { QueryPassingCarComponent } from './query-passing-car.component';
 
-describe('QueryOperationComponent', () => {
-  let component: QueryOperationComponent;
-  let fixture: ComponentFixture<QueryOperationComponent>;
+describe('QueryPassingCarComponent', () => {
+  let component: QueryPassingCarComponent;
+  let fixture: ComponentFixture<QueryPassingCarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QueryOperationComponent ]
+      declarations: [ QueryPassingCarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QueryOperationComponent);
+    fixture = TestBed.createComponent(QueryPassingCarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

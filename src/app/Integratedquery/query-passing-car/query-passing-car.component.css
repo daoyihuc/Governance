@@ -97,11 +97,9 @@ div {
   text-align: left; }
 
 .page-content {
-  background: url("../../../assets/img/home_bg.png") no-repeat;
-  min-height: 100%; }
-
-.text {
-  color: wheat; }
+  background: url("../../../assets/img/all_bg.png");
+  min-height: 100%;
+  background-size: 100% 50%; }
 
 .items {
   display: flex;
@@ -154,33 +152,4 @@ div {
   --padding-bottom: 5px;
   --background: #5481DC; }
 
-.labels {
-  font-size: 9px;
-  font-family: Hiragino Sans GB;
-  font-weight: normal;
-  color: #1DDEFB; }
-
-.page-box {
-  margin-top: 10px;
-  padding-bottom: 20px; }
-
-.page-card-section {
-  border: none;
-  background: rgba(84, 129, 220, 0.2);
-  border: 0px solid #5481DC; }
-
-.input {
-  color: #ffff;
-  --placeholder-color: #ffff;
-  --padding-start: 0px;
-  --padding-end: 0px;
-  margin-right: 30px;
-  font-size: 10px;
-  font-family: Hiragino Sans GB;
-  font-weight: normal;
-  color: #FFFFFF;
-  line-height: 13px;
-  text-align: center;
-  width: 200px; }
-
-/*# sourceMappingURL=queryenterprise.component.css.map */
+/*# sourceMappingURL=query-passing-car.component.css.map */

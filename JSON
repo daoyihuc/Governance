@@ -144,7 +144,8 @@ div {
   --padding-end: 0px;
   margin-right: 10px;
   font-size: 9px;
-  width: 200px; }
+  width: 200px;
+  border-bottom: 1px solid #5481DC; }
 
 .searchButton {
   --padding-start: 20px;
