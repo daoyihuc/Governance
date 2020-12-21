@@ -1,22 +1,22 @@
 /*
 Error: Can't extend .imgUp
        : can't extend nested selectors
-        on line 75 of information.component.scss
+        on line 94 of information.component.scss
 
-70:     .imgUp1  {
-71:       @extend .imgUp;
-72:       margin-left: 10px;
-73:     }
-74:     .imgUp2  {
-75:       @extend .imgUp
-76:     //margin-left: 10px;
-77:   }
-78:     .imgUp3  {
-79:       @extend .imgUp;
-80:     margin-left: 10px;
+89:     .imgUp1  {
+90:       @extend .imgUp;
+91:       margin-left: 10px;
+92:     }
+93:     .imgUp2  {
+94:       @extend .imgUp
+95:     //margin-left: 10px;
+96:   }
+97:     .imgUp3  {
+98:       @extend .imgUp;
+99:     margin-left: 10px;
 
 Backtrace:
-information.component.scss:75
+information.component.scss:94
 D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:108:in `block in populate_extends'
 D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `each'
 D:/DevelopmentEnvironment/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `populate_extends'
@@ -85,4 +85,4 @@ D:/DevelopmentEnvironment/Ruby27-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 75 of information.component.scss\A \A 70:     .imgUp1  {\A 71:       @extend .imgUp;\A 72:       margin-left: 10px;\A 73:     }\A 74:     .imgUp2  {\A 75:       @extend .imgUp\A 76:     //margin-left: 10px;\A 77:   }\A 78:     .imgUp3  {\A 79:       @extend .imgUp;\A 80:     margin-left: 10px;"; }
+  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 94 of information.component.scss\A \A 89:     .imgUp1  {\A 90:       @extend .imgUp;\A 91:       margin-left: 10px;\A 92:     }\A 93:     .imgUp2  {\A 94:       @extend .imgUp\A 95:     //margin-left: 10px;\A 96:   }\A 97:     .imgUp3  {\A 98:       @extend .imgUp;\A 99:     margin-left: 10px;"; }
