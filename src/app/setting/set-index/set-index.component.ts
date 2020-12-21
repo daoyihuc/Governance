@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {Baseinterface} from "../../interface/baseinterface";
+import {WindowService} from "../../utils/window.service";
 
 @Component({
   selector: 'app-set-index',
   templateUrl: './set-index.component.html',
-  styleUrls: ['./set-index.component.css']
+  styleUrls: ['./set-index.component.scss']
 })
-export class SetIndexComponent implements OnInit {
-
-  constructor(private route: Router) {
+export class SetIndexComponent implements OnInit,Baseinterface {
+  name = '设置';
+  constructor(
+    private route: Router,
+    private windowUntils: WindowService,
+  ) {
 
   }
   lists = [
@@ -31,4 +36,15 @@ export class SetIndexComponent implements OnInit {
     this.route.navigate([data.url] );
   }
 
+  onBack(): void {
+    this.windowUntils.onBack();
+  }
+
+  onHome(): void {
+    this.route.navigate(['/home']);
+  }
+
+  onSetting(): void { // 个人中心
+    this.route.navigate(['/setting']);
+  }
 }

@@ -1,0 +1,20 @@
+
+.barBox{
+  --background: #0a162b	;//选项卡按钮的背景
+  --background-focused: #0a162b;	//使用Tab键聚焦时Tab键背景的背景
+  --background-focused-opacity: 0.2;	//使用Tab键聚焦时，Tab按钮背景的不透明度
+  --color: #fff;	//选项卡按钮的颜色
+  --color-focused: #1DDEFB;	//使用Tab键聚焦时Tab键的颜色
+  --color-selected: #1DDEFB;	//所选标签按钮的颜色
+  --padding-bottom: 10px;	//选项卡按钮的底部填充
+  --padding-end: 0;	//如果方向是从左至右，则为右填充；如果方向是从右至左，则为左填充
+  --padding-start: 0;	//如果方向是从左到右，则为左填充；如果方向是从右到左，则为右填充
+  --padding-top: 10px;	//选项卡按钮的顶部填充
+  --ripple-color: 0;
+  padding: 5px 0;
+  img{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 5px;
+  }
+}

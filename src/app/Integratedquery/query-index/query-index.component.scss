@@ -1,0 +1,33 @@
+@import "../../Base/BaseHeader";
+@import "../../Base/BaseCss";
+@import "../../Base/BaseBar";
+
+.page-content{
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  min-height: 100%;
+}
+.toolbarSub{
+  @extend .toolbar;
+  --background: #091220!important;
+  padding: 15px;
+}
+.segment{
+  @extend .page-card;
+  --background: #172A4E;
+  border: 0px solid #5481DC;
+  border-radius: 0;
+
+}
+.segment ion-segment-button{
+  --background-checked: #5481DC ;
+  --background-focused: #5481DC;
+  --background-focused-opacity: 1;
+  --background-hover:#5481DC;
+  --background-hover-opacity: 1;
+  --color: #FFFFFF;
+  --color-checked:#fff;
+  --color-focused: #fff;
+  --color-hover: #fff;
+  --border-radius: 0;
+  --indicator-color: #5481DC;
+}

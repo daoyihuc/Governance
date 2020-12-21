@@ -8,3 +8,11 @@ export const BaseConst = {
   lable3: '指挥调度',
   lable5: '综合查询',
 };
+
+export const AllQueryConst = {
+  name: '综合查询',
+  lable1: '运管信息查询',
+  lable2: '过车记录查询',
+  lable3: '违法记录查询',
+  lable5: '数据统计查询',
+};

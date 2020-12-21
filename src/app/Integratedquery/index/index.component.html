@@ -1,0 +1,74 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        {{datas.name}}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="./assets/img/login-home.png">
+        </ion-button>
+        <ion-button (click)="onSetting()">
+          <img src="./assets/img/login-set.png">
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+<!--    <ion-router-outlet></ion-router-outlet>-->
+        <div class="page-content">
+          <div class="page-box">
+            <section class="item_box">
+              <div class="item" (click)="onSelect(0)">
+                <img src="./assets/img/search-1.png" alt="" class="item_img">
+                <p class="tile">{{datas.lable1}}</p>
+              </div>
+              <div class="item" (click)="onSelect(1)">
+                <img src="./assets/img/search-2.png" alt="" class="item_img">
+                <p class="tile">{{datas.lable2}}</p>
+              </div>
+            </section>
+            <section class="item_box">
+              <div class="item" (click)="onSelect(2)">
+                <img src="./assets/img/search-3.png" alt="" class="item_img">
+                <p class="tile">{{datas.lable1}}</p>
+              </div>
+              <div class="item" (click)="onSelect(3)">
+                <img src="./assets/img/search-4.png" alt="" class="item_img">
+                <p class="tile">{{datas.lable2}}</p>
+              </div>
+            </section>
+
+          </div>
+        </div>
+  </ion-content>
+<!--  <ion-footer>-->
+
+<!--    <ion-tabs>-->
+      <ion-tab-bar slot="bottom" [selectedTab]="'/queryAll/index'" class="barBox">
+        <ion-tab-button tab="command">
+          <img src="./assets/img/kind-1off.png" class=""/>
+          <ion-label>{{footerData.lable1}}</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="command">
+          <img src="./assets/img/kind-2off.png" />
+          <ion-label>{{footerData.lable2}}</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="command">
+          <img src="./assets/img/kind-3off.png" />
+          <ion-label>{{footerData.lable3}}</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="/queryAll/index">
+          <img src="./assets/img/kind-4on.png" />
+          <ion-label>{{footerData.lable5}}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+<!--    </ion-tabs>-->
+
+<!--  </ion-footer>-->
+</ion-app>

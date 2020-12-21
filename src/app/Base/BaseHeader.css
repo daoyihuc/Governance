@@ -1,0 +1,11 @@
+.toolbar {
+  --background: #0A0E2E;
+  --color: #fff; }
+  .toolbar .title {
+    --color: #fff;
+    text-align: center; }
+  .toolbar img {
+    width: 21px;
+    height: 21px; }
+
+/*# sourceMappingURL=BaseHeader.css.map */

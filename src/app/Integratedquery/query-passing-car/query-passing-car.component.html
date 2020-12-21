@@ -1,0 +1,52 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        {{name}}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="./assets/img/login-home.png">
+        </ion-button>
+        <ion-button (click)="onSetting()">
+          <img src="./assets/img/login-set.png">
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-content">
+
+      <div class="page-card">
+        <ion-item class="items" *ngFor="let item of serachData; index as i" [lines]="'none'">
+          <ion-label class="lableBox">
+            <div class="lableIcon"></div>
+            <div class="lableTitle">
+              {{item.name}}
+            </div>
+          </ion-label>
+          <ion-input slot="end"
+                     type="text"
+                     class="inputs"
+                     [placeholder]="item.placName"
+                     [(ngModel)]="item.value"
+                     [readonly]="item.isRead"
+                     maxlength="30"></ion-input>
+        </ion-item>
+        <ion-item class="items" [lines]="'none'">
+          <ion-button slot="end" class="searchButton">查询</ion-button>
+        </ion-item>
+
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

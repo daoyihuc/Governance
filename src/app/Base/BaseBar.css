@@ -1,0 +1,14 @@
+.barBox {
+  --background: #000 ;
+  --background-focused: #000;
+  --background-focused-opacity: 0.2;
+  --color: #fff;
+  --color-focused: #5481DC;
+  --color-selected: #5481DC;
+  --padding-bottom: 0;
+  --padding-end: 0;
+  --padding-start: 0;
+  --padding-top: 0;
+  --ripple-color: 0; }
+
+/*# sourceMappingURL=BaseBar.css.map */

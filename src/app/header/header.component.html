@@ -11,7 +11,10 @@
         {{name}}
       </ion-title>
       <ion-buttons slot="end">
-        <ion-button >
+        <ion-button (click)="onHome()">
+          <img src="./assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
           <img src="./assets/img/login-set.png" >
         </ion-button>
       </ion-buttons>
