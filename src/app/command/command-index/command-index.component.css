@@ -105,7 +105,39 @@
 
 
 
+.barBox{
+  --background: #0a162b	;
+--background-focused: #0a162b;
+--background-focused-opacity: 0.2;
+--color: #fff;
+--color-focused: #1DDEFB;
+--color-selected: #1DDEFB;
+--padding-bottom: 10px;
+--padding-end: 0;
+--padding-start: 0;
+--padding-top: 10px;
+--ripple-color: 0;
+  padding: 5px 0;
+}
+.barBox img{
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
 
+.toolbar{
+    --background: #0A0E2E;
+    --color: #fff;
+
+}
+.toolbar .title{
+  --color: #fff;
+  text-align: center;
+}
+.toolbar img{
+  width: 21px;
+  height: 21px;
+}
 
 
 

@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {CommandIndexComponent} from "./command-index/command-index.component";
 import {BasicInformationComponent} from "./basic-information/basic-information.component";
 import {FeedbackComponent} from './feedback/feedback.component';
+import {CommandCarComponent} from "./command-car/command-car.component";
 
 const commandRouter: Routes = [
   {
@@ -18,6 +19,7 @@ const commandRouter: Routes = [
   },
   {path: 'basicInformation', component: BasicInformationComponent},
   {path: 'feedback', component: FeedbackComponent},
+  {path: 'commandCar', component: CommandCarComponent},
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

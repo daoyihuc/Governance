@@ -1,0 +1,103 @@
+@import '../../Base/BaseCss';
+.page-content{
+  min-height: 100%;
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+}
+.page-box{
+  padding: 0;
+}
+
+//header
+.page-box-header{
+  height: 35px;
+  background: rgba(244, 91, 91, 0.4);
+  border: 0px solid #F45B5B;
+  font-size: 12px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+}
+
+.car-card{
+  margin: 20px 20px 0;
+  .p1{
+    margin-right: 13px;
+    font-size: 9px;
+    font-family: Hiragino Sans GB;
+    font-weight: normal;
+    color: #FFFFFF;
+    white-space: nowrap;
+  }
+}
+
+.car-header{
+  height: 40px;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #5481DC;
+  display: flex;
+  padding: 0 8px;
+  line-height: 40px;
+  position: relative;
+  span{
+    color: #F45B5B;
+    text-decoration: underline;
+  }
+  .flex-img{
+    width: 36px;
+    height: 4px;
+    position: absolute;
+    top: -2px;
+    left: 13px;
+  }
+}
+.car-header-show{
+  background: rgba(84, 129, 220, 0.2);
+}
+
+
+
+.car-section{
+  padding: 0 8px 10px;
+  background: rgba(31, 57, 122, 0.2);
+  .img-content{
+    position: relative;
+    padding: 13px 10px 10px;
+    img{
+      width: 100%;
+      height: 116px;
+    }
+    .flex-p1{
+      width: 76px;
+      height: 20px;
+      position: absolute;
+      top: 13px;
+      left: 10px;
+      background: #5481DC;
+      font-size: 11px;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+  .car-section-down{
+    display: flex;
+    .down-time-p1{
+
+    }
+    .down-time-p2{
+      flex-grow: 1;
+      white-space: normal;
+    }
+  }
+
+}
+
+.page-img-close{
+  width: 40px;
+  height: 40px;
+  margin: 30px auto 26px;
+  display: block;
+}
