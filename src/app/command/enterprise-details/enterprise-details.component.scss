@@ -1,0 +1,57 @@
+@import '../../Base/BaseCss';
+.page-content{
+  min-height: 100%;
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+}
+.page-box{
+  padding: 14px;
+}
+//header
+.weighing-header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  div{
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 10px 0;
+    width: 33%;
+    text-align: center;
+  }
+  .selected{
+    background: rgba(80, 136, 249, 0.4);
+  }
+  .flex-span{
+    width: 4px;
+    height: 4px;
+    background: #95B8FF;
+    border: none;
+  }
+}
+//section
+.monitoring-section{
+  margin-top: 13px;
+  padding: 0 14px;
+  padding-bottom: 13px;
+}
+//footer btn
+.warning-btn-box{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+.warning-btn{
+  width: 73px;
+  height: 24px;
+  background: #5481DC;
+  border-radius: 7px;
+  font-size: 11px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 24px;
+}
+

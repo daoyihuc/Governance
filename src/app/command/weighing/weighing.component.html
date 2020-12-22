@@ -1,0 +1,65 @@
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        夏铎铺镇南方水泥有限公司
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="../../../assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
+          <img src="../../../assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-card weighing-header">
+        <div *ngFor="let item of jumpUrl,let i=index" [class.selected]="i==0" (click)="onJump(i)">{{item.name}}</div>
+        <span class="flex-span1 flex-span"></span>
+        <span class="flex-span2 flex-span"></span>
+        <span class="flex-span3 flex-span"></span>
+        <span class="flex-span4 flex-span"></span>
+      </div>
+      <div class="page-box">
+        <!--card-->
+        <div class="page-card">
+          <div class="page-card-header">
+            <p>{{jumpUrl[0].name}}</p>
+          </div>
+          <div class="weighing-section">
+            <div class="warning-section-th thHeader">
+              <div class="warning-section-td td1">编号</div>
+              <div class="warning-section-td td2">企业名称</div>
+              <div class="warning-section-td td3">车牌</div>
+              <div class="warning-section-td td4">操作</div>
+            </div>
+            <div class="warning-section-th thContent" *ngFor="let item of tableData,let i=index">
+              <div class="warning-section-td td1">{{i+1}}</div>
+              <div class="warning-section-td td2">{{item.name}}</div>
+              <div class="warning-section-td td3">{{item.car}}</div>
+              <div class="warning-section-td td4"><p class="btn" (click)="onDetails(i)">详情</p></div>
+            </div>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+        <!--card end-->
+        <div  class="warning-btn-box">
+          <div class="warning-btn" (click)="onClose">关闭</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

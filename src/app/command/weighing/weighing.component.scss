@@ -1,0 +1,98 @@
+@import '../../Base/BaseCss';
+.page-content{
+  min-height: 100%;
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+}
+.page-box{
+  padding: 14px;
+}
+//header
+.weighing-header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  div{
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 10px 0;
+    width: 33%;
+    text-align: center;
+  }
+  .selected{
+    background: rgba(80, 136, 249, 0.4);
+  }
+  .flex-span{
+    width: 4px;
+    height: 4px;
+    background: #95B8FF;
+    border: none;
+  }
+}
+//section
+.weighing-section{
+  margin-top: 13px;
+  .thHeader{
+    background: #1F397A;
+  }
+  .thContent{
+    padding: 13px 0;
+  }
+  .warning-section-th{
+    padding: 7px 0;
+    display: flex;
+    &:nth-child(2n){
+      background: rgba(31, 57, 122, .3);
+    }
+    .warning-section-td{
+      font-size: 9px;
+      font-family: Hiragino Sans GB;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .td1{
+      width: 31px;
+    }
+    .td2{
+      padding: 0 5px;
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .td3{
+      width: 55px;
+    }
+    .td4{
+      width: 50px;
+      .btn{
+        width: 37px;
+        margin: 0 auto;
+        padding: 2px 0;
+        border: 1px solid #5088F9;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+//footer btn
+.warning-btn-box{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+.warning-btn{
+  width: 73px;
+  height: 24px;
+  background: #5481DC;
+  border-radius: 7px;
+  font-size: 11px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 24px;
+}
+
