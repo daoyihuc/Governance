@@ -11,6 +11,27 @@ import { PassingCarConstans, passingCarName} from '../constans/queryConst';
 })
 export class QueryPassingCarComponent implements OnInit, Baseinterface {
 
+
+  listOfData = [
+    {
+      key: '1',
+      name: '湘YA0089',
+      age: '金洲细线菁华铺非现场检测点',
+      address: '100'
+    },
+    {
+      key: '2',
+      name: '湘YA0089',
+      age: '金洲细线菁华铺非现场检测点',
+      address: '100'
+    },
+    {
+      key: '3',
+      name: '湘YA0089',
+      age: '金洲细线菁华铺非现场检测点',
+      address: '100'
+    }
+  ];
   name = passingCarName;
   serachData = PassingCarConstans;
   constructor(

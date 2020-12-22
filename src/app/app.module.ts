@@ -11,6 +11,12 @@ import {IonicModule} from '@ionic/angular';
 import {RouterModule, Routes} from '@angular/router';
 import {SlideVerifyComponent} from './slide-verify/slide-verify.component';
 import { HeaderComponent } from './header/header.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { zh_CN } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+
+registerLocaleData(zh);
 
 // 路由
 const appRoute: Routes = [
@@ -52,7 +58,7 @@ const appRoute: Routes = [
     RouterModule,
     RouterModule.forRoot(appRoute),
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   exports: [
     HeaderComponent
   ],

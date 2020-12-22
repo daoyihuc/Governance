@@ -152,4 +152,22 @@ div {
   --padding-bottom: 5px;
   --background: #5481DC; }
 
+.margin_top {
+  margin-top: 10px; }
+
+.page-card {
+  padding: 14px 14px; }
+
+:host ::ng-deep .ant-table-row {
+  background: #122146;
+  color: white; }
+
+:host ::ng-deep .ant-table-small .ant-table-thead > tr > th {
+  background: #1f397a;
+  border-bottom: 1px solid #1f397a;
+  color: white; }
+
+:host ::ng-deep .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #122146; }
+
 /*# sourceMappingURL=query-passing-car.component.css.map */
