@@ -41,12 +41,38 @@
         <ion-item class="items" [lines]="'none'">
           <ion-button slot="end" class="searchButton">查询</ion-button>
         </ion-item>
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+
+      <div class="page-card margin_top">
+        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false" [nzSize]="'small'" class="test">
+          <thead>
+          <tr >
+            <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">车牌号码</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">检测点</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">超限量</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of listOfData" >
+            <td [nzAlign]="'center'">{{data.key}}</td>
+            <td [nzAlign]="'center'">{{data.name}}</td>
+            <td [nzAlign]="'center'"  >{{data.age}}</td>
+            <td [nzAlign]="'center'">{{data.address}}</td>
+          </tr>
+          </tbody>
+        </nz-table>
 
         <span class="flex-span1"></span>
         <span class="flex-span2"></span>
         <span class="flex-span3"></span>
         <span class="flex-span4"></span>
       </div>
+
     </div>
   </ion-content>
 </ion-app>

@@ -11,6 +11,7 @@ import { QueryenterpriseComponent } from './queryenterprise/queryenterprise.comp
 import { QueryVehicleComponent } from './query-vehicle/query-vehicle.component';
 import { QueryOperationsComponent } from './query-operations/query-operations.component';
 import { QueryPassingCarComponent } from './query-passing-car/query-passing-car.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 
 
@@ -22,6 +23,7 @@ import { QueryPassingCarComponent } from './query-passing-car/query-passing-car.
     IonicModule,
     FormsModule,
     CommonModule,
+    NzTableModule,
   ]
 })
 export class IntegratedIndexModule { }
