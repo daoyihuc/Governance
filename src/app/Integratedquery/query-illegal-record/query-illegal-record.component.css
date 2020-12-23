@@ -22,6 +22,8 @@ div {
   padding: 7px 10px;
   background: rgba(84, 129, 220, 0.2);
   border: 1px solid #1F397A; }
+  .page-card-header p {
+    margin: 0; }
 
 .toolbar {
   --background: #0A0E2E;

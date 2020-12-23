@@ -29,7 +29,7 @@ const appRoute: Routes = [
     loadChildren: () => import('./setting/setting.module')
       .then(m => m.SettingModule)
   },
-  {path: 'command', // 主页路由
+  {path: 'command', // 指挥调度
     loadChildren: () => import('./command/command.module')
       .then(m => m.CommandModule)
   },
