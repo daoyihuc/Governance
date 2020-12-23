@@ -70,7 +70,8 @@ div {
 .page-card-header p {
   font-size: 11px;
   font-weight: normal;
-  color: #1DDEFB; }
+  color: #1DDEFB;
+  margin: 0; }
 
 /*header end*/
 /*section*/
