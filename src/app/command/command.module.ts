@@ -8,11 +8,14 @@ import { CommandIndexComponent } from './command-index/command-index.component';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { CommandCarComponent } from './command-car/command-car.component';
+import { WeighingComponent } from './weighing/weighing.component';
+import { MonitoringComponent } from './monitoring/monitoring.component';
+import { EnterpriseDetailsComponent } from './enterprise-details/enterprise-details.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent],
   imports: [
     CommonModule,
     CommandRouterModule,
