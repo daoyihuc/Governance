@@ -12,6 +12,9 @@
 div {
   box-sizing: border-box; }
 
+p {
+  margin: 0; }
+
 .page-content {
   background-size: 100% 100%;
   padding: 13px 14px 24px; }
