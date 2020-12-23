@@ -7,6 +7,7 @@ import {QueryenterpriseComponent} from '../queryenterprise/queryenterprise.compo
 import {QueryVehicleComponent} from '../query-vehicle/query-vehicle.component';
 import {QueryOperationsComponent} from '../query-operations/query-operations.component';
 import {QueryPassingCarComponent} from '../query-passing-car/query-passing-car.component';
+import {QueryIllegalRecordComponent} from "../query-illegal-record/query-illegal-record.component";
 
 
 const Router: Routes = [
@@ -42,6 +43,10 @@ const Router: Routes = [
   {
     path: 'passingCar', // 过车记录查询
     component: QueryPassingCarComponent,
+  },
+  {
+    path: 'IllegalRecord', // 过车记录查询
+    component: QueryIllegalRecordComponent,
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: '**', redirectTo: 'index' },

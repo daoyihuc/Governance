@@ -1,22 +1,22 @@
 /*
 Error: Can't extend .imgUp
        : can't extend nested selectors
-        on line 94 of information.component.scss
+        on line 98 of information.component.scss
 
-89:     .imgUp1  {
-90:       @extend .imgUp;
-91:       margin-left: 10px;
-92:     }
-93:     .imgUp2  {
-94:       @extend .imgUp
-95:     //margin-left: 10px;
-96:   }
-97:     .imgUp3  {
-98:       @extend .imgUp;
-99:     margin-left: 10px;
+93:     .imgUp1  {
+94:       @extend .imgUp;
+95:       margin-left: 10px;
+96:     }
+97:     .imgUp2  {
+98:       @extend .imgUp
+99:     //margin-left: 10px;
+100:   }
+101:     .imgUp3  {
+102:       @extend .imgUp;
+103:     margin-left: 10px;
 
 Backtrace:
-information.component.scss:94
+information.component.scss:98
 D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:108:in `block in populate_extends'
 D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `each'
 D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `populate_extends'
@@ -80,4 +80,4 @@ D:/UNTIlS/Ruby27-x64/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 94 of information.component.scss\A \A 89:     .imgUp1  {\A 90:       @extend .imgUp;\A 91:       margin-left: 10px;\A 92:     }\A 93:     .imgUp2  {\A 94:       @extend .imgUp\A 95:     //margin-left: 10px;\A 96:   }\A 97:     .imgUp3  {\A 98:       @extend .imgUp;\A 99:     margin-left: 10px;"; }
+  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 98 of information.component.scss\A \A 93:     .imgUp1  {\A 94:       @extend .imgUp;\A 95:       margin-left: 10px;\A 96:     }\A 97:     .imgUp2  {\A 98:       @extend .imgUp\A 99:     //margin-left: 10px;\A 100:   }\A 101:     .imgUp3  {\A 102:       @extend .imgUp;\A 103:     margin-left: 10px;"; }

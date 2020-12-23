@@ -305,14 +305,51 @@ export  const PassingCarConstans = [
     value: '',
   },
   {
-    id: 1,
+    id: 2,
     name: '开始时间',
     placName: '请选择开始时间',
     isRead: true,
     isIcon: false,
     value: '',
   }, {
+    id: 3,
+    name: '结束时间',
+    placName: '请选择结束时间',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  },
+];
+
+
+// 违法记录
+export  const IllegalRecordName = '违法记录查询';
+export  const IllegalRecordConstans = [
+  {
+    id: 0,
+    name: '治超站点',
+    placName: '请选择站点',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  },
+  {
     id: 1,
+    name: '车牌号码',
+    placName: '请输入车牌号码',
+    isRead: false,
+    isIcon: false,
+    value: '',
+  },
+  {
+    id: 2,
+    name: '开始时间',
+    placName: '请选择开始时间',
+    isRead: true,
+    isIcon: false,
+    value: '',
+  }, {
+    id: 3,
     name: '结束时间',
     placName: '请选择结束时间',
     isRead: true,

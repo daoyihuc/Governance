@@ -12,11 +12,12 @@ import { QueryVehicleComponent } from './query-vehicle/query-vehicle.component';
 import { QueryOperationsComponent } from './query-operations/query-operations.component';
 import { QueryPassingCarComponent } from './query-passing-car/query-passing-car.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { QueryIllegalRecordComponent } from './query-illegal-record/query-illegal-record.component';
 
 
 
 @NgModule({
-  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent],
+  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent],
   imports: [
     RouterModule,
     IntegratedrouterModule,

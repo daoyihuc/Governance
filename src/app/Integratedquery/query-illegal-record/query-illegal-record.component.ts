@@ -1,16 +1,14 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {Baseinterface} from '../../interface/baseinterface';
-import {ActivatedRoute, Router} from '@angular/router';
-import {WindowService} from '../../utils/window.service';
-import { PassingCarConstans, passingCarName} from '../constans/queryConst';
+import {IllegalRecordConstans, IllegalRecordName, PassingCarConstans, passingCarName} from "../constans/queryConst";
+import {ActivatedRoute, Router} from "@angular/router";
+import {WindowService} from "../../utils/window.service";
 
 @Component({
-  selector: 'app-query-passing-car',
-  templateUrl: './query-passing-car.component.html',
-  styleUrls: ['./query-passing-car.component.css']
+  selector: 'app-query-illegal-record',
+  templateUrl: './query-illegal-record.component.html',
+  styleUrls: ['./query-illegal-record.component.css']
 })
-export class QueryPassingCarComponent implements OnInit, Baseinterface {
-
+export class QueryIllegalRecordComponent implements OnInit {
 
   listOfData = [
     {
@@ -32,8 +30,8 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
       address: '100'
     }
   ];
-  name = passingCarName;
-  serachData = PassingCarConstans;
+  name = IllegalRecordName;
+  serachData = IllegalRecordConstans;
 
   minTime = new Date().toISOString(); // 最小时间
   customPickerOptionsStart: any; //开始时间设置
@@ -153,4 +151,5 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
         break;
     }
   }
+
 }
