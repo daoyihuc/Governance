@@ -20,6 +20,23 @@ export class EnterpriseDetailsComponent implements OnInit {
     {name: '视频监控', src: '/command/monitoring'},
     {name: '企业信息详情', src: '/command/enterpriseDetails'}
   ];
+  liData = [
+    {title: '名称', text: '夏铎铺镇南方水泥有限公司 '},
+    {title: '地址', text: '夏铎铺镇天马新村11组319国道旁 '},
+    {title: '辖区', text: '夏铎铺镇 '},
+    {title: '类型', text: '水泥厂 '},
+    {title: '责任人', text: '杨林平 '},
+    {title: '电话', text: '13254851250 '},
+    {title: '吞吐量', text: '440万吨 '},
+    {title: '称重设施', text: '有 '},
+    {title: '显示屏', text: '无 '},
+    {title: '属地监管', text: '夏铎铺镇人民政府 '},
+    {title: '属地监管责任人', text: '夏铎铺镇南方水泥有限公司 '},
+    {title: '属地监管责任人电话', text: '夏铎铺镇南方水泥有限公司 '},
+    {title: '行业监管', text: '夏铎铺镇南方水泥有限公司 '},
+    {title: '行业监管责任人', text: '夏铎铺镇南方水泥有限公司 '},
+    {title: '行业监管责任人电话', text: '夏铎铺镇南方水泥有限公司 '},
+  ];
 
   ngOnInit(): void {
   }

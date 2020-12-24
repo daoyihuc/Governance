@@ -32,9 +32,35 @@
 }
 //section
 .monitoring-section{
-  margin-top: 13px;
+  margin-top: 6px;
   padding: 0 14px;
   padding-bottom: 13px;
+  .enterprise-ul{
+    margin: 0;
+    padding: 0;
+    .enterprise-ul-li{
+      display: flex;
+      p{
+        color: #FFFFFF;
+        font-size: 9px;
+        font-weight: normal;
+        padding: 13px 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+      }
+      .p1{
+        color: #1DDEFB;
+        width: 100px;
+      }
+      .p2{
+        flex: 1;
+        border-bottom: 1px solid #5088F9;
+        padding-left: 8px;
+      }
+    }
+  }
 }
 //footer btn
 .warning-btn-box{

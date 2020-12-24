@@ -8,6 +8,7 @@ import {CommandCarComponent} from "./command-car/command-car.component";
 import {WeighingComponent} from "./weighing/weighing.component";
 import {MonitoringComponent} from "./monitoring/monitoring.component";
 import {EnterpriseDetailsComponent} from "./enterprise-details/enterprise-details.component";
+import {WeighingDetailsComponent} from "./weighing-details/weighing-details.component";
 
 const commandRouter: Routes = [
   {
@@ -26,6 +27,7 @@ const commandRouter: Routes = [
   {path: 'weighing', component: WeighingComponent},
   {path: 'monitoring', component: MonitoringComponent},
   {path: 'enterpriseDetails', component: EnterpriseDetailsComponent},
+  {path: 'weighingDetails', component: WeighingDetailsComponent},
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

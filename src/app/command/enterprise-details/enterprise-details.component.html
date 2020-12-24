@@ -37,7 +37,12 @@
             <p>{{jumpUrl[2].name}}</p>
           </div>
           <div class="monitoring-section">
-            123123123
+            <ul class="enterprise-ul">
+              <li class="enterprise-ul-li" *ngFor="let item of liData">
+                <p class="p1">{{item.title}}</p>
+                <p class="p2">{{item.text}}</p>
+              </li>
+            </ul>
           </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>

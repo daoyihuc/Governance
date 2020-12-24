@@ -129,9 +129,30 @@ p {
     border: none; }
 
 .monitoring-section {
-  margin-top: 13px;
+  margin-top: 6px;
   padding: 0 14px;
   padding-bottom: 13px; }
+  .monitoring-section .enterprise-ul {
+    margin: 0;
+    padding: 0; }
+    .monitoring-section .enterprise-ul .enterprise-ul-li {
+      display: flex; }
+      .monitoring-section .enterprise-ul .enterprise-ul-li p {
+        color: #FFFFFF;
+        font-size: 9px;
+        font-weight: normal;
+        padding: 13px 0;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all; }
+      .monitoring-section .enterprise-ul .enterprise-ul-li .p1 {
+        color: #1DDEFB;
+        width: 100px; }
+      .monitoring-section .enterprise-ul .enterprise-ul-li .p2 {
+        flex: 1;
+        border-bottom: 1px solid #5088F9;
+        padding-left: 8px; }
 
 .warning-btn-box {
   display: flex;

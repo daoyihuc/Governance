@@ -49,6 +49,7 @@ export class WeighingComponent implements OnInit {
 
   onDetails(index): void{// 详情
     console.log(index);
+    this.route.navigate(['/command/weighingDetails']);
   }
 
   onClose(): void{// 关闭
