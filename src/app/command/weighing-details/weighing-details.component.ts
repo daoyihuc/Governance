@@ -44,7 +44,7 @@ export class WeighingDetailsComponent implements OnInit {
 
   onClose(): void{// 关闭
     console.log('1231232');
-    this.route.navigate(['/command/weighing']);
+    this.windowUntils.onBack();
   }
 
 }

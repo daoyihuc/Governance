@@ -12,11 +12,12 @@ import { WeighingComponent } from './weighing/weighing.component';
 import { MonitoringComponent } from './monitoring/monitoring.component';
 import { EnterpriseDetailsComponent } from './enterprise-details/enterprise-details.component';
 import { WeighingDetailsComponent } from './weighing-details/weighing-details.component';
+import { InspectorComponent } from './inspector/inspector.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent, InspectorComponent],
   imports: [
     CommonModule,
     CommandRouterModule,

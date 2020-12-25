@@ -29,4 +29,8 @@ export class FeedbackComponent implements OnInit {
   onSetting(): void { // 个人中心
     this.route.navigate(['/setting']);
   }
+
+  onJump(): void{// 跳转
+    this.windowUntils.onBack();
+  }
 }

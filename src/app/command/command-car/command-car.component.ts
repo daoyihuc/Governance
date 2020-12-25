@@ -51,6 +51,6 @@ export class CommandCarComponent implements OnInit {
   }
 
   onClose(): void {
-    console.log('123123213');
+    this.windowUntils.onBack();
   }
 }

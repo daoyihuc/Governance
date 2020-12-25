@@ -29,7 +29,9 @@
 
       <div class="page-content-section">
         <div class="section-title">任务列表</div>
-        <div class="section-card" *ngFor="let item of cardData" [class.section-card2]="item.class == 2">
+        <div class="section-card" *ngFor="let item of cardData,let i = index"
+             (click)="onJump(i)"
+             [class.section-card2]="item.class == 2">
           <div class="section-card-title">
             <p class="p1">{{item.id}}</p>
             <p class="p1">{{item.name}}</p>

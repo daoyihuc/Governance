@@ -55,4 +55,8 @@ export class CommandIndexComponent implements OnInit {
     this.route.navigate(['/setting']);
   }
 
+  onJump(index): void{// 跳转
+    this.route.navigate(['/command/basicInformation']);
+  }
+
 }

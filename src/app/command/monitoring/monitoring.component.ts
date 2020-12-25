@@ -38,11 +38,12 @@ export class MonitoringComponent implements OnInit {
 
   onJump(index): void{// 跳转
     console.log(this.jumpUrl[index].src);
-    this.route.navigate([this.jumpUrl[index].src]);
+    this.route.navigate([this.jumpUrl[index].src], { skipLocationChange: true });
   }
 
 
   onClose(): void{// 关闭
     console.log('关闭');
+    this.windowUntils.onBack();
   }
 }

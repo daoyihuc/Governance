@@ -40,4 +40,12 @@ export class BasicInformationComponent implements OnInit,Baseinterface {
   onSetting(): void { // 个人中心
     this.route.navigate(['/setting']);
   }
+
+  onJump(index): void{// 跳转
+    if (index === 1){
+      this.route.navigate(['/command/feedback']);
+    }else if (index === 2){
+      this.route.navigate(['/command/commandCar']);
+    }
+  }
 }
