@@ -1,0 +1,104 @@
+@import '../../Base/BaseCss';
+.page-content{
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+}
+.page-card-header{
+  p{
+    color: #fff;
+  }
+}
+.page-card2-section{
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #5481DC;
+}
+.basic-page2{
+  .p1{
+    width: 100%;
+    font-size: 9px;
+  }
+  .basic-section{
+    padding-bottom: 13px;
+  }
+}
+.page-card{
+  .flex-img{
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+  }
+}
+.page-box{
+  padding: 13px 13px 25px;
+}
+.page-footer-btn{
+  border-top: 1px solid #5481DC;
+  margin-top: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .left{
+    width: 193px;
+    height: 50px;
+    border-radius: 5px;
+    background-image: url("../../../assets/img/button-1bg.png");
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-8px);
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #5481DB;
+    text-stroke: 1px #5481DB;
+    margin: 0 5px;
+  }
+  .right{
+    background: rgba(84, 129, 220, 0.2);
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 16px;
+    padding: 13px 9px;
+    p{    white-space: nowrap;
+
+    }
+  }
+}
+
+.imgUp{
+  display: flex;
+  margin: 13px auto 0;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 63px;
+  min-height: 63px;
+  //height: 130px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #5481DC;
+  position: relative;
+}
+
+.add{
+  width: 27px;
+  height: 27px;
+}
+
+//自定义输入框
+.my-input{
+  --padding-end:10px;
+  --padding-bottom:0;
+  --padding-start:10px;
+  --padding-top:0;
+  --font-size: 9px;
+  --color: #FFFFFF;
+  height: 70px;
+}
+
+textarea{
+  height: 70px;
+}

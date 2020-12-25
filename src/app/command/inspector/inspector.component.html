@@ -1,0 +1,80 @@
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        源头督查
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="../../../assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
+          <img src="../../../assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-box">
+        <div class="page-card2-section page-card basic-page2">
+          <div class="section-card-section-content basic-section">
+            <p class="p1">点击上传图片</p>
+            <div class="imgUp">
+              <img src="./assets/img/all-img.png" alt="" class="add">
+            </div>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+          <img src="../../../assets/img/all-2tbg.png" alt="" class="flex-img">
+        </div>
+
+        <div class="page-card2-section page-card ">
+          <div class="section-card-section-content basic-section">
+            <p class="p1">123123</p>
+            <p class="p1">123123</p>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+
+        <div class="page-card2-section basic-page">
+          <div class="page-card-header">
+            <p>督查工作情况</p>
+          </div>
+        </div>
+
+        <div class="page-card2-section basic-page">
+          <div class="page-card-header">
+            <p>补充事项</p>
+          </div>
+          <div class="section-card-section-content  basic-section">
+            <ion-textarea class="my-input" value="" placeholder="请输入您需要补充的事项..."></ion-textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="page-footer-btn">
+        <div class="right" style="opacity: 0">
+          <p>信息反馈</p>
+          <p>(已上传)</p>
+        </div>
+        <div class="left">确认提交</div>
+        <div class="right" (click)="onJump()">
+          <p>取消上传</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
