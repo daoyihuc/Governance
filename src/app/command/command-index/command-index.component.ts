@@ -15,6 +15,15 @@ export class CommandIndexComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
+  liData = [
+    {text: '视频卡口', check: false, number: '28'},
+    {text: '源头企业', check: false, number: '28'},
+    {text: '非现场检测点', check: false, number: '28'},
+    {text: '治超检测站', check: false, number: '28'},
+    {text: '执法人员', check: false, number: '28'},
+    {text: '执法车辆', check: false, number: '28'},
+  ];
+
   cardData = [
     {id: '粤HB8982', name: '超限嫌疑车', class: 1,
       list: [
