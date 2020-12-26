@@ -53,6 +53,12 @@
           <div class="page-card-header">
             <p>督查工作情况</p>
           </div>
+          <div class="section-card-section-content work-section">
+            <div class="work-section-li" *ngFor="let item of liData">
+              <p class="p1">{{item.text}}</p>
+              <ion-toggle color="secondary" [(ngModel)]="item.isDisabled"></ion-toggle>
+            </div>
+          </div>
         </div>
 
         <div class="page-card2-section basic-page">

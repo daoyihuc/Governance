@@ -10,6 +10,8 @@ import {MonitoringComponent} from "./monitoring/monitoring.component";
 import {EnterpriseDetailsComponent} from "./enterprise-details/enterprise-details.component";
 import {WeighingDetailsComponent} from "./weighing-details/weighing-details.component";
 import {InspectorComponent} from "./inspector/inspector.component";
+import {SupervisionInformationComponent} from "./supervision-information/supervision-information.component";
+import {CsourceIndexComponent} from "./csource-index/csource-index.component";
 
 const commandRouter: Routes = [
   {
@@ -30,6 +32,8 @@ const commandRouter: Routes = [
   {path: 'enterpriseDetails', component: EnterpriseDetailsComponent}, // 企业信息详情
   {path: 'weighingDetails', component: WeighingDetailsComponent}, // 实时数据详情内页
   {path: 'inspector', component: InspectorComponent}, // 源头督查
+  {path: 'supervisionInformation', component: SupervisionInformationComponent}, // 源头督查 信息
+  {path: 'sourceIndex', component: CsourceIndexComponent}, // 源头企业
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

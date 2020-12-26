@@ -113,9 +113,12 @@ p {
 
 .basic-page2 .p1 {
   width: 100%;
-  font-size: 9px; }
+  font-size: 9px;
+  padding-left: 0; }
 .basic-page2 .basic-section {
-  padding-bottom: 13px; }
+  padding: 0 14px 13px; }
+.basic-page2 .imgUp {
+  margin: 13px 0 0; }
 
 .page-card .flex-img {
   position: absolute;
@@ -129,7 +132,7 @@ p {
 
 .page-footer-btn {
   border-top: 1px solid #5481DC;
-  margin-top: 94px;
+  margin-top: 27px;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -187,5 +190,15 @@ p {
 
 textarea {
   height: 70px; }
+
+.work-section .work-section-li {
+  display: flex; }
+  .work-section .work-section-li .p1 {
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding-left: 13px;
+    flex: 1; }
 
 /*# sourceMappingURL=inspector.component.css.map */

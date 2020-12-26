@@ -15,6 +15,13 @@ export class InspectorComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
+  liData = [
+    {text: '1.是否悬挂了治超宣传横幅及永久性宣传标志牌？' , isDisabled: false},
+    {text: '1.是否悬挂了治超宣传横幅及永久性宣传标志牌？' , isDisabled: true},
+    {text: '1.是否悬挂了治超宣传横幅及永久性宣传标志牌？' , isDisabled: false},
+    {text: '1.是否悬挂了治超宣传横幅及永久性宣传标志牌？' , isDisabled: false},
+  ];
+
   ngOnInit(): void {
   }
 

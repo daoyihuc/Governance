@@ -15,9 +15,13 @@
   .p1{
     width: 100%;
     font-size: 9px;
+    padding-left: 0;
   }
   .basic-section{
-    padding-bottom: 13px;
+    padding: 0 14px 13px;
+  }
+  .imgUp{
+    margin: 13px 0 0;
   }
 }
 .page-card{
@@ -34,7 +38,7 @@
 }
 .page-footer-btn{
   border-top: 1px solid #5481DC;
-  margin-top: 94px;
+  margin-top: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,4 +105,20 @@
 
 textarea{
   height: 70px;
+}
+
+.work-section{
+
+  .work-section-li{
+    display: flex;
+    .p1{
+      font-size: 11px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #FFFFFF;
+      padding-left: 13px;
+      flex: 1;
+    }
+
+  }
 }
