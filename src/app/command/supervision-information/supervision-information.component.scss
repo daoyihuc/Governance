@@ -1,0 +1,50 @@
+@import '../../Base/BaseCss';
+.page-content{
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+  min-height: 100%;
+}
+.page-card-header{
+  p{
+    color: #fff;
+  }
+}
+.page-card2-section{
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #5481DC;
+}
+.page-box{
+  padding: 3px 13px 25px;
+}
+.basic-card{
+  padding-bottom: 13px;
+}
+.basic-section{
+  padding-bottom: 0;
+}
+
+//add
+.super-content{
+  display: block;
+  padding: 16px 13px 0;
+  .p2{
+
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    flex: 1;
+    display: block;
+    margin-bottom: 13px;
+  }
+}
+.super-content-img{
+  padding: 13px 0 13px 13px;
+  display: flex;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  img{
+    width: 63px;
+    height: 63px;
+    margin-right: 5px;
+  }
+}

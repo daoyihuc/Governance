@@ -1,0 +1,126 @@
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        源头企业
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="../../../assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
+          <img src="../../../assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-content-header">
+
+        <div class="header-flex-source" (click)="onFlexJump(0)">
+          <p class="header-flex-p1">源头企业</p>
+          <p class="header-flex-p2">
+            <span>在线：33</span>
+            <span>总数：66</span>
+          </p>
+        </div>
+        <div class="header-flex-source header-flex2-source" (click)="onFlexJump(1)">
+          <p class="header-flex-p1">督查记录！</p>
+        </div>
+        <div class="header-flex-source header-flex3-source" (click)="onFlexJump(2)">
+          <img src="../../../assets/img/yuantou_icon.png" alt="">
+          <p class="header-flex-p1">源头督查</p>
+        </div>
+        <div class="header-flex-source header-flex4-source">
+          <p class="header-flex-p1">平江往浏阳方向 超限嫌疑车 粤HB8982</p>
+        </div>
+      </div>
+      <div class="page-content-section">
+        <div class="page-card weighing-header">
+          <p>实时数据查询</p>
+          <span class="flex-span1 flex-span"></span>
+          <span class="flex-span2 flex-span"></span>
+          <span class="flex-span3 flex-span"></span>
+          <span class="flex-span4 flex-span"></span>
+        </div>
+
+        <div class="page-card items-card">
+          <ion-item class="items" *ngFor="let item of serachData; index as i" [lines]="'none'">
+            <ion-label class="lableBox">
+              <div class="lableIcon"></div>
+              <div class="lableTitle">
+                {{item.name}}
+              </div>
+            </ion-label>
+            <ion-input slot="end"
+                       type="text"
+                       class="inputs"
+                       [placeholder]="item.placName"
+                       [(ngModel)]="item.value"
+                       [readonly]="item.isRead"
+                       maxlength="30"></ion-input>
+          </ion-item>
+          <ion-item class="items" [lines]="'none'">
+            <ion-button slot="end" class="searchButton">查询</ion-button>
+          </ion-item>
+          <img class="flex-img" src="../../../assets/img/pop-b.png" alt="">
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+
+        <!--card-->
+        <div class="page-card page-card-weighing">
+          <div class="weighing-section">
+            <div class="warning-section-th thHeader">
+              <div class="warning-section-td td1">编号</div>
+              <div class="warning-section-td td2">企业名称</div>
+              <div class="warning-section-td td3">车牌</div>
+              <div class="warning-section-td td4">操作</div>
+            </div>
+            <div class="page-card-weighing-tdBox">
+              <div class="warning-section-th thContent" *ngFor="let item of tableData,let i=index">
+                <div class="warning-section-td td1">{{i+1}}</div>
+                <div class="warning-section-td td2">{{item.name}}</div>
+                <div class="warning-section-td td3">{{item.car}}</div>
+                <div class="warning-section-td td4"><p class="btn" (click)="onDetails(i)">详情</p></div>
+              </div>
+            </div>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+        <!--card end-->
+      </div>
+    </div>
+  </ion-content>
+  <ion-tab-bar slot="bottom" class="barBox">
+    <ion-tab-button tab="command">
+      <img src="./assets/img/kind-1off.png" class=""/>
+      <ion-label>运行监测</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="command">
+      <img src="./assets/img/kind-2on.png" />
+      <ion-label>源头企业</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="/command/commandIndex">
+      <img src="./assets/img/kind-3off.png" />
+      <ion-label>指挥调度</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="/queryAll/index">
+      <img src="./assets/img/kind-4off.png" />
+      <ion-label>综合查询</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-app>
