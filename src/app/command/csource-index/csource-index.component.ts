@@ -29,6 +29,12 @@ export class CsourceIndexComponent implements OnInit {
     {src: '/command/commandCar'},
     {src: '/command/inspector'},
   ];
+  tabUrl = [
+    {src: '/command/runMonitoring'},
+    {src: '/command/sourceIndex'},
+    {src: '/command/commandIndex'},
+    {src: '/queryAll/index'},
+  ];
   serachData = [
     {
       id: 1,
@@ -81,6 +87,10 @@ export class CsourceIndexComponent implements OnInit {
   onDetails(index): void{// 详情
     console.log(index);
     // this.route.navigate(['/command/weighingDetails']);
+  }
+
+  onTabJump(index): void {
+    this.route.navigate([this.tabUrl[index].src]);
   }
 
 }

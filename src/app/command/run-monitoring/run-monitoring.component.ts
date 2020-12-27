@@ -21,6 +21,13 @@ export class RunMonitoringComponent implements OnInit {
     {src: '/command/runDiagram'},
   ];
 
+  tabUrl = [
+    {src: '/command/runMonitoring'},
+    {src: '/command/sourceIndex'},
+    {src: '/command/commandIndex'},
+    {src: '/queryAll/index'},
+  ];
+
   ngOnInit(): void {
   }
 
@@ -38,5 +45,9 @@ export class RunMonitoringComponent implements OnInit {
 
   onJump(index): void {
     this.route.navigate([this.jumpUrl[index].src]);
+  }
+
+  onTabJump(index): void {
+    this.route.navigate([this.tabUrl[index].src]);
   }
 }

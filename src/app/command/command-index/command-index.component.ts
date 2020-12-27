@@ -15,6 +15,13 @@ export class CommandIndexComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
+  tabUrl = [
+    {src: '/command/runMonitoring'},
+    {src: '/command/sourceIndex'},
+    {src: '/command/commandIndex'},
+    {src: '/queryAll/index'},
+  ];
+
   liData = [
     {text: '视频卡口', check: false, number: '28'},
     {text: '源头企业', check: false, number: '28'},
@@ -66,6 +73,10 @@ export class CommandIndexComponent implements OnInit {
 
   onJump(index): void{// 跳转
     this.route.navigate(['/command/basicInformation']);
+  }
+
+  onTabJump(index): void {
+    this.route.navigate([this.tabUrl[index].src]);
   }
 
 }

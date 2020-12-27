@@ -106,19 +106,19 @@
     </div>
   </ion-content>
   <ion-tab-bar slot="bottom" class="barBox">
-    <ion-tab-button tab="command">
+    <ion-tab-button tab="command"  (click)="onTabJump(0)">
       <img src="./assets/img/kind-1off.png" class=""/>
       <ion-label>运行监测</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="command">
+    <ion-tab-button tab="command"  (click)="onTabJump(1)">
       <img src="./assets/img/kind-2on.png" />
       <ion-label>源头企业</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="/command/commandIndex">
+    <ion-tab-button tab="/command/commandIndex"  (click)="onTabJump(2)">
       <img src="./assets/img/kind-3off.png" />
       <ion-label>指挥调度</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="/queryAll/index">
+    <ion-tab-button tab="/queryAll/index"  (click)="onTabJump(3)">
       <img src="./assets/img/kind-4off.png" />
       <ion-label>综合查询</ion-label>
     </ion-tab-button>

@@ -8,7 +8,7 @@
         </ion-button>
       </ion-buttons>
       <ion-title class="title">
-        源头企业
+        运行监测
       </ion-title>
       <ion-buttons slot="end">
         <ion-button (click)="onHome()">
@@ -102,19 +102,19 @@
     </div>
   </ion-content>
   <ion-tab-bar slot="bottom" class="barBox">
-    <ion-tab-button tab="/command/runMonitoring">
+    <ion-tab-button tab="/command/runMonitoring" (click)="onTabJump(0)">
       <img src="./assets/img/kind-1on.png" class=""/>
       <ion-label>运行监测</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="/command/sourceIndex">
+    <ion-tab-button tab="/command/sourceIndex" (click)="onTabJump(1)">
       <img src="./assets/img/kind-2off.png" />
       <ion-label>源头企业</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="/command/commandIndex">
+    <ion-tab-button tab="/command/commandIndex" (click)="onTabJump(2)">
       <img src="./assets/img/kind-3off.png" />
       <ion-label>指挥调度</ion-label>
     </ion-tab-button>
-    <ion-tab-button tab="/queryAll/index">
+    <ion-tab-button tab="/queryAll/index" (click)="onTabJump(3)">
       <img src="./assets/img/kind-4off.png" />
       <ion-label>综合查询</ion-label>
     </ion-tab-button>

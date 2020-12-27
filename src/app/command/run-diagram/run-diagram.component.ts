@@ -54,4 +54,8 @@ export class RunDiagramComponent implements OnInit {
   onJump(index): void {
     this.route.navigate([this.jumpUrl[index].src]);
   }
+
+  onDetails(index): void {
+    this.route.navigate(['/command/carDetails']);
+  }
 }
