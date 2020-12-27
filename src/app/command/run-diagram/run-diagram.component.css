@@ -1,0 +1,212 @@
+@charset "UTF-8";
+div {
+  box-sizing: border-box; }
+
+p {
+  margin: 0; }
+
+.page-content {
+  background-size: 100% 100%;
+  padding: 13px 14px 24px; }
+
+.page-box {
+  width: 100%;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #1F397A;
+  padding: 13px 13px 0; }
+
+.page-card {
+  width: 100%;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #1F397A;
+  position: relative; }
+
+.page-card-header {
+  padding: 7px 10px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #1F397A; }
+  .page-card-header p {
+    margin: 0; }
+
+.toolbar {
+  --background: #0A0E2E;
+  --color: #fff; }
+  .toolbar .title {
+    --color: #fff;
+    text-align: center; }
+  .toolbar img {
+    width: 21px;
+    height: 21px; }
+
+.page-card-header p {
+  font-size: 11px;
+  font-weight: normal;
+  color: #1DDEFB; }
+
+.page-card span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #1DDEFB; }
+
+.page-card .flex-span1 {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none; }
+
+.page-card .flex-span2 {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none; }
+
+.page-card .flex-span3 {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none; }
+
+.page-card .flex-span4 {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none; }
+
+.page-card-section {
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid #F45B5B;
+  margin-top: 11px; }
+
+.page-card2-section {
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+  margin-top: 11px; }
+
+/*详细信息排序 盒子 content*/
+.section-card-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px; }
+
+.section-card-section-content .p1 {
+  width: 50%;
+  font-size: 8px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 11px; }
+
+.section-card-section-content .p1 span {
+  min-width: 34px;
+  text-align: left; }
+
+.page-content {
+  min-height: 100%;
+  background: #000;
+  padding: 13px 0; }
+
+.page-card-weighing {
+  margin-bottom: 13px; }
+  .page-card-weighing .car-number-box {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; }
+    .page-card-weighing .car-number-box .left {
+      width: 75px;
+      height: 75px; }
+    .page-card-weighing .car-number-box .right {
+      width: 133px;
+      margin-left: 32px; }
+      .page-card-weighing .car-number-box .right .right-btn {
+        width: 100%;
+        padding: 5px 8px;
+        background: rgba(84, 129, 220, 0.2);
+        border: 0px solid #5481DC;
+        border-radius: 5px;
+        display: flex;
+        margin-bottom: 5px; }
+        .page-card-weighing .car-number-box .right .right-btn:last-child {
+          background: rgba(244, 91, 91, 0.2);
+          margin-bottom: 0; }
+        .page-card-weighing .car-number-box .right .right-btn p {
+          font-size: 9px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: #FFFFFF; }
+          .page-card-weighing .car-number-box .right .right-btn p:first-child {
+            margin-right: 13px; }
+
+.page-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .page-card-header img {
+    width: 20px;
+    height: 20px; }
+
+/* section */
+.page-content-section {
+  margin: 0 15px;
+  background: rgba(31, 57, 122, 0.2); }
+
+.weighing-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px; }
+  .weighing-header p {
+    font-size: 12px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 9px 0;
+    text-align: center;
+    display: block;
+    width: 50%; }
+  .weighing-header .weighing-header-p1 {
+    background: rgba(84, 129, 220, 0.3); }
+  .weighing-header .flex-span {
+    width: 4px;
+    height: 4px;
+    background: #95B8FF;
+    border: none; }
+
+.weighing-section {
+  margin: 13px 14px 0; }
+  .weighing-section .thHeader {
+    background: #1F397A; }
+  .weighing-section .thContent {
+    padding: 13px 0; }
+  .weighing-section .warning-section-th {
+    padding: 7px 0;
+    display: flex; }
+    .weighing-section .warning-section-th:nth-child(2n) {
+      background: rgba(31, 57, 122, 0.3); }
+    .weighing-section .warning-section-th .warning-section-td {
+      font-size: 9px;
+      font-family: Hiragino Sans GB;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-align: center; }
+    .weighing-section .warning-section-th .td1 {
+      flex: 1; }
+    .weighing-section .warning-section-th .td2 {
+      padding: 0 5px;
+      width: 90px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .weighing-section .warning-section-th .td3 {
+      width: 55px; }
+    .weighing-section .warning-section-th .td4 {
+      width: 90px; }
+      .weighing-section .warning-section-th .td4 .btn {
+        width: 37px;
+        margin: 0 auto;
+        padding: 2px 0;
+        border: 1px solid #5088F9;
+        border-radius: 3px; }
+    .weighing-section .warning-section-th .red-p {
+      color: #F45B5B; }
+
+/*# sourceMappingURL=run-diagram.component.css.map */

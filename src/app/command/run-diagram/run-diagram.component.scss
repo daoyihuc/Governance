@@ -1,0 +1,148 @@
+@import '../../Base/BaseCss';
+.page-content{
+  min-height: 100%;
+  background: #000;
+  padding: 13px 0;
+}
+.page-card-weighing{
+  margin-bottom: 13px;
+  .car-number-box{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    .left{
+      width: 75px;
+      height: 75px;
+    }
+    .right{
+      width: 133px;
+      margin-left: 32px;
+      .right-btn{
+        width: 100%;
+        padding: 5px 8px;
+        background: rgba(84, 129, 220, 0.2);
+        border: 0px solid #5481DC;
+        border-radius: 5px;
+        display: flex;
+        margin-bottom: 5px;
+        &:last-child{
+
+          background: rgba(244, 91, 91, 0.2);
+          margin-bottom: 0;
+        }
+        p{
+          font-size: 9px;
+          font-family: Source Han Sans CN;
+          font-weight: 400;
+          color: #FFFFFF;
+          &:first-child{
+            margin-right: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+.page-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img{
+    width: 20px;
+    height: 20px;
+  }
+}
+/* section */
+.page-content-section{
+  margin: 0 15px;
+  background: rgba(31, 57, 122, 0.2);
+
+}
+.weighing-header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+  p{
+    font-size: 12px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+    padding: 9px 0;
+    text-align: center;
+    display: block;
+    width: 50%;
+  }
+  .weighing-header-p1{
+    background: rgba(84, 129, 220, .3);
+  }
+.flex-span{
+  width: 4px;
+  height: 4px;
+  background: #95B8FF;
+  border: none;
+}
+}
+//section
+  .weighing-section{
+    margin: 13px 14px 0;
+.thHeader{
+  background: #1F397A;
+}
+.thContent{
+  padding: 13px 0;
+}
+
+.warning-section-th{
+  padding: 7px 0;
+  display: flex;
+&:nth-child(2n){
+   background: rgba(31, 57, 122, .3);
+ }
+.warning-section-td{
+  font-size: 9px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+}
+  .td1{
+    flex: 1;
+
+  }
+  .td2{
+    padding: 0 5px;
+    width: 90px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .td3{
+    width: 55px;
+  }
+  .td4{
+    width: 90px;
+    .btn{
+      width: 37px;
+      margin: 0 auto;
+      padding: 2px 0;
+      border: 1px solid #5088F9;
+      border-radius: 3px;
+    }
+  }
+  .red-p{
+
+    color: #F45B5B;
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+

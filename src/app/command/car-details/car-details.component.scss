@@ -1,0 +1,38 @@
+@import '../../Base/BaseCss';
+.page-content{
+  min-height: 100%;
+  background: url("../../../assets/img/login-bg.png") no-repeat ;
+}
+
+.page-card2-section{
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #5481DC;
+}
+.page-box{
+  padding: 1px 13px 25px;
+}
+.basic-page{
+  .basic-section{
+    .p1:first-child{
+      width: 100%;
+    }
+    .p1:nth-child(2){
+      width: 100%;
+    }
+  }
+}
+.basic-section span{
+  border: none;
+  width: auto;
+  height: auto;
+  position: inherit;
+}
+.page-img-content{
+  height: 127px;
+  background: aqua;
+  margin: 14px;
+}
+//huakaui
+ion-slides {
+  height: 100%;
+}

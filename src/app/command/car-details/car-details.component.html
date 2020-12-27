@@ -1,0 +1,87 @@
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        车辆信息
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="../../../assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
+          <img src="../../../assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-box">
+        <div class="page-card2-section page-card basic-page">
+          <div class="section-card-section-content basic-section">
+            <p class="p1">
+              <span>车牌号码：</span>湘H8515
+            </p>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+
+        <div class="page-card2-section page-card basic-page">
+          <div class="page-card-header">
+            <p>过车卡口信息</p>
+          </div>
+          <div class="section-card-section-content  basic-section">
+            <p class="p1" *ngFor="let itemP of list">
+              <span>{{itemP.span}}</span>{{itemP.p}}
+            </p>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+
+        <div class="page-card2-section page-card">
+          <div class="page-card-header">
+            <p>运管登记信息</p>
+          </div>
+          <div class="section-card-section-content  basic-section">
+            <p class="p1" *ngFor="let itemP of list2Data">
+              <span>{{itemP.span}}</span>{{itemP.p}}
+            </p>
+          </div>
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+
+        <div class="page-img-content">
+          <ion-content>
+            <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide>
+                <h1>Slide 1</h1>
+              </ion-slide>
+              <ion-slide>
+                <h1>Slide 2</h1>
+              </ion-slide>
+              <ion-slide>
+                <h1>Slide 3</h1>
+              </ion-slide>
+            </ion-slides>
+          </ion-content>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
