@@ -27,15 +27,15 @@ const Router: Routes = [
     children: [
       {
         path: 'operation',
-        component: QueryOperationsComponent,
+        component: QueryOperationsComponent,  // 人员资料查询
       },
       {
         path: 'enterprise',
-        component: QueryenterpriseComponent,
+        component: QueryenterpriseComponent, // 企业资料查询
       },
       {
         path: 'vehicle',
-        component: QueryVehicleComponent,
+        component: QueryVehicleComponent, // 车辆资料查询
       },
       { path: '', redirectTo: 'operation', pathMatch: 'full' },
     ],
@@ -45,7 +45,7 @@ const Router: Routes = [
     component: QueryPassingCarComponent,
   },
   {
-    path: 'IllegalRecord', // 过车记录查询
+    path: 'IllegalRecord', // 违法记录查询
     component: QueryIllegalRecordComponent,
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' },

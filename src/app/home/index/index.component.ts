@@ -32,13 +32,14 @@ export class IndexComponent implements OnInit, Baseinterface {
 
         break;
       case 1:
-
+        this.route.navigate(['/command']);
         break;
       case 2:
 
         break;
       case 3: // 综合search
         this.route.navigate(['/queryAll']);
+
         break;
       case 4: // 信息录入
         this.route.navigate(['/home/entry']);
