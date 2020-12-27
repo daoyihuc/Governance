@@ -27,7 +27,7 @@
             <p>{{datas.name}}</p>
           </div>
           <div class="page-card-section">
-            <ion-item class="items" *ngFor="let item of InputDatas; index as i" [lines]="'none'" (click)="onClick(item.id, index)" >
+            <ion-item class="items" *ngFor="let item of InputDatas; index as i" [lines]="'none'" (click)="onClick(item.id, i)" >
               <ion-label class="labels" >
                 {{item.name}}
               </ion-label>

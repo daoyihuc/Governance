@@ -357,3 +357,27 @@ export  const IllegalRecordConstans = [
     value: '',
   },
 ];
+
+
+//  过车详细记录
+export  const  passingCatDetailsTitle = '过车详细信息'
+//  过车详细记录
+export  const  illtegalDetailsTitle = '车辆违法详细信息'
+
+
+export  const  statisticsConstans = {
+  Operation: {
+    personnel: {
+      id: 0,
+      label: '超限率综合统计',
+    },
+    enterprise: {
+      id: 1,
+      label: '超限量统计',
+    },
+    vehicle: {
+      id: 2,
+      label: '车辆车籍地统计',
+    }
+  }
+};

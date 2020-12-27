@@ -8,6 +8,9 @@ import {QueryVehicleComponent} from '../query-vehicle/query-vehicle.component';
 import {QueryOperationsComponent} from '../query-operations/query-operations.component';
 import {QueryPassingCarComponent} from '../query-passing-car/query-passing-car.component';
 import {QueryIllegalRecordComponent} from "../query-illegal-record/query-illegal-record.component";
+import {PassingCatDetailsComponent} from "../passing-cat-details/passing-cat-details.component";
+import {IllegalDetailsComponent} from "../illegal-details/illegal-details.component";
+import {StatisticsIndexComponent} from "../statistics-index/statistics-index.component";
 
 
 const Router: Routes = [
@@ -47,6 +50,16 @@ const Router: Routes = [
   {
     path: 'IllegalRecord', // 违法记录查询
     component: QueryIllegalRecordComponent,
+  },
+  {
+    path: 'PassingCatDetails', // 过车记录详情
+    component: PassingCatDetailsComponent,
+  },{
+    path: 'IllegalDetails', // 违法记录详情
+    component: IllegalDetailsComponent,
+  },{
+    path: 'StatisticsIndex', // 数据统计查询
+    component: StatisticsIndexComponent,
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: '**', redirectTo: 'index' },

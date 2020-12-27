@@ -1,14 +1,4 @@
 @charset "UTF-8";
-.toolbar, .toolbarSub {
-  --background: #0A0E2E;
-  --color: #fff; }
-  .toolbar .title, .toolbarSub .title {
-    --color: #fff;
-    text-align: center; }
-  .toolbar img, .toolbarSub img {
-    width: 21px;
-    height: 21px; }
-
 div {
   box-sizing: border-box; }
 
@@ -25,7 +15,7 @@ p {
   border: 1px solid #1F397A;
   padding: 13px 13px 0; }
 
-.page-card, .segment {
+.page-card {
   width: 100%;
   background: rgba(84, 129, 220, 0.2);
   border: 0 solid #1F397A;
@@ -38,13 +28,13 @@ p {
   .page-card-header p {
     margin: 0; }
 
-.toolbar, .toolbarSub {
+.toolbar {
   --background: #0A0E2E;
   --color: #fff; }
-  .toolbar .title, .toolbarSub .title {
+  .toolbar .title {
     --color: #fff;
     text-align: center; }
-  .toolbar img, .toolbarSub img {
+  .toolbar img {
     width: 21px;
     height: 21px; }
 
@@ -53,31 +43,31 @@ p {
   font-weight: normal;
   color: #1DDEFB; }
 
-.page-card span, .segment span {
+.page-card span {
   position: absolute;
   width: 7px;
   height: 7px;
   border: 1px solid #1DDEFB; }
 
-.page-card .flex-span1, .segment .flex-span1 {
+.page-card .flex-span1 {
   top: 0;
   left: 0;
   border-right: none;
   border-bottom: none; }
 
-.page-card .flex-span2, .segment .flex-span2 {
+.page-card .flex-span2 {
   top: 0;
   right: 0;
   border-left: none;
   border-bottom: none; }
 
-.page-card .flex-span3, .segment .flex-span3 {
+.page-card .flex-span3 {
   bottom: 0;
   left: 0;
   border-right: none;
   border-top: none; }
 
-.page-card .flex-span4, .segment .flex-span4 {
+.page-card .flex-span4 {
   bottom: 0;
   right: 0;
   border-left: none;
@@ -111,49 +101,66 @@ p {
   min-width: 34px;
   text-align: left; }
 
-.barBox {
-  --background: #0a162b ;
-  --background-focused: #0a162b;
-  --background-focused-opacity: 0.2;
-  --color: #fff;
-  --color-focused: #1DDEFB;
-  --color-selected: #1DDEFB;
-  --padding-bottom: 10px;
-  --padding-end: 0;
-  --padding-start: 0;
-  --padding-top: 10px;
-  --ripple-color: 0;
-  padding: 5px 0; }
-  .barBox img {
-    width: 25px;
-    height: 25px;
-    margin-bottom: 5px; }
+.noBackground {
+  --background: #00000000; }
+
+.red {
+  color: red !important; }
 
 .page-content {
   background: url("../../../assets/img/all_bg.png") no-repeat;
   min-height: 100%;
   background-size: 100% 100%; }
 
-.toolbarSub {
-  --background: #091220!important;
-  padding: 15px; }
+.closeButton {
+  width: 73px;
+  height: 24px;
+  --background: #5481DC;
+  border-radius: 7px; }
 
-.segment {
-  --background: #172A4E;
-  border: 0px solid #5481DC;
-  border-radius: 0; }
+.items {
+  display: flex;
+  justify-content: space-between;
+  --background:RGBA(27, 47, 89, 0.4);
+  --highlight-color-valid: #5481DC;
+  --border: 0px solid #5481DC;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --highlight-color-focused: #5481DC;
+  --highlight-color-invalidL: #5481DC;
+  --inner-padding-end: 0; }
+  .items .labels {
+    font-size: 9px;
+    font-family: Hiragino Sans GB;
+    font-weight: normal;
+    color: #1DDEFB; }
+  .items .input {
+    --color: #ffff;
+    --placeholder-color: #ffff;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    margin-right: 30px;
+    font-size: 9px;
+    width: 200px; }
+  .items .p {
+    color: #ffff;
+    margin-left: 40px;
+    font-size: 9px;
+    width: 200px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #5088F9;
+    max-lines: 1;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  .items .img {
+    width: 53px;
+    height: 21px; }
+  .items .widths {
+    width: 200px;
+    border-bottom: 1px solid #5088F9;
+    padding-bottom: 5px; }
 
-.segment ion-segment-button {
-  --background-checked: #5481DC ;
-  --background-focused: #5481DC;
-  --background-focused-opacity: 1;
-  --background-hover:#5481DC;
-  --background-hover-opacity: 1;
-  --color: #FFFFFF;
-  --color-checked:#fff;
-  --color-focused: #fff;
-  --color-hover: #fff;
-  --border-radius: 0;
-  --indicator-color: #5481DC; }
+.img {
+  margin-top: 10px; }
 
-/*# sourceMappingURL=query-index.component.css.map */
+/*# sourceMappingURL=passing-cat-details.component.css.map */

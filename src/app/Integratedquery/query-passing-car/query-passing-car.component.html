@@ -59,7 +59,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let data of listOfData" >
+          <tr *ngFor="let data of listOfData" (click)="showDetails(data)" >
             <td [nzAlign]="'center'">{{data.key}}</td>
             <td [nzAlign]="'center'">{{data.name}}</td>
             <td [nzAlign]="'center'" >{{data.age}}</td>

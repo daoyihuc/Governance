@@ -153,4 +153,9 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
         break;
     }
   }
+
+  // 查看详情
+  showDetails(data: any): void{
+    this.route.navigate(['queryAll/PassingCatDetails'])
+  }
 }

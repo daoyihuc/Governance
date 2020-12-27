@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,aAAa;EACX,YAAY,CAAC,UAAU",
+"sources": ["BaseIonic.scss"],
+"names": [],
+"file": "BaseIonic.css"
+}

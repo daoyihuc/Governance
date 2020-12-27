@@ -151,5 +151,9 @@ export class QueryIllegalRecordComponent implements OnInit {
         break;
     }
   }
+   // 查看详情
+  showDetails(data: any): void{
+    this.route.navigate(['queryAll/IllegalDetails'])
+  }
 
 }

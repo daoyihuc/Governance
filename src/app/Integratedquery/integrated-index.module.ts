@@ -13,11 +13,14 @@ import { QueryOperationsComponent } from './query-operations/query-operations.co
 import { QueryPassingCarComponent } from './query-passing-car/query-passing-car.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { QueryIllegalRecordComponent } from './query-illegal-record/query-illegal-record.component';
+import { PassingCatDetailsComponent } from './passing-cat-details/passing-cat-details.component';
+import { IllegalDetailsComponent } from './illegal-details/illegal-details.component';
+import { StatisticsIndexComponent } from './statistics-index/statistics-index.component';
 
 
 
 @NgModule({
-  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent],
+  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent],
   imports: [
     RouterModule,
     IntegratedrouterModule,

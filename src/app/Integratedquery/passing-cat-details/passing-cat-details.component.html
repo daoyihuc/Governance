@@ -1,0 +1,118 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        {{name}}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="./assets/img/login-home.png">
+        </ion-button>
+        <ion-button (click)="onSetting()">
+          <img src="./assets/img/login-set.png">
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <div class="page-content">
+      <div class="page-box">
+
+        <div class="page-card">
+          <div class="page-card-header">
+            <p>湘YA0089 - 过车详细信息</p>
+          </div>
+          <ion-item class="items">
+            <ion-label class="labels">车牌号码</ion-label>
+            <div>
+              <p class="p">湘AY0089</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">车牌照片</ion-label>
+            <div class="widths">
+              <img src="assets/img/kind-1off.png" alt="" class="img">
+            </div>
+          </ion-item>
+          <!---->
+          <ion-item class="items">
+            <ion-label class="labels">车速</ion-label>
+            <div>
+              <p class="p">100km/h</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">过车时间</ion-label>
+            <div>
+              <p class="p">2020-12-02  13:47:40</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">站点/卡口</ion-label>
+            <div>
+              <p class="p">金洲西线菁华铺非现场检测点</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">方向</ion-label>
+            <div>
+              <p class="p">南往北</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">总重</ion-label>
+            <div>
+              <p class="p red">44.6吨</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">轴数</ion-label>
+            <div>
+              <p class="p">3</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">限重</ion-label>
+            <div>
+              <p class="p">27吨</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">超限量</ion-label>
+            <div>
+              <p class="p red">17.6吨</p>
+            </div>
+          </ion-item>
+          <ion-item class="items">
+            <ion-label class="labels">超限比例</ion-label>
+            <div>
+              <p class="p red">65.44%</p>
+            </div>
+          </ion-item>
+          <div>
+            <img src="assets/img/login.jpg" alt="" class="img">
+            <img src="assets/img/login.jpg" alt="" class="img">
+          </div>
+
+          <span class="flex-span1"></span>
+          <span class="flex-span2"></span>
+          <span class="flex-span3"></span>
+          <span class="flex-span4"></span>
+        </div>
+        <ion-item class="noBackground">
+          <ion-button slot="end" class="closeButton">关闭</ion-button>
+        </ion-item>
+
+
+      </div>
+    </div>
+  </ion-content>
+
+</ion-app>
