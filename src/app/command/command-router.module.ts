@@ -12,6 +12,9 @@ import {WeighingDetailsComponent} from "./weighing-details/weighing-details.comp
 import {InspectorComponent} from "./inspector/inspector.component";
 import {SupervisionInformationComponent} from "./supervision-information/supervision-information.component";
 import {CsourceIndexComponent} from "./csource-index/csource-index.component";
+import {CarDetailsComponent} from "./car-details/car-details.component";
+import {RunMonitoringComponent} from "./run-monitoring/run-monitoring.component";
+import {RunDiagramComponent} from "./run-diagram/run-diagram.component";
 
 const commandRouter: Routes = [
   {
@@ -34,6 +37,9 @@ const commandRouter: Routes = [
   {path: 'inspector', component: InspectorComponent}, // 源头督查
   {path: 'supervisionInformation', component: SupervisionInformationComponent}, // 源头督查 信息
   {path: 'sourceIndex', component: CsourceIndexComponent}, // 源头企业
+  {path: 'carDetails', component: CarDetailsComponent}, // 车辆详情查看
+  {path: 'runMonitoring', component: RunMonitoringComponent}, // 运行监测
+  {path: 'runDiagram', component: RunDiagramComponent}, // 运行监测 tubiao
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

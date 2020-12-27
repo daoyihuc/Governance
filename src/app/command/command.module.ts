@@ -15,11 +15,14 @@ import { WeighingDetailsComponent } from './weighing-details/weighing-details.co
 import { InspectorComponent } from './inspector/inspector.component';
 import { SupervisionInformationComponent } from './supervision-information/supervision-information.component';
 import { CsourceIndexComponent } from './csource-index/csource-index.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
+import { RunMonitoringComponent } from './run-monitoring/run-monitoring.component';
+import { RunDiagramComponent } from './run-diagram/run-diagram.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent, InspectorComponent, SupervisionInformationComponent, CsourceIndexComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent, InspectorComponent, SupervisionInformationComponent, CsourceIndexComponent, CarDetailsComponent, RunMonitoringComponent, RunDiagramComponent],
   imports: [
     CommonModule,
     CommandRouterModule,
