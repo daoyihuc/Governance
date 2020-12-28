@@ -26,6 +26,11 @@ export class BasicInformationComponent implements OnInit, Baseinterface {
     {span: '超限率：', p: '12.45%'}
     ];
 
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
+
   ngOnInit(): void {
   }
 

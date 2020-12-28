@@ -47,10 +47,18 @@
 }
 .weighingD-box{
   height: 127px;
-  background: yellow;
   flex: 1;
   box-sizing: border-box;
   margin: 0 14px 14px;
+  //huakaui
+  ion-slides {
+    height: 100%;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #5481DC;
+  }
 }
 .weighingD-img{
   height: 154px;

@@ -128,10 +128,13 @@ p {
   padding: 13px 13px 25px; }
 
 .img-content {
-  position: relative; }
+  position: relative;
+  height: 140px; }
+  .img-content ion-slides {
+    height: 100%; }
   .img-content img {
     width: 100%;
-    height: 140px;
+    height: 100%;
     border: 1px solid #5481DC; }
   .img-content .flex-p1 {
     width: 76px;
@@ -149,7 +152,7 @@ p {
     width: 76px;
     height: 20px;
     position: absolute;
-    bottom: 6px;
+    bottom: 0px;
     right: 0;
     background: #5481DC;
     font-size: 11px;

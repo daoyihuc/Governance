@@ -18,11 +18,12 @@ import { CsourceIndexComponent } from './csource-index/csource-index.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { RunMonitoringComponent } from './run-monitoring/run-monitoring.component';
 import { RunDiagramComponent } from './run-diagram/run-diagram.component';
+import { InspectorRecordComponent } from './inspector-record/inspector-record.component';
 
 
 
 @NgModule({
-  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent, InspectorComponent, SupervisionInformationComponent, CsourceIndexComponent, CarDetailsComponent, RunMonitoringComponent, RunDiagramComponent],
+  declarations: [CommandIndexComponent, BasicInformationComponent, FeedbackComponent, CommandCarComponent, WeighingComponent, MonitoringComponent, EnterpriseDetailsComponent, WeighingDetailsComponent, InspectorComponent, SupervisionInformationComponent, CsourceIndexComponent, CarDetailsComponent, RunMonitoringComponent, RunDiagramComponent, InspectorRecordComponent],
   imports: [
     CommonModule,
     CommandRouterModule,

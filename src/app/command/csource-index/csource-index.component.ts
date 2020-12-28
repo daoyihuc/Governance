@@ -26,7 +26,7 @@ export class CsourceIndexComponent implements OnInit {
   ];
   flexUrl = [
     {src: '/command/weighing'},
-    {src: '/command/commandCar'},
+    {src: '/command/inspectorRecord'},
     {src: '/command/inspector'},
   ];
   tabUrl = [

@@ -15,6 +15,11 @@ export class FeedbackComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
+
   ngOnInit(): void {
   }
 

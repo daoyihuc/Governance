@@ -25,6 +25,10 @@ export class WeighingDetailsComponent implements OnInit {
     {title: '超限量（吨）', text: '0 '},
     {title: '超限率（%）', text: '0 '},
   ];
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
 
   ngOnInit(): void {
   }

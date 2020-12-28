@@ -25,6 +25,10 @@ export class CommandCarComponent implements OnInit {
     },
     ];
   temp = -1;
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
 
   ngOnInit(): void {
   }

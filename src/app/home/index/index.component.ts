@@ -29,13 +29,13 @@ export class IndexComponent implements OnInit, Baseinterface {
   GoRouter(index): void{
     switch (index){
       case 0:
-
+        this.route.navigate(['/command/runMonitoring']);
         break;
       case 1:
-        this.route.navigate(['/command']);
+        this.route.navigate(['/command/sourceIndex']);
         break;
       case 2:
-
+        this.route.navigate(['/command/commandIndex']);
         break;
       case 3: // 综合search
         this.route.navigate(['/queryAll']);
