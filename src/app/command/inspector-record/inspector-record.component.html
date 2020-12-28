@@ -1,0 +1,41 @@
+<ion-app>
+  <!--头部-->
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        督查记录
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="../../../assets/img/login-home.png" >
+        </ion-button>
+        <ion-button (click)="onSetting()" >
+          <img src="../../../assets/img/login-set.png" >
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!--身体-->
+  <ion-content>
+    <div class="page-content">
+      <div class="page-box">
+        <div class="page-box-header">
+          历史违法记录({{levels.length}})
+        </div>
+        <div class="car-card" *ngFor="let level of levels,let indx=index">
+          <div class="car-header" [class.car-header-show]="temp == indx"  (click)="accordion(indx)">
+            <p class="p1">{{level.time}}</p>
+            <p class="p1">{{level.name}}</p>
+            <img class="flex-img" src="../../../assets/img/all-safe.png" alt="">
+          </div>
+        </div>
+        <img class="page-img-close" (click)="onClose()" src="../../../assets/img/all-close.png" alt="">
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
