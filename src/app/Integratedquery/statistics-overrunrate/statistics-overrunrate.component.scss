@@ -12,6 +12,14 @@
   border: 0px solid #5481DC;
 }
 
+.searchButton {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  --background: #5481DC;
+}
+
 .items{
   display: flex;
   justify-content: space-between;
@@ -85,4 +93,37 @@
   text-align: center;
   width: 200px;
 }
+.margin_top{
+  margin-top: 10px;
+}
 
+:host ::ng-deep .ant-table-row{
+  background: rgba(18, 33, 70, 1);
+  color: white;
+  width: 100%;
+}
+
+:host ::ng-deep .ant-table-small .ant-table-thead > tr > th{
+  background: rgba(31, 57, 122, 1);
+  border-bottom: 1px solid rgba(31, 57, 122, 1);
+  color: white;
+  white-space: nowrap;
+  padding: 6px;
+
+  font-size: 9px;
+}
+:host ::ng-deep .ant-table-tbody > tr > td{
+  border-bottom: 1px solid rgba(18, 33, 70, 1);
+  font-size: 9px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+:host ::ng-deep  .ant-table-container {
+  .ant-table-content  {
+    table{
+      width: 100%;
+    }
+  }
+}

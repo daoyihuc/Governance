@@ -1,16 +1,14 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-// @ts-ignore
-import {OverrunrateConstans} from '../constans/queryConst';
-
-import * as echars from 'echarts';
-import * as $ from 'jquery';
+import {OverrunrateConstans} from "../constans/queryConst";
+import * as $ from "jquery";
+import * as echars from "echarts";
 
 @Component({
-  selector: 'app-statistics-overrunrate',
-  templateUrl: './statistics-overrunrate.component.html',
-  styleUrls: ['./statistics-overrunrate.component.css']
+  selector: 'app-statistics-over-limit',
+  templateUrl: './statistics-over-limit.component.html',
+  styleUrls: ['./statistics-over-limit.component.css']
 })
-export class StatisticsOverrunrateComponent implements OnInit {
+export class StatisticsOverLimitComponent implements OnInit {
 
   serachData = OverrunrateConstans;
   option = {
@@ -60,19 +58,31 @@ export class StatisticsOverrunrateComponent implements OnInit {
       key: '1',
       name: '湘YA0089',
       age: '金洲细线菁华铺非现场检测点',
-      address: '100'
+      address: '100',
+      i1: '1',
+      i2: '1',
+      i3: '1',
+      i4: '1',
     },
     {
       key: '2',
       name: '湘YA0089',
       age: '金洲细线菁华铺非现场检测点',
-      address: '100'
+      address: '100',
+      i1: '1',
+      i2: '1',
+      i3: '1',
+      i4: '1',
     },
     {
       key: '3',
       name: '湘YA0089',
       age: '金洲细线菁华铺非现场检测点',
-      address: '100'
+      address: '100',
+      i1: '1',
+      i2: '1',
+      i3: '1',
+      i4: '1',
     }
   ];
 
@@ -95,8 +105,17 @@ export class StatisticsOverrunrateComponent implements OnInit {
       init.setOption(this.option)
     }, 1000)
 
-  }
+    // 超限量/辆（分轴统计）
+    const  a1=this.el.nativeElement.querySelector("#cons1");
+    this.barStyle.width =  $(window).width()-30;
+    // this.barStyle.height =  $(window).height();
+    setTimeout(()=>{2
+      const ec1 = echars as any;
+      let init1 = ec1.init(a1);
+      init1.setOption(this.option)
+    }, 1000)
 
+  }
 
 
 }

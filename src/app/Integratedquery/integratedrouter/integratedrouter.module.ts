@@ -12,6 +12,8 @@ import {PassingCatDetailsComponent} from "../passing-cat-details/passing-cat-det
 import {IllegalDetailsComponent} from "../illegal-details/illegal-details.component";
 import {StatisticsIndexComponent} from "../statistics-index/statistics-index.component";
 import {StatisticsOverrunrateComponent} from '../statistics-overrunrate/statistics-overrunrate.component';
+import {StatisticsOverLimitComponent} from "../statistics-over-limit/statistics-over-limit.component";
+import {StatisticsDomicileComponent} from "../statistics-domicile/statistics-domicile.component";
 
 
 const Router: Routes = [
@@ -69,12 +71,12 @@ const Router: Routes = [
         component: StatisticsOverrunrateComponent,  // 超限率统计
       },
       {
-        path: 'enterprise',
-        component: QueryenterpriseComponent, // 企业资料查询
+        path: 'OverLimit',
+        component: StatisticsOverLimitComponent, // 企业资料查询
       },
       {
-        path: 'vehicle',
-        component: QueryVehicleComponent, // 车辆资料查询
+        path: 'Domicile',
+        component: StatisticsDomicileComponent, // 车辆资料查询
       },
       { path: '', redirectTo: 'Overrunrate', pathMatch: 'full' },
     ],

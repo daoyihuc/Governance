@@ -18,11 +18,13 @@ import { IllegalDetailsComponent } from './illegal-details/illegal-details.compo
 import { StatisticsIndexComponent } from './statistics-index/statistics-index.component';
 import { StatisticsOverrunrateComponent } from './statistics-overrunrate/statistics-overrunrate.component';
 import {NgxEchartsModule} from 'ngx-echarts';
+import { StatisticsOverLimitComponent } from './statistics-over-limit/statistics-over-limit.component';
+import { StatisticsDomicileComponent } from './statistics-domicile/statistics-domicile.component';
 
 
 
 @NgModule({
-  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent, StatisticsOverrunrateComponent],
+  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent, StatisticsOverrunrateComponent, StatisticsOverLimitComponent, StatisticsDomicileComponent],
     imports: [
         RouterModule,
         IntegratedrouterModule,

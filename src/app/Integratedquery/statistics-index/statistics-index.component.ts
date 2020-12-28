@@ -47,10 +47,10 @@ export class StatisticsIndexComponent implements OnInit {
         break;
       case '1':
         console.log('Segment changed', 1);
-        // this.route.navigate(['/queryAll/queryIndex/enterprise']);
+        this.route.navigate(['/queryAll/StatisticsIndex/OverLimit']);
         break;
       case '2':
-        // this.route.navigate(['/queryAll/queryIndex/vehicle']);
+        this.route.navigate(['/queryAll/StatisticsIndex/Domicile']);
         break;
     }
 

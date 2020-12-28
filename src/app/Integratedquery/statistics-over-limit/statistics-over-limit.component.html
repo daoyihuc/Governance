@@ -1,0 +1,119 @@
+
+<ion-app>
+  <ion-content>
+    <div class="page-content">
+      <div class="page-card">
+        <ion-item class="items" *ngFor="let item of serachData; index as i" [lines]="'none'">
+          <ion-label class="lableBox">
+            <div class="lableIcon"></div>
+            <div class="lableTitle">
+              {{item.name}}
+            </div>
+          </ion-label>
+          <ion-input slot="end"
+                     type="text"
+                     class="inputs"
+                     [placeholder]="item.placName"
+                     [(ngModel)]="item.value"
+                     maxlength="30"></ion-input>
+        </ion-item>
+        <ion-item class="items" [lines]="'none'">
+          <ion-button slot="end" class="searchButton">查询</ion-button>
+        </ion-item>
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+      <div class="page-card">
+        <div class="page-card-section">
+          <div class="page-card-header">
+            <p>超限量/辆（分时统计）</p>
+          </div>
+          <div id="cons"  [ngStyle]="{'width':barStyle.width+'px','height': barStyle.height+'px'}"></div>
+
+        </div>
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+
+      <div class="page-card margin_top">
+        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false" [nzSize]="'small'" class="test">
+          <thead>
+          <tr >
+            <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">检测点</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">过车量</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">超限率</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of listOfData"  >
+            <td [nzAlign]="'center'">{{data.key}}</td>
+            <td [nzAlign]="'center'">{{data.name}}</td>
+            <td [nzAlign]="'center'" >{{data.age}}</td>
+            <td [nzAlign]="'center'">{{data.address}}</td>
+          </tr>
+          </tbody>
+        </nz-table>
+
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+
+      <div class="page-card">
+        <div class="page-card-section">
+          <div class="page-card-header">
+            <p>超限量/辆（分轴统计）</p>
+          </div>
+          <div id="cons1"  [ngStyle]="{'width':barStyle.width+'px','height': barStyle.height+'px'}"></div>
+
+        </div>
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+
+      <div class="page-card margin_top">
+        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false" [nzSize]="'small'" class="test">
+          <thead>
+          <tr >
+            <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">检测点</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">过车量</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">2轴</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">3轴</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">4轴</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">5轴</th>
+            <th [nzAlign]="'center'" [nzEllipsis]="true">6轴</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of listOfData"  >
+            <td [nzAlign]="'center'">{{data.key}}</td>
+            <td [nzAlign]="'center'">{{data.name}}</td>
+            <td [nzAlign]="'center'" >{{data.age}}</td>
+            <td [nzAlign]="'center'">{{data.address}}</td>
+            <td [nzAlign]="'center'">{{data.i1}}</td>
+            <td [nzAlign]="'center'">{{data.i2}}</td>
+            <td [nzAlign]="'center'">{{data.i3}}</td>
+            <td [nzAlign]="'center'">{{data.i4}}</td>
+          </tr>
+          </tbody>
+        </nz-table>
+
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-app>
