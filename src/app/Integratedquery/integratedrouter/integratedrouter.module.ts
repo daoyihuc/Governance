@@ -11,6 +11,7 @@ import {QueryIllegalRecordComponent} from "../query-illegal-record/query-illegal
 import {PassingCatDetailsComponent} from "../passing-cat-details/passing-cat-details.component";
 import {IllegalDetailsComponent} from "../illegal-details/illegal-details.component";
 import {StatisticsIndexComponent} from "../statistics-index/statistics-index.component";
+import {StatisticsOverrunrateComponent} from '../statistics-overrunrate/statistics-overrunrate.component';
 
 
 const Router: Routes = [
@@ -54,12 +55,29 @@ const Router: Routes = [
   {
     path: 'PassingCatDetails', // 过车记录详情
     component: PassingCatDetailsComponent,
-  },{
+  },
+  {
     path: 'IllegalDetails', // 违法记录详情
     component: IllegalDetailsComponent,
-  },{
+  },
+  {
     path: 'StatisticsIndex', // 数据统计查询
     component: StatisticsIndexComponent,
+    children: [
+      {
+        path: 'Overrunrate',
+        component: StatisticsOverrunrateComponent,  // 超限率统计
+      },
+      {
+        path: 'enterprise',
+        component: QueryenterpriseComponent, // 企业资料查询
+      },
+      {
+        path: 'vehicle',
+        component: QueryVehicleComponent, // 车辆资料查询
+      },
+      { path: '', redirectTo: 'Overrunrate', pathMatch: 'full' },
+    ],
   },
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: '**', redirectTo: 'index' },

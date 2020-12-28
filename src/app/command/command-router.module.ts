@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {CommandIndexComponent} from "./command-index/command-index.component";
-import {BasicInformationComponent} from "./basic-information/basic-information.component";
+import {CommandIndexComponent} from './command-index/command-index.component';
+import {BasicInformationComponent} from './basic-information/basic-information.component';
 import {FeedbackComponent} from './feedback/feedback.component';
-import {CommandCarComponent} from "./command-car/command-car.component";
-import {WeighingComponent} from "./weighing/weighing.component";
-import {MonitoringComponent} from "./monitoring/monitoring.component";
-import {EnterpriseDetailsComponent} from "./enterprise-details/enterprise-details.component";
-import {WeighingDetailsComponent} from "./weighing-details/weighing-details.component";
-import {InspectorComponent} from "./inspector/inspector.component";
-import {SupervisionInformationComponent} from "./supervision-information/supervision-information.component";
-import {CsourceIndexComponent} from "./csource-index/csource-index.component";
-import {CarDetailsComponent} from "./car-details/car-details.component";
-import {RunMonitoringComponent} from "./run-monitoring/run-monitoring.component";
-import {RunDiagramComponent} from "./run-diagram/run-diagram.component";
+import {CommandCarComponent} from './command-car/command-car.component';
+import {WeighingComponent} from './weighing/weighing.component';
+import {MonitoringComponent} from './monitoring/monitoring.component';
+import {EnterpriseDetailsComponent} from './enterprise-details/enterprise-details.component';
+import {WeighingDetailsComponent} from './weighing-details/weighing-details.component';
+import {InspectorComponent} from './inspector/inspector.component';
+import {SupervisionInformationComponent} from './supervision-information/supervision-information.component';
+import {CsourceIndexComponent} from './csource-index/csource-index.component';
+import {CarDetailsComponent} from './car-details/car-details.component';
+import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component';
+import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 
 const commandRouter: Routes = [
   {

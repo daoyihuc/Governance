@@ -76,6 +76,8 @@
    background: rgba(31, 57, 122, 1);
    border-bottom: 1px solid rgba(31, 57, 122, 1);
   color: white;
+  white-space: nowrap;
+  padding: 6px;
 }
  :host ::ng-deep .ant-table-tbody > tr > td{
    border-bottom: 1px solid rgba(18, 33, 70, 1);

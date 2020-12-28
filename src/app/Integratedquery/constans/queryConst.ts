@@ -360,9 +360,9 @@ export  const IllegalRecordConstans = [
 
 
 //  过车详细记录
-export  const  passingCatDetailsTitle = '过车详细信息'
+export  const  passingCatDetailsTitle = '过车详细信息';
 //  过车详细记录
-export  const  illtegalDetailsTitle = '车辆违法详细信息'
+export  const  illtegalDetailsTitle = '车辆违法详细信息';
 
 
 export  const  statisticsConstans = {
@@ -381,3 +381,31 @@ export  const  statisticsConstans = {
     }
   }
 };
+
+export  const OverrunrateConstans = [
+  {
+    id: 0,
+    name: '站点',
+    placName: '请选择站点',
+    isRead: false,
+    isIcon: false,
+    value: '',
+  },
+  {
+    id: 1,
+    name: '开始日期',
+    placName: '请选择开始时间',
+    isRead: false,
+    isIcon: false,
+    value: '',
+  },
+  {
+    id: 2,
+    name: '结束日期',
+    placName: '请选择结束时间',
+    isRead: false,
+    isIcon: false,
+    value: '',
+  },
+];
+

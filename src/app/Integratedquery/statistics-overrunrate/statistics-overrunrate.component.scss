@@ -1,13 +1,17 @@
 @import "../../Base/BaseCss";
+
 .page-content{
   background: url("../../../assets/img/home_bg.png") no-repeat;
-  //background-size: 100% 100%;
+  background-size: 100% 100%;
   min-height: 100%;
 }
 
-.text{
-  color: wheat;
+.page-card-section{
+  border: none;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0px solid #5481DC;
 }
+
 .items{
   display: flex;
   justify-content: space-between;
@@ -44,6 +48,7 @@
   padding-bottom: 3px;
   width: 73px;
 }
+
 .inputs{
   --color: #ffff;
   --placeholder-color: #ffff;
@@ -54,13 +59,7 @@
   width: 200px;
   border-bottom: 1px solid #5481DC;
 }
-.searchButton {
-  --padding-start: 20px;
-  --padding-end: 20px;
-  --padding-top: 5px;
-  --padding-bottom: 5px;
-  --background: #5481DC;
-}
+
 .labels {
   font-size: 9px;
   font-family: Hiragino Sans GB;
@@ -71,13 +70,6 @@
   margin-top: 10px;
   padding-bottom: 20px;
 }
-.page-card-section{
-  border: none;
-  background: rgba(84, 129, 220, 0.2);
-  border: 0px solid #5481DC;
-}
-
-
 .input{
   color: #ffff;
   --placeholder-color: #ffff;
@@ -87,8 +79,10 @@
   font-size: 10px;
   font-family: Hiragino Sans GB;
   font-weight: normal;
+
   color: #FFFFFF;
   line-height: 13px;
   text-align: center;
   width: 200px;
 }
+

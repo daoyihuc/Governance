@@ -16,18 +16,21 @@ import { QueryIllegalRecordComponent } from './query-illegal-record/query-illega
 import { PassingCatDetailsComponent } from './passing-cat-details/passing-cat-details.component';
 import { IllegalDetailsComponent } from './illegal-details/illegal-details.component';
 import { StatisticsIndexComponent } from './statistics-index/statistics-index.component';
+import { StatisticsOverrunrateComponent } from './statistics-overrunrate/statistics-overrunrate.component';
+import {NgxEchartsModule} from 'ngx-echarts';
 
 
 
 @NgModule({
-  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent],
-  imports: [
-    RouterModule,
-    IntegratedrouterModule,
-    IonicModule,
-    FormsModule,
-    CommonModule,
-    NzTableModule,
-  ]
+  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent, StatisticsOverrunrateComponent],
+    imports: [
+        RouterModule,
+        IntegratedrouterModule,
+        IonicModule,
+        FormsModule,
+        CommonModule,
+        NzTableModule,
+        NgxEchartsModule,
+    ]
 })
 export class IntegratedIndexModule { }

@@ -34,7 +34,7 @@
               }
             ],
             "styles": [
-              "src/theme.less",
+//              "src/theme.less",
               "src/styles.css",
               {
                 "input": "node_modules/@ionic/angular/css/normalize.css"

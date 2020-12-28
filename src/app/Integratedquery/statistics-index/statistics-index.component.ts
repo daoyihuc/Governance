@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AllQueryConst} from "../../constans/BaseConst";
-import {queryConstans, statisticsConstans} from "../constans/queryConst";
-import {ActivatedRoute, Router} from "@angular/router";
-import {WindowService} from "../../utils/window.service";
+import {AllQueryConst} from '../../constans/BaseConst';
+import {queryConstans, statisticsConstans} from '../constans/queryConst';
+import {ActivatedRoute, Router} from '@angular/router';
+import {WindowService} from '../../utils/window.service';
 
 @Component({
   selector: 'app-statistics-index',
@@ -43,7 +43,7 @@ export class StatisticsIndexComponent implements OnInit {
     switch (event.detail.value){
       case '0':
         console.log('Segment changed', 0);
-        // this.route.navigate(['/queryAll/queryIndex/operation']);
+        this.route.navigate(['/queryAll/StatisticsIndex/Overrunrate']);
         break;
       case '1':
         console.log('Segment changed', 1);

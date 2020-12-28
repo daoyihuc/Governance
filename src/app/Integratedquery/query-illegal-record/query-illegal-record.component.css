@@ -170,7 +170,9 @@ p {
 :host ::ng-deep .ant-table-small .ant-table-thead > tr > th {
   background: #1f397a;
   border-bottom: 1px solid #1f397a;
-  color: white; }
+  color: white;
+  white-space: nowrap;
+  padding: 6px; }
 
 :host ::ng-deep .ant-table-tbody > tr > td {
   border-bottom: 1px solid #122146; }
