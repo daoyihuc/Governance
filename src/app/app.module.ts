@@ -13,7 +13,7 @@ import {SlideVerifyComponent} from './slide-verify/slide-verify.component';
 import { HeaderComponent } from './header/header.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {NgxEchartsModule} from 'ngx-echarts';
 
@@ -60,7 +60,7 @@ const appRoute: Routes = [
     RouterModule,
     RouterModule.forRoot(appRoute),
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   exports: [
     HeaderComponent
   ],

@@ -5,6 +5,8 @@
   padding: 0;
 }
 
+
+
 /* header */
 .page-content-header{
   width: 100%;
@@ -14,10 +16,11 @@
 
   .header-flex-source{
     padding: 9px 0;
-    background: rgba(54, 93, 220, .2);
+    background: rgba(54, 93, 220, .5);
     position: absolute;
     top: 14px;
     left: 0;
+    z-index: 88!important;
     padding-left: 15px;
     .header-flex-p1{
       font-size: 11px;

@@ -101,15 +101,14 @@ p {
   min-width: 34px;
   text-align: left; }
 
-.page-content {
-  background: url("../../../assets/img/home_bg.png") no-repeat;
-  background-size: 100% 100%;
-  min-height: 100%; }
+.map {
+  width: 100%;
+  height: 100%; }
 
-.page-card-section {
-  border: none;
-  background: rgba(84, 129, 220, 0.2);
-  border: 0px solid #5481DC; }
+.page-content {
+  background: url("../../../assets/img/all_bg.png");
+  min-height: 100%;
+  background-size: 100% 50%; }
 
 .items {
   display: flex;
@@ -155,28 +154,40 @@ p {
   width: 200px;
   border-bottom: 1px solid #5481DC; }
 
-.labels {
+.searchButton {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  --background: #5481DC; }
+
+.margin_top {
+  margin-top: 10px; }
+
+.page-card {
+  padding: 14px 14px; }
+
+:host ::ng-deep .ant-table-row {
+  background: #122146;
+  color: white; }
+
+:host ::ng-deep .ant-table-small .ant-table-thead > tr > th {
+  background: #1f397a;
+  border-bottom: 1px solid #1f397a;
+  color: white;
+  white-space: nowrap;
+  padding: 6px;
+  font-size: 9px; }
+
+:host ::ng-deep .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #122146;
   font-size: 9px;
-  font-family: Hiragino Sans GB;
-  font-weight: normal;
-  color: #1DDEFB; }
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 5px; }
 
-.page-box {
-  margin-top: 10px;
-  padding-bottom: 20px; }
-
-.input {
-  color: #ffff;
-  --placeholder-color: #ffff;
-  --padding-start: 0px;
-  --padding-end: 0px;
-  margin-right: 30px;
-  font-size: 10px;
-  font-family: Hiragino Sans GB;
-  font-weight: normal;
-  color: #FFFFFF;
-  line-height: 13px;
-  text-align: center;
-  width: 200px; }
+:host ::ng-deep .ant-table-container .ant-table-content table {
+  width: 100%; }
 
 /*# sourceMappingURL=JSON.map */

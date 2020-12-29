@@ -101,6 +101,10 @@ p {
   min-width: 34px;
   text-align: left; }
 
+.map {
+  width: 100%;
+  height: 100%; }
+
 .page-content {
   min-height: 100%;
   background: #000;
@@ -114,10 +118,11 @@ p {
   position: relative; }
   .page-content-header .header-flex-source {
     padding: 9px 0;
-    background: rgba(54, 93, 220, 0.2);
+    background: rgba(54, 93, 220, 0.5);
     position: absolute;
     top: 14px;
     left: 0;
+    z-index: 88 !important;
     padding-left: 15px; }
     .page-content-header .header-flex-source .header-flex-p1 {
       font-size: 11px;

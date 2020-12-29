@@ -15,7 +15,7 @@ import {CsourceIndexComponent} from './csource-index/csource-index.component';
 import {CarDetailsComponent} from './car-details/car-details.component';
 import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component';
 import {RunDiagramComponent} from './run-diagram/run-diagram.component';
-import {InspectorRecordComponent} from "./inspector-record/inspector-record.component";
+import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
 
 const commandRouter: Routes = [
   {

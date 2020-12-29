@@ -101,6 +101,10 @@ p {
   min-width: 34px;
   text-align: left; }
 
+.map {
+  width: 100%;
+  height: 100%; }
+
 .page-content {
   background: url("../../../assets/img/all_bg.png");
   min-height: 100%;
@@ -172,9 +176,18 @@ p {
   border-bottom: 1px solid #1f397a;
   color: white;
   white-space: nowrap;
-  padding: 6px; }
+  padding: 6px;
+  font-size: 9px; }
 
 :host ::ng-deep .ant-table-tbody > tr > td {
-  border-bottom: 1px solid #122146; }
+  border-bottom: 1px solid #122146;
+  font-size: 9px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+:host ::ng-deep .ant-table-container .ant-table-content table {
+  width: 100%; }
 
 /*# sourceMappingURL=query-illegal-record.component.css.map */

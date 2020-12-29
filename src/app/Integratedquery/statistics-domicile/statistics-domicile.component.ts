@@ -14,7 +14,10 @@ export class StatisticsDomicileComponent implements OnInit {
   option = {
     tooltip: {
       trigger: 'item',
-      formatter: '{a} <br/>{b}: {c} ({d}%)'
+      formatter: '{a} <br/>{b}: {c} ({d}%)',
+      position(point, params, dom, rect, size): void {
+        dom.style.transform = 'translateZ(0)';
+      }
     },
 
     legend: {

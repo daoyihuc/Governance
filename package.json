@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@amap/amap-jsapi-loader": "0.0.7",
     "@angular/animations": "~11.0.4",
     "@angular/common": "~11.0.4",
     "@angular/compiler": "~11.0.4",

@@ -23,8 +23,11 @@
   <!--身体-->
   <ion-content>
     <div class="page-content">
-      <div class="page-content-header">
+      <div class="page-content-header" >
 
+        <div class="map" id="container">
+
+        </div>
         <div class="header-flex-box">
           <div class="li" *ngFor="let item of liData">
             <ion-checkbox class="checkbox" color="secondary" [(ngModel)]="item.check"></ion-checkbox>

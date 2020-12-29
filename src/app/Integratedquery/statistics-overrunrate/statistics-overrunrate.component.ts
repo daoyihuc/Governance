@@ -16,9 +16,13 @@ export class StatisticsOverrunrateComponent implements OnInit {
   option = {
     color: ['#3398DB'],
     tooltip: {
+      show: false,
       trigger: 'axis',
       axisPointer: {            // 坐标轴指示器，坐标轴触发有效
         type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+      },
+      position(point, params, dom, rect, size): void {
+        dom.style.transform = 'translateZ(0)';
       }
     },
     grid: {
@@ -53,7 +57,7 @@ export class StatisticsOverrunrateComponent implements OnInit {
   barStyle = {
     width: 300,
     height: 300
-  }
+  };
 
   listOfData = [
     {
@@ -86,17 +90,16 @@ export class StatisticsOverrunrateComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const  a=this.el.nativeElement.querySelector("#cons");
-    this.barStyle.width =  $(window).width()-30;
+    const a = this.el.nativeElement.querySelector('#cons0');
+    this.barStyle.width = $(window).width() - 30;
     // this.barStyle.height =  $(window).height();
-    setTimeout(()=>{
+    setTimeout(() => {
       const ec = echars as any;
       let init = ec.init(a);
-      init.setOption(this.option)
-    }, 1000)
+      init.setOption(this.option);
+    }, 1000);
 
   }
-
 
 
 }

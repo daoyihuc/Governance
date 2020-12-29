@@ -23,8 +23,11 @@
   <!--身体-->
   <ion-content>
     <div class="page-content">
-      <div class="page-content-header">
+      <div class="page-content-header" >
 
+        <div class="map" id="container">
+
+        </div>
         <div class="page-card weighing-header">
           <p class="weighing-header-p1" (click)="onJump(0)">运行轨迹</p>
           <p (click)="onJump(1)">图表分析</p>
@@ -100,6 +103,8 @@
         </div>
       </div>
     </div>
+
+
   </ion-content>
   <ion-tab-bar slot="bottom" class="barBox">
     <ion-tab-button tab="/command/runMonitoring" (click)="onTabJump(0)">
