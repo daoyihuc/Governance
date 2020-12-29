@@ -179,6 +179,16 @@ p {
       color: #FFFFFF;
       text-align: center;
       line-height: 20px; }
+      .car-section .img-content .flex-p1:before {
+        content: "";
+        width: 0px;
+        height: 0px;
+        /* border-top: 10px solid transparent; */
+        border-bottom: 20px solid transparent;
+        border-left: 15px solid #5481DC;
+        position: absolute;
+        top: 0;
+        right: -15px; }
   .car-section .car-section-down {
     display: flex; }
     .car-section .car-section-down .down-time-p2 {

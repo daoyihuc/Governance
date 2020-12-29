@@ -70,19 +70,44 @@ p{
   background: rgba(31, 57, 122, 0.2);
   border: 1px solid #5481DC;
   padding: 0 8px 11px;
-  transform: translateY(-34px);
+  /*transform: translateY(-34px);*/
 }
 .page-content-section .section-title{
   margin: 0 auto;
   width: 83px;
   height: 23px;
   background: rgba(84, 129, 220, 0.5);
-  box-shadow: 0 1px 3px 0 rgba(10, 165, 180, 0.6);
+  /*box-shadow: 0 1px 3px 0 rgba(10, 165, 180, 0.6);*/
   text-align: center;
   line-height: 23px;
   font-size: 12px;
   font-weight: normal;
   color: #FFFFFF;
+  position: relative;
+
+}
+.section-title:before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-bottom: 23px solid transparent;
+  border-right: 15px solid rgba(84, 129, 220, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+
+}
+.section-title:after{
+
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-bottom: 23px solid transparent;
+  border-left: 15px solid rgba(84, 129, 220, 0.5);
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+
 }
 /*card*/
 .page-content-section .section-card{

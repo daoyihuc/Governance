@@ -152,6 +152,16 @@ p {
     color: #FFFFFF;
     text-align: center;
     line-height: 20px; }
+    .img-content .flex-p1:before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      /* border-top: 10px solid transparent; */
+      border-bottom: 20px solid transparent;
+      border-left: 15px solid #5481DC;
+      position: absolute;
+      top: 0;
+      right: -15px; }
   .img-content .flex-p2 {
     width: 76px;
     height: 20px;
@@ -164,6 +174,15 @@ p {
     color: #FFFFFF;
     text-align: center;
     line-height: 20px; }
+    .img-content .flex-p2:before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-top: 20px solid transparent;
+      border-right: 15px solid #5481DC;
+      position: absolute;
+      bottom: 0;
+      left: -15px; }
 
 .page-footer-btn {
   border-top: 1px solid #5481DC;
