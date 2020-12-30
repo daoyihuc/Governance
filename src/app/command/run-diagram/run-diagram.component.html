@@ -39,7 +39,9 @@
             <img src="../../../assets/img/pop-b.png" (click)="onShow(0)" alt="">
           </div>
           <div class="car-number-box" *ngIf="isShow[0]">
-            <div class="left"></div>
+            <div class="left">
+              <div echarts [options]="EChartOption" class="demo-chart"></div>
+            </div>
             <div class="right">
               <div class="right-btn">
                 <p>今日过车量</p>

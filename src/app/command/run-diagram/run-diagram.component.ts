@@ -15,7 +15,7 @@ export class RunDiagramComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
-  isShow = [false, false, false, false];
+  isShow = [true, false, false, false];
 
   tableData = [
     {name: '99.6%', car: '湘A9FJ76' },
@@ -31,6 +31,63 @@ export class RunDiagramComponent implements OnInit {
     {src: '/command/runMonitoring'},
     {src: '/command/runDiagram'},
   ];
+
+  pass_rate = 1240;
+  total = 2000;
+
+  EChartOption = {
+    series: [
+      {
+        type:'pie',//图形类型
+        radius: ['85%', '100%'],//图形宽度
+        roundCap:true,
+        label: {//字的位置
+          show: true,
+          position: 'center',
+        },
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        data:[
+          {
+            value:this.pass_rate, //需要显示的数据
+            name: this.pass_rate,
+            label: {//字
+              formatter: [
+                '{a|'+this.pass_rate+'}'
+              ].join('\n'),
+              rich: {
+                a: {
+                  color: '#ffffff',
+                  fontSize:12,
+                  backgroundColor: 'rgba(84, 129, 220, 0.2)',
+                  borderRadius:50,
+                  height:40,
+                  width:40,
+                },
+              }
+            },
+            itemStyle: {
+              normal: {
+                color: '#F94670',
+              }
+            }
+          },
+          {
+            value:this.total-this.pass_rate,
+            //不需要显示的数据，颜色设置成和背景一样
+            itemStyle: {
+              normal: {
+                color: 'rgba(84, 129, 220, 0.2)'
+              }
+            }
+          }
+        ]
+      },
+    ]
+  };
 
   ngOnInit(): void {
   }

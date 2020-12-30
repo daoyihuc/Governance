@@ -19,6 +19,7 @@ import {CarDetailsComponent} from './car-details/car-details.component';
 import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component';
 import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -44,6 +45,9 @@ import {InspectorRecordComponent} from './inspector-record/inspector-record.comp
     IonicModule,
     RouterModule,
     FormsModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
   ]
 })
 export class CommandModule {
