@@ -38,10 +38,10 @@ export class RunDiagramComponent implements OnInit {
   EChartOption = {
     series: [
       {
-        type:'pie',//图形类型
-        radius: ['85%', '100%'],//图形宽度
-        roundCap:true,
-        label: {//字的位置
+        type: 'pie', // 图形类型
+        radius: ['85%', '100%'], // 图形宽度
+        roundCap: true,
+        label: {// 字的位置
           show: true,
           position: 'center',
         },
@@ -50,22 +50,22 @@ export class RunDiagramComponent implements OnInit {
             show: false
           }
         },
-        data:[
+        data: [
           {
-            value:this.pass_rate, //需要显示的数据
+            value: this.pass_rate, // 需要显示的数据
             name: this.pass_rate,
-            label: {//字
+            label: {// 字
               formatter: [
-                '{a|'+this.pass_rate+'}'
+                '{a|' + this.pass_rate + '}'
               ].join('\n'),
               rich: {
                 a: {
                   color: '#ffffff',
-                  fontSize:12,
+                  fontSize: 12,
                   backgroundColor: 'rgba(84, 129, 220, 0.2)',
-                  borderRadius:50,
-                  height:40,
-                  width:40,
+                  borderRadius: 50,
+                  height: 45,
+                  width: 45,
                 },
               }
             },
@@ -76,8 +76,8 @@ export class RunDiagramComponent implements OnInit {
             }
           },
           {
-            value:this.total-this.pass_rate,
-            //不需要显示的数据，颜色设置成和背景一样
+            value: this.total - this.pass_rate,
+            // 不需要显示的数据，颜色设置成和背景一样
             itemStyle: {
               normal: {
                 color: 'rgba(84, 129, 220, 0.2)'
@@ -89,7 +89,7 @@ export class RunDiagramComponent implements OnInit {
     ]
   };
 
-  xData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  xData = ['09.15', '09.16', '09.17', '09.18', '09.19', '09.20', '09.21'];
   yData = [120, 200, 150, 80, 70, 110, 130];
 
   EChartOptionTwo = {
@@ -98,22 +98,24 @@ export class RunDiagramComponent implements OnInit {
       data: this.xData
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+      splitLine: {
+        show: false
+      }
     },
     series: [{
       data: this.yData,
       type: 'line',
-      symbol: 'triangle',
-      symbolSize: 20,
+      symbol: 'circle',
+      symbolSize: 8,
       lineStyle: {
-        color: 'green',
-        width: 4,
-        type: 'dashed'
+        color: '#F94670',
+        width: 1,
+        type: 'solid'
       },
       itemStyle: {
         borderWidth: 3,
-        borderColor: 'yellow',
-        color: 'blue'
+        color: '#fff'
       }
     }]
   };

@@ -11,16 +11,16 @@
     display: flex;
     justify-content: center;
     .left{
-      width: 75px;
-      height: 75px;
-      border: 1px solid rgb(55 240 163);
+      width: 88px;
+      height: 88px;
+      border: 1px solid rgb(55,240,163);
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       .demo-chart {
-        width: 65px;
-        height: 65px;
+        width: 80px;
+        height: 80px;
       }
     }
     .right{
@@ -148,7 +148,7 @@
 //  e
 .demo2-chart {
   width: 100%;
-  height: 265px;
+  height: 195px;
 }
 
 
