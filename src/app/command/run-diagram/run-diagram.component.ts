@@ -89,6 +89,35 @@ export class RunDiagramComponent implements OnInit {
     ]
   };
 
+  xData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  yData = [120, 200, 150, 80, 70, 110, 130];
+
+  EChartOptionTwo = {
+    xAxis: {
+      type: 'category',
+      data: this.xData
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [{
+      data: this.yData,
+      type: 'line',
+      symbol: 'triangle',
+      symbolSize: 20,
+      lineStyle: {
+        color: 'green',
+        width: 4,
+        type: 'dashed'
+      },
+      itemStyle: {
+        borderWidth: 3,
+        borderColor: 'yellow',
+        color: 'blue'
+      }
+    }]
+  };
+
   ngOnInit(): void {
   }
 
