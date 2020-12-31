@@ -28,7 +28,7 @@
           <div [ngClass]="{'item_s_header':item.check,'item_s_header2':!item.check}"
           >
             <span class="name">{{item.name}}</span>
-            <ion-checkbox [(ngModel)]="item.check" (ionChange)="initCheck()" class="check"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="item.check" (ionChange)="initCheck(i)" class="check"></ion-checkbox>
 <!--            <label nz-checkbox [(ngModel)]="item.check" (ngModelChange)="initCheck()"></label>-->
           </div>
           <div *ngFor="let item2 of item.childsItem;index as j" class="item_s_section" [hidden]="!item.check">

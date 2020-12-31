@@ -97,16 +97,20 @@ export class SiteSelectionComponent implements OnInit, Baseinterface {
   }
 
   ngOnInit(): void {
-    this.initCheck();
+    this.initCheck(0);
   }
 
   // 初始化选择
-  initCheck(): void {
+  initCheck(index): void {
     for (let i = 0; i < this.ItemData.length; i++) {
+
       for (let j = 0; j < this.ItemData[i].childsItem.length; j++) {
-        if (this.ItemData[i].check) {
-          this.ItemData[i].childsItem[j].check = true;
+        if (index === i){
+          if (this.ItemData[i].check) {
+            this.ItemData[i].childsItem[j].check = true;
+          }
         }
+
       }
     }
   }

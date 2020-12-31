@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 import {IonicModule} from '@ionic/angular';
 import {RouterModule, Routes} from '@angular/router';
@@ -17,6 +17,7 @@ import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angul
 import zh from '@angular/common/locales/zh';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {MatDialogModule} from '@angular/material/dialog';
+import {LoginInterceptor} from './http/handle/login.interceptor';
 
 registerLocaleData(zh);
 
@@ -62,7 +63,11 @@ const appRoute: Routes = [
     RouterModule,
     RouterModule.forRoot(appRoute),
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN },
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    {provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor , multi: true}
+    ],
   exports: [
     HeaderComponent
   ],

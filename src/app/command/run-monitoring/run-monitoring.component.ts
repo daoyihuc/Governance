@@ -51,6 +51,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   onBack(): void {
     this.windowUntils.onBack();
+    // this.route.navigate(['/home']);
   }
 
   onHome(): void {
