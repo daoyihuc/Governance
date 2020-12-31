@@ -16,6 +16,7 @@
                        [placeholder]="item.placName"
                        [(ngModel)]="item.value"
                        [readonly]="item.isRead"
+                       (click)="OnClick(item.id,i)"
                        maxlength="30"></ion-input>
           </ion-item>
           <ion-item class="items" [lines]="'none'">

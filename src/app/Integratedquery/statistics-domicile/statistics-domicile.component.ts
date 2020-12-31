@@ -105,11 +105,11 @@ export class StatisticsDomicileComponent implements OnInit {
     // this.barStyle.height =  $(window).height();
     setTimeout(() => {
       const ec = echars as any;
-      let init = ec.init(a);
+      const init = ec.init(a);
       init.setOption(this.option);
 
       const ecb = echars as any;
-      let initb = ecb.init(b);
+      const initb = ecb.init(b);
       initb.setOption(this.option);
     }, 1000);
 
@@ -134,6 +134,7 @@ export class StatisticsDomicileComponent implements OnInit {
     }
   }
 
+  // tslint:disable-next-line:typedef
   async openPicker( numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
@@ -157,7 +158,7 @@ export class StatisticsDomicileComponent implements OnInit {
     await picker.present();
   }
 
-  getColumns(numColumns, numOptions, columnOptions) {
+  getColumns(numColumns, numOptions, columnOptions): any{
     const columns = [];
     for (let i = 0; i < numColumns; i++) {
       columns.push({
@@ -169,8 +170,8 @@ export class StatisticsDomicileComponent implements OnInit {
     return columns;
   }
 
-  getColumnOptions(columnIndex, numOptions, columnOptions) {
-    let options = [];
+  getColumnOptions(columnIndex, numOptions, columnOptions): any {
+    const options = [];
     for (let i = 0; i < numOptions; i++) {
       options.push({
         text: columnOptions[columnIndex][i % numOptions],

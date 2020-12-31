@@ -4,6 +4,9 @@ import {OverrunrateConstans} from '../constans/queryConst';
 
 import * as echars from 'echarts';
 import * as $ from 'jquery';
+import {MatDialog} from '@angular/material/dialog';
+import {PickerController} from '@ionic/angular';
+import {SiteSelectionComponent} from '../site-selection/site-selection.component';
 
 @Component({
   selector: 'app-statistics-overrunrate',
@@ -83,6 +86,8 @@ export class StatisticsOverrunrateComponent implements OnInit {
 
   constructor(
     private el: ElementRef,
+    private mes: MatDialog,
+    private pickerController: PickerController,
   ) {
 
 
@@ -95,10 +100,30 @@ export class StatisticsOverrunrateComponent implements OnInit {
     // this.barStyle.height =  $(window).height();
     setTimeout(() => {
       const ec = echars as any;
-      let init = ec.init(a);
+      const init = ec.init(a);
       init.setOption(this.option);
     }, 1000);
 
+  }
+
+
+  OnClick(id, index): void{
+    switch (id){
+      case 0:
+        const matDialogRef = this.mes.open(SiteSelectionComponent);
+        matDialogRef.afterClosed().subscribe(value => {
+          console.log(value);
+        });
+        break;
+      case 1:
+
+        break;
+      case 2:
+
+        break;
+      default:
+        break;
+    }
   }
 
 

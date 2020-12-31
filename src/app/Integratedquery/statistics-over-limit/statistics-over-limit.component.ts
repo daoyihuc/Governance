@@ -2,6 +2,8 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 import {OverrunrateConstans} from '../constans/queryConst';
 import * as $ from 'jquery';
 import * as echars from 'echarts';
+import {MatDialog} from '@angular/material/dialog';
+import {SiteSelectionComponent} from '../site-selection/site-selection.component';
 
 @Component({
   selector: 'app-statistics-over-limit',
@@ -132,6 +134,7 @@ export class StatisticsOverLimitComponent implements OnInit {
 
   constructor(
     private el: ElementRef,
+    private mes: MatDialog,
   ) {
 
 
@@ -158,6 +161,25 @@ export class StatisticsOverLimitComponent implements OnInit {
       init1.setOption(this.option1);
     }, 1000);
 
+  }
+
+  OnClick(id, index): void{
+    switch (id){
+      case 0:
+        const matDialogRef = this.mes.open(SiteSelectionComponent);
+        matDialogRef.afterClosed().subscribe(value => {
+          console.log(value);
+        });
+        break;
+      case 1:
+
+        break;
+      case 2:
+
+        break;
+      default:
+        break;
+    }
   }
 
 
