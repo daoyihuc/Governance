@@ -108,6 +108,13 @@ export class RunDiagramComponent implements OnInit {
       type: 'line',
       symbol: 'circle',
       symbolSize: 8,
+      label: {
+        normal: {
+          show: true,
+          position: 'top',
+          color : "#fff"
+        }
+      },
       lineStyle: {
         color: '#F94670',
         width: 1,
