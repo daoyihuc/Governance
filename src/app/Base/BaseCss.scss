@@ -3,7 +3,6 @@ div{
 }
 p{
   margin: 0;
-
 }
 //最外层背景盒子
 .page-content{
@@ -46,6 +45,10 @@ p{
   .title{
     --color: #fff;
     text-align: center;
+    font-size: 17px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF;
   }
   img{
     width: 21px;
@@ -99,8 +102,8 @@ p{
 }
 // 蓝色
 .page-card2-section{
-  background: rgba(16, 207, 226, 0.2);
-  border: 1px solid #10CFE2;
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #10CFE2;
   margin-top: 11px;
 }
 

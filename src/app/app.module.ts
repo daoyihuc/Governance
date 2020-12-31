@@ -16,6 +16,7 @@ import { zh_CN } from 'ng-zorro-antd/i18n';
 import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {NgxEchartsModule} from 'ngx-echarts';
+import {MatDialogModule} from '@angular/material/dialog';
 
 registerLocaleData(zh);
 
@@ -55,6 +56,7 @@ const appRoute: Routes = [
     HttpClientModule,
     NgZorroAntdMobileModule,
     NgxEchartsModule,
+    MatDialogModule,
     IonicModule,
     IonicModule.forRoot(),
     RouterModule,

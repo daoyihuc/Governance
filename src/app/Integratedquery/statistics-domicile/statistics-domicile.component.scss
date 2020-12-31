@@ -1,1 +1,17 @@
 @import "../statistics-overrunrate/statistics-overrunrate.component";
+
+
+.cityBox{
+
+  width: 70px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0px solid #5481DC;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 10px;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 10px 10px;
+}

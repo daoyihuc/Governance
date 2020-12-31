@@ -15,6 +15,7 @@
                      class="inputs"
                      [placeholder]="item.placName"
                      [(ngModel)]="item.value"
+                     [readonly]="item.isRead"
                      maxlength="30"></ion-input>
         </ion-item>
         <ion-item class="items" [lines]="'none'">

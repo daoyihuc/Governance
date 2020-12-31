@@ -15,6 +15,8 @@
                      class="inputs"
                      [placeholder]="item.placName"
                      [(ngModel)]="item.value"
+                     [readonly]="item.isRead"
+                     (click)="OnClick(item.id,i)"
                      maxlength="30"></ion-input>
         </ion-item>
         <ion-item class="items" [lines]="'none'">
@@ -29,6 +31,9 @@
         <div class="page-card-section">
           <div class="page-card-header">
             <p>通行车辆比例</p>
+          </div>
+          <div class="cityBox" (click)="openPicker()">
+            {{city}}
           </div>
           <div id="cons"  [ngStyle]="{'width':barStyle.width+'px','height': barStyle.height+'px'}"></div>
 

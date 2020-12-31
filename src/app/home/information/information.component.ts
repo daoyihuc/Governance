@@ -2,16 +2,16 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Baseinterface} from '../../interface/baseinterface';
 import {InformationConst} from '../../constans/informationConst';
 import {WindowService} from '../../utils/window.service';
-import {ActivatedRoute, Router} from "@angular/router";
-import {HomeConstansInfo} from "../constans/HomeConstans";
-import {PickerController} from "@ionic/angular";
+import {ActivatedRoute, Router} from '@angular/router';
+import {HomeConstansInfo} from '../constans/HomeConstans';
+import {PickerController} from '@ionic/angular';
 
 @Component({
   selector: 'app-information',
   templateUrl: './information.component.html',
   styleUrls: ['./information.component.scss']
 })
-export class InformationComponent implements OnInit, Baseinterface{
+export class InformationComponent implements OnInit, Baseinterface {
 
   datas = InformationConst;
   InputDatas = HomeConstansInfo;
@@ -20,12 +20,13 @@ export class InformationComponent implements OnInit, Baseinterface{
     section: '',
     footer: '',
     WeighingList: ''
-  }
+  };
   minTime = new Date().toISOString(); // 最小时间
   customPickerOptions: any;
 
   // 绑定时间
-  ValueTime; any;
+  ValueTime;
+  any;
 
   defaultColumnOptions = [
     [
@@ -35,7 +36,7 @@ export class InformationComponent implements OnInit, Baseinterface{
       'Lizard',
       'Chinchilla'
     ]
-  ]
+  ];
 
   // 组件申明
   constructor(
@@ -50,35 +51,35 @@ export class InformationComponent implements OnInit, Baseinterface{
       buttons: [{
         text: '取消',
         handler: (a) => {
-          console.log('Clicked save'+JSON.stringify(a));
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTime = year+month+day+hour+minute;
+          console.log('Clicked save' + JSON.stringify(a));
+          let b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTime = year + month + day + hour + minute;
           // this.InputDatas[2].value = this.ValueTime;
           return a;
         }
       }, {
         text: '确定',
         handler: (a) => {
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTime = year+'年'+month+'月'+day+'日'+hour+'点'+minute;
+          let b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTime = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
           this.InputDatas[2].value = this.ValueTime;
-          console.log('Clicked Log. Do not Dismiss.'+this.ValueTime);
+          console.log('Clicked Log. Do not Dismiss.' + this.ValueTime);
           return a;
         }
       }]
-    }
+    };
   }
 
   ngOnInit(): void {
@@ -97,7 +98,7 @@ export class InformationComponent implements OnInit, Baseinterface{
   }
 
   // 文件上传
-  onSelectFile(envent,index): void{
+  onSelectFile(envent, index): void {
     console.log(envent.target.files);
     const file = envent.target.files[0];
     const suffix = file.name.split('.');
@@ -106,31 +107,31 @@ export class InformationComponent implements OnInit, Baseinterface{
       return;
     }
     const reader = new FileReader();
-    switch (index){
+    switch (index) {
       case 0:
         reader.readAsDataURL(file);
-        reader.onload= () => {
+        reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.header = reader.result;
         };
         break;
       case 1:
         reader.readAsDataURL(file);
-        reader.onload= () => {
+        reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.section = reader.result;
         };
-        break
+        break;
       case 2:
         reader.readAsDataURL(file);
-        reader.onload= () => {
+        reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.footer = reader.result;
         };
         break;
       case 3:
         reader.readAsDataURL(file);
-        reader.onload= () => {
+        reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.WeighingList = reader.result;
         };
@@ -139,12 +140,13 @@ export class InformationComponent implements OnInit, Baseinterface{
   }
 
   // 时间选择
-  timeChange(event): void{
+  timeChange(event): void {
     console.log(event);
   }
+
   // 点击事件
-  onClick(id,index,): void{
-    switch (id){
+  onClick(id, index,): void {
+    switch (id) {
       case 0:
 
         break;
@@ -163,7 +165,8 @@ export class InformationComponent implements OnInit, Baseinterface{
         break;
     }
   }
-  async  openPicker(index,numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions){
+
+  async openPicker(index, numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
       buttons: [
@@ -174,9 +177,9 @@ export class InformationComponent implements OnInit, Baseinterface{
         {
           text: '确认',
           handler: (value) => {
-            const a=JSON.stringify(value);
-            const b=JSON.parse(a);
-            this.InputDatas[index].value=b.col_0.text;
+            const a = JSON.stringify(value);
+            const b = JSON.parse(a);
+            this.InputDatas[index].value = b.col_0.text;
             console.log(`Got Value ${a}`);
           }
         }
@@ -186,7 +189,7 @@ export class InformationComponent implements OnInit, Baseinterface{
     await picker.present();
   }
 
-   getColumns(numColumns, numOptions, columnOptions) {
+  getColumns(numColumns, numOptions, columnOptions) {
     let columns = [];
     for (let i = 0; i < numColumns; i++) {
       columns.push({
@@ -198,13 +201,13 @@ export class InformationComponent implements OnInit, Baseinterface{
     return columns;
   }
 
-   getColumnOptions(columnIndex, numOptions, columnOptions) {
+  getColumnOptions(columnIndex, numOptions, columnOptions) {
     let options = [];
     for (let i = 0; i < numOptions; i++) {
       options.push({
         text: columnOptions[columnIndex][i % numOptions],
         value: i
-      })
+      });
     }
 
     return options;

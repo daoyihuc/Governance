@@ -1,0 +1,50 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button (click)="onBack()">
+          <ion-icon slot="icon-only" name="chevron-back-outline" style="color: white"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="title">
+        {{name}}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onHome()">
+          <img src="./assets/img/login-home.png">
+        </ion-button>
+        <ion-button (click)="onSetting()">
+          <img src="./assets/img/login-set.png">
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-content">
+
+      <div class="page-box">
+
+        <div class="item_section" *ngFor="let item of ItemData;index as i">
+          <div [ngClass]="{'item_s_header':item.check,'item_s_header2':!item.check}"
+          >
+            <span class="name">{{item.name}}</span>
+            <ion-checkbox [(ngModel)]="item.check" (ionChange)="initCheck()" class="check"></ion-checkbox>
+<!--            <label nz-checkbox [(ngModel)]="item.check" (ngModelChange)="initCheck()"></label>-->
+          </div>
+          <div *ngFor="let item2 of item.childsItem;index as j" class="item_s_section" [hidden]="!item.check">
+            <span class="name">{{item2.name}}</span>
+            <ion-checkbox [(ngModel)]="item2.check" (ionChange)="initChild(i,j)" class="check"></ion-checkbox>
+<!--            <label nz-checkbox [(ngModel)]="item2.check" ></label>-->
+          </div>
+        </div>
+        <div class="closeBox" >
+          <img src="assets/img/all-close.png" alt="" style="width: 42px;height: 42px" (click)="onBack()">
+        </div>
+
+
+      </div>
+
+    </div>
+  </ion-content>
+</ion-app>
+

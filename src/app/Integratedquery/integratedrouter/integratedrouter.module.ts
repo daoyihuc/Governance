@@ -14,6 +14,7 @@ import {StatisticsIndexComponent} from "../statistics-index/statistics-index.com
 import {StatisticsOverrunrateComponent} from '../statistics-overrunrate/statistics-overrunrate.component';
 import {StatisticsOverLimitComponent} from "../statistics-over-limit/statistics-over-limit.component";
 import {StatisticsDomicileComponent} from "../statistics-domicile/statistics-domicile.component";
+import {SiteSelectionComponent} from '../site-selection/site-selection.component';
 
 
 const Router: Routes = [
@@ -61,6 +62,9 @@ const Router: Routes = [
   {
     path: 'IllegalDetails', // 违法记录详情
     component: IllegalDetailsComponent,
+  }, {
+    path: 'SiteSelection', // 违法记录详情
+    component: SiteSelectionComponent,
   },
   {
     path: 'StatisticsIndex', // 数据统计查询

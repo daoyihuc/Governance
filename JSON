@@ -33,7 +33,11 @@ p {
   --color: #fff; }
   .toolbar .title {
     --color: #fff;
-    text-align: center; }
+    text-align: center;
+    font-size: 17px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF; }
   .toolbar img {
     width: 21px;
     height: 21px; }
@@ -79,8 +83,8 @@ p {
   margin-top: 11px; }
 
 .page-card2-section {
-  background: rgba(16, 207, 226, 0.2);
-  border: 1px solid #10CFE2;
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #10CFE2;
   margin-top: 11px; }
 
 /*详细信息排序 盒子 content*/
@@ -106,9 +110,21 @@ p {
   height: 100%; }
 
 .page-content {
-  background: url("../../../assets/img/all_bg.png");
-  min-height: 100%;
-  background-size: 100% 50%; }
+  background: url("../../../assets/img/home_bg.png") no-repeat;
+  background-size: 100% 100%;
+  min-height: 100%; }
+
+.page-card-section {
+  border: none;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0px solid #5481DC; }
+
+.searchButton {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  --background: #5481DC; }
 
 .items {
   display: flex;
@@ -154,22 +170,37 @@ p {
   width: 200px;
   border-bottom: 1px solid #5481DC; }
 
-.searchButton {
-  --padding-start: 20px;
-  --padding-end: 20px;
-  --padding-top: 5px;
-  --padding-bottom: 5px;
-  --background: #5481DC; }
+.labels {
+  font-size: 9px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #1DDEFB; }
+
+.page-box {
+  margin-top: 10px;
+  padding-bottom: 20px; }
+
+.input {
+  color: #ffff;
+  --placeholder-color: #ffff;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  margin-right: 30px;
+  font-size: 10px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #FFFFFF;
+  line-height: 13px;
+  text-align: center;
+  width: 200px; }
 
 .margin_top {
   margin-top: 10px; }
 
-.page-card {
-  padding: 14px 14px; }
-
 :host ::ng-deep .ant-table-row {
   background: #122146;
-  color: white; }
+  color: white;
+  width: 100%; }
 
 :host ::ng-deep .ant-table-small .ant-table-thead > tr > th {
   background: #1f397a;
@@ -189,5 +220,18 @@ p {
 
 :host ::ng-deep .ant-table-container .ant-table-content table {
   width: 100%; }
+
+.cityBox {
+  width: 70px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0px solid #5481DC;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 10px;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 10px 10px; }
 
 /*# sourceMappingURL=JSON.map */

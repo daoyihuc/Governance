@@ -20,14 +20,17 @@ import { StatisticsOverrunrateComponent } from './statistics-overrunrate/statist
 import {NgxEchartsModule} from 'ngx-echarts';
 import { StatisticsOverLimitComponent } from './statistics-over-limit/statistics-over-limit.component';
 import { StatisticsDomicileComponent } from './statistics-domicile/statistics-domicile.component';
+import { SiteSelectionComponent } from './site-selection/site-selection.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 
 
 @NgModule({
-  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent, StatisticsOverrunrateComponent, StatisticsOverLimitComponent, StatisticsDomicileComponent],
+  declarations: [IndexComponent, QueryIndexComponent, QueryenterpriseComponent, QueryVehicleComponent, QueryOperationsComponent, QueryPassingCarComponent, QueryIllegalRecordComponent, PassingCatDetailsComponent, IllegalDetailsComponent, StatisticsIndexComponent, StatisticsOverrunrateComponent, StatisticsOverLimitComponent, StatisticsDomicileComponent, SiteSelectionComponent],
     imports: [
         RouterModule,
         IntegratedrouterModule,
+        NzCheckboxModule,
         IonicModule,
         FormsModule,
         CommonModule,

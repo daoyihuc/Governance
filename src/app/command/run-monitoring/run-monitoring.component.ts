@@ -170,11 +170,18 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   }
 
   addMark(obj): void {
+
+    // 创建 AMap.Icon 实例：
+    const icons = new AMap.Icon({
+      size: new AMap.Size(14, 14),    // 图标尺寸
+      image: '../../../assets/img/zhichaozhan.png',  // Icon的图像
+      imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
+    });
     // 创建一个 Marker 实例：
     const marker = new AMap.Marker({
       position: new AMap.LngLat(obj.Latitude, obj.longitude),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
       title: obj.title,
-      icon: '../../../assets/img/zhichaozhan.png',
+      icon: icons,
     });
 
     marker.on('click', this.showInfoM);

@@ -33,7 +33,11 @@ p {
   --color: #fff; }
   .toolbar .title {
     --color: #fff;
-    text-align: center; }
+    text-align: center;
+    font-size: 17px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF; }
   .toolbar img {
     width: 21px;
     height: 21px; }
@@ -79,8 +83,8 @@ p {
   margin-top: 11px; }
 
 .page-card2-section {
-  background: rgba(16, 207, 226, 0.2);
-  border: 1px solid #10CFE2;
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #10CFE2;
   margin-top: 11px; }
 
 /*详细信息排序 盒子 content*/
@@ -106,7 +110,9 @@ p {
   height: 100%; }
 
 .page-content {
-  background: url("../../../assets/img/login-bg.png") no-repeat; }
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  background-size: 100% 100%;
+  min-height: 100%; }
 
 .page-card2-section {
   background: rgba(84, 129, 220, 0.2);
