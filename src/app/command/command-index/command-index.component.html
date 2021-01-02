@@ -29,11 +29,13 @@
 
         </div>
         <div class="header-flex-box">
-          <div class="li" *ngFor="let item of liData">
-            <ion-checkbox class="checkbox" color="secondary" [(ngModel)]="item.check"></ion-checkbox>
-            <p [class.checkP]="item.check">{{item.text}}({{item.number}})</p>
+          <div  *ngFor="let item of liData,let i = index">
+            <div class="li" *ngIf="liShow || i === 0">
+              <ion-checkbox class="checkbox" color="secondary" [(ngModel)]="item.check"></ion-checkbox>
+              <p [class.checkP]="item.check">{{item.text}}({{item.number}})</p>
+            </div>
           </div>
-          <img class="flex-box-img1" src="../../../assets/img/pop-b.png" alt="">
+          <img class="flex-box-img1" (click)="isShow()" src="../../../assets/img/pop-b.png" alt="">
           <img class="flex-box-img2" src="../../../assets/img/all-1tbg.png" alt="">
         </div>
       </div>

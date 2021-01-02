@@ -66,9 +66,11 @@
         <div class="page-card page-card-weighing">
           <div class="page-card-header">
             <p>7天超限率</p>
-            <img src="../../../assets/img/pop-b.png" alt="">
+            <img src="../../../assets/img/pop-b.png" (click)="onShow(1)" alt="">
           </div>
-          <div echarts [options]="EChartOptionTwo" class="demo2-chart"></div>
+          <div  *ngIf="isShow[1]">
+            <div echarts [options]="EChartOptionTwo" class="demo2-chart"></div>
+          </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>

@@ -15,7 +15,7 @@ export class RunDiagramComponent implements OnInit {
     private windowUntils: WindowService,
   ) { }
 
-  isShow = [true, false, false, false];
+  isShow = [true, true, true, true];
 
   tableData = [
     {name: '99.6%', car: '湘A9FJ76' },

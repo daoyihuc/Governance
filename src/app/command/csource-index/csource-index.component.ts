@@ -93,7 +93,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
 
-
+  inputShow = true;
   tableData = [
     {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76'},
     {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
@@ -184,6 +184,10 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   onTabJump(index): void {
     this.route.navigate([this.tabUrl[index].src]);
+  }
+
+  isShow(): void {
+    this.inputShow = !this.inputShow;
   }
 
   initData(): void {

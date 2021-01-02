@@ -115,6 +115,9 @@ p {
 .page-card-header p {
   color: #fff; }
 
+.section-card-section-content {
+  overflow-x: hidden; }
+
 .page-card2-section {
   background: rgba(84, 129, 220, 0.2);
   border: 1px solid #5481DC; }

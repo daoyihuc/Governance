@@ -39,6 +39,8 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
     {text: '执法车辆', check: false, number: '28'},
   ];
 
+  liShow = true;
+
   cardData = [
     {id: '粤HB8982', name: '超限嫌疑车', class: 1,
       list: [
@@ -247,6 +249,10 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   ngAfterViewInit(): void {
     console.log('页面加载完成');
 
+  }
+
+  isShow(): void {
+    this.liShow = !this.liShow;
   }
 
 }

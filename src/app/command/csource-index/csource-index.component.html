@@ -43,7 +43,7 @@
           <img src="../../../assets/img/yuantou_icon.png" alt="">
           <p class="header-flex-p1">源头督查</p>
         </div>
-        <div class="header-flex-source header-flex4-source">
+        <div class="header-flex-source header-flex4-source" (click)="onTabJump(2)">
           <p class="header-flex-p1">平江往浏阳方向 超限嫌疑车 粤HB8982</p>
         </div>
       </div>
@@ -57,26 +57,28 @@
         </div>
 
         <div class="page-card items-card">
-          <ion-item class="items" *ngFor="let item of serachData; index as i" [lines]="'none'">
-            <ion-label class="lableBox">
-              <div class="lableIcon"></div>
-              <div class="lableTitle">
-                {{item.name}}
-              </div>
-            </ion-label>
-            <ion-input slot="end"
-                       type="text"
-                       class="inputs"
-                       [placeholder]="item.placName"
-                       [(ngModel)]="item.value"
-                       [readonly]="item.isRead"
-                       (click)="onTime(item.id,i)"
-                       maxlength="30"></ion-input>
-          </ion-item>
+          <div  *ngFor="let item of serachData; index as i">
+            <ion-item class="items" *ngIf="inputShow || i === 0" [lines]="'none'">
+              <ion-label class="lableBox" >
+                <div class="lableIcon"></div>
+                <div class="lableTitle">
+                  {{item.name}}
+                </div>
+              </ion-label>
+              <ion-input slot="end"
+                         type="text"
+                         class="inputs"
+                         [placeholder]="item.placName"
+                         [(ngModel)]="item.value"
+                         [readonly]="item.isRead"
+                         (click)="onTime(item.id,i)"
+                         maxlength="30"></ion-input>
+            </ion-item>
+          </div>
           <ion-item class="items" [lines]="'none'">
             <ion-button slot="end" class="searchButton">查询</ion-button>
           </ion-item>
-          <img class="flex-img" src="../../../assets/img/pop-b.png" alt="">
+          <img class="flex-img" src="../../../assets/img/pop-b.png" (click)="isShow()" alt="">
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>
