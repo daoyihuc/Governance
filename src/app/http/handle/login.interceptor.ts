@@ -33,11 +33,8 @@ export class LoginInterceptor implements HttpInterceptor {
     //
     // }
     const headers1 = req.headers;
-    headers1.append('JWTHeaderName', sessionStorage.getItem('token'));
-    req = req.clone({
-      url,
-      headers: headers1,
-    });
+    console.log(headers1,"5454");
+    console.log(sessionStorage.getItem('token'));
     return next.handle(req).pipe(
       tap(
         event => {
@@ -45,8 +42,8 @@ export class LoginInterceptor implements HttpInterceptor {
             // console.log(event);
             if (event.body.code === 1002) {
               // 跳转错误页面
-              sessionStorage.clear();
-              this.router.navigate(['/login']);
+              // sessionStorage.clear();
+              // this.router.navigate(['/login']);
             }
           }
         },

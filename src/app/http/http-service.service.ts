@@ -13,6 +13,7 @@ import {Headers, HeadersFile, observes, reType} from './header';
 import { Api } from './HttpApi';
 import {catchError} from 'rxjs/operators';
 import {LoginBean} from './HttpBean/LoginBean';
+import {axleInitBean} from "./HttpBean/axleInitBean";
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,17 @@ export class HttpServiceService {
             .pipe(
               // catchError(this.handleError)
             );
+  }
+
+  //
+  // 轴数初始化
+  axleInit(loginBean: any): Observable<HttpResponse<axleInitBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< LoginBean > ( Api.axleInit, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
   }
 
 

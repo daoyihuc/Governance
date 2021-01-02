@@ -5,6 +5,7 @@ import {WindowService} from '../../utils/window.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HomeConstansInfo} from '../constans/HomeConstans';
 import {PickerController} from '@ionic/angular';
+import {HttpServiceService} from "../../http/http-service.service";
 
 @Component({
   selector: 'app-information',
@@ -44,7 +45,9 @@ export class InformationComponent implements OnInit, Baseinterface {
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private el: ElementRef,
-    private pickerController: PickerController,
+    private pickerController: PickerController, //  选择
+    private  http: HttpServiceService, //请求
+
   ) {
 
     this.customPickerOptions = {
@@ -83,6 +86,7 @@ export class InformationComponent implements OnInit, Baseinterface {
   }
 
   ngOnInit(): void {
+    this.axlexHttp();
   }
 
   onBack(): void {
@@ -211,5 +215,15 @@ export class InformationComponent implements OnInit, Baseinterface {
     }
 
     return options;
+  }
+
+
+  // 轴数初始化
+  private axlexHttp(): void{
+    this.http.axleInit(null).subscribe( value => {
+      if(value.body.code === 0){
+        console.log(value);
+      }
+    })
   }
 }
