@@ -1,6 +1,10 @@
 import {AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import * as $ from 'jquery';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WindowService} from '../../utils/window.service';
+import {HttpServiceService} from '../../http/http-service.service';
+import {ToastController} from '@ionic/angular';
+import {ToastService} from '../../utils/toast.service';
 declare var AMap: any;
 
 @Component({
@@ -14,7 +18,10 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
+    private http: HttpServiceService,
+    private toast: ToastService,
   ) { }
+
 
   tabUrl = [
     {src: '/command/runMonitoring'},
@@ -70,6 +77,10 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   location: any = []; // 锚点参数
 
   ngOnInit(): void {
+    // 获取列表
+    // @ts-ignore
+    this.getList();
+
     setTimeout( () => {
       this.getMap();
       this.initData();
@@ -94,6 +105,19 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   onTabJump(index): void {
     this.route.navigate([this.tabUrl[index].src]);
+  }
+
+  // 获取列表
+  getList(): void{
+    // @ts-ignore
+    this.http.getResourceList().subscribe(value => {
+      console.log(value);
+      if (value.body.code === 0){
+        console.log(value);
+      }else{
+        this.toast.presentToast(value.body.message);
+      }
+    });
   }
 
   initData(): void {

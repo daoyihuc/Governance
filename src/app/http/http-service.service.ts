@@ -13,7 +13,8 @@ import {Headers, HeadersFile, observes, reType} from './header';
 import { Api } from './HttpApi';
 import {catchError} from 'rxjs/operators';
 import {LoginBean} from './HttpBean/LoginBean';
-import {axleInitBean} from "./HttpBean/axleInitBean";
+import {axleInitBean} from './HttpBean/axleInitBean';
+import {getResourceListBean} from './HttpBean/getResourceListBean';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,27 @@ export class HttpServiceService {
     // this.options.params = data;
     // @ts-ignore
     return  this.http.post< LoginBean > ( Api.axleInit, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+
+  // 指挥调度-任务列表
+  getResourceList(loginBean: any): Observable<HttpResponse<getResourceListBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< LoginBean > ( Api.listRealTimeAlarmRecord, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  督查记录
+  superviseRecord(loginBean: any): Observable<HttpResponse<getResourceListBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< LoginBean > ( Api.superviseRecord, loginBean, this.options)
       .pipe(
         // catchError(this.handleError)
       );

@@ -20,6 +20,8 @@ export class FeedbackComponent implements OnInit {
     speed: 400
   };
 
+  imgsPreview = '';
+
   ngOnInit(): void {
   }
 
@@ -37,5 +39,26 @@ export class FeedbackComponent implements OnInit {
 
   onJump(): void{// 跳转
     this.windowUntils.onBack();
+  }
+
+  // 文件上传
+  onSelectFile(envent, index): void {
+    console.log(envent.target.files);
+    const file = envent.target.files[0];
+    const suffix = file.name.split('.');
+    if (!/(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(suffix[1])) {
+      this.windowUntils.presentToast('只能上传图片哦');
+      return;
+    }
+    const reader = new FileReader();
+    switch (index) {
+      case 0:
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          // @ts-ignore
+          this.imgsPreview = reader.result;
+        };
+        break;
+    }
   }
 }

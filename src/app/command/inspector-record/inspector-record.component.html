@@ -25,12 +25,12 @@
     <div class="page-content">
       <div class="page-box">
         <div class="page-box-header">
-          历史违法记录({{levels.length}})
+          企业督查记录({{levels.length}})
         </div>
         <div class="car-card" *ngFor="let level of levels,let indx=index">
           <div class="car-header" [class.car-header-show]="temp == indx"  (click)="accordion(indx)">
-            <p class="p1">{{level.time}}</p>
-            <p class="p1">{{level.name}}</p>
+            <p class="p1">{{level.superviseTime}}</p>
+            <p class="p1">{{level.remark}}</p>
             <img class="flex-img" src="../../../assets/img/all-safe.png" alt="">
           </div>
         </div>

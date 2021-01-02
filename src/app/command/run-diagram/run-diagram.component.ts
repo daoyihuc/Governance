@@ -33,7 +33,7 @@ export class RunDiagramComponent implements OnInit {
   ];
 
   pass_rate = 1240;
-  total = 2000;
+  total = this.pass_rate + this.pass_rate * 0.8;
 
   EChartOption = {
     series: [

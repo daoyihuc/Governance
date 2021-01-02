@@ -70,6 +70,7 @@
                        [placeholder]="item.placName"
                        [(ngModel)]="item.value"
                        [readonly]="item.isRead"
+                       (click)="onTime(item.id,i)"
                        maxlength="30"></ion-input>
           </ion-item>
           <ion-item class="items" [lines]="'none'">
@@ -104,6 +105,22 @@
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>
           <span class="flex-span4"></span>
+          <ion-datetime id="times"
+                        displayFormat="YYYY/MM/DD/HH/mm"
+                        pickerFormat="YYYY MM DD HH mm"
+                        [pickerOptions]="customPickerOptionsStart"
+                        [(ngModel)]="ValueTimeStart"
+                        [min]="minTime" [hidden]="true">
+
+          </ion-datetime>
+          <ion-datetime id="timesEnd"
+                        displayFormat="YYYY/MM/DD/HH/mm"
+                        pickerFormat="YYYY MM DD HH mm"
+                        [pickerOptions]="customPickerOptionsEnd"
+                        [(ngModel)]="ValueTimeEnd"
+                        [min]="minTime" [hidden]="true">
+
+          </ion-datetime>
         </div>
         <!--card end-->
       </div>

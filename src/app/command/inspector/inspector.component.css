@@ -170,6 +170,10 @@ p {
     .page-footer-btn .right p {
       white-space: nowrap; }
 
+.imgList-box {
+  display: flex;
+  overflow-y: hidden; }
+
 .imgUp {
   display: flex;
   margin: 13px auto 0;
@@ -178,14 +182,31 @@ p {
   align-content: center;
   align-items: center;
   width: 63px;
+  min-width: 63px;
   min-height: 63px;
   background: rgba(84, 129, 220, 0.2);
   border: 0 solid #5481DC;
   position: relative; }
 
+.imgList {
+  width: 63px;
+  height: 63px;
+  min-height: 63px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #5481DC;
+  position: relative;
+  margin: 13px 13px 0 0; }
+
+.file {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 101; }
+
 .add {
   width: 27px;
-  height: 27px; }
+  height: 27px;
+  position: absolute; }
 
 .my-input {
   --padding-end:10px;
@@ -196,7 +217,7 @@ p {
   --color: #FFFFFF;
   height: 70px; }
 
-textarea {
+.sc-ion-textarea-md {
   height: 70px; }
 
 .work-section .work-section-li {

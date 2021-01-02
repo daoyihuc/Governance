@@ -27,8 +27,12 @@
         <div class="page-card2-section page-card basic-page2">
           <div class="section-card-section-content basic-section">
             <p class="p1">点击上传图片</p>
-            <div class="imgUp">
-              <img src="./assets/img/all-img.png" alt="" class="add">
+            <div class="imgList-box">
+              <img class="imgList" *ngFor="let item of imgsList" [src]="item" alt="">
+              <div class="imgUp">
+                <img src="./assets/img/all-img.png" alt="" class="add">
+                <input type="file" class="file" (change)="onSelectFile($event,0)" accept="image/*"/>
+              </div>
             </div>
           </div>
           <span class="flex-span1"></span>

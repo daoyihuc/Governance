@@ -55,7 +55,9 @@
           <div class="section-card-section-content basic-section">
             <p class="p1">点击上传图片或者视频文件</p>
             <div class="imgUp">
+              <img [src]="imgsPreview" alt="" class="imgs">
               <img src="./assets/img/all-img.png" alt="" class="add">
+              <input type="file" class="file" (change)="onSelectFile($event,0)" accept="image/*"/>
             </div>
           </div>
           <span class="flex-span1"></span>
