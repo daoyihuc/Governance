@@ -31,6 +31,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     {src: '/command/commandIndex'},
     {src: '/queryAll/index'},
   ];
+  runShow = true;
 
   maps: any = null; // 地图空间
   infoWindow: any = null; // 信息彈窗
@@ -44,6 +45,46 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   };
 
   location: any = []; // 锚点参数
+
+  // popup
+  isPopup = false; // 弹窗控制
+  xData = ['09.15', '09.16', '09.17', '09.18', '09.19', '09.20', '09.21'];
+  yData = [120, 200, 150, 80, 70, 110, 130];
+
+  EChartOptionTwo = {
+    xAxis: {
+      type: 'category',
+      data: this.xData
+    },
+    yAxis: {
+      type: 'value',
+      splitLine: {
+        show: false
+      }
+    },
+    series: [{
+      data: this.yData,
+      type: 'line',
+      symbol: 'circle',
+      symbolSize: 8,
+      label: {
+        normal: {
+          show: true,
+          position: 'top',
+          color : '#fff'
+        }
+      },
+      lineStyle: {
+        color: '#F94670',
+        width: 1,
+        type: 'solid'
+      },
+      itemStyle: {
+        borderWidth: 3,
+        color: '#fff'
+      }
+    }]
+  };
 
   ngOnInit(): void {
     console.log('初始化');
@@ -68,6 +109,14 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   onTabJump(index): void {
     this.route.navigate([this.tabUrl[index].src]);
+  }
+
+  onShow(index): void {
+    if (index == 1){
+      this.runShow = true;
+    }else {
+      this.runShow = false;
+    }
   }
 
   initData(): void {
@@ -125,7 +174,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     const bounds = data.boundaries;
     if (bounds) {
       for (let i = 0, l = bounds.length; i < l; i++) {
-        let polygon = new AMap.Polygon({
+        const polygon = new AMap.Polygon({
           map: this.maps,
           strokeWeight: 1,
           strokeColor: '#0091ea',

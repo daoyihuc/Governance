@@ -109,6 +109,43 @@ p {
   width: 100%;
   height: 100%; }
 
+.weighing-section {
+  margin-top: 13px; }
+  .weighing-section .thHeader {
+    background: #1F397A; }
+  .weighing-section .thContent {
+    padding: 13px 0; }
+  .weighing-section .warning-section-th {
+    padding: 7px 5px;
+    display: flex; }
+    .weighing-section .warning-section-th:nth-child(2n) {
+      background: rgba(31, 57, 122, 0.3); }
+    .weighing-section .warning-section-th .warning-section-td {
+      font-size: 9px;
+      font-family: Hiragino Sans GB;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-align: center; }
+    .weighing-section .warning-section-th .td1 {
+      width: 31px; }
+    .weighing-section .warning-section-th .td2 {
+      padding: 0 5px;
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .weighing-section .warning-section-th .td3 {
+      width: 58px;
+      white-space: nowrap; }
+    .weighing-section .warning-section-th .td4 {
+      width: 50px; }
+      .weighing-section .warning-section-th .td4 .btn {
+        width: 37px;
+        margin: 0 auto;
+        padding: 2px 0;
+        border: 1px solid #5088F9;
+        border-radius: 3px; }
+
 .page-content {
   background: url("../../../assets/img/all_bg.png");
   min-height: 100%;
@@ -170,26 +207,6 @@ p {
 
 .page-card {
   padding: 14px 14px; }
-
-:host ::ng-deep .ant-table-row {
-  background: #122146;
-  color: white; }
-
-:host ::ng-deep .ant-table-small .ant-table-thead > tr > th {
-  background: #1f397a;
-  border-bottom: 1px solid #1f397a;
-  color: white;
-  white-space: nowrap;
-  padding: 6px;
-  font-size: 9px; }
-
-:host ::ng-deep .ant-table-tbody > tr > td {
-  border-bottom: 1px solid #122146;
-  font-size: 9px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-right: 5px;
-  padding-left: 5px; }
 
 :host ::ng-deep .ant-table-container .ant-table-content table {
   width: 100%; }

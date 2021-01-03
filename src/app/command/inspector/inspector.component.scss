@@ -1,6 +1,7 @@
 @import '../../Base/BaseCss';
 .page-content{
-  background: url("../../../assets/img/login-bg.png") no-repeat ;
+  background: url("../../../assets/img/all_bg.png") no-repeat ;
+  background-size: 100% 100%;
 }
 .page-card-header{
   p{
@@ -143,6 +144,32 @@
       padding-left: 13px;
       flex: 1;
     }
+
+  }
+}
+
+
+.img-p{
+  display: flex;
+  align-items: center;
+  width: 50%;
+  img{
+    width: 17px;
+    height: 15px;
+    margin-top: 11px;
+    transition: all linear 200ms;
+  }
+  .p1{
+    flex: 1;
+  }
+  .overflow-p1{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+  }
+  .overflow-img{
+    transform: rotateZ(180deg);
 
   }
 }

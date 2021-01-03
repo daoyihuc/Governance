@@ -49,24 +49,22 @@
       </div>
 
       <div class="page-card margin_top">
-        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false" [nzSize]="'small'" class="test">
-          <thead>
-          <tr >
-            <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>
-            <th [nzAlign]="'center'" [nzEllipsis]="true">车牌号码</th>
-            <th [nzAlign]="'center'" [nzEllipsis]="true">检测点</th>
-            <th [nzAlign]="'center'" [nzEllipsis]="true">超限量</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let data of listOfData" (click)="showDetails(data)" >
-            <td [nzAlign]="'center'">{{data.key}}</td>
-            <td [nzAlign]="'center'">{{data.name}}</td>
-            <td [nzAlign]="'center'" >{{data.age}}</td>
-            <td [nzAlign]="'center'">{{data.address}}</td>
-          </tr>
-          </tbody>
-        </nz-table>
+        <div class="weighing-section">
+          <div class="warning-section-th thHeader">
+            <div class="warning-section-td td1">编号</div>
+            <div class="warning-section-td td3">企业名称</div>
+            <div class="warning-section-td td2">检测点</div>
+            <div class="warning-section-td td4">超限量</div>
+          </div>
+          <div class="page-card-weighing-tdBox">
+            <div class="warning-section-th thContent" *ngFor="let data of listOfData" (click)="showDetails(data)" >
+              <div class="warning-section-td td1">{{data.key}}</div>
+              <div class="warning-section-td td3">{{data.name}}</div>
+              <div class="warning-section-td td2">{{data.age}}</div>
+              <div class="warning-section-td td4">{{data.address}}</div>
+            </div>
+          </div>
+        </div>
 
         <span class="flex-span1"></span>
         <span class="flex-span2"></span>

@@ -15,6 +15,8 @@ import {catchError} from 'rxjs/operators';
 import {LoginBean} from './HttpBean/LoginBean';
 import {axleInitBean} from './HttpBean/axleInitBean';
 import {getResourceListBean} from './HttpBean/getResourceListBean';
+import {getInfoByCodeBean} from './HttpBean/getInfoByCodeBean';
+import {getBayonetByCodeBean} from './HttpBean/getBayonetByCodeBean';
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +81,26 @@ export class HttpServiceService {
     // this.options.params = data;
     // @ts-ignore
     return  this.http.post< LoginBean > ( Api.superviseRecord, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  获取单个企业信息
+  getInfoByCode(loginBean: any): Observable<HttpResponse<getInfoByCodeBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< getInfoByCodeBean > ( Api.getInfoByCode, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  获取单个企业视频卡口
+  getBayonetByCode(loginBean: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, loginBean, this.options)
       .pipe(
         // catchError(this.handleError)
       );

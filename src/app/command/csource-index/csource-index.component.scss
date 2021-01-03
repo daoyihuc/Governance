@@ -4,6 +4,9 @@
   background: #000;
   padding: 0;
 }
+.page-new-card{
+  background: rgba(31, 57, 122, 0.2);
+}
 
 
 
@@ -44,6 +47,10 @@
         }
       }
     }
+  }
+  .header-flex1-source{
+    background: url("../../../assets/img/show-1bg.png") no-repeat ;
+    background-size: 100% 100%;
   }
   .header-flex2-source{
     top: 83px;
@@ -107,6 +114,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 13px;
+  background: rgba(84, 129, 220, 0.6);
   p{
     font-size: 12px;
     font-family: Source Han Sans CN;

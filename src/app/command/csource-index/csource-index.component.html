@@ -29,7 +29,7 @@
         <div class="map" id="container">
 
         </div>
-        <div class="header-flex-source" (click)="onFlexJump(0)">
+        <div class="header-flex-source header-flex1-source" (click)="onFlexJump(0)">
           <p class="header-flex-p1">源头企业</p>
           <p class="header-flex-p2">
             <span>在线：33</span>
@@ -44,7 +44,7 @@
           <p class="header-flex-p1">源头督查</p>
         </div>
         <div class="header-flex-source header-flex4-source" (click)="onTabJump(2)">
-          <p class="header-flex-p1">平江往浏阳方向 超限嫌疑车 粤HB8982</p>
+          <p class="header-flex-p1 transform-p1">平江往浏阳方向 超限嫌疑车 粤HB8982</p>
         </div>
       </div>
       <div class="page-content-section">
@@ -56,7 +56,7 @@
           <span class="flex-span4 flex-span"></span>
         </div>
 
-        <div class="page-card items-card">
+        <div class="page-card items-card page-new-card">
           <div  *ngFor="let item of serachData; index as i">
             <ion-item class="items" *ngIf="inputShow || i === 0" [lines]="'none'">
               <ion-label class="lableBox" >

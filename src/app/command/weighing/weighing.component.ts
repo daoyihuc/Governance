@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, ParamMap} from "@angular/router";
 import {WindowService} from "../../utils/window.service";
 
 @Component({
@@ -26,8 +26,12 @@ export class WeighingComponent implements OnInit {
     {name: '视频监控', src: '/command/monitoring'},
     {name: '企业信息详情', src: '/command/enterpriseDetails'}
   ];
+  selectedEnterprise = {}; // 企业信息
 
   ngOnInit(): void {
+    this.router.queryParams.subscribe(params => {
+      this.selectedEnterprise = params;
+    });
   }
 
   onBack(): void {
@@ -44,7 +48,8 @@ export class WeighingComponent implements OnInit {
 
   onJump(index): void{// 跳转
     console.log(this.jumpUrl[index].src);
-    this.route.navigate([this.jumpUrl[index].src], { skipLocationChange: true });
+    this.route.navigate([this.jumpUrl[index].src],
+      { skipLocationChange: true , queryParams: this.selectedEnterprise});
   }
 
   onDetails(index): void{// 详情

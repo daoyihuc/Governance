@@ -1,4 +1,54 @@
 @import "../../Base/BaseCss";
+//section
+.weighing-section{
+  margin-top: 13px;
+  .thHeader{
+    background: #1F397A;
+  }
+  .thContent{
+    padding: 13px 0;
+  }
+
+  .warning-section-th{
+    padding: 7px 5px;
+    display: flex;
+    &:nth-child(2n){
+      background: rgba(31, 57, 122, .3);
+    }
+    .warning-section-td{
+      font-size: 9px;
+      font-family: Hiragino Sans GB;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .td1{
+      width: 31px;
+    }
+    .td2{
+      padding: 0 5px;
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .td3{
+      width: 58px;
+      white-space: nowrap;
+    }
+    .td4{
+      width: 50px;
+      .btn{
+        width: 37px;
+        margin: 0 auto;
+        padding: 2px 0;
+        border: 1px solid #5088F9;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
 
 .page-content{
   background: url("../../../assets/img/all_bg.png") ;
@@ -65,31 +115,6 @@
 .page-card{
   padding: 14px 14px;
 }
-//:host ::ng-deep .test{
-//  background: red;
-//}
-:host ::ng-deep .ant-table-row{
-  background: rgba(18, 33, 70, 1);
-  color: white;
-}
-
-:host ::ng-deep .ant-table-small .ant-table-thead > tr > th{
-   background: rgba(31, 57, 122, 1);
-   border-bottom: 1px solid rgba(31, 57, 122, 1);
-  color: white;
-  white-space: nowrap;
-  padding: 6px;
-  font-size: 9px;
-}
- :host ::ng-deep .ant-table-tbody > tr > td{
-   border-bottom: 1px solid rgba(18, 33, 70, 1);
-   font-size: 9px;
-   padding-top: 14px;
-   padding-bottom: 14px;
-   padding-right: 5px;
-   padding-left: 5px;
- }
-
 :host ::ng-deep  .ant-table-container {
   .ant-table-content  {
     table{
@@ -114,3 +139,5 @@
 //:host ::ng-deep  .ant-table table{
 //  background: red;
 //}
+
+

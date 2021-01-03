@@ -110,7 +110,8 @@ p {
   height: 100%; }
 
 .page-content {
-  background: url("../../../assets/img/login-bg.png") no-repeat; }
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  background-size: 100% 100%; }
 
 .page-card-header p {
   color: #fff; }
@@ -232,5 +233,24 @@ p {
     color: #FFFFFF;
     padding-left: 13px;
     flex: 1; }
+
+.img-p {
+  display: flex;
+  align-items: center;
+  width: 50%; }
+  .img-p img {
+    width: 17px;
+    height: 15px;
+    margin-top: 11px;
+    transition: all linear 200ms; }
+  .img-p .p1 {
+    flex: 1; }
+  .img-p .overflow-p1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all; }
+  .img-p .overflow-img {
+    transform: rotateZ(180deg); }
 
 /*# sourceMappingURL=inspector.component.css.map */

@@ -114,6 +114,9 @@ p {
   background: #000;
   padding: 0; }
 
+.page-new-card {
+  background: rgba(31, 57, 122, 0.2); }
+
 /* header */
 .page-content-header {
   width: 100%;
@@ -144,6 +147,9 @@ p {
         margin-right: 7px; }
         .page-content-header .header-flex-source .header-flex-p2 span:nth-child(1) {
           color: #11E5F7; }
+  .page-content-header .header-flex1-source {
+    background: url("../../../assets/img/show-1bg.png") no-repeat;
+    background-size: 100% 100%; }
   .page-content-header .header-flex2-source {
     top: 83px;
     background: rgba(244, 91, 91, 0.2); }
@@ -189,7 +195,8 @@ p {
 .weighing-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 13px; }
+  margin-bottom: 13px;
+  background: rgba(84, 129, 220, 0.6); }
   .weighing-header p {
     font-size: 12px;
     font-family: Source Han Sans CN;

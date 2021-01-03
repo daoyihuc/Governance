@@ -24,6 +24,7 @@ export class InspectorComponent implements OnInit {
 
   imgsList = [];
   imgsIndex = 0;
+  overflowShow = true;
 
   ngOnInit(): void {
   }

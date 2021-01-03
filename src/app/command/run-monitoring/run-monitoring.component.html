@@ -54,14 +54,14 @@
       </div>
       <div class="page-content-section">
         <div class="run-monitoring-header">
-          <div class="run-header-box">
+          <div class="run-header-box" (click)="onShow(1)" [class.run-header-box-no]="!runShow">
             <div class="box-right">3</div>
             <div class="box-left">
               <img src="../../../assets/img/zhichaozhan.png" alt="feixcje">
               超限检测站
             </div>
           </div>
-          <div class="run-header-box run-header-box-no">
+          <div class="run-header-box run-header-box-no" (click)="onShow(2)" [class.run-header-box-no]="runShow">
             <div class="box-right">2</div>
             <div class="box-left">
               <img src="../../../assets/img/feixcje.png" alt="feixcje">
@@ -95,12 +95,28 @@
               </div>
             </div>
           </div>
-          <div class="basic-page-btn">查看数据</div>
+          <div class="basic-page-btn" (click)="isPopup = true">查看数据</div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>
           <span class="flex-span4"></span>
         </div>
+      </div>
+    </div>
+    <!--popup-->
+    <div class="popup" *ngIf="isPopup">
+      <div class="page-card page-card-weighing">
+        <div class="page-card-header">
+          <p>菁华铺超限检测站-7天超限率</p>
+          <img src="../../../assets/img/pop-close.png" alt=""  (click)="isPopup = false">
+        </div>
+        <div >
+          <div echarts [options]="EChartOptionTwo" class="demo2-chart"></div>
+        </div>
+        <span class="flex-span1"></span>
+        <span class="flex-span2"></span>
+        <span class="flex-span3"></span>
+        <span class="flex-span4"></span>
       </div>
     </div>
 

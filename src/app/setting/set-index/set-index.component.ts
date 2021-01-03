@@ -24,7 +24,7 @@ export class SetIndexComponent implements OnInit,Baseinterface {
   btns = [
     {text: '修改密码', url: '/setting/changepassword'},
     {text: '系统信息', url: '/setting/information'},
-    {text: '注销账号', url: '/setting/information'}
+    {text: '注销账号', url: ''}
   ];
   clickBtn = '';
   ngOnInit(): void {

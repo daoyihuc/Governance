@@ -17,7 +17,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   // 绑定时间
   ValueTimeStart: any;
   ValueTimeEnd: any;
-  
+
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
@@ -28,68 +28,68 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       buttons: [{
         text: '取消',
         handler: (a) => {
-          console.log('Clicked save'+JSON.stringify(a));
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTimeStart = year+month+day+hour+minute;
+          console.log('Clicked save' + JSON.stringify(a));
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeStart = year + month + day + hour + minute;
           // this.InputDatas[2].value = this.ValueTime;
           return a;
         }
       }, {
         text: '确定',
         handler: (a) => {
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTimeStart = year+'年'+month+'月'+day+'日'+hour+'点'+minute;
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeStart = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
           this.serachData[1].value = this.ValueTimeStart;
-          console.log('Clicked Log. Do not Dismiss.'+this.ValueTimeStart);
+          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeStart);
           return a;
         }
       }]
-    }
+    };
     this.customPickerOptionsEnd = {
       buttons: [{
         text: '取消',
         handler: (a) => {
-          console.log('Clicked save'+JSON.stringify(a));
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTimeEnd = year+month+day+hour+minute;
+          console.log('Clicked save' + JSON.stringify(a));
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeEnd = year + month + day + hour + minute;
           // this.InputDatas[2].value = this.ValueTime;
           return a;
         }
       }, {
         text: '确定',
         handler: (a) => {
-          let b=JSON.stringify(a);
-          const c=JSON.parse(b);
-          const year=c.year.value;
-          const month=c.month.value;
-          const day=c.day.value;
-          const hour=c.hour.value;
-          const minute=c.minute.value;
-          this.ValueTimeEnd = year+'年'+month+'月'+day+'日'+hour+'点'+minute;
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeEnd = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
           this.serachData[2].value = this.ValueTimeEnd;
-          console.log('Clicked Log. Do not Dismiss.'+this.ValueTimeEnd);
+          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeEnd);
           return a;
         }
       }]
-    }
+    };
   }
 
 
@@ -139,6 +139,10 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       value: '',
     },
   ];
+  selectedEnterprise = {
+    enterpriseName: '招商局物流集团湖南有限公司',
+    enterpriseCode: '10003'
+  }; // 选中企业
   maps: any = null;
   map = [];
   district = [];
@@ -174,7 +178,8 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
   onFlexJump(index): void {// 跳转
-    this.route.navigate([this.flexUrl[index].src]);
+    this.route.navigate([this.flexUrl[index].src],
+      { queryParams: this.selectedEnterprise });
   }
 
   onDetails(index): void {// 详情
@@ -327,17 +332,17 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
 
 //  time
-  onTime(id,index): void {
+  onTime(id, index): void {
     switch (id){
       case 1:
 
         break;
       case 2:
-        let query = this.el.nativeElement.querySelector('#times');
+        const query = this.el.nativeElement.querySelector('#times');
         query.dispatchEvent(new Event('click'));
         break;
       case 3:
-        let query2 = this.el.nativeElement.querySelector('#timesEnd');
+        const query2 = this.el.nativeElement.querySelector('#timesEnd');
         query2.dispatchEvent(new Event('click'));
         break;
       case 4:

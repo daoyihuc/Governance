@@ -111,8 +111,12 @@ p {
 
 .page-content {
   min-height: 100%;
-  background: #000;
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  background-size: 100% 100%;
   padding: 13px 0; }
+
+.page-card {
+  background: rgba(18, 33, 70, 0.2); }
 
 .page-card-weighing {
   margin-bottom: 13px; }
