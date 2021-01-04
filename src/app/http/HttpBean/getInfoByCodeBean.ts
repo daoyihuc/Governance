@@ -1,9 +1,11 @@
 import {BaseBody} from './BaseBody';
 
+// tslint:disable-next-line:class-name
 export interface getInfoByCodeBean extends BaseBody{
   data: getInfoByCodeBeanData;
 }
 
+// tslint:disable-next-line:class-name
 export interface getInfoByCodeBeanData {
   telephone3: string;
   tradeDuty: string;

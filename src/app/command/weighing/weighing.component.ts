@@ -26,9 +26,10 @@ export class WeighingComponent implements OnInit {
     {name: '视频监控', src: '/command/monitoring'},
     {name: '企业信息详情', src: '/command/enterpriseDetails'}
   ];
-  selectedEnterprise = {}; // 企业信息
+  selectedEnterprise: any = {}; // 企业信息
 
   ngOnInit(): void {
+    this.selectedEnterprise.enterpriseName = '';
     this.router.queryParams.subscribe(params => {
       this.selectedEnterprise = params;
     });
