@@ -17,7 +17,17 @@ export class InformationComponent implements OnInit, Baseinterface {
 
   datas = InformationConst;
   InputDatas = HomeConstansInfo;
+
+  // 预览图片
   imgsPreview = {
+    header: '',
+    section: '',
+    footer: '',
+    WeighingList: ''
+  };
+
+  // 图片文件
+  imgsData = {
     header: '',
     section: '',
     footer: '',
@@ -124,12 +134,14 @@ export class InformationComponent implements OnInit, Baseinterface {
     switch (index) {
       case 0:
         reader.readAsDataURL(file);
+        this.imgsData.header  = file;
         reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.header = reader.result;
         };
         break;
       case 1:
+        this.imgsData.section  = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -137,6 +149,7 @@ export class InformationComponent implements OnInit, Baseinterface {
         };
         break;
       case 2:
+        this.imgsData.footer  = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -144,6 +157,7 @@ export class InformationComponent implements OnInit, Baseinterface {
         };
         break;
       case 3:
+        this.imgsData.WeighingList  = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -342,6 +356,31 @@ export class InformationComponent implements OnInit, Baseinterface {
         this.toast.presentToast(value.body.message);
       }
     })
+  }
+  // 数据录入
+  save(): void{
+    this.AddData();
+  }
+
+
+  // 数据添加
+  AddData(): void{
+    const fileData = new FormData();
+    fileData.append('carNumber',this.InputDatas[0].value);
+    fileData.append('totalWeight',this.InputDatas[1].value);
+    fileData.append('previewDate',this.InputDatas[2].value);
+    fileData.append('station',this.InputDatas[3].value);
+    fileData.append('axle',this.InputDatas[4].value);
+    fileData.append('weightLimit',this.InputDatas[5].value);
+    fileData.append('overWeight',this.InputDatas[6].value);
+    fileData.append('overRate',this.InputDatas[7].value);
+    fileData.append('overRate1',"dadad");
+    fileData.append('file1',this.imgsData.header);
+    fileData.append('file2',this.imgsData.section);
+    fileData.append('file3',this.imgsData.footer);
+    fileData.append('file4',this.imgsData.WeighingList);
+    console.log(fileData);
+    this.HttpEnTring(fileData);
   }
 
   // 清除数据模型
