@@ -1,12 +1,10 @@
-
 // json
 export const Headers = {
   // 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', // 表单提交
   // 'Content-Type': 'multipart/form-data', // 文件上载时，既可以上传文件和文本
-  'Content-Type':  'application/json',
+  'Content-Type': 'application/json',
   Accept: '*/*',
-  JWTHeaderName: sessionStorage.getItem('token'),
-  // JWTHeaderName: '',
+  JWTHeaderName: sessionStorage.getItem('token') ? sessionStorage.getItem('token') : '12',
 };
 
 // 表單
@@ -30,4 +28,4 @@ export const HeadersFile = {
 export const observes = 'response'; // 'body' | 'events' | 'response',
 
 // 返回类型
-export  const reType = 'json'; //  responseType?: 'arraybuffer'|'blob'|'json'|'text'
+export const reType = 'json'; //  responseType?: 'arraybuffer'|'blob'|'json'|'text'

@@ -52,7 +52,9 @@ export class LoginComponent implements OnInit {
       this.toast.presentToast('还没有验证哦');
       return;
     }
+    console.log('daoyi', this.data);
     this.httpLogin(this.data);
+
 
   }
   goHome(): void{
@@ -62,13 +64,16 @@ export class LoginComponent implements OnInit {
   // 执行登录
   httpLogin(data): void{
     this.http.Login(data).subscribe(value => {
-      console.log(value);
+      console.log('daoyi', value);
       if (value.body.code === 0){
+        this.toast.presentToast(value.body.message);
         sessionStorage.setItem('token', '' + value.body.data); // token存儲
         this.route.navigate(['/home']);
       }else{
         this.toast.presentToast(value.body.message);
       }
+    }, error => {
+      console.log(error);
     });
   }
 

@@ -34,9 +34,9 @@ export class LoginInterceptor implements HttpInterceptor {
     // }
 
 
-    const headers1 = req.headers;
-    console.log(headers1,"5454");
-    console.log(sessionStorage.getItem('token'));
+    // const headers1 = req.headers;
+    // console.log(headers1, '545');
+    // console.log(sessionStorage.getItem('token'));
     return next.handle(req).pipe(
       tap(
         event => {
