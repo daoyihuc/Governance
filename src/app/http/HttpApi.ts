@@ -10,6 +10,7 @@ export const Api: any =
     getAccessToken : BaseUrl + '/common/getAccessToken', //  获取萤石云视频播放token
     tenterpriseInit : BaseUrl + '/common/tenterpriseInit', //  源头企业初始化
     tweighInit : BaseUrl + '/common/tweighInit', //  站点初始化
+    entering : BaseUrl + '/case/entering', //  执法录入
     getAlarmRecordCount : BaseUrl + '/dispatch/alarmRecord/getAlarmRecordCount', //  指挥调度-查看是否有报警任务
     listRealTimeAlarmRecord : BaseUrl + '/dispatch/alarmRecord/listRealTimeAlarmRecord', //  指挥调度-任务列表
     historyIllegal : BaseUrl + '/dispatch/enforce/enforcementLedger/historyIllegal', //  指挥调度-获取历史违法记录

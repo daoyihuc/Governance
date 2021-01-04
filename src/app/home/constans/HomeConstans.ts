@@ -7,6 +7,7 @@ export  const  HomeConstansInfo = [
     isRead: false,
     isIcon: false,
     value: '',
+    type: 'text'
   },  {
     id: 1,
     name: '总重',
@@ -14,6 +15,7 @@ export  const  HomeConstansInfo = [
     isRead: false,
     isIcon: false,
     value: '',
+    type: 'number'
   }, {
     id: 2,
     name: '过车时间',
@@ -21,6 +23,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
   {
     id: 5,
@@ -45,6 +50,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
   {
     id: 6,
@@ -53,6 +59,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
   {
     id: 7,
@@ -61,6 +68,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    type: 'text'
   },
 ];
 

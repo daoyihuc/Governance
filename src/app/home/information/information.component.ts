@@ -5,7 +5,8 @@ import {WindowService} from '../../utils/window.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HomeConstansInfo} from '../constans/HomeConstans';
 import {PickerController} from '@ionic/angular';
-import {HttpServiceService} from '../../http/http-service.service';
+import {HttpServiceService} from "../../http/http-service.service";
+import {ToastService} from "../../utils/toast.service";
 
 @Component({
   selector: 'app-information',
@@ -31,13 +32,19 @@ export class InformationComponent implements OnInit, Baseinterface {
 
   defaultColumnOptions = [
     [
-      // 'Dog',
-      // 'Cat',
-      // 'Bird',
-      // 'Lizard',
-      // 'Chinchilla'
+      // 'Dog'
     ]
   ];
+  SiteColumnOptions = [
+    [
+      // 'Dog'
+    ]
+  ];
+
+  weightLimits: number; // 限重
+  SuperWeightLimit: number;// 超限量
+  overRate: string; // 超限率
+
 
   // 组件申明
   constructor(
@@ -46,7 +53,8 @@ export class InformationComponent implements OnInit, Baseinterface {
     private windowUntils: WindowService,
     private el: ElementRef,
     private pickerController: PickerController, //  选择
-    private  http: HttpServiceService, // 请求
+    private  http: HttpServiceService, //请求
+    private toast: ToastService, // toast 提示
 
   ) {
 
@@ -86,7 +94,9 @@ export class InformationComponent implements OnInit, Baseinterface {
   }
 
   ngOnInit(): void {
-    this.axlexHttp();
+    this.axlexHttp(); // 轴数初始化
+    this.HttpSite(); // 站点初始化
+
   }
 
   onBack(): void {
@@ -161,19 +171,47 @@ export class InformationComponent implements OnInit, Baseinterface {
         let query = this.el.nativeElement.querySelector('#times');
         query.dispatchEvent(new Event('click'));
         break;
-      case 3:
-        this.openPicker(3);
+      case 3: // 站点选择
+        this.openPickerSite(3);
         break;
-      case 4:
+      case 4: // 轴数选择
         this.openPicker(4);
         break;
     }
   }
 
   // tslint:disable-next-line:typedef
-  async openPicker(index, numColumns = 1, numOptions = this.defaultColumnOptions[0].length, columnOptions = this.defaultColumnOptions) {
+  async openPicker(index, numColumns = 1, numOptions = this.defaultColumnOptions[0].length,
+                   columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
-      columns: this.getColumns(numColumns, numOptions, columnOptions),
+      columns: this.getColumns(numColumns, numOptions, columnOptions, 0),
+      mode: 'ios',
+      buttons: [
+        {
+          text: '取消',
+          role: 'cancel'
+        },
+        {
+          text: '确认',
+          handler: (value) => {
+            const a = JSON.stringify(value);
+            const b = JSON.parse(a);
+            this.InputDatas[index].value = b.col_0.text;
+            this.weightLimits = b.col_0.value;
+            this.InputDatas[5].value = b.col_0.value;
+            console.log(`Got Value ${a}`);
+            console.log('daoyi', this.weightLimits);
+          }
+        }
+      ]
+    });
+
+    await picker.present();
+  }
+
+  async openPickerSite(index, numColumns = 1, numOptions = this.SiteColumnOptions[0].length, columnOptions = this.SiteColumnOptions) {
+    const picker = await this.pickerController.create({
+      columns: this.getColumns(numColumns, numOptions, columnOptions, 1),
       mode: 'ios',
       buttons: [
         {
@@ -195,26 +233,41 @@ export class InformationComponent implements OnInit, Baseinterface {
     await picker.present();
   }
 
-  getColumns(numColumns, numOptions, columnOptions): any {
+  getColumns(numColumns, numOptions, columnOptions, type): any {
     let columns = [];
     for (let i = 0; i < numColumns; i++) {
-      columns.push({
-        name: `col_${i}`,
-        options: this.getColumnOptions(i, numOptions, columnOptions)
-      });
+      if (type === 0) {
+        columns.push({
+          name: `col_${i}`,
+          options: this.getColumnOptions(i, numOptions, columnOptions, 0)
+        });
+      } else {
+        columns.push({
+          name: `col_${i}`,
+          options: this.getColumnOptions(i, numOptions, columnOptions, 1)
+        });
+      }
+
     }
 
     return columns;
   }
 
-  getColumnOptions(columnIndex, numOptions, columnOptions): any {
+  getColumnOptions(columnIndex, numOptions, columnOptions, type): any {
     let options = [];
     for (let i = 0; i < numOptions; i++) {
-      options.push({
-        text: columnOptions[columnIndex][i % numOptions].axleNum,
-        text2: columnOptions[columnIndex][i % numOptions].weightLimit,
-        value: i
-      });
+      if (type === 0) {
+        options.push({
+          text: columnOptions[columnIndex][i % numOptions].axleNum,
+          value: columnOptions[columnIndex][i % numOptions].weightLimit,
+        });
+      } else {
+        options.push({
+          text: columnOptions[columnIndex][i % numOptions].name,
+          value: columnOptions[columnIndex][i % numOptions].id,
+        });
+      }
+
     }
 
     return options;
@@ -234,23 +287,79 @@ export class InformationComponent implements OnInit, Baseinterface {
   }
 
   // 数据发生改变时
-  InputChange(id): void{
-    switch (id){
+  InputChange(id): void {
+    switch (id) {
       case 0:
         this.InputDatas[0].value = this.upperCase(this.InputDatas[0].value);
         break;
     }
+
+    // 判断当前的总量有没有输入 计算超限，超限率 ，
+    if (this.InputDatas[1].value) {
+      this.SuperWeightLimit = Number(this.InputDatas[1].value) - this.weightLimits;
+      if (this.SuperWeightLimit > 0) {
+        this.InputDatas[6].value = '' + this.SuperWeightLimit; // 设置超限量
+        this.overRate = (this.SuperWeightLimit / this.weightLimits * 100).toFixed(2) + '%';
+        this.InputDatas[7].value = this.overRate;
+      }
+
+    }
+    console.log("daoyi", this.weightLimits);
+    console.log("daoyi", this.SuperWeightLimit);
+  }
+
+  // 站点初始化
+  HttpSite(): void {
+    this.http.tweighInit(null).subscribe(value => {
+
+
+      for (let i = 0; i < value.body.data.length; i++) {
+        const a = {
+          id: '',
+          name: ''
+        };
+        a.id = value.body.data[i].weighnum; // 编号
+        a.name = value.body.data[i].weighname; // 名称
+        if (value.body.data[i].weighType === '0') {
+          this.SiteColumnOptions[0].push(a); // 非现场
+        } else {
+          this.SiteColumnOptions[0].push(a); // 精检测
+        }
+      }
+      console.log(this.SiteColumnOptions);
+
+    });
+  }
+
+  // 执法录入
+  HttpEnTring(data): void {
+    this.http.entering(data).subscribe(value => {
+      if (value.body.code === 0) {
+
+        this.toast.presentToast(value.body.message);
+        this.ClearInputData();
+      } else {
+        this.toast.presentToast(value.body.message);
+      }
+    })
+  }
+
+  // 清除数据模型
+  ClearInputData(): void {
+    for (let i = 0; i < this.InputDatas.length; i++) {
+      this.InputDatas[i].value = '';
+    }
   }
 
 
-  upperCase(str): any{
+  upperCase(str): any {
     const arr = str.split('');
     let newStr = '';
     // 通过数组的forEach方法来遍历数组
-    arr.forEach( (value) => {
-      if (value >= 'a' && value <= 'z'){
+    arr.forEach((value) => {
+      if (value >= 'a' && value <= 'z') {
         newStr += value.toUpperCase();
-      } else{
+      } else {
         newStr += value;
       }
 

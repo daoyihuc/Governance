@@ -31,7 +31,7 @@
               <ion-label class="labels" >
                 {{item.name}}
               </ion-label>
-              <ion-input [type]="'text'" [slot]="'end'"
+              <ion-input [type]="item.type" [slot]="'end'"
                          [placeholder]="item.placName"
                          class="input"
                          [(ngModel)]="item.value"
@@ -40,6 +40,7 @@
                          (ionBlur)="InputChange(item.id)"
                          (ionInput)="InputChange(item.id)"
                          (ionFocus)="InputChange(item.id)"
+
               >
               </ion-input>
             </ion-item>

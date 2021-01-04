@@ -18,6 +18,7 @@ import {getResourceListBean} from './HttpBean/getResourceListBean';
 import {getInfoByCodeBean} from './HttpBean/getInfoByCodeBean';
 import {getBayonetByCodeBean} from './HttpBean/getBayonetByCodeBean';
 import {TweightBean} from './HttpBean/TweightBean';
+import {BaseBody} from "./HttpBean/BaseBody";
 
 @Injectable({
   providedIn: 'root'
@@ -112,6 +113,16 @@ export class HttpServiceService {
     // this.options.params = data;
     // @ts-ignore
     return  this.http.post< TweightBean > ( Api.tweighInit, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 执法录入
+  entering(data: any): Observable<HttpResponse<BaseBody>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< BaseBody > ( Api.entering, data, this.options2)
       .pipe(
         // catchError(this.handleError)
       );
