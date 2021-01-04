@@ -29,9 +29,10 @@ export class WeighingComponent implements OnInit {
   selectedEnterprise: any; // 企业信息
 
   ngOnInit(): void {
-    this.selectedEnterprise.enterpriseName = '';
+    // this.selectedEnterprise.enterpriseName = '';
     this.router.queryParams.subscribe(params => {
       this.selectedEnterprise = params;
+      console.log(this.selectedEnterprise);
     });
   }
 

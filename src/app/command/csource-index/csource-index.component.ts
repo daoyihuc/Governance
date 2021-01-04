@@ -184,7 +184,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   onDetails(index): void {// 详情
     console.log(index);
-    // this.route.navigate(['/command/weighingDetails']);
+    this.route.navigate(['/command/weighingDetails']);
   }
 
   onTabJump(index): void {

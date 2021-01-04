@@ -17,7 +17,11 @@ export class FeedbackComponent implements OnInit {
 
   slideOpts = {
     initialSlide: 1,
-    speed: 400
+    speed: 400,
+    autoplay: {
+      delay: 2000,
+    },
+    loop: true
   };
 
   imgsPreview = '';
