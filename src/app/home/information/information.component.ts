@@ -5,7 +5,7 @@ import {WindowService} from '../../utils/window.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HomeConstansInfo} from '../constans/HomeConstans';
 import {PickerController} from '@ionic/angular';
-import {HttpServiceService} from "../../http/http-service.service";
+import {HttpServiceService} from '../../http/http-service.service';
 
 @Component({
   selector: 'app-information',
@@ -31,11 +31,11 @@ export class InformationComponent implements OnInit, Baseinterface {
 
   defaultColumnOptions = [
     [
-      'Dog',
-      'Cat',
-      'Bird',
-      'Lizard',
-      'Chinchilla'
+      // 'Dog',
+      // 'Cat',
+      // 'Bird',
+      // 'Lizard',
+      // 'Chinchilla'
     ]
   ];
 
@@ -46,7 +46,7 @@ export class InformationComponent implements OnInit, Baseinterface {
     private windowUntils: WindowService,
     private el: ElementRef,
     private pickerController: PickerController, //  选择
-    private  http: HttpServiceService, //请求
+    private  http: HttpServiceService, // 请求
 
   ) {
 
@@ -149,7 +149,7 @@ export class InformationComponent implements OnInit, Baseinterface {
   }
 
   // 点击事件
-  onClick(id, index,): void {
+  onClick(id, index): void {
     switch (id) {
       case 0:
 
@@ -170,9 +170,11 @@ export class InformationComponent implements OnInit, Baseinterface {
     }
   }
 
-  async openPicker(index, numColumns = 1, numOptions = 5, columnOptions = this.defaultColumnOptions) {
+  // tslint:disable-next-line:typedef
+  async openPicker(index, numColumns = 1, numOptions = this.defaultColumnOptions[0].length, columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
+
       buttons: [
         {
           text: '取消',
@@ -193,7 +195,7 @@ export class InformationComponent implements OnInit, Baseinterface {
     await picker.present();
   }
 
-  getColumns(numColumns, numOptions, columnOptions) {
+  getColumns(numColumns, numOptions, columnOptions): any {
     let columns = [];
     for (let i = 0; i < numColumns; i++) {
       columns.push({
@@ -205,11 +207,12 @@ export class InformationComponent implements OnInit, Baseinterface {
     return columns;
   }
 
-  getColumnOptions(columnIndex, numOptions, columnOptions) {
+  getColumnOptions(columnIndex, numOptions, columnOptions): any {
     let options = [];
     for (let i = 0; i < numOptions; i++) {
       options.push({
-        text: columnOptions[columnIndex][i % numOptions],
+        text: columnOptions[columnIndex][i % numOptions].axleNum,
+        text2: columnOptions[columnIndex][i % numOptions].weightLimit,
         value: i
       });
     }
@@ -219,11 +222,14 @@ export class InformationComponent implements OnInit, Baseinterface {
 
 
   // 轴数初始化
-  private axlexHttp(): void{
-    this.http.axleInit(null).subscribe( value => {
-      if(value.body.code === 0){
+  private axlexHttp(): void {
+    this.http.axleInit(null).subscribe(value => {
+      if (value.body.code === 0) {
         console.log(value);
+        for (let i = 0; i < value.body.data.length; i++) {
+          this.defaultColumnOptions[0].push(value.body.data[i]);
+        }
       }
-    })
+    });
   }
 }

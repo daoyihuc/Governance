@@ -106,6 +106,16 @@ export class HttpServiceService {
       );
   }
 
+  //  获取
+  tweighInit(data: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< getBayonetByCodeBean > ( Api.tweighInit, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
 
 
   private handleError(error: HttpErrorResponse): Observable<never>{

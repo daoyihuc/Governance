@@ -8,6 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import {isHttp} from '../../Base/Constans';
 
 const ignoreToken = ['doLogin'];
 @Injectable()
@@ -33,6 +34,9 @@ export class LoginInterceptor implements HttpInterceptor {
     //
     // }
 
+    if (!isHttp){
+      return ;
+    }
 
     // const headers1 = req.headers;
     // console.log(headers1, '545');
