@@ -174,7 +174,7 @@ export class InformationComponent implements OnInit, Baseinterface {
   async openPicker(index, numColumns = 1, numOptions = this.defaultColumnOptions[0].length, columnOptions = this.defaultColumnOptions) {
     const picker = await this.pickerController.create({
       columns: this.getColumns(numColumns, numOptions, columnOptions),
-
+      mode: 'ios',
       buttons: [
         {
           text: '取消',
@@ -231,5 +231,30 @@ export class InformationComponent implements OnInit, Baseinterface {
         }
       }
     });
+  }
+
+  // 数据发生改变时
+  InputChange(id): void{
+    switch (id){
+      case 0:
+        this.InputDatas[0].value = this.upperCase(this.InputDatas[0].value);
+        break;
+    }
+  }
+
+
+  upperCase(str): any{
+    const arr = str.split('');
+    let newStr = '';
+    // 通过数组的forEach方法来遍历数组
+    arr.forEach( (value) => {
+      if (value >= 'a' && value <= 'z'){
+        newStr += value.toUpperCase();
+      } else{
+        newStr += value;
+      }
+
+    });
+    return newStr;
   }
 }

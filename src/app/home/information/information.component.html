@@ -31,7 +31,16 @@
               <ion-label class="labels" >
                 {{item.name}}
               </ion-label>
-              <ion-input [type]="'text'" [slot]="'end'" [placeholder]="item.placName" class="input" [(ngModel)]="item.value" [maxlength]="12" [readonly]="item.isRead"  >
+              <ion-input [type]="'text'" [slot]="'end'"
+                         [placeholder]="item.placName"
+                         class="input"
+                         [(ngModel)]="item.value"
+                         [maxlength]="12"
+                         [readonly]="item.isRead"
+                         (ionBlur)="InputChange(item.id)"
+                         (ionInput)="InputChange(item.id)"
+                         (ionFocus)="InputChange(item.id)"
+              >
               </ion-input>
             </ion-item>
             <div class="imgMax">

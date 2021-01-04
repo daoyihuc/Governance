@@ -9,6 +9,7 @@ html body {
   background: url("../../assets/img/login-bg.png") no-repeat;
   background-size: 100% 100%;
   width: 100%;
+  min-height: 100%;
   padding-top: 70px;
   padding-bottom: 20px; }
   .maxBox .title {
@@ -86,7 +87,7 @@ html body {
           --background: #1DDEFB; }
 
 .footer_box {
-  margin-top: 200px; }
+  margin-top: 40px; }
   .footer_box p {
     text-align: center;
     font-size: 12px;

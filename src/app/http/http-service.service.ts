@@ -17,6 +17,7 @@ import {axleInitBean} from './HttpBean/axleInitBean';
 import {getResourceListBean} from './HttpBean/getResourceListBean';
 import {getInfoByCodeBean} from './HttpBean/getInfoByCodeBean';
 import {getBayonetByCodeBean} from './HttpBean/getBayonetByCodeBean';
+import {TweightBean} from './HttpBean/TweightBean';
 
 @Injectable({
   providedIn: 'root'
@@ -106,11 +107,11 @@ export class HttpServiceService {
       );
   }
 
-  //  获取
-  tweighInit(data: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+  //  站点初始化
+  tweighInit(data: any): Observable<HttpResponse<TweightBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getBayonetByCodeBean > ( Api.tweighInit, data, this.options)
+    return  this.http.post< TweightBean > ( Api.tweighInit, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );

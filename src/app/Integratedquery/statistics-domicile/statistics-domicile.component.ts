@@ -37,6 +37,7 @@ export class StatisticsDomicileComponent implements OnInit {
         name: '访问来源',
         type: 'pie',
         radius: ['50%', '70%'],
+        roundCap: true,
         avoidLabelOverlap: false,
         top: 20,
         label: {
@@ -54,7 +55,13 @@ export class StatisticsDomicileComponent implements OnInit {
           show: false
         },
         data: [
-          {value: 335, name: '直接访问'},
+          {value: 335,
+            name: '直接访问',
+            itemStyle: {
+              normal: {
+                color: '#F94670',
+              }
+            }},
           {value: 310, name: '邮件营销'},
           {value: 234, name: '联盟广告'},
           {value: 135, name: '视频广告'},
@@ -66,7 +73,6 @@ export class StatisticsDomicileComponent implements OnInit {
       }
     ]
   };
-
   barStyle = {
     width: 300,
     height: 300
