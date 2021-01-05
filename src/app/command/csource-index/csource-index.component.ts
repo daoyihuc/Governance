@@ -11,13 +11,6 @@ declare var AMap: any;
 })
 export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, AfterViewInit{
 
-  minTime = new Date().toISOString(); // 最小时间
-  customPickerOptionsStart: any; // 开始时间设置
-  customPickerOptionsEnd: any; // 结束时间设置
-  // 绑定时间
-  ValueTimeStart: any;
-  ValueTimeEnd: any;
-
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
@@ -92,6 +85,13 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     };
   }
 
+  minTime = new Date().toISOString(); // 最小时间
+  customPickerOptionsStart: any; // 开始时间设置
+  customPickerOptionsEnd: any; // 结束时间设置
+  // 绑定时间
+  ValueTimeStart: any;
+  ValueTimeEnd: any;
+
 
   inputShow = true;
   tableData = [
@@ -153,13 +153,34 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     adcode: '宁乡市'
   };
 
-  location: any = []; // 锚点参数
+  mackerels: any = []; // 锚点参数
+  mapList = [
+    {
+      Latitude: 112.551885,
+      longitude: 28.277483,
+      name: '双凫铺镇三虹建材有限公司',
+      isShow: false,
+      index: 0
+    },
+    {
+      Latitude: 112.580037,
+      longitude: 28.287989,
+      name: '2',
+      isShow:  false,
+      index: 1
+    },
+    {
+      Latitude: 112.45936,
+      longitude: 28.274535,
+      name: '3',
+      isShow: false,
+      index: 2
+    }
+  ];
 
   ngOnInit(): void {
     console.log('初始化');
   }
-
-
 
   onBack(): void {
     this.windowUntils.onBack();
@@ -196,34 +217,10 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
   initData(): void {
-    const a = {
-      Latitude: 0,
-      longitude: 0,
-    };
-    const b = {
-      Latitude: 0,
-      longitude: 0,
-    };
-    const c = {
-      Latitude: 0,
-      longitude: 0,
-    };
-
-    a.Latitude = 112.551885;
-    a.longitude = 28.277483;
-    this.location.push(a);
-    b.Latitude = 112.580037;
-    b.longitude = 28.287989;
-    this.location.push(b);
-    c.Latitude = 112.45936;
-    c.longitude = 28.274535;
-    this.location.push(c);
-
-
-    for (let i = 0; i < this.location.length; i++) {
-      this.addMark(this.location[i]);
+    for (let i = 0; i < this.mapList.length; i++) {
+      this.addMark(this.mapList[i]);
     }
-    console.log('count', '' + this.location.length);
+    console.log('count', '' + this.mapList.length);
   }
 
   // 地图要放到函数里。
@@ -288,23 +285,23 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
   addMark(obj): void {
-
-    // 创建 AMap.Icon 实例：
-    const icons = new AMap.Icon({
-      size: new AMap.Size(14, 14),    // 图标尺寸
-      image: '../../../assets/img/yuantou_icon.png',  // Icon的图像
-      imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
-    });
-
     // 创建一个 Marker 实例：
     const marker = new AMap.Marker({
       position: new AMap.LngLat(obj.Latitude, obj.longitude),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
       title: '宁乡',
-      icon: icons,
+      // icon: icons,
+      content: `<div class="map-box">
+                  <div class="map-img map-img-show" [class.map-img-show]="isShow"><div class="img-span"></div></div>
+                  <div class="map-text map-text-show" [class.map-text-show]="isShow">${obj.name}</div>
+                </div>`, // 自定义点标记覆盖物内容
     });
-
+    this.mackerels.push({
+      marker
+    });
+    // this.mackerels[obj.index].marker.on('click', this.mapOnClick);
+    this.mackerels[obj.index].marker.on('click', this.mapOnClick(obj.index));
 // 将创建的点标记添加到已有的地图实例：
-    this.maps.add(marker);
+    this.maps.add(this.mackerels[obj.index].marker);
   }
 
   ngDoCheck(): void {
@@ -349,5 +346,21 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
         break;
     }
   }
-
+  //  map
+  mapOnClick(index): void{
+    console.log(index);
+    console.log(this.mackerels);
+    // if (this.mackerels[index].marker !== undefined){
+    //   this.maps.remove(this.mackerels[index].marker); // 清除
+    //   this.mapList[index].isShow = true; // 赋值
+    //   this.maps.add(this.mackerels[index].marker); // 渲染
+    //   this.mapList.forEach((e, i) => {
+    //     if (e.isShow){
+    //       this.maps.remove(this.mackerels[i].marker); // 清除
+    //       e.isShow = false; // 赋值
+    //       this.maps.add(this.mackerels[i].marker); // 渲染
+    //     }
+    //   });
+    // }
+  }
 }

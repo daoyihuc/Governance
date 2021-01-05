@@ -273,6 +273,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     const text = '您在 [ ' + e.lnglat.getLng() + ',' + e.lnglat.getLat() + ' ] 的位置点击了marker！';
     const text1 = '您在 [ ' + e.target.w.title + ' ] 的位置';
     console.log(e);
+    console.log(this.searchOptions);
     alert(text1);
     // alert(JSON.parse(e));
 
