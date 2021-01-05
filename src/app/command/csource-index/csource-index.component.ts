@@ -351,9 +351,6 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     console.log(index);
     console.log(this.mackerels);
     // if (this.mackerels[index].marker !== undefined){
-    //   this.maps.remove(this.mackerels[index].marker); // 清除
-    //   this.mapList[index].isShow = true; // 赋值
-    //   this.maps.add(this.mackerels[index].marker); // 渲染
     //   this.mapList.forEach((e, i) => {
     //     if (e.isShow){
     //       this.maps.remove(this.mackerels[i].marker); // 清除
@@ -361,6 +358,9 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     //       this.maps.add(this.mackerels[i].marker); // 渲染
     //     }
     //   });
+    //   this.maps.remove(this.mackerels[index].marker); // 清除
+    //   this.mapList[index].isShow = true; // 赋值
+    //   this.maps.add(this.mackerels[index].marker); // 渲染
     // }
   }
 }
