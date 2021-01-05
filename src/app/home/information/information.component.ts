@@ -5,8 +5,8 @@ import {WindowService} from '../../utils/window.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HomeConstansInfo} from '../constans/HomeConstans';
 import {PickerController} from '@ionic/angular';
-import {HttpServiceService} from "../../http/http-service.service";
-import {ToastService} from "../../utils/toast.service";
+import {HttpServiceService} from '../../http/http-service.service';
+import {ToastService} from '../../utils/toast.service';
 
 @Component({
   selector: 'app-information',
@@ -52,7 +52,7 @@ export class InformationComponent implements OnInit, Baseinterface {
   ];
 
   weightLimits: number; // 限重
-  SuperWeightLimit: number;// 超限量
+  SuperWeightLimit: number; // 超限量
   overRate: string; // 超限率
 
 
@@ -63,7 +63,7 @@ export class InformationComponent implements OnInit, Baseinterface {
     private windowUntils: WindowService,
     private el: ElementRef,
     private pickerController: PickerController, //  选择
-    private  http: HttpServiceService, //请求
+    private  http: HttpServiceService, // 请求
     private toast: ToastService, // toast 提示
 
   ) {
@@ -134,14 +134,14 @@ export class InformationComponent implements OnInit, Baseinterface {
     switch (index) {
       case 0:
         reader.readAsDataURL(file);
-        this.imgsData.header  = file;
+        this.imgsData.header = file;
         reader.onload = () => {
           // @ts-ignore
           this.imgsPreview.header = reader.result;
         };
         break;
       case 1:
-        this.imgsData.section  = file;
+        this.imgsData.section = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -149,7 +149,7 @@ export class InformationComponent implements OnInit, Baseinterface {
         };
         break;
       case 2:
-        this.imgsData.footer  = file;
+        this.imgsData.footer = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -157,7 +157,7 @@ export class InformationComponent implements OnInit, Baseinterface {
         };
         break;
       case 3:
-        this.imgsData.WeighingList  = file;
+        this.imgsData.WeighingList = file;
         reader.readAsDataURL(file);
         reader.onload = () => {
           // @ts-ignore
@@ -318,8 +318,8 @@ export class InformationComponent implements OnInit, Baseinterface {
       }
 
     }
-    console.log("daoyi", this.weightLimits);
-    console.log("daoyi", this.SuperWeightLimit);
+    console.log('daoyi', this.weightLimits);
+    console.log('daoyi', this.SuperWeightLimit);
   }
 
   // 站点初始化
@@ -355,30 +355,31 @@ export class InformationComponent implements OnInit, Baseinterface {
       } else {
         this.toast.presentToast(value.body.message);
       }
-    })
+    });
   }
+
   // 数据录入
-  save(): void{
+  save(): void {
     this.AddData();
   }
 
 
   // 数据添加
-  AddData(): void{
+  AddData(): void {
     const fileData = new FormData();
-    fileData.append('carNumber',this.InputDatas[0].value);
-    fileData.append('totalWeight',this.InputDatas[1].value);
-    fileData.append('previewDate',this.InputDatas[2].value);
-    fileData.append('station',this.InputDatas[3].value);
-    fileData.append('axle',this.InputDatas[4].value);
-    fileData.append('weightLimit',this.InputDatas[5].value);
-    fileData.append('overWeight',this.InputDatas[6].value);
-    fileData.append('overRate',this.InputDatas[7].value);
-    fileData.append('overRate1',"dadad");
-    fileData.append('file1',this.imgsData.header);
-    fileData.append('file2',this.imgsData.section);
-    fileData.append('file3',this.imgsData.footer);
-    fileData.append('file4',this.imgsData.WeighingList);
+    fileData.append('carNumber', this.InputDatas[0].value);
+    fileData.append('totalWeight', this.InputDatas[1].value);
+    fileData.append('previewDate', this.InputDatas[2].value);
+    fileData.append('station', this.InputDatas[3].value);
+    fileData.append('axle', this.InputDatas[4].value);
+    fileData.append('weightLimit', this.InputDatas[5].value);
+    fileData.append('overWeight', this.InputDatas[6].value);
+    fileData.append('overRate', this.InputDatas[7].value);
+    fileData.append('overRate1', 'dadad');
+    fileData.append('file1', this.imgsData.header);
+    fileData.append('file2', this.imgsData.section);
+    fileData.append('file3', this.imgsData.footer);
+    fileData.append('file4', this.imgsData.WeighingList);
     console.log(fileData);
     this.HttpEnTring(fileData);
   }
