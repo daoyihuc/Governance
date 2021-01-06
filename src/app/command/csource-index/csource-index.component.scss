@@ -292,12 +292,16 @@
 
 
 /* ,map */
+:host ::ng-deep.map-box-show{
+  z-index: 99 !important;
+}
 :host ::ng-deep.map-box {
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
   transform: translateX(-50%);
+  z-index:999;
 
   .map-img {
     width: 24px;

@@ -11,6 +11,7 @@ declare var AMap: any;
 })
 export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, AfterViewInit{
 
+  mackerels: any = []; // 锚点参数
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
@@ -153,7 +154,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     adcode: '宁乡市'
   };
 
-  mackerels: any = []; // 锚点参数
+
   mapList = [
     {
       Latitude: 112.551885,
@@ -286,22 +287,22 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   addMark(obj): void {
     // 创建一个 Marker 实例：
-    const marker = new AMap.Marker({
+    this.mackerels[obj.index] = new AMap.Marker({
       position: new AMap.LngLat(obj.Latitude, obj.longitude),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
       title: '宁乡',
       // icon: icons,
-      content: `<div class="map-box">
-                  <div class="map-img map-img-show" [class.map-img-show]="isShow"><div class="img-span"></div></div>
-                  <div class="map-text map-text-show" [class.map-text-show]="isShow">${obj.name}</div>
+      content: `<div class="map-box ${obj.isShow ? 'map-box-show' : ''}">
+                  <div class="map-img ${obj.isShow ? 'map-img-show' : ''}"><div class="img-span"></div></div>
+                  <div class="map-text ${obj.isShow ? 'map-text-show' : ''}">${obj.name}</div>
                 </div>`, // 自定义点标记覆盖物内容
     });
-    this.mackerels.push({
-      marker
+    // this.mackerels.push(marker);
+    this.mackerels[obj.index].on('click', () => {
+      this.mapOnClick(obj.index);
     });
-    // this.mackerels[obj.index].marker.on('click', this.mapOnClick);
-    this.mackerels[obj.index].marker.on('click', this.mapOnClick(obj.index));
-// 将创建的点标记添加到已有的地图实例：
-    this.maps.add(this.mackerels[obj.index].marker);
+    // this.mackerels[obj.index].marker.on('click', this.mapOnClick(obj.index));
+    // 将创建的点标记添加到已有的地图实例：
+    this.maps.add(this.mackerels[obj.index]);
   }
 
   ngDoCheck(): void {
@@ -348,19 +349,29 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
   //  map
   mapOnClick(index): void{
-    console.log(index);
-    console.log(this.mackerels);
-    // if (this.mackerels[index].marker !== undefined){
-    //   this.mapList.forEach((e, i) => {
-    //     if (e.isShow){
-    //       this.maps.remove(this.mackerels[i].marker); // 清除
-    //       e.isShow = false; // 赋值
-    //       this.maps.add(this.mackerels[i].marker); // 渲染
-    //     }
-    //   });
-    //   this.maps.remove(this.mackerels[index].marker); // 清除
-    //   this.mapList[index].isShow = true; // 赋值
-    //   this.maps.add(this.mackerels[index].marker); // 渲染
-    // }
+    if (!this.mapList[index].isShow){
+      console.log(index);
+      // this.mapList.forEach((e, i) => {
+      //   if (e.isShow){
+      //     this.maps.remove(this.mackerels[i]); // 清除
+      //     e.isShow = false; // 赋值
+      //     this.addMark(this.mapList[i]); // 渲染
+      //   }
+      // });
+      this.maps.remove(this.mackerels[index]); // 清除
+      this.mapList[index].isShow = true; // 赋值
+      this.addMark(this.mapList[index]); // 渲染
+      // 后渲染层级高
+      this.mapList.forEach((e, i) => {
+        if (e.index !== index){
+          this.maps.remove(this.mackerels[i]); // 清除
+          e.isShow = false; // 赋值
+          this.addMark(this.mapList[i]); // 渲染
+        }
+      });
+    }else {
+      //  跳转
+      this.onFlexJump(0);
+    }
   }
 }
