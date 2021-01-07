@@ -16,10 +16,10 @@ export class WeighingComponent implements OnInit {
   ) { }
 
   tableData = [
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76' },
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76' },
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76' },
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76' },
+    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
+    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
   ];
   jumpUrl = [
     {name: '过磅数据', src: '/command/weighing'},
@@ -56,7 +56,8 @@ export class WeighingComponent implements OnInit {
 
   onDetails(index): void{// 详情
     console.log(index);
-    this.route.navigate(['/command/weighingDetails']);
+    this.route.navigate(['/command/weighingDetails'],
+      { queryParams: {id: this.tableData[index].id}});
   }
 
   onClose(): void{// 关闭

@@ -1,6 +1,10 @@
 import {AfterViewInit, Component, DoCheck, ElementRef, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WindowService} from '../../utils/window.service';
+import * as $ from 'jquery';
+import {HttpServiceService} from '../../http/http-service.service';
+import {ToastController} from '@ionic/angular';
+import {ToastService} from '../../utils/toast.service';
 
 declare var AMap: any;
 
@@ -17,6 +21,8 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private el: ElementRef,
+    private http: HttpServiceService,
+    private toast: ToastService,
   ) {
     this.customPickerOptionsStart = {
       buttons: [{
@@ -96,13 +102,13 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   inputShow = true;
   tableData = [
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76'},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76'},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76'},
+    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
+    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 6},
+    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 7},
   ];
   flexUrl = [
     {src: '/command/weighing'},
@@ -144,6 +150,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     enterpriseName: '招商局物流集团湖南有限公司',
     enterpriseCode: '10003'
   }; // 选中企业
+  Enterprises = 0;
   maps: any = null;
   map = [];
   district = [];
@@ -151,36 +158,41 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   // 地图绘制参数
   searchOptions = {
     value: 'district',
-    adcode: '宁乡市'
+    adcode: '长沙市'
   };
 
 
-  mapList = [
-    {
-      Latitude: 112.551885,
-      longitude: 28.277483,
-      name: '双凫铺镇三虹建材有限公司',
-      isShow: false,
-      index: 0
-    },
-    {
-      Latitude: 112.580037,
-      longitude: 28.287989,
-      name: '2',
-      isShow:  false,
-      index: 1
-    },
-    {
-      Latitude: 112.45936,
-      longitude: 28.274535,
-      name: '3',
-      isShow: false,
-      index: 2
-    }
-  ];
+  mapList: any = [];
 
   ngOnInit(): void {
     console.log('初始化');
+    this.getMapData();
+  }
+
+  // 获取数据
+  getMapData(): void{
+    this.mapList = [];
+    // @ts-ignore
+    this.http.mapListAll().subscribe(value => {
+      console.log(value);
+      if (value.body.code === 0){
+        console.log(value.body.data);
+        value.body.data.forEach((e, i ) => {
+          if ( e.onlineNum > 0 ) {
+            this.Enterprises++;
+          }
+          this.mapList.push({
+            ...e,
+            isShow: false,
+            index: i,
+            Latitude: e.xzb,
+            longitude: e.yzb
+          });
+        });
+      }else{
+        this.toast.presentToast(value.body.message);
+      }
+    });
   }
 
   onBack(): void {
@@ -206,11 +218,12 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   onDetails(index): void {// 详情
     console.log(index);
-    this.route.navigate(['/command/weighingDetails']);
+    this.route.navigate(['/command/weighingDetails'],
+      { queryParams: {id: this.tableData[index].id}});
   }
 
   onTabJump(index): void {
-    this.route.navigate([this.tabUrl[index].src]);
+     this.route.navigate([this.tabUrl[index].src]);
   }
 
   isShow(): void {
@@ -293,7 +306,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       // icon: icons,
       content: `<div class="map-box ${obj.isShow ? 'map-box-show' : ''}">
                   <div class="map-img ${obj.isShow ? 'map-img-show' : ''}"><div class="img-span"></div></div>
-                  <div class="map-text ${obj.isShow ? 'map-text-show' : ''}">${obj.name}</div>
+                  <div class="map-text ${obj.isShow ? 'map-text-show' : ''}">${obj.enterpriseName}</div>
                 </div>`, // 自定义点标记覆盖物内容
     });
     // this.mackerels.push(marker);
@@ -349,8 +362,8 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
   //  map
   mapOnClick(index): void{
+    console.log(index);
     if (!this.mapList[index].isShow){
-      console.log(index);
       // this.mapList.forEach((e, i) => {
       //   if (e.isShow){
       //     this.maps.remove(this.mackerels[i]); // 清除
@@ -371,6 +384,8 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       });
     }else {
       //  跳转
+      this.selectedEnterprise.enterpriseName = this.mapList[index].enterpriseName;
+      this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
       this.onFlexJump(0);
     }
   }

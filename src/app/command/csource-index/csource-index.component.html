@@ -29,11 +29,11 @@
         <div class="map" id="container">
 
         </div>
-        <div class="header-flex-source header-flex1-source" (click)="onFlexJump(0)">
+        <div class="header-flex-source header-flex1-source">
           <p class="header-flex-p1">源头企业</p>
           <p class="header-flex-p2">
-            <span>在线：33</span>
-            <span>总数：66</span>
+            <span>在线：{{Enterprises}}</span>
+            <span>总数：{{mapList.length}}</span>
           </p>
         </div>
         <div class="header-flex-source header-flex2-source" (click)="onFlexJump(1)">

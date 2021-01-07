@@ -19,6 +19,8 @@ import {getInfoByCodeBean} from './HttpBean/getInfoByCodeBean';
 import {getBayonetByCodeBean} from './HttpBean/getBayonetByCodeBean';
 import {TweightBean} from './HttpBean/TweightBean';
 import {BaseBody} from "./HttpBean/BaseBody";
+import {mapListAllBean} from "./HttpBean/mapListAllBean";
+import {enterpriseGetByIdBean} from "./HttpBean/enterpriseGetByIdBean";
 
 @Injectable({
   providedIn: 'root'
@@ -123,6 +125,26 @@ export class HttpServiceService {
     // this.options.params = data;
     // @ts-ignore
     return  this.http.post< BaseBody > ( Api.entering, data, this.options2)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  源头企业点位地图展示
+  mapListAll(loginBean: any): Observable<HttpResponse<mapListAllBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< mapListAllBean > ( Api.mapListAll, loginBean, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  源头企业点位地图展示
+  enterpriseGetById(loginBean: any): Observable<HttpResponse<enterpriseGetByIdBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, loginBean, this.options)
       .pipe(
         // catchError(this.handleError)
       );
