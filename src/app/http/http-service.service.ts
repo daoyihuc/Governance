@@ -71,40 +71,40 @@ export class HttpServiceService {
 
 
   // 指挥调度-任务列表
-  getResourceList(loginBean: any): Observable<HttpResponse<getResourceListBean>> {
+  getResourceList(data: any): Observable<HttpResponse<getResourceListBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< LoginBean > ( Api.listRealTimeAlarmRecord, loginBean, this.options)
+    return  this.http.post< LoginBean > ( Api.listRealTimeAlarmRecord, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
   }
 
   //  督查记录
-  superviseRecord(loginBean: any): Observable<HttpResponse<getResourceListBean>> {
+  superviseRecord(data: any): Observable<HttpResponse<getResourceListBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< LoginBean > ( Api.superviseRecord, loginBean, this.options)
+    return  this.http.post< LoginBean > ( Api.superviseRecord, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
   }
 
   //  获取单个企业信息
-  getInfoByCode(loginBean: any): Observable<HttpResponse<getInfoByCodeBean>> {
+  getInfoByCode(data: any): Observable<HttpResponse<getInfoByCodeBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getInfoByCodeBean > ( Api.getInfoByCode, loginBean, this.options)
+    return  this.http.post< getInfoByCodeBean > ( Api.getInfoByCode, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
   }
 
   //  获取单个企业视频卡口
-  getBayonetByCode(loginBean: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+  getBayonetByCode(data: any): Observable<HttpResponse<getBayonetByCodeBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, loginBean, this.options)
+    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -131,20 +131,20 @@ export class HttpServiceService {
   }
 
   //  源头企业点位地图展示
-  mapListAll(loginBean: any): Observable<HttpResponse<mapListAllBean>> {
+  mapListAll(data: any): Observable<HttpResponse<mapListAllBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< mapListAllBean > ( Api.mapListAll, loginBean, this.options)
+    return  this.http.post< mapListAllBean > ( Api.mapListAll, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
   }
 
-  //  源头企业点位地图展示
-  enterpriseGetById(loginBean: any): Observable<HttpResponse<enterpriseGetByIdBean>> {
+  //  企业过车详情
+  enterpriseGetById(data: any): Observable<HttpResponse<enterpriseGetByIdBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, loginBean, this.options)
+    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );

@@ -107,8 +107,6 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
     {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
     {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 6},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 7},
   ];
   flexUrl = [
     {src: '/command/weighing'},
@@ -167,6 +165,20 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   ngOnInit(): void {
     console.log('初始化');
     this.getMapData();
+  }
+
+  scrollDiv(e): void {
+      const raw = e.target;
+      if (raw.scrollTop + raw.offsetHeight === raw.scrollHeight) {
+        console.log('触底事件');
+        this.tableData.push(
+          {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
+          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
+          {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
+          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
+          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5}
+          )
+      }
   }
 
   // 获取数据

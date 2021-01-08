@@ -94,7 +94,7 @@
               <div class="warning-section-td td3">车牌</div>
               <div class="warning-section-td td4">操作</div>
             </div>
-            <div class="page-card-weighing-tdBox">
+            <div class="page-card-weighing-tdBox" (scroll)="scrollDiv($event)">
               <div class="warning-section-th thContent" *ngFor="let item of tableData,let i=index">
                 <div class="warning-section-td td1">{{i+1}}</div>
                 <div class="warning-section-td td2">{{item.name}}</div>
