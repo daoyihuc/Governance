@@ -37,8 +37,18 @@
             <p>{{jumpUrl[1].name}}</p>
           </div>
           <div class="monitoring-section">
-            <div class="monitoring-video-box">
-              <img src="../../../assets/img/login-bg.png" alt="">
+            <div class="monitoring-video-box" *ngFor="let item of videoData">
+              <video width="100%" height="auto" controls>
+                <source [src]="item.aliveAddress">
+              </video>
+              <!--<iframe-->
+                <!--src="https://open.ys7.com/ezopen/h5/iframe?url=ezopen://open.ys7.com/E57948629/1.live&autoplay=1&accessToken=at.5u11j5ts96jbub966zz68jxedee25l9h-7avmjy04ew-1jwsamx-2lq5p7sba"-->
+                <!--width="100%"-->
+                <!--height="auto"-->
+                <!--id="ysOpenDevice"-->
+                <!--allowfullscreen-->
+              <!--&gt;-->
+              <!--</iframe>-->
             </div>
           </div>
           <span class="flex-span1"></span>

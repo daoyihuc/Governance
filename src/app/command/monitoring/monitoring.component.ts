@@ -26,6 +26,7 @@ export class MonitoringComponent implements OnInit {
     {name: '视频监控', src: '/command/monitoring'},
     {name: '企业信息详情', src: '/command/enterpriseDetails'}
   ];
+  videoData = [];
   selectedEnterprise = {
     enterpriseName: '',
     enterpriseCode: ''
@@ -63,10 +64,10 @@ export class MonitoringComponent implements OnInit {
     this.http.getBayonetByCode({
       enterpriseCode: this.selectedEnterprise.enterpriseCode
     }).subscribe(value => {
-      console.log(value);
-      if (value.body.code === 0){
+      if (value.body.code === 0) {
         console.log(value);
-      }else{
+        this.videoData = value.body.data;
+      } else {
         this.toast.presentToast(value.body.message);
       }
     });

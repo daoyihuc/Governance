@@ -1,10 +1,10 @@
 import {BaseBody} from './BaseBody';
 
 export interface getBayonetByCodeBean extends BaseBody{
-  data: getBayonetByCodeBeanData;
+  data: getBayonetByCodeBeanData[];
 }
 
 export interface getBayonetByCodeBeanData {
   // @ts-ignore
-  data?: Array;
+  data?: string;
 }

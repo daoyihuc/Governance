@@ -92,9 +92,9 @@ export class HttpServiceService {
 
   //  获取单个企业信息
   getInfoByCode(data: any): Observable<HttpResponse<getInfoByCodeBean>> {
-    // this.options.params = data;
+    this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getInfoByCodeBean > ( Api.getInfoByCode, data, this.options)
+    return  this.http.post< getInfoByCodeBean > ( Api.getInfoByCode, null, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -102,9 +102,10 @@ export class HttpServiceService {
 
   //  获取单个企业视频卡口
   getBayonetByCode(data: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+    this.options.params = data;
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, data, this.options)
+    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, null, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -142,9 +143,9 @@ export class HttpServiceService {
 
   //  企业过车详情
   enterpriseGetById(data: any): Observable<HttpResponse<enterpriseGetByIdBean>> {
-    // this.options.params = data;
+    this.options.params = data;
     // @ts-ignore
-    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, data, this.options)
+    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, null, this.options)
       .pipe(
         // catchError(this.handleError)
       );
