@@ -28,24 +28,6 @@ export class SiteSelectionComponent implements OnInit, Baseinterface {
         //   name: '夏铎铺',
         //   check: false,
         //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '金唐公路',
-        //   check: false,
-        //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '金洲西线菁华铺非现场检测点',
-        //   check: false,
-        //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: 'S209大成桥非现场检测点',
-        //   check: false,
-        //   click: false,
         // }
       ],
       check: false,
@@ -60,36 +42,22 @@ export class SiteSelectionComponent implements OnInit, Baseinterface {
         //   name: '养鱼塘超限检测站',
         //   check: false,
         //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '菁华铺超限检测站',
-        //   check: false,
-        //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '横市超限检测站',
-        //   check: false,
-        //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '横市超限检测站',
-        //   check: false,
-        //   click: false,
-        // },
-        // {
-        //   id: 1,
-        //   name: '横市超限检测站',
-        //   check: false,
-        //   click: false,
         // }
       ],
       check: false,
       click: false,
     },
   ];
+
+  // 已选择站点
+  ItemDataSelect: any =[
+    // {
+    //   id: 1,
+    //   name: '夏铎铺',
+    //   check: false,
+    //   click: false,
+    // }
+  ]
 
   constructor(
     private windowUntils: WindowService,
@@ -121,11 +89,27 @@ export class SiteSelectionComponent implements OnInit, Baseinterface {
   // child输出
   initChild(i, j): void {
     console.log(this.ItemData[i].childsItem[j].name, this.ItemData[i].childsItem[j].check);
+    this.ItemDataSelect = [];
+    for(let u=0;u<this.ItemData.length;u++){
+      console.log(this.ItemData.length);
+      if(this.ItemData[u].check){
+        console.log(this.ItemData[u].childsItem.length);
+        for(let o=0;o<this.ItemData[u].childsItem.length;o++){
+          if(this.ItemData[u].childsItem[o].check){
+            console.log(this.ItemData[u].childsItem[o].name);
+            this.ItemDataSelect.push(this.ItemData[u].childsItem[o]);
+          }
+
+        }
+      }
+    }
+    console.log(this.ItemData);
+    console.log(this.ItemDataSelect);
   }
 
   onBack(): void {
     // 返回站点选择
-    this.dialog.close({da: 123});
+    this.dialog.close({data: this.ItemDataSelect});
   }
 
   onHome(): void {

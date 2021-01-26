@@ -132,7 +132,7 @@ p {
   height: 100%;
   min-height: 100%; }
 
-.page-box {
+:host ::ng-deep .page-box {
   padding: 20px 25px;
   border: 1px solid #1F397A;
   height: 100%; }

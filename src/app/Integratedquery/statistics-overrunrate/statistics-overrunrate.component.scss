@@ -1,5 +1,4 @@
 @import "../../Base/BaseCss";
-
 .page-content{
   background: url("../../../assets/img/home_bg.png") no-repeat;
   background-size: 100% 100%;
@@ -126,4 +125,17 @@
       width: 100%;
     }
   }
+}
+.ant-table-pagination {
+  li{
+    background:  rgba(31, 57, 122, 1);
+    color: white;
+  }
+  .anticon{
+    color: white!important;
+  }
+}
+
+.anticon{
+  color: white!important;
 }

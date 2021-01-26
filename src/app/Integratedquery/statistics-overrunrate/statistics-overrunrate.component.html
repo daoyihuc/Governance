@@ -42,7 +42,8 @@
       </div>
 
       <div class="page-card margin_top">
-        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false" [nzSize]="'small'" class="test">
+        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="true"
+                  [nzPageSize]="10" [nzSize]="'small'" class="test">
           <thead>
           <tr >
             <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>

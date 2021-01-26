@@ -68,6 +68,7 @@ export class InformationComponent implements OnInit, Baseinterface {
 
   ) {
 
+    //时间选择
     this.customPickerOptions = {
       buttons: [{
         text: '取消',
@@ -94,7 +95,7 @@ export class InformationComponent implements OnInit, Baseinterface {
           const day = c.day.value;
           const hour = c.hour.value;
           const minute = c.minute.value;
-          this.ValueTime = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
+          this.ValueTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
           this.InputDatas[2].value = this.ValueTime;
           console.log('Clicked Log. Do not Dismiss.' + this.ValueTime);
           return a;
@@ -238,6 +239,7 @@ export class InformationComponent implements OnInit, Baseinterface {
             const a = JSON.stringify(value);
             const b = JSON.parse(a);
             this.InputDatas[index].value = b.col_0.text;
+            this.InputDatas[index].value2 = b.col_0.value;
             console.log(`Got Value ${a}`);
           }
         }
@@ -313,8 +315,9 @@ export class InformationComponent implements OnInit, Baseinterface {
       this.SuperWeightLimit = Number(this.InputDatas[1].value) - this.weightLimits;
       if (this.SuperWeightLimit > 0) {
         this.InputDatas[6].value = '' + this.SuperWeightLimit; // 设置超限量
-        this.overRate = (this.SuperWeightLimit / this.weightLimits * 100).toFixed(2) + '%';
-        this.InputDatas[7].value = this.overRate;
+        this.overRate = (this.SuperWeightLimit / this.weightLimits * 100).toFixed(2);
+        this.InputDatas[7].value = this.overRate+ '%';
+        this.InputDatas[7].value2 = this.overRate;
       }
 
     }
@@ -366,16 +369,16 @@ export class InformationComponent implements OnInit, Baseinterface {
 
   // 数据添加
   AddData(): void {
-    const fileData = new FormData();
+    let fileData = new FormData();
     fileData.append('carNumber', this.InputDatas[0].value);
     fileData.append('totalWeight', this.InputDatas[1].value);
     fileData.append('previewDate', this.InputDatas[2].value);
-    fileData.append('station', this.InputDatas[3].value);
+    fileData.append('station', this.InputDatas[3].value2);
     fileData.append('axle', this.InputDatas[4].value);
     fileData.append('weightLimit', this.InputDatas[5].value);
     fileData.append('overWeight', this.InputDatas[6].value);
-    fileData.append('overRate', this.InputDatas[7].value);
-    fileData.append('overRate1', 'dadad');
+    fileData.append('overRate', this.InputDatas[7].value2);
+    // fileData.append('overRate1', 'dadad');
     fileData.append('file1', this.imgsData.header);
     fileData.append('file2', this.imgsData.section);
     fileData.append('file3', this.imgsData.footer);

@@ -7,6 +7,7 @@ export  const  HomeConstansInfo = [
     isRead: false,
     isIcon: false,
     value: '',
+    value2: '',
     type: 'text'
   },  {
     id: 1,
@@ -15,6 +16,7 @@ export  const  HomeConstansInfo = [
     isRead: false,
     isIcon: false,
     value: '',
+    value2: '',
     type: 'number'
   }, {
     id: 2,
@@ -23,6 +25,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
   {
@@ -32,6 +35,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
   {
@@ -41,6 +45,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
   {
@@ -50,6 +55,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
   {
@@ -59,6 +65,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
   {
@@ -68,6 +75,7 @@ export  const  HomeConstansInfo = [
     isRead: true,
     isIcon: true,
     value: '',
+    value2: '',
     type: 'text'
   },
 ];

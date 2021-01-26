@@ -332,6 +332,7 @@ export  const IllegalRecordConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: '',
   },
   {
     id: 1,
@@ -340,6 +341,7 @@ export  const IllegalRecordConstans = [
     isRead: false,
     isIcon: false,
     value: '',
+    value2: '',
   },
   {
     id: 2,
@@ -348,6 +350,7 @@ export  const IllegalRecordConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: '',
   }, {
     id: 3,
     name: '结束时间',
@@ -355,6 +358,7 @@ export  const IllegalRecordConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: '',
   },
 ];
 

@@ -21,6 +21,7 @@ import {TweightBean} from './HttpBean/TweightBean';
 import {BaseBody} from "./HttpBean/BaseBody";
 import {mapListAllBean} from "./HttpBean/mapListAllBean";
 import {enterpriseGetByIdBean} from "./HttpBean/enterpriseGetByIdBean";
+import {illegalQueryBean} from "./HttpBean/illegalQueryBean";
 
 @Injectable({
   providedIn: 'root'
@@ -123,9 +124,9 @@ export class HttpServiceService {
 
   // 执法录入
   entering(data: any): Observable<HttpResponse<BaseBody>> {
-    // this.options.params = data;
+    this.options2.params = data;
     // @ts-ignore
-    return  this.http.post< BaseBody > ( Api.entering, data, this.options2)
+    return  this.http.post< BaseBody > ( Api.entering, data,this.options2)
       .pipe(
         // catchError(this.handleError)
       );
@@ -135,7 +136,7 @@ export class HttpServiceService {
   mapListAll(data: any): Observable<HttpResponse<mapListAllBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< mapListAllBean > ( Api.mapListAll, data, this.options)
+    return  this.http.post< mapListAllBean > ( Api.mapListAll, data, this.options2)
       .pipe(
         // catchError(this.handleError)
       );
@@ -146,6 +147,16 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, null, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  违法记录查询
+  illegalQueryPageList(data: any): Observable<HttpResponse<illegalQueryBean>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< illegalQueryBean > ( Api.illegalQueryPageList, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );

@@ -221,6 +221,15 @@ p {
 :host ::ng-deep .ant-table-container .ant-table-content table {
   width: 100%; }
 
+.ant-table-pagination li {
+  background: #1f397a;
+  color: white; }
+.ant-table-pagination .anticon {
+  color: white !important; }
+
+.anticon {
+  color: white !important; }
+
 .cityBox {
   width: 70px;
   background: rgba(84, 129, 220, 0.2);

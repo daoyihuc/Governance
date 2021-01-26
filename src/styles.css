@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.anticon{
+  color: white!important;
+}
+.ant-pagination-item-active{
+  margin: 0 10px;
+}
+.ant-pagination.mini .ant-pagination-item{
+  background:  rgba(31, 57, 122, 1);
+}
+.ant-pagination-item-active{
+  border: none;
+}
+.ant-pagination.mini .ant-pagination-next, .ant-pagination.mini .ant-pagination-prev{
+  background:  rgba(31, 57, 122, 1);
+  margin: 0 5px!important;
+}
+.ant-pagination-item a{
+  color: white!important;
+}
