@@ -22,6 +22,7 @@ import {BaseBody} from "./HttpBean/BaseBody";
 import {mapListAllBean} from "./HttpBean/mapListAllBean";
 import {enterpriseGetByIdBean} from "./HttpBean/enterpriseGetByIdBean";
 import {illegalQueryBean} from "./HttpBean/illegalQueryBean";
+import {TransportGetDriverInfoBeanData} from "./HttpBean/TransportGetDriverInfoBean";
 
 @Injectable({
   providedIn: 'root'
@@ -157,6 +158,16 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< illegalQueryBean > ( Api.illegalQueryPageList, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 获取驾驶员信息
+  getDriverInfo(data: any): Observable<HttpResponse< TransportGetDriverInfoBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TransportGetDriverInfoBeanData > ( Api.getDriverInfo, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );

@@ -11,6 +11,16 @@ import {WindowService} from "../../utils/window.service";
 export class IllegalDetailsComponent implements OnInit {
   name = illtegalDetailsTitle; // 头部名称
 
+
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    autoplay: {
+      delay: 2000,
+    },
+    loop: true
+  };
+
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者

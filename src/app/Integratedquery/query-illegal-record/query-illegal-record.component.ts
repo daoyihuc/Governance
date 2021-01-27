@@ -74,7 +74,8 @@ export class QueryIllegalRecordComponent implements OnInit {
           const hour=c.hour.value;
           const minute=c.minute.value;
           this.ValueTimeStart = year+month+day+hour+minute;
-          // this.InputDatas[2].value = this.ValueTime;
+          this.serachData[2].value = "";
+          this.serachData[2].value2 = "";
           return a;
         }
       }, {
@@ -109,7 +110,8 @@ export class QueryIllegalRecordComponent implements OnInit {
           const hour=c.hour.value;
           const minute=c.minute.value;
           this.ValueTimeEnd = year+month+day+hour+minute;
-
+          this.serachData[3].value = "";
+          this.serachData[3].value2 = "";
           // this.InputDatas[2].value = this.ValueTime;
           return a;
         }
