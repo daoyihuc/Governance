@@ -27,93 +27,93 @@
 
         <div class="page-card">
           <div class="page-card-header">
-            <p>湘YA0089 - 车辆违法详细信息</p>
+            <p>{{carNumber}} - 车辆违法详细信息</p>
           </div>
           <ion-item class="items">
             <ion-label class="labels">检测时间</ion-label>
             <div>
-              <p class="p">2020-09-08 15:17:32</p>
+              <p class="p">{{operateTime}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">检测点</ion-label>
             <div>
-              <p class="p">开元东路东延线非现场检测点</p>
+              <p class="p">{{stationName}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">方向</ion-label>
             <div>
-              <p class="p">自南而北</p>
+              <p class="p">{{responseData.direction}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">车牌号码</ion-label>
             <div>
-              <p class="p">湘YA0089</p>
+              <p class="p">{{carNumber}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">车牌照片</ion-label>
             <div class="widths">
-              <img src="assets/img/kind-1off.png" alt="" class="img">
+              <img [src]="ImgPaths+responseData.imgFile3"  alt="" class="img">
             </div>
           </ion-item>
           <!---->
           <ion-item class="items">
             <ion-label class="labels">轴数</ion-label>
             <div>
-              <p class="p">3</p>
+              <p class="p">{{responseData.axisNum}}</p>
             </div>
           </ion-item>
 
           <ion-item class="items">
             <ion-label class="labels">车速</ion-label>
             <div>
-              <p class="p">100km/h</p>
+              <p class="p">{{responseData.speed}}km/h</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">总重</ion-label>
             <div>
-              <p class="p red">44.6吨</p>
+              <p class="p red">{{responseData.totalWeight}}吨</p>
             </div>
           </ion-item>
 
           <ion-item class="items">
             <ion-label class="labels">限重</ion-label>
             <div>
-              <p class="p">27吨</p>
+              <p class="p">{{responseData.weightLimited}}吨</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">超限量</ion-label>
             <div>
-              <p class="p red">17.6吨</p>
+              <p class="p red">{{responseData.overLimited}}吨</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">超限比例</ion-label>
             <div>
-              <p class="p red">65.44%</p>
+              <p class="p red">{{responseData.overRate}}%</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">办理状态</ion-label>
             <div>
-              <p class="p ">已结案</p>
+              <p class="p ">{{step}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">办理时间</ion-label>
             <div>
-              <p class="p ">2020-09-08 15:17:32</p>
+              <p class="p ">{{responseData.previewDate}}</p>
             </div>
           </ion-item>
           <ion-item class="items">
             <ion-label class="labels">办理人</ion-label>
             <div>
-              <p class="p ">欧尚</p>
+              <p class="p ">{{operateUser}}</p>
             </div>
           </ion-item>
           <div class="slideBox">

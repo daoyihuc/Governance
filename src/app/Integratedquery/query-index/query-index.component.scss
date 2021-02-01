@@ -2,6 +2,16 @@
 @import "../../Base/BaseCss";
 @import "../../Base/BaseBar";
 
+
+:host ::ng-deep.title {
+  --color: #fff;
+  text-align: center!important;
+  font-size: 17px!important; ;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+
+
 .page-content{
   background: url("../../../assets/img/all_bg.png") no-repeat;
   min-height: 100%;
@@ -11,6 +21,7 @@
   @extend .toolbar;
   --background: #091220!important;
   padding: 15px;
+  font-size: 17px;
 }
 .segment{
   @extend .page-card;

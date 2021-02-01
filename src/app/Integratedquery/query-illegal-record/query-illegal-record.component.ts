@@ -52,6 +52,9 @@ export class QueryIllegalRecordComponent implements OnInit {
      "station": this.station
    };
 
+   // 案件状态
+  steps: any = [];
+
 
   constructor(
     private route: Router, // 路由传递
@@ -191,7 +194,17 @@ export class QueryIllegalRecordComponent implements OnInit {
   }
    // 查看详情
   showDetails(data: any): void{
-    this.route.navigate(['queryAll/IllegalDetails'])
+    let steps = this.isType(data.step);
+    this.route.navigate(['queryAll/IllegalDetails',
+      {
+        id: data.id,
+        name: data.operateUser,
+        carnumber: data.carNumber,
+        stationName: data.stationName,
+        operateTime: data.operateTime,
+        step: steps
+      }
+      ])
   }
 
   // 查看本区域所有违法记录
@@ -206,6 +219,10 @@ export class QueryIllegalRecordComponent implements OnInit {
           // @ts-ignore
           this.listOfData.push(value.body.data.data[i]);
           this.total = value.body.data.totalRows;
+          this.steps.push(this.isType(value.body.data.data[i].step));
+
+          console.log(this.isType(value.body.data.data[i].step))
+          console.log(value.body.data.data[i].step)
         }
       }
 
@@ -217,5 +234,33 @@ export class QueryIllegalRecordComponent implements OnInit {
     this.requestData.pageNo = number;
     this.HttpAll(this.requestData);
   }
+  isType(type): any{
+    switch (type){
+      case "0":
+        return '未办理';
+        break;
+      case "1":
+        return '已采集';
+        break
+      case "2":
+        return '已审核';
+        break;
+      case "3":
+        return '已立案';
+        break;
+      case "4":
+        return '已结案';
+        break;
+      case "-2":
+        return '不采集';
+        break;
+      case "-1":
+        return '不审核';
+        break;
+      case "-3":
+        return '不立案';
+        break;
+    }
 
+  }
 }

@@ -67,7 +67,10 @@ export class LoginComponent implements OnInit {
       console.log('daoyi', value);
       if (value.body.code === 0){
         this.toast.presentToast(value.body.message);
-        sessionStorage.setItem('token', '' + value.body.data); // token存儲
+        console.log(value.body.data.token);
+        sessionStorage.setItem('token', '' + value.body.data.token); // token存儲
+        sessionStorage.setItem('district', value.body.data.unitName);// 行政区域名称
+
         this.route.navigate(['/home']);
       }else{
         this.toast.presentToast(value.body.message);

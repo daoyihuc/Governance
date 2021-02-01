@@ -23,6 +23,15 @@ import {mapListAllBean} from "./HttpBean/mapListAllBean";
 import {enterpriseGetByIdBean} from "./HttpBean/enterpriseGetByIdBean";
 import {illegalQueryBean} from "./HttpBean/illegalQueryBean";
 import {TransportGetDriverInfoBeanData} from "./HttpBean/TransportGetDriverInfoBean";
+import {TransportCompanyInfoBeanData} from "./HttpBean/TransportCompanyInfoBean";
+import {TransportCarInfoBeanData} from "./HttpBean/TransportCarInfoBean";
+import {CarPassQueryPageListBean, CarPassQueryPageListBeanData} from "./HttpBean/CarPassQueryPageListBean";
+import {passCatDetailsBeanData} from "./HttpBean/PassCatDetailsBean";
+import {reportQueryOverRateReportBeanData} from "./HttpBean/ReportQueryOverRateReportBean";
+import {ReportQueryOverNumReportBeanData} from "./HttpBean/ReportQueryOverNumReportBean";
+import {IllegalQueryGetByIdBeanData} from "./HttpBean/IllegalQueryGetByIdBean";
+import {DispatchQueryResourceListBeanData} from "./HttpBean/DispatchQueryResourceListBean";
+import {ListRealTimeAlarmRecordBeanData} from "./HttpBean/ListRealTimeAlarmRecordBean";
 
 @Injectable({
   providedIn: 'root'
@@ -73,10 +82,10 @@ export class HttpServiceService {
 
 
   // 指挥调度-任务列表
-  getResourceList(data: any): Observable<HttpResponse<getResourceListBean>> {
+  getResourceList(data: any): Observable<HttpResponse<ListRealTimeAlarmRecordBeanData>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< LoginBean > ( Api.listRealTimeAlarmRecord, data, this.options)
+    return  this.http.post< ListRealTimeAlarmRecordBeanData > ( Api.listRealTimeAlarmRecord, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -172,6 +181,87 @@ export class HttpServiceService {
         // catchError(this.handleError)
       );
   }
+
+
+  // 获取企业信息
+  companyInfo(data: any): Observable<HttpResponse< TransportCompanyInfoBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TransportCompanyInfoBeanData > ( Api.companyInfo, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 查询车辆信息
+  carInfo(data: any): Observable<HttpResponse< TransportCarInfoBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TransportCarInfoBeanData > ( Api.carInfo, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  过车记录查询
+  carPassQueryPageList(data: any): Observable<HttpResponse<CarPassQueryPageListBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< CarPassQueryPageListBeanData > ( Api.carPassQueryPageList, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  过车记录详情
+  carPassQueryGetById(data: any): Observable<HttpResponse<passCatDetailsBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< passCatDetailsBeanData > ( Api.carPassQueryGetById, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  //  请求超限率综合统计
+  overRateReport(data: any): Observable<HttpResponse<reportQueryOverRateReportBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< reportQueryOverRateReportBeanData > ( Api.overRateReport, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  请求超限量统计
+  overNumReport(data: any): Observable<HttpResponse<ReportQueryOverNumReportBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< ReportQueryOverNumReportBeanData > ( Api.overNumReport, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  //  违法记录详情
+  illegalQueryGetById(data: any): Observable<HttpResponse<IllegalQueryGetByIdBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< IllegalQueryGetByIdBeanData > ( Api.illegalQueryGetById, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 指挥调度-获取资源列表
+  queryResourceList(data: any): Observable<HttpResponse<DispatchQueryResourceListBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< DispatchQueryResourceListBeanData > ( Api.queryResourceList, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
 
 
 

@@ -15,7 +15,7 @@ export const Api: any =
     listRealTimeAlarmRecord : BaseUrl + '/dispatch/alarmRecord/listRealTimeAlarmRecord', //  指挥调度-任务列表
     historyIllegal : BaseUrl + '/dispatch/enforce/enforcementLedger/historyIllegal', //  指挥调度-获取历史违法记录
     getAlarmRecordJumpDetails : BaseUrl + '/dispatch/getAlarmRecordJumpDetails', //  指挥调度-报警记录跳转详情
-    getResourceList : BaseUrl + '/dispatch/getResourceList', //  指挥调度-获取资源列表
+    queryResourceList : BaseUrl + '/dispatch/queryResourceList', //  指挥调度-获取资源列表
     infoFeedbackSubmit : BaseUrl + '/dispatch/infoFeedback/submit', //  指挥调度-信息反馈
     carNativeReport : BaseUrl + '/reportQuery/carNativeReport', //  车辆车籍地统计
     overNumReport : BaseUrl + '/reportQuery/overNumReport', //  超限量统计

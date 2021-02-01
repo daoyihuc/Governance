@@ -182,7 +182,7 @@ export  const enterpriseInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 6,
+    id: 5,
     name: '发证机关',
     placName: '暂无数据',
     isRead: true,
@@ -190,7 +190,7 @@ export  const enterpriseInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 7,
+    id: 6,
     name: '联系电话',
     placName: '暂无数据',
     isRead: true,
@@ -198,7 +198,7 @@ export  const enterpriseInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 10,
+    id: 7,
     name: '地址',
     placName: '暂无数据',
     isRead: true,
@@ -260,7 +260,7 @@ export  const vehicleInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 6,
+    id: 5,
     name: '有效期止',
     placName: '暂无数据',
     isRead: true,
@@ -268,7 +268,7 @@ export  const vehicleInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 7,
+    id: 6,
     name: '营运状态',
     placName: '暂无数据',
     isRead: true,
@@ -276,7 +276,7 @@ export  const vehicleInfoConstans = [
     value: '暂无数据',
   },
   {
-    id: 10,
+    id: 7,
     name: '锁定状态',
     placName: '暂无数据',
     isRead: true,
@@ -295,6 +295,7 @@ export  const PassingCarConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   },
   {
     id: 1,
@@ -303,6 +304,7 @@ export  const PassingCarConstans = [
     isRead: false,
     isIcon: false,
     value: '',
+    value2: ''
   },
   {
     id: 2,
@@ -311,6 +313,7 @@ export  const PassingCarConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   }, {
     id: 3,
     name: '结束时间',
@@ -318,6 +321,7 @@ export  const PassingCarConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   },
 ];
 
@@ -394,6 +398,7 @@ export  const OverrunrateConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   },
   {
     id: 1,
@@ -402,6 +407,7 @@ export  const OverrunrateConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   },
   {
     id: 2,
@@ -410,6 +416,7 @@ export  const OverrunrateConstans = [
     isRead: true,
     isIcon: false,
     value: '',
+    value2: ''
   },
 ];
 

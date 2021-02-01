@@ -50,10 +50,15 @@
 
 
       <div class="page-card margin_top">
-        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="true"
+        <nz-table #basicTable [nzData]="listOfData"
+                  [nzShowPagination]="true"
                   [nzTotal]="total"
+                  [nzPageIndex]="1"
+                  [nzFrontPagination]="false"
                   [nzPageSize]="pagesize"
-                  [nzSize]="'small'" class="test"
+                  [nzSimple]="true"
+                  [nzSize]="'small'"
+                  class="test"
                   (nzPageIndexChange)="PageIndexChange($event)"
         >
           <thead>
@@ -65,7 +70,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let data of listOfData"  (click)="showDetails(data)">
+          <tr *ngFor="let data of listOfData;index as i"  (click)="showDetails(data)">
             <td [nzAlign]="'center'"
                 style="white-space: nowrap;
                        max-width:50px;
@@ -75,7 +80,7 @@
             </td>
             <td [nzAlign]="'center'">{{data.carNumber}}</td>
             <td [nzAlign]="'center'" >{{data.stationName}}</td>
-            <td [nzAlign]="'center'">{{data.step===3?'未处理':'已处理'}}</td>
+            <td [nzAlign]="'center'">{{steps[i]}}</td>
           </tr>
           </tbody>
         </nz-table>

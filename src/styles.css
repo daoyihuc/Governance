@@ -3,6 +3,31 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+ .ant-table-row{
+  background: rgba(18, 33, 70, 1);
+  color: white;
+  width: 100%;
+}
+
+ .ant-table-small .ant-table-thead > tr > th{
+  background: rgba(31, 57, 122, 1)!important;
+  border-bottom: 1px solid rgba(31, 57, 122, 1);
+  color: white;
+  white-space: nowrap;
+  padding: 6px;
+
+  font-size: 9px;
+}
+ .ant-table-tbody > tr > td{
+  border-bottom: 1px solid rgba(18, 33, 70, 1);
+  font-size: 9px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
 .anticon{
   color: white!important;
 }
@@ -21,4 +46,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .ant-pagination-item a{
   color: white!important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.ant-pagination-item-active a, .ant-pagination-item:focus a, .ant-pagination-item:hover a{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.ant-pagination-item-link{
+  background:  rgba(31, 57, 122, 1)!important;
+}
+.ant-pagination-slash{
+ color: white;
+}
+.ant-pagination-simple .ant-pagination-simple-pager{
+  color: white;
+}
+.ant-pagination-simple-pager> input{
+  color: rgba(31, 57, 122, 1);
+}
+.ant-table-tbody>tr.ant-table-row:hover>td{
+  background:  rgba(31, 57, 122, 1)!important;;
 }

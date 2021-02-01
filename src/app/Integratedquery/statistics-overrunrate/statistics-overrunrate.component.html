@@ -20,7 +20,7 @@
                        maxlength="30"></ion-input>
           </ion-item>
           <ion-item class="items" [lines]="'none'">
-            <ion-button slot="end" class="searchButton">查询</ion-button>
+            <ion-button slot="end" class="searchButton" (click)="OnClick(3,0)">查询</ion-button>
           </ion-item>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
@@ -42,8 +42,17 @@
       </div>
 
       <div class="page-card margin_top">
-        <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="true"
-                  [nzPageSize]="10" [nzSize]="'small'" class="test">
+        <nz-table #basicTable [nzData]="listOfData"
+                  [nzShowPagination]="false"
+                  [nzTotal]="total"
+                  [nzPageIndex]="1"
+                  [nzFrontPagination]="false"
+                  [nzPageSize]="pagesize"
+                  [nzSimple]="true"
+                  [nzSize]="'small'"
+                  class="test"
+                  (nzPageIndexChange)="PageIndexChange($event)"
+        >
           <thead>
           <tr >
             <th [nzAlign]="'center'" [nzEllipsis]="true">编号</th>
@@ -53,11 +62,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let data of listOfData"  >
-            <td [nzAlign]="'center'">{{data.key}}</td>
-            <td [nzAlign]="'center'">{{data.name}}</td>
-            <td [nzAlign]="'center'" >{{data.age}}</td>
-            <td [nzAlign]="'center'">{{data.address}}</td>
+          <tr *ngFor="let data of listOfData;index as i"  >
+            <td [nzAlign]="'center'">{{i}}</td>
+            <td [nzAlign]="'center'">{{data.stationName}}</td>
+            <td [nzAlign]="'center'" >{{data.gcl}}</td>
+            <td [nzAlign]="'center'">{{data.olr}}</td>
           </tr>
           </tbody>
         </nz-table>
@@ -68,6 +77,23 @@
         <span class="flex-span4"></span>
       </div>
 
+
+      <ion-datetime id="times"
+                    displayFormat="YYYY/MM/DD/HH/mm"
+                    pickerFormat="YYYY MM DD HH mm"
+                    [pickerOptions]="customPickerOptionsStart"
+                    [(ngModel)]="ValueTimeStart"
+                    [min]="minTime" [hidden]="true">
+
+      </ion-datetime>
+      <ion-datetime id="timesEnd"
+                    displayFormat="YYYY/MM/DD/HH/mm"
+                    pickerFormat="YYYY MM DD HH mm"
+                    [pickerOptions]="customPickerOptionsEnd"
+                    [(ngModel)]="ValueTimeEnd"
+                    [min]="minTime" [hidden]="true">
+
+      </ion-datetime>
     </div>
 
   </ion-content>

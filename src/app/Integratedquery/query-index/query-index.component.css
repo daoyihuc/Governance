@@ -1,103 +1,130 @@
 @charset "UTF-8";
 .toolbar, .toolbarSub {
   --background: #0A0E2E;
-  --color: #fff; }
-  .toolbar .title, .toolbarSub .title {
-    --color: #fff;
-    text-align: center; }
-  .toolbar img, .toolbarSub img {
-    width: 21px;
-    height: 21px; }
+  --color: #fff;
+}
+.toolbar .title, .toolbarSub .title {
+  --color: #fff;
+  text-align: center;
+  font-size: 17px;
+}
+.toolbar img, .toolbarSub img {
+  width: 21px;
+  height: 21px;
+}
 
 div {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 p {
-  margin: 0; }
+  margin: 0;
+}
 
 .page-content {
   background-size: 100% 100%;
-  padding: 13px 14px 24px; }
+  padding: 13px 14px 24px;
+}
 
 .page-box {
   width: 100%;
   background: rgba(31, 57, 122, 0.2);
   border: 1px solid #1F397A;
-  padding: 13px 13px 0; }
+  padding: 13px 13px 0;
+}
 
 .page-card, .segment {
   width: 100%;
   background: rgba(84, 129, 220, 0.2);
   border: 0 solid #1F397A;
-  position: relative; }
+  position: relative;
+}
 
 .page-card-header {
   padding: 7px 10px;
   background: rgba(84, 129, 220, 0.2);
-  border: 1px solid #1F397A; }
-  .page-card-header p {
-    margin: 0; }
+  border: 1px solid #1F397A;
+}
+.page-card-header p {
+  margin: 0;
+}
 
 .toolbar, .toolbarSub {
   --background: #0A0E2E;
-  --color: #fff; }
-  .toolbar .title, .toolbarSub .title {
-    --color: #fff;
-    text-align: center; }
-  .toolbar img, .toolbarSub img {
-    width: 21px;
-    height: 21px; }
+  --color: #fff;
+}
+.toolbar .title, .toolbarSub .title {
+  --color: #fff;
+  text-align: center;
+  font-size: 17px;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+.toolbar img, .toolbarSub img {
+  width: 21px;
+  height: 21px;
+}
 
 .page-card-header p {
   font-size: 11px;
   font-weight: normal;
-  color: #1DDEFB; }
+  color: #1DDEFB;
+}
 
 .page-card span, .segment span {
   position: absolute;
   width: 7px;
   height: 7px;
-  border: 1px solid #1DDEFB; }
+  border: 1px solid #1DDEFB;
+}
 
 .page-card .flex-span1, .segment .flex-span1 {
   top: 0;
   left: 0;
   border-right: none;
-  border-bottom: none; }
+  border-bottom: none;
+}
 
 .page-card .flex-span2, .segment .flex-span2 {
   top: 0;
   right: 0;
   border-left: none;
-  border-bottom: none; }
+  border-bottom: none;
+}
 
 .page-card .flex-span3, .segment .flex-span3 {
   bottom: 0;
   left: 0;
   border-right: none;
-  border-top: none; }
+  border-top: none;
+}
 
 .page-card .flex-span4, .segment .flex-span4 {
   bottom: 0;
   right: 0;
   border-left: none;
-  border-top: none; }
+  border-top: none;
+}
 
 .page-card-section {
   background: rgba(244, 91, 91, 0.2);
   border: 1px solid #F45B5B;
-  margin-top: 11px; }
+  margin-top: 11px;
+}
 
 .page-card2-section {
-  background: rgba(16, 207, 226, 0.2);
-  border: 1px solid #10CFE2;
-  margin-top: 11px; }
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #10CFE2;
+  margin-top: 11px;
+}
 
 /*详细信息排序 盒子 content*/
 .section-card-section-content {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 11px; }
+  padding-bottom: 11px;
+}
 
 .section-card-section-content .p1 {
   width: 50%;
@@ -105,14 +132,21 @@ p {
   font-weight: 400;
   color: #FFFFFF;
   padding-left: 15px;
-  margin-top: 11px; }
+  margin-top: 11px;
+}
 
 .section-card-section-content .p1 span {
   min-width: 34px;
-  text-align: left; }
+  text-align: left;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
 
 .barBox {
-  --background: #0a162b ;
+  --background: #0a162b	;
   --background-focused: #0a162b;
   --background-focused-opacity: 0.2;
   --color: #fff;
@@ -123,25 +157,39 @@ p {
   --padding-start: 0;
   --padding-top: 10px;
   --ripple-color: 0;
-  padding: 5px 0; }
-  .barBox img {
-    width: 25px;
-    height: 25px;
-    margin-bottom: 5px; }
+  padding: 5px 0;
+}
+.barBox img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+:host ::ng-deep.title {
+  --color: #fff;
+  text-align: center !important;
+  font-size: 17px !important;
+  font-weight: normal;
+  color: #FFFFFF;
+}
 
 .page-content {
   background: url("../../../assets/img/all_bg.png") no-repeat;
   min-height: 100%;
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+}
 
 .toolbarSub {
   --background: #091220!important;
-  padding: 15px; }
+  padding: 15px;
+  font-size: 17px;
+}
 
 .segment {
   --background: #172A4E;
   border: 0px solid #5481DC;
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 .segment ion-segment-button {
   --background-checked: #5481DC ;
@@ -154,6 +202,7 @@ p {
   --color-focused: #fff;
   --color-hover: #fff;
   --border-radius: 0;
-  --indicator-color: #5481DC; }
+  --indicator-color: #5481DC;
+}
 
 /*# sourceMappingURL=query-index.component.css.map */

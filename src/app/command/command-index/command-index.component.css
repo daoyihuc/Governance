@@ -112,7 +112,7 @@ p{
 /*card*/
 .page-content-section .section-card{
   background: rgba(244, 91, 91, 0.2);
-  border: 1px solid #F45B5B;
+  border: 1px solid rgba(244, 91, 91, 0.2);
   margin-top: 11px;
 }
 .page-content-section .section-card2{
@@ -142,13 +142,14 @@ p{
   flex-wrap: wrap;
   padding-bottom: 11px;
 }
+
 .page-content-section .section-card .section-card-content .p1{
   width: 50%;
   font-size: 8px;
   font-weight: 400;
   color: #FFFFFF;
   padding-left: 15px;
-  margin-top: 11px;
+  margin-top: 5px;
 }
 .page-content-section .section-card .section-card-content .p1 span{
   min-width: 34px;

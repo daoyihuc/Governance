@@ -146,6 +146,17 @@ p {
         border: 1px solid #5088F9;
         border-radius: 3px; }
 
+:host ::ng-deep .toolbar {
+  --background: #0A0E2E;
+  --color: #fff; }
+  :host ::ng-deep .toolbar :host ::ng-deep .title {
+    --color: #fff;
+    text-align: center;
+    font-size: 17px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF; }
+
 .page-content {
   background: url("../../../assets/img/all_bg.png");
   min-height: 100%;

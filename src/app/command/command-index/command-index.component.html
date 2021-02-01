@@ -31,7 +31,11 @@
         <div class="header-flex-box">
           <div  *ngFor="let item of liData,let i = index">
             <div class="li" *ngIf="liShow || i === 0">
-              <ion-checkbox class="checkbox" color="secondary" [(ngModel)]="item.check"></ion-checkbox>
+              <ion-checkbox
+                class="checkbox"
+                color="secondary"
+                (ionChange)="isCheck()"
+                [(ngModel)]="item.check"></ion-checkbox>
               <p [class.checkP]="item.check">{{item.text}}({{item.number}})</p>
             </div>
           </div>

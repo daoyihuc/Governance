@@ -3,12 +3,13 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor, HttpResponse
+  HttpInterceptor, HttpResponse, HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {isHttp} from '../../Base/Constans';
+import {Headers,HeadersFile} from "../header";
 
 const ignoreToken = ['doLogin'];
 @Injectable()
@@ -25,21 +26,21 @@ export class LoginInterceptor implements HttpInterceptor {
     // if (url.indexOf('http://') < 0 || url.indexOf('https://') < 0) {
     //   url = 'http://' + url;
     // }
-    // 过滤掉不需要token的请求
-    // if (!needToken) {
-    //   req = req.clone({
-    //     url,
-    //   });
-    // } else {
-    //
-    // }
 
     if (!isHttp){
       return ;
     }
 
-    // const headers1 = req.headers;
-    // console.log(headers1, '545');
+    Headers.JWTHeaderName = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : '12';
+    HeadersFile.JWTHeaderName = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : '12';
+    let headers1 = req.headers;
+    headers1.append('JWTHeaderName',sessionStorage.getItem('token') ? sessionStorage.getItem('token') : '12');
+    console.log(headers1, '545');
+
+    req = req.clone({
+      headers: headers1,
+    });
+
     // console.log(sessionStorage.getItem('token'));
     return next.handle(req).pipe(
       tap(

@@ -4,7 +4,8 @@
   --color: #fff; }
   .toolbar .title, .toolbarSub .title {
     --color: #fff;
-    text-align: center; }
+    text-align: center;
+    font-size: 17px; }
   .toolbar img, .toolbarSub img {
     width: 21px;
     height: 21px; }
@@ -137,6 +138,13 @@ p {
     height: 25px;
     margin-bottom: 5px; }
 
+:host ::ng-deep.title {
+  --color: #fff;
+  text-align: center !important;
+  font-size: 17px !important;
+  font-weight: normal;
+  color: #FFFFFF; }
+
 .page-content {
   background: url("../../../assets/img/all_bg.png") no-repeat;
   min-height: 100%;
@@ -144,7 +152,8 @@ p {
 
 .toolbarSub {
   --background: #091220!important;
-  padding: 15px; }
+  padding: 15px;
+  font-size: 17px; }
 
 .segment {
   --background: #172A4E;
