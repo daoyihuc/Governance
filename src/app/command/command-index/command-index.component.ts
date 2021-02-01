@@ -42,7 +42,7 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   liShow = true;
 
   cardData = [
-    {id: '粤HB8982', name: '超限嫌疑车', class: 1,
+    {id: '粤HB8982', name: '超限嫌疑车', class: 1,carPassId: 'sd',
       list: [
         {span: '报警时间：', p: '2020-09-27 11:40:57'},
         {span: '检测点：', p: 'G106K1612安定检测点'},
@@ -94,7 +94,7 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
   onJump(index): void{// 跳转
-    this.route.navigate(['/command/basicInformation']);
+    this.route.navigate(['/command/basicInformation',{carNumber: this.cardData[index].id, id: this.cardData[index].carPassId}]);
   }
 
   onTabJump(index): void {
@@ -289,12 +289,14 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
         let polygon = new AMap.Polygon({
           map: this.maps,
           strokeWeight: 1,
-          strokeColor: 'rgba(0.2,64,156,0.86)',
-          fillColor: 'rgba(0.2,64,156,0.86)',
+          // strokeColor: 'rgba(0.2,64,156,0.86)',
+          // fillColor: 'rgba(0.2,64,156,0.86)',
+          strokeColor: '#0091ea',
+          fillColor: '#80d8ff',
           fillOpacity: 0.2,
           path: bounds[i]
         });
-        this.polygons.push(polygon);
+        // this.polygons.push(polygon);
       }
       // this.maps.add(this.polygons)
       // this.maps.setFitView(this.polygons);//视口自适应

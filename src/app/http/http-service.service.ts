@@ -32,6 +32,8 @@ import {ReportQueryOverNumReportBeanData} from "./HttpBean/ReportQueryOverNumRep
 import {IllegalQueryGetByIdBeanData} from "./HttpBean/IllegalQueryGetByIdBean";
 import {DispatchQueryResourceListBeanData} from "./HttpBean/DispatchQueryResourceListBean";
 import {ListRealTimeAlarmRecordBeanData} from "./HttpBean/ListRealTimeAlarmRecordBean";
+import {GetAlarmRecordJumpDetailsBeanData} from "./HttpBean/GetAlarmRecordJumpDetailsBean";
+import {HistoryIllegalBeanData} from "./HttpBean/HistoryIllegalBean";
 
 @Injectable({
   providedIn: 'root'
@@ -262,6 +264,35 @@ export class HttpServiceService {
       );
   }
 
+  // 指挥调度-获取资源列表
+  getAlarmRecordJumpDetails(data: any): Observable<HttpResponse<GetAlarmRecordJumpDetailsBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetAlarmRecordJumpDetailsBeanData > ( Api.getAlarmRecordJumpDetails, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 指挥调度-信息反馈
+  infoFeedbackSubmit(data: any): Observable<HttpResponse<BaseBody>> {
+    this.options2.params = data;
+    // @ts-ignore
+    return  this.http.post< BaseBody > ( Api.infoFeedbackSubmit, data, this.options2)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 指挥调度-历史违法记录
+  historyIllegal(data: any): Observable<HttpResponse<HistoryIllegalBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< HistoryIllegalBeanData > ( Api.historyIllegal, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
 
 
 

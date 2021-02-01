@@ -7,5 +7,7 @@ export interface LoginBean extends BaseBody{
 export interface LoginBeanData {
   token: string,
   unitCode: string,
-  unitName: string
+  unitname: string,
+  xzb: string,
+  yzb: string
 }

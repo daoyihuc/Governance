@@ -27,18 +27,12 @@
         <div class="img-content">
           <ion-content>
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide>
-                <h1>Slide 1</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 2</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 3</h1>
+              <ion-slide *ngFor="let data of banner">
+                <img [src]="ImgPath+data" alt="">
               </ion-slide>
             </ion-slides>
           </ion-content>
-          <p class="flex-p1">湘G22728</p>
+          <p class="flex-p1">{{RequestData.carNumber}}</p>
         </div>
         <div class="page-card2-section page-card basic-page">
           <div class="section-card-section-content  basic-section">
@@ -53,8 +47,8 @@
         </div>
         <div class="page-card2-section page-card ">
           <div class="section-card-section-content basic-section">
-            <p class="p1">123123</p>
-            <p class="p1">123123</p>
+            <p class="p1">是黑名单：否</p>
+            <p class="p1">布控原因：超载</p>
           </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
@@ -64,7 +58,7 @@
         <div class="page-card-section basic-page3">
           <div class="section-card-section-content basic-section3" (click)="onJump(2)">
             <p class="p1">历史违法记录</p>
-            <p class="p1">3 条未处理</p>
+            <p class="p1">{{IllegalList.length}}条未处理</p>
           </div>
         </div>
         <div class="basic-page4">
@@ -74,10 +68,10 @@
             <p class="p2">状态</p>
           </div>
           <div class="basic-page4-section">
-            <div class="basic-page4-header basic-page4-section-box">
-              <p class="p1">123</p>
-              <p class="p1">123</p>
-              <p class="p2">123</p>
+            <div class="basic-page4-header basic-page4-section-box" *ngFor="let data of IllegalList;index as i">
+              <p class="p1">{{data.illegalDate}}</p>
+              <p class="p1">{{data.weighname}}</p>
+              <p class="p2">{{data.step===3?"未处理":"已处理"}}</p>
             </div>
           </div>
         </div>
@@ -90,7 +84,7 @@
         <div class="left" >开始追踪</div>
         <div class="right" (click)="onJump(1)">
           <p>信息反馈</p>
-          <p>(已上传)</p>
+          <p>{{status===0?"(未上传)":"(已上传)"}}</p>
         </div>
       </div>
     </div>

@@ -27,23 +27,21 @@
         <div class="img-content">
           <ion-content>
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide>
-                <h1>Slide 1</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 2</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 3</h1>
+              <ion-slide *ngFor="let data of banner">
+                <img [src]="data" alt="">
               </ion-slide>
             </ion-slides>
           </ion-content>
-          <p class="flex-p1">湘G22728</p>
+          <p class="flex-p1">{{carNumber}}</p>
           <p class="flex-p2">超限嫌疑车</p>
         </div>
         <div class="page-card2-section page-card basic-page">
           <div class="section-card-section-content  basic-section">
-            <ion-textarea auto-grow="true" class="my-input" value="" placeholder="请输入您需要反馈的信息..."></ion-textarea>
+            <ion-textarea auto-grow="true"
+                          class="my-input"
+                          value=""
+                          [(ngModel)]="content"
+                          placeholder="请输入您需要反馈的信息..."></ion-textarea>
           </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
@@ -72,7 +70,7 @@
           <p>信息反馈</p>
           <p>(已上传)</p>
         </div>
-        <div class="left">确认提交</div>
+        <div class="left" (click)="onSumbit()">确认提交</div>
         <div class="right" (click)="onJump()">
           <p>取消上传</p>
         </div>

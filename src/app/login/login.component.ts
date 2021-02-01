@@ -69,7 +69,9 @@ export class LoginComponent implements OnInit {
         this.toast.presentToast(value.body.message);
         console.log(value.body.data.token);
         sessionStorage.setItem('token', '' + value.body.data.token); // token存儲
-        sessionStorage.setItem('district', value.body.data.unitName);// 行政区域名称
+        sessionStorage.setItem('district', value.body.data.unitname);// 行政区域名称
+        sessionStorage.setItem('x', value.body.data.xzb);// 经度
+        sessionStorage.setItem('y', value.body.data.yzb);// 纬度
 
         this.route.navigate(['/home']);
       }else{
