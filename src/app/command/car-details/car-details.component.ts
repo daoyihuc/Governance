@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {WindowService} from "../../utils/window.service";
+import {HttpServiceService} from "../../http/http-service.service";
 
 @Component({
   selector: 'app-car-details',
@@ -9,11 +10,21 @@ import {WindowService} from "../../utils/window.service";
 })
 export class CarDetailsComponent implements OnInit {
 
+  requestData = {
+    truckId: ''
+  };
+
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
-  ) { }
+    private http: HttpServiceService,
+  ) {
+    this.requestData.truckId = this.router.snapshot.paramMap.get("id");
+  }
+
+  carNumber = "";
+  banner = [];
 
   list = [
     {span: '过车时间：', p: '2020-09-27 11:40:57'},
@@ -39,6 +50,7 @@ export class CarDetailsComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.Http(this.requestData);
   }
 
   onBack(): void {
@@ -51,6 +63,31 @@ export class CarDetailsComponent implements OnInit {
 
   onSetting(): void { // 个人中心
     this.route.navigate(['/setting']);
+  }
+
+  Http(data): void{
+    this.http.truckInfo(data).subscribe( value => {
+      if(value.body.code===0){
+        this.carNumber = value.body.data.carPassVO.truckNoFront;
+        this.list[0].p = value.body.data.carPassVO.previewDate;
+        this.list[1].p = value.body.data.carPassVO.stationName;
+        this.list[2].p = value.body.data.carPassVO.direction;
+        this.list[3].p = value.body.data.carPassVO.axisNum;
+        this.list[4].p = value.body.data.carPassVO.totalWeight;
+        this.list[5].p = value.body.data.carPassVO.weightLimited;
+        this.list[6].p = value.body.data.carPassVO.overLimited;
+        this.list[7].p = value.body.data.carPassVO.overRate;
+
+        this.list2Data[0].p = value.body.data.carInfo.transportLicenseNumber;
+        this.list2Data[1].p = value.body.data.carInfo.transportIssuingAuthority;
+        this.list2Data[2].p = value.body.data.carInfo.transportIssueDate;
+        this.list2Data[3].p = value.body.data.carInfo.owner;
+
+        value.body.data.carPassImgInfoVO.imgFileList.forEach((e,i)=>{
+          this.banner.push(e);
+        })
+      }
+    })
   }
 
 }

@@ -38,8 +38,9 @@ export const Api: any =
     selectGcllAndCzll : BaseUrl + '/operationMonitor/tCarPass/selectGcllAndCzll', //  图表分析-今日过车统计
     truckInfo : BaseUrl + '/operationMonitor/tCarPass/truckInfo', //  图表分析-超限货车排行-查看计
     queryCzGclAndCzlToDay : BaseUrl + '/operationMonitor/tGaode/queryCzGclAndCzlToDay', //  运行轨迹-查询检测点详情信息
-    stationCarPassByRegionCode : BaseUrl + '/operationMonitor/tWeigh/stationCarPassByRegionCode', //  图表分析-非现场检测点超限率排名
+    stationCarPass : BaseUrl + '/operationMonitor/tWeigh/stationCarPass', //  图表分析-非现场检测点超限率排名
     stationStats : BaseUrl + '/operationMonitor/tWeigh/stationStats', //  运行轨迹-统计检测点数目
+    tWeighList : BaseUrl + '/operationMonitor/tWeigh/list', //  运行轨迹-查询页面数据
     weighPointByRegionCode : BaseUrl + '/operationMonitor/tWeigh/weighPointByRegionCode', //  运行轨迹-查询称重点信息
     illegalQueryGetById : BaseUrl + '/illegalQuery/getById', //  根据id获取过车对象
     illegalQueryPageList : BaseUrl + '/illegalQuery/pageList', //  根据id获取过车对象

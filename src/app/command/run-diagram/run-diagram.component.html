@@ -40,20 +40,20 @@
           </div>
           <div class="car-number-box" *ngIf="isShow[0]">
             <div class="left">
-              <div echarts [options]="EChartOption" class="demo-chart"></div>
+              <div echarts id="cons0"  class="demo-chart"></div>
             </div>
             <div class="right">
               <div class="right-btn">
                 <p>今日过车量</p>
-                <p>1240</p>
+                <p>{{pass_rate}}</p>
               </div>
               <div class="right-btn">
                 <p>今日超限量</p>
-                <p>19</p>
+                <p>{{Over_limit}}</p>
               </div>
               <div class="right-btn">
                 <p>今日超限率</p>
-                <p>1.5%</p>
+                <p>{{Over_rate}}%</p>
               </div>
             </div>
           </div>
@@ -90,10 +90,10 @@
               <div class="warning-section-td td4">超限率</div>
             </div>
             <div class="page-card-weighing-tdBox">
-              <div class="warning-section-th thContent" *ngFor="let item of tableData,let i=index">
-                <div class="warning-section-td td1">{{item.car}}</div>
-                <div class="warning-section-td td2 red-p">{{item.name}}</div>
-                <div class="warning-section-td td4 red-p">{{item.name}}</div>
+              <div class="warning-section-th thContent" *ngFor="let item of tableData1,let i=index">
+                <div class="warning-section-td td1">{{item.stationName}}</div>
+                <div class="warning-section-td td2 red-p">{{item.oln}}</div>
+                <div class="warning-section-td td4 red-p">{{item.olr+"%"}}</div>
               </div>
             </div>
           </div>
@@ -118,9 +118,9 @@
               <div class="warning-section-td td4">车辆详情</div>
             </div>
             <div class="page-card-weighing-tdBox">
-              <div class="warning-section-th thContent" *ngFor="let item of tableData,let i=index">
-                <div class="warning-section-td td1">{{item.car}}</div>
-                <div class="warning-section-td td2 red-p">{{item.name}}</div>
+              <div class="warning-section-th thContent" *ngFor="let item of tableData2,let i=index">
+                <div class="warning-section-td td1">{{item.truckNoFront}}</div>
+                <div class="warning-section-td td2 red-p">{{item.olr}}</div>
                 <div class="warning-section-td td4"><p class="btn" (click)="onDetails(i)">查看</p></div>
               </div>
             </div>

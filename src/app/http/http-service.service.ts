@@ -34,6 +34,12 @@ import {DispatchQueryResourceListBeanData} from "./HttpBean/DispatchQueryResourc
 import {ListRealTimeAlarmRecordBeanData} from "./HttpBean/ListRealTimeAlarmRecordBean";
 import {GetAlarmRecordJumpDetailsBeanData} from "./HttpBean/GetAlarmRecordJumpDetailsBean";
 import {HistoryIllegalBeanData} from "./HttpBean/HistoryIllegalBean";
+import {TweightListBeanData} from "./HttpBean/TweightListBean";
+import {SelectGcllAndCzllBeanData} from "./HttpBean/SelectGcllAndCzllBean";
+import {QueryTopOLTruckByUnitCodeBeanData} from "./HttpBean/QueryTopOLTruckByUnitCodeBean";
+import {StationCarPassBeanData} from "./HttpBean/StationCarPassBean";
+import {TruckInfoBeanData} from "./HttpBean/TruckInfoBean";
+import {pageListBeanData} from "./HttpBean/PageListBean";
 
 @Injectable({
   providedIn: 'root'
@@ -289,6 +295,65 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< HistoryIllegalBeanData > ( Api.historyIllegal, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 运行监测-查询页面数据
+  tWeighList(data: any): Observable<HttpResponse<TweightListBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TweightListBeanData > ( Api.tWeighList, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 图表分析-今日过车统计
+  selectGcllAndCzll(data: any): Observable<HttpResponse<SelectGcllAndCzllBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< SelectGcllAndCzllBeanData > ( Api.selectGcllAndCzll, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 图标分析-超限货车排行
+  queryTopOLTruckByUnitCode(data: any): Observable<HttpResponse<QueryTopOLTruckByUnitCodeBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< QueryTopOLTruckByUnitCodeBeanData > ( Api.queryTopOLTruckByUnitCode, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 图表分析-非现场检测点超限率排名
+  stationCarPass(data: any): Observable<HttpResponse<StationCarPassBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< StationCarPassBeanData > ( Api.stationCarPass, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 图表分析-超限货车排行-查看
+  truckInfo(data: any): Observable<HttpResponse<TruckInfoBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TruckInfoBeanData > ( Api.truckInfo, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 源头企业实时数据查询
+  pageList(data: any): Observable<HttpResponse<pageListBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< pageListBeanData > ( Api.pageList, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );

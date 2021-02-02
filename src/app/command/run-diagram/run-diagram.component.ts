@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {WindowService} from "../../utils/window.service";
+import {HttpServiceService} from "../../http/http-service.service";
+import * as $ from "jquery";
+import * as echars from 'echarts';
+import {StationCarPassBean, StationCarPassBeanData} from "../../http/HttpBean/StationCarPassBean";
+import {
+  QueryTopOLTruckByUnitCodeBean,
+  QueryTopOLTruckByUnitCodeBeanData
+} from "../../http/HttpBean/QueryTopOLTruckByUnitCodeBean";
 
 @Component({
   selector: 'app-run-diagram',
@@ -13,19 +21,14 @@ export class RunDiagramComponent implements OnInit {
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
+    private http: HttpServiceService, // http
+    private el: ElementRef,
   ) { }
 
   isShow = [true, true, true, true];
 
-  tableData = [
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-    {name: '99.6%', car: '湘A9FJ76' },
-  ];
+  tableData1: StationCarPassBean[] = [];
+  tableData2: QueryTopOLTruckByUnitCodeBean[] = [];
 
   jumpUrl = [
     {src: '/command/runMonitoring'},
@@ -33,6 +36,8 @@ export class RunDiagramComponent implements OnInit {
   ];
 
   pass_rate = 1240;
+  Over_limit = 0;
+  Over_rate: string = "0";
   total = this.pass_rate + this.pass_rate * 0.8;
 
   EChartOption = {
@@ -128,6 +133,9 @@ export class RunDiagramComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.selectGcllAndCzll();
+    this.stationCarPass();
+    this.queryTopOLTruckByUnitCode();
   }
 
   onBack(): void {
@@ -151,6 +159,58 @@ export class RunDiagramComponent implements OnInit {
   }
 
   onDetails(index): void {
-    this.route.navigate(['/command/carDetails']);
+    this.route.navigate(['/command/carDetails',{id: this.tableData2[index].id}]);
   }
+
+  // 今日过车统计
+  selectGcllAndCzll(): void{
+    this.http.selectGcllAndCzll(null).subscribe( value => {
+      if(value.body.code === 0){
+        this.pass_rate = value.body.data.czll;
+        this.Over_limit = value.body.data.gcll;
+        this.Over_rate = (this.pass_rate/this.Over_limit*100).toFixed(2);
+        this.EChartOption.series[0].data[0].value = this.pass_rate;
+        this.EChartOption.series[0].data[0].name = this.pass_rate;
+        this.EChartOption.series[0].data[0].label.formatter = [
+          '{a|' + this.pass_rate + '}'
+        ].join('\n');
+        this.initEchars();
+      }
+    })
+  }
+
+  initEchars(): void{
+    // 超限量/辆（分轴统计）
+    const a1 = this.el.nativeElement.querySelector('#cons0');
+    // this.barStyle.height =  $(window).height();
+    setTimeout(() => {
+      const ec1 = echars as any;
+      const init1 = ec1.init(a1);
+      init1.setOption(this.EChartOption);
+    }, 1000);
+  }
+
+  // 图表分析-非现场检测点超限率排名
+  stationCarPass(): void{
+    this.http.stationCarPass(null).subscribe( value => {
+      if(value.body.code === 0){
+        value.body.data.forEach((e,i)=>{
+          this.tableData1.push(e);
+        })
+      }
+    })
+  }
+
+  // 图标分析-超限货车排行
+  queryTopOLTruckByUnitCode(): void{
+    this.http.queryTopOLTruckByUnitCode(null).subscribe( value => {
+      if(value.body.code === 0){
+        value.body.data.forEach((e,i) => {
+          this.tableData2.push(e);
+        });
+      }
+    })
+  }
+
+
 }

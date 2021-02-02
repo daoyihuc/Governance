@@ -27,7 +27,7 @@
         <div class="page-card2-section page-card basic-page">
           <div class="section-card-section-content basic-section">
             <p class="p1">
-              <span>车牌号码：</span>湘H8515
+              <span>车牌号码：</span>{{carNumber}}
             </p>
           </div>
           <span class="flex-span1"></span>
@@ -69,14 +69,8 @@
         <div class="page-img-content">
           <ion-content>
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide>
-                <h1>Slide 1</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 2</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 3</h1>
+              <ion-slide *ngFor="let data of banner">
+                <img [src]="data" alt="">
               </ion-slide>
             </ion-slides>
           </ion-content>

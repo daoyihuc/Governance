@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import {HttpServiceService} from '../../http/http-service.service';
 import {ToastController} from '@ionic/angular';
 import {ToastService} from '../../utils/toast.service';
+import {PageListBean, pageListBeanData, PageListDate} from "../../http/HttpBean/PageListBean";
 
 declare var AMap: any;
 
@@ -16,109 +17,6 @@ declare var AMap: any;
 export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, AfterViewInit{
 
   mackerels: any = []; // 锚点参数
-  constructor(
-    private route: Router, // 路由传递
-    private router: ActivatedRoute, // 路由接收者
-    private windowUntils: WindowService,
-    private el: ElementRef,
-    private http: HttpServiceService,
-    private toast: ToastService,
-  ) {
-    this.customPickerOptionsStart = {
-      buttons: [{
-        text: '取消',
-        handler: (a) => {
-          console.log('Clicked save' + JSON.stringify(a));
-          const b = JSON.stringify(a);
-          const c = JSON.parse(b);
-          const year = c.year.value;
-          const month = c.month.value;
-          const day = c.day.value;
-          const hour = c.hour.value;
-          const minute = c.minute.value;
-          this.ValueTimeStart = year + month + day + hour + minute;
-          // this.InputDatas[2].value = this.ValueTime;
-          return a;
-        }
-      }, {
-        text: '确定',
-        handler: (a) => {
-          const b = JSON.stringify(a);
-          const c = JSON.parse(b);
-          const year = c.year.value;
-          const month = c.month.value;
-          const day = c.day.value;
-          const hour = c.hour.value;
-          const minute = c.minute.value;
-          this.ValueTimeStart = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
-          this.serachData[1].value = this.ValueTimeStart;
-          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeStart);
-          return a;
-        }
-      }]
-    };
-    this.customPickerOptionsEnd = {
-      buttons: [{
-        text: '取消',
-        handler: (a) => {
-          console.log('Clicked save' + JSON.stringify(a));
-          const b = JSON.stringify(a);
-          const c = JSON.parse(b);
-          const year = c.year.value;
-          const month = c.month.value;
-          const day = c.day.value;
-          const hour = c.hour.value;
-          const minute = c.minute.value;
-          this.ValueTimeEnd = year + month + day + hour + minute;
-          // this.InputDatas[2].value = this.ValueTime;
-          return a;
-        }
-      }, {
-        text: '确定',
-        handler: (a) => {
-          const b = JSON.stringify(a);
-          const c = JSON.parse(b);
-          const year = c.year.value;
-          const month = c.month.value;
-          const day = c.day.value;
-          const hour = c.hour.value;
-          const minute = c.minute.value;
-          this.ValueTimeEnd = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
-          this.serachData[2].value = this.ValueTimeEnd;
-          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeEnd);
-          return a;
-        }
-      }]
-    };
-  }
-
-  minTime = new Date().toISOString(); // 最小时间
-  customPickerOptionsStart: any; // 开始时间设置
-  customPickerOptionsEnd: any; // 结束时间设置
-  // 绑定时间
-  ValueTimeStart: any;
-  ValueTimeEnd: any;
-
-
-  inputShow = true;
-  tableData = [
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
-    {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
-    {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5},
-  ];
-  flexUrl = [
-    {src: '/command/weighing'},
-    {src: '/command/inspectorRecord'},
-    {src: '/command/inspector'},
-  ];
-  tabUrl = [
-    {src: '/command/runMonitoring'},
-    {src: '/command/sourceIndex'},
-    {src: '/command/commandIndex'},
-    {src: '/queryAll/index'},
-  ];
   serachData = [
     {
       id: 1,
@@ -144,6 +42,124 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       value: '',
     },
   ];
+  pageNow = 1;
+  requestData  = {
+    "endTime": "",
+    "pageNo": this.pageNow,
+    "pageSize": 10,
+    "provinceCode": "",
+    "startTime": "",
+  };
+
+  constructor(
+    private route: Router, // 路由传递
+    private router: ActivatedRoute, // 路由接收者
+    private windowUntils: WindowService,
+    private el: ElementRef,
+    private http: HttpServiceService,
+    private toast: ToastService,
+  ) {
+    this.customPickerOptionsStart = {
+      buttons: [{
+        text: '取消',
+        handler: (a) => {
+          console.log('Clicked save' + JSON.stringify(a));
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeStart = year + month + day + hour + minute;
+          // this.InputDatas[2].value = this.ValueTime;
+          this.serachData[1].value = "";
+          this.requestData.startTime ="";
+          return a;
+        }
+      }, {
+        text: '确定',
+        handler: (a) => {
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeStart = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
+          this.serachData[1].value = this.ValueTimeStart;
+          this.requestData.startTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeStart);
+          return a;
+        }
+      }]
+    };
+    this.customPickerOptionsEnd = {
+      buttons: [{
+        text: '取消',
+        handler: (a) => {
+          console.log('Clicked save' + JSON.stringify(a));
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeEnd = year + month + day + hour + minute;
+          // this.InputDatas[2].value = this.ValueTime;
+          this.serachData[2].value = "";
+          return a;
+        }
+      }, {
+        text: '确定',
+        handler: (a) => {
+          const b = JSON.stringify(a);
+          const c = JSON.parse(b);
+          const year = c.year.value;
+          const month = c.month.value;
+          const day = c.day.value;
+          const hour = c.hour.value;
+          const minute = c.minute.value;
+          this.ValueTimeEnd = year + '年' + month + '月' + day + '日' + hour + '点' + minute;
+          this.serachData[2].value = this.ValueTimeEnd;
+          this.requestData.endTime = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+          console.log('Clicked Log. Do not Dismiss.' + this.ValueTimeEnd);
+          return a;
+        }
+      }]
+    };
+  }
+
+  minTime = new Date().toISOString(); // 最小时间
+  customPickerOptionsStart: any; // 开始时间设置
+  customPickerOptionsEnd: any; // 结束时间设置
+  // 绑定时间
+  ValueTimeStart: any;
+  ValueTimeEnd: any;
+
+
+  inputShow = true;
+  tableData: PageListDate[]= [
+    // {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
+    // {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
+    // {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
+    // {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
+    // {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5},
+  ];
+  flexUrl = [
+    {src: '/command/weighing'},
+    {src: '/command/inspectorRecord'},
+    {src: '/command/inspector'},
+  ];
+  tabUrl = [
+    {src: '/command/runMonitoring'},
+    {src: '/command/sourceIndex'},
+    {src: '/command/commandIndex'},
+    {src: '/queryAll/index'},
+  ];
+
   selectedEnterprise = {
     enterpriseName: '招商局物流集团湖南有限公司',
     enterpriseCode: '10003'
@@ -165,19 +181,22 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   ngOnInit(): void {
     console.log('初始化');
     this.getMapData();
+    this.pageList(this.requestData);
   }
 
   scrollDiv(e): void {
       const raw = e.target;
       if (raw.scrollTop + raw.offsetHeight === raw.scrollHeight) {
         console.log('触底事件');
-        this.tableData.push(
-          {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
-          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
-          {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
-          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
-          {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5}
-          )
+        // this.tableData.push(
+        //   {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 1},
+        //   {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 2},
+        //   {name: '夏铎铺镇南方水泥有限公司', car: '湘A9FJ76', id: 3},
+        //   {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 4},
+        //   {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5}
+        //   )
+        this.pageNow++;
+        this.pageList(this.requestData);
       }
   }
 
@@ -400,5 +419,21 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
       this.onFlexJump(0);
     }
+  }
+
+  searchPage(): void{
+    this.requestData.provinceCode =this.serachData[0].value;
+    this.pageList(this.requestData);
+  }
+
+  // 源头企业实时数据查询
+  pageList(data): void{
+    this.http.pageList(data).subscribe( value => {
+      if(value.body.code === 0){
+        value.body.data.data.forEach((e,i)=>{
+          this.tableData.push(e);
+        })
+      }
+    });
   }
 }

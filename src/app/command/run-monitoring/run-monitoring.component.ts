@@ -1,6 +1,8 @@
 import {AfterContentInit, AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WindowService} from '../../utils/window.service';
+import {HttpServiceService} from "../../http/http-service.service";
+import {TweightListData} from "../../http/HttpBean/TweightListBean";
 
 declare var AMap: any;
 
@@ -15,6 +17,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
+    private http: HttpServiceService,
   ) {
 
 
@@ -41,10 +44,27 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   // 地图绘制参数
   searchOptions = {
     value: 'district',
-    adcode: '宁乡市'
+    adcode: sessionStorage.getItem("district")
   };
 
+  TweightList: TweightListData[] = [];
   location: any = []; // 锚点参数
+  type = 0; // 0: all 1,治超 2： 非治超
+
+  ShowData = {
+    equipmentType: null,
+    id: null,
+    oln: 0,
+    passNo: 0,
+    wa: "夏铎铺",
+    weighType: "0",
+    wid: "10",
+    wn: "请选择站点",
+    wnm: "夏铎铺",
+    xpos: "112.620162",
+    ypos: "28.239477",
+  }
+
 
   // popup
   isPopup = false; // 弹窗控制
@@ -88,6 +108,13 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   ngOnInit(): void {
     console.log('初始化');
+    this.getMap();
+    this.Http();
+    setTimeout(() => {
+
+      // this.initData();
+    }, 500);
+
   }
 
   onBack(): void {
@@ -117,41 +144,25 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     }else {
       this.runShow = false;
     }
+    this.type = index;
+    this.initData();
   }
 
   initData(): void {
-    const a = {
-      Latitude: 0,
-      longitude: 0,
-      title: ''
-    };
-    const b = {
-      Latitude: 0,
-      longitude: 0,
-      title: ''
-    };
-    const c = {
-      Latitude: 0,
-      longitude: 0,
-      title: ''
-    };
 
-    a.Latitude = 112.551885;
-    a.longitude = 28.277483;
-    a.title = '宁乡';
-    this.location.push(a);
-    b.Latitude = 112.580037;
-    b.longitude = 28.287989;
-    b.title = '宁乡政府';
-    this.location.push(b);
-    c.Latitude = 112.45936;
-    c.longitude = 28.274535;
-    c.title = 'G319收费站';
-    this.location.push(c);
 
+    this.maps.clearMap();
+    this.getMap();
 
     for (let i = 0; i < this.location.length; i++) {
-      this.addMark(this.location[i]);
+      if(this.type === 0 ){
+        this.addMark(this.location[i]);
+        continue;
+      }
+      if(this.location[i].type === this.type-1){
+        this.addMark(this.location[i]);
+      }
+
     }
     console.log('count', '' + this.location.length);
   }
@@ -161,7 +172,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     this.maps = new AMap.Map('container', {
       resizeEnable: false,
       zoom: 8.5,
-      center: [112.551885, 28.277483], // 此参数用于定位到当前行政区域
+      center: [sessionStorage.getItem("x"), sessionStorage.getItem("y")], // 此参数用于定位到当前行政区域
     });
     this.maps.setMapStyle('amap://styles/darkblue');
     // const adiw = new AMap.AdvancedInfoWindow();
@@ -221,10 +232,21 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   addMark(obj): void {
 
+    // 0 : 非治超 1： 治超
+    let img ="../../../assets/img/zhichaozhan.png";
+    switch (obj.type) {
+      case 0:
+        img="../../../assets/img/zhichaozhan.png";
+        break
+      case 1:
+        img="../../../assets/img/feixcje.png";
+        break;
+    }
+
     // 创建 AMap.Icon 实例：
     const icons = new AMap.Icon({
       size: new AMap.Size(14, 14),    // 图标尺寸
-      image: '../../../assets/img/zhichaozhan.png',  // Icon的图像
+      image: img,  // Icon的图像
       imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
     });
     // 创建一个 Marker 实例：
@@ -234,7 +256,9 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
       icon: icons,
     });
 
-    marker.on('click', this.showInfoM);
+    marker.on('click',()=>{
+      this.showInfoM(obj.index);
+    });
 // 将创建的点标记添加到已有的地图实例：
     this.maps.add(marker);
   }
@@ -242,7 +266,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   ngDoCheck(): void {
     if (this.maps == null) {
       this.getMap();
-      this.initData();
+      // this.initData();
       console.log('监测中');
     }
     console.log('监测中2');
@@ -255,42 +279,53 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   ngAfterViewInit(): void {
     console.log('页面加载完成');
-    setTimeout(() => {
-      this.getMap();
-      this.initData();
-    }, 500);
+
 
   }
 
   showInfoM(e): void {
-    const contents = '' +
-      '<div class="page-box" style="z-index: 899" id="daoyi">\n' +
-      '       <div class="page-card-header">\n' +
-      '<script>alert("ddaoas")</script>' +
-      '         <p>' + e.target.w.title + '</p>\n' +
-      '       </div>\n' +
-      '</div>';
-    const text = '您在 [ ' + e.lnglat.getLng() + ',' + e.lnglat.getLat() + ' ] 的位置点击了marker！';
-    const text1 = '您在 [ ' + e.target.w.title + ' ] 的位置';
+    const text1 = '您在 [ ' +e + ' ] 的位置';
     console.log(e);
     console.log(this.searchOptions);
-    alert(text1);
-    // alert(JSON.parse(e));
+    this.ShowData.wn = this.TweightList[e].wn;
+    this.ShowData.oln = this.TweightList[e].oln;
+    this.ShowData.passNo = this.TweightList[e].passNo;
+    // alert(text1);
 
-
-    // 创建 infoWindow 实例
-    // todo: 解释重要参数示意
-
-// 创建 infoWindow 实例
-    this.infoWindow = new AMap.InfoWindow({
-      anchor: 'top-left',
-      isCustom: true,  // 使用自定义窗体
-      content: contents  // 传入 dom 对象，或者 html 字符串
-    });
-
-    console.log(this.infoWindow);
-// 打开信息窗体
-//     this.infoWindow.open(this.maps, [e.lnglat.getLng(), e.lnglat.getLat()]);
     console.log('完成open');
+  }
+
+  // http
+  Http(): void{
+    this.http.tWeighList(null).subscribe( value => {
+      console.log(value);
+      if(value.body.code === 0){
+        value.body.data.cxWeighPointList.forEach( (e,i) => {
+          this.TweightList.push(e);
+        });
+        value.body.data.fxcWeighPointList.forEach((e,i)=>{
+          this.TweightList.push(e);
+        });
+        this.TweightList.forEach((e,i) => {
+          const a = {
+            Latitude: 0,
+            longitude: 0,
+            title: '',
+            type: 0,
+            index: 0,
+          };
+          a.Latitude = Number(e.xpos);
+          a.longitude = Number(e.ypos);
+          a.title = e.wn;
+          a.index = i;
+          a.type = Number(e.weighType);
+
+          this.location.push(a);
+        });
+        console.log(this.location);
+        this.initData();
+
+      }
+    });
   }
 }

@@ -71,24 +71,24 @@
         </div>
         <div class="page-card2-section page-card basic-page">
           <div class="page-card-header">
-            <p>菁华铺超限检测站</p>
+            <p>{{ShowData.wn}}</p>
           </div>
           <div class="section-card-section-content  basic-section">
             <div class="basic-section-card">
               <div class="basic-section-card-content">
-                <div class="run-p1"><p>242</p>
+                <div class="run-p1"><p>{{ShowData.oln}}</p>
                   辆
                 </div>
                 <div>通行总数</div>
               </div>
               <div class="basic-section-card-content">
-                <div class="run-p1 run-p2"><p>6</p>
+                <div class="run-p1 run-p2"><p>{{ShowData.passNo}}</p>
                   辆
                 </div>
                 <div>超限车辆</div>
               </div>
               <div class="basic-section-card-content">
-                <div class="run-p1 run-p3"><p>2.67</p>
+                <div class="run-p1 run-p3"><p>{{ShowData.passNo != 0?(ShowData.oln/ShowData.passNo*100).toFixed(2):0}}</p>
                   %
                 </div>
                 <div>超限率</div>
