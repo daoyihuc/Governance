@@ -8,10 +8,8 @@ export interface passCatDetailsBeanData extends BaseBody{
 export  interface PassCatDetailsBean {
    axisNum?: string;
    direction?: string;
-   imgFile1?: string;
-   imgFile2?: string;
    imgFile3?: string;
-   imgFile5?: string;
+  imgFileList: string[];
    overLimited?: string;
    overRate?: string;
    previewDate?: string;

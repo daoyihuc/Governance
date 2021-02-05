@@ -79,6 +79,13 @@ export class BasicInformationComponent implements OnInit, Baseinterface {
       this.route.navigate(['/command/commandCar',{
         carNumber: this.RequestData.carNumber,
       }]);
+    }else if(index === 3){
+      console.log("carnumber",this.RequestData.carNumber);
+      console.log("carPassId",this.RequestData.carPassId);
+      this.route.navigate(['/command/commandIndex',{
+        a: this.RequestData.carNumber,
+        b: this.RequestData.carPassId,
+      }]);
     }
   }
 

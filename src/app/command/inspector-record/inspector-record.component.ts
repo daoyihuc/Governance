@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import {HttpServiceService} from '../../http/http-service.service';
 import {ToastController} from '@ionic/angular';
 import {ToastService} from '../../utils/toast.service';
+import {getResourceListBean, getResourceListBeanData} from "../../http/HttpBean/getResourceListBean";
 
 @Component({
   selector: 'app-inspector-record',
@@ -21,7 +22,7 @@ export class InspectorRecordComponent implements OnInit {
     private toast: ToastService,
   ) { }
 
-  levels = [
+  levels:  getResourceListBean[] = [
 
   ];
 
@@ -32,8 +33,8 @@ export class InspectorRecordComponent implements OnInit {
   }
 
   accordion(index): void{
-    console.log(index);
-    this.route.navigate(['/command/supervisionInformation']);
+    console.log("id:",this.levels[index].id);
+    this.route.navigate(['/command/supervisionInformation',{id: this.levels[index].id}]);
   }
 
   onBack(): void {
@@ -59,7 +60,9 @@ export class InspectorRecordComponent implements OnInit {
       console.log(value);
       if (value.body.code === 0){
         console.log(value);
-        this.levels = value.body.data;
+       value.body.data.forEach((e,i)=>{
+          this.levels.push(e);
+        });
       }else{
         this.toast.presentToast(value.body.message);
       }

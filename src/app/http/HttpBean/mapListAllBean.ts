@@ -14,6 +14,8 @@ export  interface mapListAllBean extends BaseBody{
 // }
 
 export  interface mapListAllBeanData {
+  enterpriseCode: string;
+  enterpriseName: string;
   onlineNum: number;
   yzb: any;
   xzb: any;

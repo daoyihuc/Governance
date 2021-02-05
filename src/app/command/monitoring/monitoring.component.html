@@ -37,10 +37,13 @@
             <p>{{jumpUrl[1].name}}</p>
           </div>
           <div class="monitoring-section">
-            <div class="monitoring-video-box" *ngFor="let item of videoData">
-              <video width="100%" height="auto" controls>
-                <source [src]="item.aliveAddress">
-              </video>
+            <div class="monitoring-video-box"  *ngFor="let item of videoData;index as i">
+              <img
+                src="./assets/img/vediodetails.png"
+                    style="height: 149px"
+                   (click)="fullScreen(i)"
+              />
+<!--                <source [src]="item.aliveAddress">-->
               <!--<iframe-->
                 <!--src="https://open.ys7.com/ezopen/h5/iframe?url=ezopen://open.ys7.com/E57948629/1.live&autoplay=1&accessToken=at.5u11j5ts96jbub966zz68jxedee25l9h-7avmjy04ew-1jwsamx-2lq5p7sba"-->
                 <!--width="100%"-->

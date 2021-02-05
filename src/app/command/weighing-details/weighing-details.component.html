@@ -43,19 +43,18 @@
           <div class="weighingD-box">
             <ion-content>
               <ion-slides pager="true" [options]="slideOpts">
-                <ion-slide>
-                  <h1>Slide 1</h1>
-                </ion-slide>
-                <ion-slide>
-                  <h1>Slide 2</h1>
-                </ion-slide>
-                <ion-slide>
-                  <h1>Slide 3</h1>
+                <ion-slide *ngFor="let data of banner">
+                  <img [src]="ImgPath + data" alt="">
                 </ion-slide>
               </ion-slides>
             </ion-content>
           </div>
-          <img src="../../../assets/img/login-bg.png" alt="" class="weighingD-img">
+<!--          <div id="myPlayer"-->
+<!--               class="weighingD-img">-->
+
+<!--          </div>-->
+          <video width="100%" height="150px" controls autoplay [src]="videoSrc">
+          </video>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>
           <span class="flex-span3"></span>

@@ -112,10 +112,10 @@ export class FeedbackComponent implements OnInit {
   Http(data: any): void{
 
     this.http.infoFeedbackSubmit(data).subscribe( value => {
-      if(value.body.code===0){
+      if(value.code===0){
         this.onBack();
       }else{
-        console.log("文件上传失败"+value.body.message);
+        console.log("文件上传失败"+value.message);
       }
     })
   }

@@ -45,11 +45,11 @@
         <div class="page-card2-section page-card ">
           <div class="section-card-section-content basic-section">
             <p class="p1">执法人</p>
-            <p class="p1">吴世勋</p>
+            <p class="p1">{{requestData.supervisePerson}}</p>
             <p class="p1">督查地点</p>
             <div class="img-p" (click)="overflowShow = !overflowShow">
               <p class="p1" [class.overflow-p1]="overflowShow">
-                夏铎铺镇南方水泥11111111111有
+                {{requestData.enterpriseName}}
               </p>
               <img src="../../../assets/img/all-op.png" [class.overflow-img]="!overflowShow" alt="">
             </div>
@@ -67,7 +67,7 @@
           <div class="section-card-section-content work-section">
             <div class="work-section-li" *ngFor="let item of liData">
               <p class="p1">{{item.text}}</p>
-              <ion-toggle color="secondary" [(ngModel)]="item.isDisabled"></ion-toggle>
+              <ion-toggle color="secondary" [(ngModel)]="item.isDisabled" slot="end"></ion-toggle>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@
             <p>补充事项</p>
           </div>
           <div class="section-card-section-content  basic-section">
-            <ion-textarea auto-grow="true" class="my-input" value="" placeholder="请输入您需要补充的事项..."></ion-textarea>
+            <ion-textarea auto-grow="true" class="my-input" [(ngModel)]="requestData.remark" placeholder="请输入您需要补充的事项..."></ion-textarea>
           </div>
         </div>
 
@@ -87,7 +87,7 @@
           <p>信息反馈</p>
           <p>(已上传)</p>
         </div>
-        <div class="left">确认提交</div>
+        <div class="left" (click)="sumbit()">确认提交</div>
         <div class="right" (click)="onJump()">
           <p>取消上传</p>
         </div>

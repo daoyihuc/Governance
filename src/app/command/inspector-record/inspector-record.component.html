@@ -30,7 +30,7 @@
         <div class="car-card" *ngFor="let level of levels,let indx=index">
           <div class="car-header" [class.car-header-show]="temp == indx"  (click)="accordion(indx)">
             <p class="p1">{{level.superviseTime}}</p>
-            <p class="p1">{{level.remark}}</p>
+            <p class="p1">{{level.enterpriseName}}</p>
             <img class="flex-img" src="../../../assets/img/all-safe.png" alt="">
           </div>
         </div>

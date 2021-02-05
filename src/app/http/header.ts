@@ -17,7 +17,7 @@ export const HeadersFrom = {
 // 文件上传
 export const HeadersFile = {
   // 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8', // 表单提交
-  // 'Content-Type': 'multipart/form-data', // 文件上载时，既可以上传文件和文本
+  'Content-Type': 'multipart/form-data', // 文件上载时，既可以上传文件和文本
   // 'Content-Type':  'application/json',
   // 'Content-Type':  'application/json',
   Accept: '*/*',

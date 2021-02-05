@@ -38,7 +38,7 @@
           <ion-item class="items">
             <ion-label class="labels">车牌照片</ion-label>
             <div class="widths">
-              <img [src]="responseData.imgFile3" alt="" class="img">
+              <img [src]="Imgpath+responseData.imgFile3" alt="" class="img">
             </div>
           </ion-item>
           <!---->
@@ -98,14 +98,8 @@
           </ion-item>
           <div class="slideBox">
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide>
-                <img [src]="responseData.imgFile1"  alt="">
-              </ion-slide>
-              <ion-slide>
-                <img [src]="responseData.imgFile2"  alt="">
-              </ion-slide>
-              <ion-slide>
-                <img [src]="responseData.imgFile5"  alt="">
+              <ion-slide *ngFor="let item of responseData.imgFileList">
+                <img [src]="Imgpath+item"  alt="">
               </ion-slide>
             </ion-slides>
           </div>

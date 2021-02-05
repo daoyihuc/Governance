@@ -26,7 +26,8 @@ export class StatisticsIndexComponent implements OnInit {
   }
 
   onBack(): void {
-    this.windowUntils.onBack();
+    // this.windowUntils.onBack();
+    this.route.navigate(['/queryAll']);
   }
 
   onHome(): void {

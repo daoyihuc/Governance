@@ -9,5 +9,6 @@ export interface LoginBeanData {
   unitCode: string,
   unitname: string,
   xzb: string,
-  yzb: string
+  yzb: string,
+  realName: string
 }

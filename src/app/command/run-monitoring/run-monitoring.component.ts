@@ -1,8 +1,9 @@
-import {AfterContentInit, AfterViewInit, Component, DoCheck, OnDestroy, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WindowService} from '../../utils/window.service';
 import {HttpServiceService} from "../../http/http-service.service";
 import {TweightListData} from "../../http/HttpBean/TweightListBean";
+import * as echars from 'echarts';
 
 declare var AMap: any;
 
@@ -18,6 +19,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private http: HttpServiceService,
+    private el: ElementRef,
   ) {
 
 
@@ -65,6 +67,10 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     ypos: "28.239477",
   }
 
+  requestData = {
+    days: "7",
+    weighNumber: ""
+  };
 
   // popup
   isPopup = false; // 弹窗控制
@@ -118,8 +124,8 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   }
 
   onBack(): void {
-    this.windowUntils.onBack();
-    // this.route.navigate(['/home']);
+    // this.windowUntils.onBack();
+    this.route.navigate(['/home']);
   }
 
   onHome(): void {
@@ -291,6 +297,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     this.ShowData.oln = this.TweightList[e].oln;
     this.ShowData.passNo = this.TweightList[e].passNo;
     // alert(text1);
+    this.requestData.weighNumber =this.TweightList[e].wnm;
 
     console.log('完成open');
   }
@@ -328,4 +335,51 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
       }
     });
   }
+
+  // 运行轨迹-查看数据
+  queryStationPassNDaysOL(data): void{
+    this.http.queryStationPassNDaysOL(data).subscribe( value => {
+      if(value.body.code === 0 ){
+        this.xData = [];
+        value.body.data.dates.forEach((e,i)=>{
+          this.xData.push(e);
+        });
+        this.yData = [];
+        value.body.data.noOverLimit.forEach((e,i)=>{
+          this.yData.push(e);
+        });
+        this.EChartOptionTwo.xAxis.data = this.xData;
+        this.EChartOptionTwo.series[0].data =this.yData;
+        this.initEchars();
+
+      }
+
+    });
+  }
+  initEchars(): void{
+    // 超限量/辆（分轴统计）
+    const a1 = this.el.nativeElement.querySelector('#const1');
+    // this.barStyle.height =  $(window).height();
+    setTimeout(() => {
+      const ec1 = echars as any;
+      const init1 = ec1.init(a1);
+      init1.setOption(this.EChartOptionTwo);
+    }, 1000);
+  }
+
+  alertShow(index): void{
+    switch (index){
+      case 1:
+        this.isPopup = true;
+        break;
+      case 2:
+        this.isPopup =false;
+        break;
+      default: {
+        this.queryStationPassNDaysOL(this.requestData);
+      }
+    }
+    this.queryStationPassNDaysOL(this.requestData);
+  }
+
 }

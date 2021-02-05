@@ -27,11 +27,13 @@ export class QueryIndexComponent implements OnInit, Baseinterface {
   }
 
   onBack(): void {
-    this.windowUntils.onBack();
+    // this.windowUntils.onBack();
+    this.route.navigate(['/queryAll']);
   }
 
   onHome(): void {
     this.route.navigate(['/home']);
+
   }
 
   onSetting(): void { // 个人中心

@@ -68,7 +68,11 @@
                 "input": "src/theme/variables.css"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "src/assets/ezuikit.js"
+              }
+            ]
           },
           "configurations": {
             "production": {

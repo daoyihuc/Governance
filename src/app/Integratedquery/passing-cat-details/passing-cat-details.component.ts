@@ -6,6 +6,7 @@ import {passingCatDetailsTitle} from "../constans/queryConst";
 import {HttpServiceService} from "../../http/http-service.service";
 import {PassCatDetailsBean, passCatDetailsBeanData} from "../../http/HttpBean/PassCatDetailsBean";
 import {ToastService} from "../../utils/toast.service";
+import {ImgPath} from "../../Base/Constans";
 
 @Component({
   selector: 'app-passing-cat-details',
@@ -24,6 +25,7 @@ export class PassingCatDetailsComponent implements OnInit, Baseinterface {
     },
     loop: true
   };
+  Imgpath = ImgPath;
 
   station_Name: string = "";
   responseData: PassCatDetailsBean; // 返回数据

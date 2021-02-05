@@ -72,14 +72,26 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('district', value.body.data.unitname);// 行政区域名称
         sessionStorage.setItem('x', value.body.data.xzb);// 经度
         sessionStorage.setItem('y', value.body.data.yzb);// 纬度
+        sessionStorage.setItem('name',value.body.data.realName);// 执法人姓名
 
-        this.route.navigate(['/home']);
+        this.GetAccessToken();
+        // this.route.navigate(['/home']);
       }else{
         this.toast.presentToast(value.body.message);
       }
     }, error => {
       console.log(error);
     });
+  }
+
+  GetAccessToken(): void{
+    this.http.getAccessToken(null).subscribe( value => {
+      const v = value;
+      if(v.body.code===0){
+        sessionStorage.setItem('AccessToken', v.body.data);// 纬度
+        this.route.navigate(['/home']);
+      }
+    })
   }
 
 

@@ -44,6 +44,9 @@ export const Api: any =
     weighPointByRegionCode : BaseUrl + '/operationMonitor/tWeigh/weighPointByRegionCode', //  运行轨迹-查询称重点信息
     illegalQueryGetById : BaseUrl + '/illegalQuery/getById', //  根据id获取过车对象
     illegalQueryPageList : BaseUrl + '/illegalQuery/pageList', //  根据id获取过车对象
+    trace : BaseUrl + '/dispatch/trace', //  指挥调度-开始追踪
+    getProvinceCode : BaseUrl + '/common/getProvinceCode', //  '获取省编码'
+    getSuperviseById : BaseUrl + '/enterprise/getSuperviseById', //督查记录详情
 
     // /illegalQuery/pageList
     // 违法记录查询

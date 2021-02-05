@@ -20,6 +20,7 @@ import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component'
 import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ShowComponent } from './show/show.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     CarDetailsComponent,
     RunMonitoringComponent,
     RunDiagramComponent,
-    InspectorRecordComponent],
+    InspectorRecordComponent,
+    ShowComponent],
   imports: [
     CommonModule,
     CommandRouterModule,

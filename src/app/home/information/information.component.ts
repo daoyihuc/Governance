@@ -351,12 +351,13 @@ export class InformationComponent implements OnInit, Baseinterface {
   // 执法录入
   HttpEnTring(data): void {
     this.http.entering(data).subscribe(value => {
-      if (value.body.code === 0) {
 
-        this.toast.presentToast(value.body.message);
+      if (value.code === 0) {
+
+        this.toast.presentToast(value.message);
         this.ClearInputData();
       } else {
-        this.toast.presentToast(value.body.message);
+        this.toast.presentToast(value.message);
       }
     });
   }
@@ -392,6 +393,16 @@ export class InformationComponent implements OnInit, Baseinterface {
     for (let i = 0; i < this.InputDatas.length; i++) {
       this.InputDatas[i].value = '';
     }
+    this.imgsData.header = "";
+    this.imgsData.section = "";
+    this.imgsData.footer = "";
+    this.imgsData.WeighingList = "";
+    this.imgsPreview.header = "";
+    this.imgsPreview.section = "";
+    this.imgsPreview.footer = "";
+    this.imgsPreview.WeighingList = "";
+
+
   }
 
 

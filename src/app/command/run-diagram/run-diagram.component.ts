@@ -35,6 +35,10 @@ export class RunDiagramComponent implements OnInit {
     {src: '/command/runDiagram'},
   ];
 
+  requestData = {
+    days: "7",
+  };
+
   pass_rate = 1240;
   Over_limit = 0;
   Over_rate: string = "0";
@@ -136,6 +140,7 @@ export class RunDiagramComponent implements OnInit {
     this.selectGcllAndCzll();
     this.stationCarPass();
     this.queryTopOLTruckByUnitCode();
+    this.queryPassNDaysOL(this.requestData);
   }
 
   onBack(): void {
@@ -210,6 +215,35 @@ export class RunDiagramComponent implements OnInit {
         });
       }
     })
+  }
+
+  //图表分析-7天超限率统计
+  queryPassNDaysOL(data): void{
+    this.http.queryPassNDaysOL(data).subscribe( value => {
+      if(value.body.code === 0){
+        this.xData = [];
+        value.body.data.dates.forEach((e,i)=>{
+          this.xData.push(e);
+        });
+        this.yData = [];
+        value.body.data.noOverLimit.forEach((e,i)=>{
+          this.yData.push(e);
+        });
+        this.EChartOptionTwo.xAxis.data = this.xData;
+        this.EChartOptionTwo.series[0].data =this.yData;
+        this.initEchars1();
+      }
+    })
+  }
+  initEchars1(): void{
+    // 超限量/辆（分轴统计）
+    const a1 = this.el.nativeElement.querySelector('#const1');
+    // this.barStyle.height =  $(window).height();
+    setTimeout(() => {
+      const ec1 = echars as any;
+      const init1 = ec1.init(a1);
+      init1.setOption(this.EChartOptionTwo);
+    }, 1000);
   }
 
 

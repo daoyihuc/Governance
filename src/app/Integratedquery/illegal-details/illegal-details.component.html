@@ -118,14 +118,8 @@
           </ion-item>
           <div class="slideBox">
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide>
-                <h1>Slide 1</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 2</h1>
-              </ion-slide>
-              <ion-slide>
-                <h1>Slide 3</h1>
+              <ion-slide *ngFor="let item of responseData.imgFileList">
+                <img [src]="ImgPaths+item" alt="">
               </ion-slide>
             </ion-slides>
           </div>

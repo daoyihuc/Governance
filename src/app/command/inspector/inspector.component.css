@@ -225,6 +225,7 @@ p {
   height: 70px; }
 
 .work-section .work-section-li {
+  width: 100%;
   display: flex; }
   .work-section .work-section-li .p1 {
     font-size: 11px;

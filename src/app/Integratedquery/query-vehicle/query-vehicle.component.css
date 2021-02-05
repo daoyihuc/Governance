@@ -157,7 +157,7 @@ p {
   --padding-end: 0px;
   margin-right: 10px;
   font-size: 9px;
-  width: 200px;
+  width: 132px;
   border-bottom: 1px solid #5481DC; }
 
 .searchButton {
@@ -194,6 +194,6 @@ p {
   color: #FFFFFF;
   line-height: 13px;
   text-align: center;
-  width: 200px; }
+  width: 132px; }
 
 /*# sourceMappingURL=query-vehicle.component.css.map */

@@ -45,10 +45,10 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   pageNow = 1;
   requestData  = {
     "endTime": "",
+    "enterpriseName": "",
     "pageNo": this.pageNow,
     "pageSize": 10,
-    "provinceCode": "",
-    "startTime": "",
+    "startTime": ""
   };
 
   constructor(
@@ -172,7 +172,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   // 地图绘制参数
   searchOptions = {
     value: 'district',
-    adcode: '长沙市'
+    adcode: sessionStorage.getItem("district")
   };
 
 
@@ -196,6 +196,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
         //   {name: '双凫铺镇南方水泥有限公司双凫铺石矿', car: '湘A9FJ76', id: 5}
         //   )
         this.pageNow++;
+        this.requestData.pageNo =this.pageNow;
         this.pageList(this.requestData);
       }
   }
@@ -214,6 +215,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
           }
           this.mapList.push({
             ...e,
+            code: e.enterpriseCode,
             isShow: false,
             index: i,
             Latitude: e.xzb,
@@ -227,7 +229,8 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
   onBack(): void {
-    this.windowUntils.onBack();
+    // this.windowUntils.onBack();
+    this.route.navigate(['/home']);
   }
 
   onHome(): void {
@@ -273,7 +276,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     this.maps = new AMap.Map('container', {
       resizeEnable: false,
       zoom: 8.5,
-      center: [112.551885, 28.277483], // 此参数用于定位到当前行政区域
+      center: [sessionStorage.getItem("x"), sessionStorage.getItem("y")], // 此参数用于定位到当前行政区域
     });
     this.maps.setMapStyle('amap://styles/darkblue');
 
@@ -353,9 +356,9 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     if (this.maps == null){
       this.getMap();
       this.initData();
-      console.log('监测中');
+      // console.log('监测中');
     }
-    console.log('监测中2');
+    // console.log('监测中2');
   }
   ngOnDestroy(): void {
     this.maps  = null;
@@ -394,6 +397,9 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   //  map
   mapOnClick(index): void{
     console.log(index);
+    //  跳转
+    this.selectedEnterprise.enterpriseName = this.mapList[index].enterpriseName;
+    this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
     if (!this.mapList[index].isShow){
       // this.mapList.forEach((e, i) => {
       //   if (e.isShow){
@@ -415,14 +421,17 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
       });
     }else {
       //  跳转
-      this.selectedEnterprise.enterpriseName = this.mapList[index].enterpriseName;
-      this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
+      // this.selectedEnterprise.enterpriseName = this.mapList[index].enterpriseName;
+      // this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
       this.onFlexJump(0);
     }
   }
 
   searchPage(): void{
-    this.requestData.provinceCode =this.serachData[0].value;
+    this.pageNow =1;
+    this.requestData.pageNo = this.pageNow;
+    this.tableData = [];
+    this.requestData.enterpriseName =this.serachData[0].value;
     this.pageList(this.requestData);
   }
 
@@ -430,6 +439,9 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
   pageList(data): void{
     this.http.pageList(data).subscribe( value => {
       if(value.body.code === 0){
+        if(value.body.data.data === null){
+          return;
+        }
         value.body.data.data.forEach((e,i)=>{
           this.tableData.push(e);
         })

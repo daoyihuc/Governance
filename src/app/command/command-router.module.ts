@@ -16,17 +16,18 @@ import {CarDetailsComponent} from './car-details/car-details.component';
 import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component';
 import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
+import {ShowComponent} from "./show/show.component";
 
 const commandRouter: Routes = [
   {
-    path: '', // 路径名称
+    path: 'commandIndex', // 路径名称
     component: CommandIndexComponent,  // 组件 <---
-    children: [
-      {
-        path: 'commandIndex',
-        component: CommandIndexComponent,  // 组件 <---
-      },
-    ],
+    // children: [
+    //   {
+    //     path: 'commandIndex',
+    //     component: CommandIndexComponent,  // 组件 <---
+    //   },
+    // ],
   },
   {path: 'basicInformation', component: BasicInformationComponent}, // 车辆基本信息
   {path: 'feedback', component: FeedbackComponent}, // 车辆基本信息 信息反馈
@@ -42,6 +43,7 @@ const commandRouter: Routes = [
   {path: 'carDetails', component: CarDetailsComponent}, // 车辆详情查看
   {path: 'runMonitoring', component: RunMonitoringComponent}, // 运行监测
   {path: 'runDiagram', component: RunDiagramComponent}, // 运行监测 tubiao
+  {path: 'show', component: ShowComponent}, // 视频查看 tubiao
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },
 ];

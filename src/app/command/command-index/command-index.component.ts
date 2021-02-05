@@ -5,6 +5,7 @@ import {WindowService} from '../../utils/window.service';
 import {HttpServiceService} from '../../http/http-service.service';
 import {ToastController} from '@ionic/angular';
 import {ToastService} from '../../utils/toast.service';
+import {flatten} from "@angular/compiler";
 declare var AMap: any;
 
 @Component({
@@ -14,13 +15,25 @@ declare var AMap: any;
 })
 export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, AfterViewInit {
 
+  TraceData = {
+    carNumber: "",
+    carPassId: ""
+  }
+
+  driverPoint =[];
+  endPoint =[];
+
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private http: HttpServiceService,
     private toast: ToastService,
-  ) { }
+  ) {
+    // if(this.router.snapshot.paramMap.has("carNumber")){
+
+
+  }
 
 
   tabUrl = [
@@ -71,18 +84,20 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   ngOnInit(): void {
     // 获取列表
     // @ts-ignore
-    this.getList();
 
+    this.getList();
     setTimeout( () => {
       this.getMap();
       this.initData();
     }, 500);
 
     this.HttpAll();
+
   }
 
   onBack(): void {
-    this.windowUntils.onBack();
+    // this.windowUntils.onBack();
+    this.route.navigate(['/home']);
   }
 
   onHome(): void {
@@ -240,16 +255,30 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
   }
 
 
+  // getDriving
+  getDriving(): void{
+    this.router.paramMap.subscribe(value => {
+      console.log(value);
+      this.TraceData.carNumber = this.router.snapshot.paramMap.get("a");
+      console.log("存在",this.router.snapshot.paramMap.get("a"));
+      // }
+      // if(this.router.snapshot.paramMap.has("carPassId")){
+      //   console.log("存在2");
+      this.TraceData.carPassId = this.router.snapshot.paramMap.get("b");
+      console.log("存在w",this.router.snapshot.paramMap.get("b"));
+
+
+      if(this.TraceData.carNumber){
+        if(this.TraceData.carPassId){
+          this.Trace(this.TraceData);
+        }
+      }
+    });
+  }
+
+
   initData(): void {
-    // const a = {
-    //   name: "",
-    //   type: 0,
-    //   Latitude: 0,
-    //   longitude: 0,
-    // };
-    // a.Latitude = 112.551885;
-    // a.longitude = 28.277483;
-    // this.location.push(a);
+
     this.maps.clearMap();
     this.getMap();
    this.liData.forEach((e,j) => {
@@ -266,7 +295,8 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
          }
        }
      }
-   })
+   });
+   this.getDriving();
     console.log('count', '' + this.location.length);
   }
 
@@ -275,12 +305,13 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
     this.maps = new AMap.Map('container', {
       resizeEnable: false,
       zoom: 8.5,
-      center: [112.551885, 28.277483], // 此参数用于定位到当前行政区域
+      center: [sessionStorage.getItem("x"),sessionStorage.getItem("y")], // 此参数用于定位到当前行政区域
     });
     this.maps.setMapStyle('amap://styles/darkblue');
 
     this.search(this.searchOptions);
   }
+
 
   getData(data, level): void {
     const bounds = data.boundaries;
@@ -394,9 +425,9 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
     if (this.maps == null){
       this.getMap();
       this.initData();
-      console.log('监测中');
+      // console.log('监测中');
     }
-    console.log('监测中2');
+    // console.log('监测中2');
   }
   ngOnDestroy(): void {
     this.maps  = null;
@@ -410,6 +441,105 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
 
   isShow(): void {
     this.liShow = !this.liShow;
+  }
+
+  // 开始追踪
+  Trace(data): void{
+    this.http.trace(data).subscribe( value => {
+      if(value.body.code===0){
+        value.body.data.track.forEach((e,i)=>{
+          if(i==0){
+            this.driverPoint.push(e.xzb);
+            this.driverPoint.push(e.yzb);
+          }else{
+            this.endPoint.push(e.xzb);
+            this.endPoint.push(e.yzb);
+          }
+        });
+        this.driving();
+      }
+    });
+  }
+
+  // 路线规划
+  driving(): void{
+
+    let img ="../../../assets/img/zhifarenyuan.png";
+    const startIcon = new AMap.Icon({
+      // image: require('../img/start-point.png'),
+      size: new AMap.Size(14, 14),    // 图标尺寸
+      image: img,
+      imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
+    });
+
+
+    const driverMark = new AMap.Marker({
+      position:   new AMap.LngLat(this.driverPoint[0],this.driverPoint[1]),
+      icon:        startIcon,
+      autoFitView: true,
+      autoRotation: true,
+      // offset:      new Pixel(-32, -70),
+      // offset:      new AMap.Pixel(-14, -20),
+    })
+    driverMark.setMap(this.maps);
+
+    const endIcon = new AMap.Icon({
+      size: new AMap.Size(14, 14),    // 图标尺寸
+      image: img,
+      imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
+    });
+
+    const endMark = new AMap.Marker({
+      position:    new AMap.LngLat(this.endPoint[0],this.endPoint[1]),
+      icon:        endIcon,
+      zoom:        1,
+      autoFitView: true,
+      // offset:      new AMap.Pixel(-32, -70),
+    })
+    endMark.setMap(this.maps)
+
+
+    this.maps.plugin('AMap.Driving', () => {
+      // 我的路线规划
+      const myDriving = new AMap.Driving({
+        map:         this.maps,
+        hideMarkers: true,
+        isOutline:false,
+        outlineColor:'#28F',
+        autoFitView:  true,
+        policy: AMap.DrivingPolicy.LEAST_TIME,
+      })
+      // 司机位置和终点的
+      myDriving.search(this.driverPoint, this.endPoint, (status, result) => {
+        console.log('555555')
+        // 解析返回结果，自己生成操作界面和地图展示界面
+        if (status === 'complete') {
+          const { routes = [] } = result
+          const { steps = [] } = routes[0]
+          const pathArr = []
+          steps.map(i => {
+            pathArr.push(i.path)
+            return pathArr
+          })
+          const path = flatten(pathArr)
+          // 绘制轨迹
+          const polyline = new AMap.Polyline({
+            map: this.maps,
+            path,
+            showDir:true,
+            strokeColor: '#be025a',  // 线颜色
+            strokeOpacity: 1,     // 线透明度
+            strokeWeight: 10,      // 线宽
+            strokeStyle: 'solid',  // 线样式
+            lineJoin: 'round',  // 折线拐点的绘制样式
+            zIndex:999,
+          })
+          polyline.setMap(this.maps)
+          this.maps.setFitView([driverMark, endMark])
+          // this.driverMark.moveAlong(path, 1) // 汽车驾驶路线动画回放
+        }
+      })
+    })
   }
 
 }

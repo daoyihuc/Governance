@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {WindowService} from "../../utils/window.service";
 import {HttpServiceService} from "../../http/http-service.service";
+import {ImgPath} from "../../Base/Constans";
 
 @Component({
   selector: 'app-car-details',
@@ -25,23 +26,24 @@ export class CarDetailsComponent implements OnInit {
 
   carNumber = "";
   banner = [];
+  ImgPath = ImgPath;
 
   list = [
-    {span: '过车时间：', p: '2020-09-27 11:40:57'},
-    {span: '过车地点：', p: 'S207金井非现场检测点'},
-    {span: '行驶方向：', p: '益阳往宁乡'},
-    {span: '轴数：', p: '3'},
-    {span: '总重：', p: '6100'},
-    {span: '限重：', p: '6'},
-    {span: '超限量：', p: '6'},
-    {span: '超限率：', p: '12.45%'}
+    {span: '过车时间：', p: ''},
+    {span: '过车地点：', p: ''},
+    {span: '行驶方向：', p: ''},
+    {span: '轴数：', p: ''},
+    {span: '总重：', p: ''},
+    {span: '限重：', p: ''},
+    {span: '超限量：', p: ''},
+    {span: '超限率：', p: ''}
   ];
 
   list2Data = [
-    {span: '道路运输证：', p: '430124008914'},
-    {span: '发证机关：', p: '长沙县交通运输局'},
-    {span: '证件有效期止：', p: '2022-07-15'},
-    {span: '所有人：', p: '胡云刚'},
+    {span: '道路运输证：', p: ''},
+    {span: '发证机关：', p: ''},
+    {span: '证件有效期止：', p: ''},
+    {span: '所有人：', p: ''},
   ];
 
   slideOpts = {
@@ -78,10 +80,12 @@ export class CarDetailsComponent implements OnInit {
         this.list[6].p = value.body.data.carPassVO.overLimited;
         this.list[7].p = value.body.data.carPassVO.overRate;
 
-        this.list2Data[0].p = value.body.data.carInfo.transportLicenseNumber;
-        this.list2Data[1].p = value.body.data.carInfo.transportIssuingAuthority;
-        this.list2Data[2].p = value.body.data.carInfo.transportIssueDate;
-        this.list2Data[3].p = value.body.data.carInfo.owner;
+        if(value.body.data.carInfo !=null){
+          this.list2Data[0].p = value.body.data.carInfo.transportLicenseNumber;
+          this.list2Data[1].p = value.body.data.carInfo.transportIssuingAuthority;
+          this.list2Data[2].p = value.body.data.carInfo.transportIssueDate;
+          this.list2Data[3].p = value.body.data.carInfo.owner;
+        }
 
         value.body.data.carPassImgInfoVO.imgFileList.forEach((e,i)=>{
           this.banner.push(e);

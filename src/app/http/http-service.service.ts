@@ -14,13 +14,13 @@ import { Api } from './HttpApi';
 import {catchError} from 'rxjs/operators';
 import {LoginBean} from './HttpBean/LoginBean';
 import {axleInitBean} from './HttpBean/axleInitBean';
-import {getResourceListBean} from './HttpBean/getResourceListBean';
+import {getResourceListBean, getResourceListBeanData} from './HttpBean/getResourceListBean';
 import {getInfoByCodeBean} from './HttpBean/getInfoByCodeBean';
-import {getBayonetByCodeBean} from './HttpBean/getBayonetByCodeBean';
+import {getBayonetByCodeBean, GetBayonetByCodeBeanData} from './HttpBean/getBayonetByCodeBean';
 import {TweightBean} from './HttpBean/TweightBean';
 import {BaseBody} from "./HttpBean/BaseBody";
 import {mapListAllBean} from "./HttpBean/mapListAllBean";
-import {enterpriseGetByIdBean} from "./HttpBean/enterpriseGetByIdBean";
+import {enterpriseGetByIdBean, EnterpriseGetByIdBeanData} from "./HttpBean/enterpriseGetByIdBean";
 import {illegalQueryBean} from "./HttpBean/illegalQueryBean";
 import {TransportGetDriverInfoBeanData} from "./HttpBean/TransportGetDriverInfoBean";
 import {TransportCompanyInfoBeanData} from "./HttpBean/TransportCompanyInfoBean";
@@ -40,6 +40,13 @@ import {QueryTopOLTruckByUnitCodeBeanData} from "./HttpBean/QueryTopOLTruckByUni
 import {StationCarPassBeanData} from "./HttpBean/StationCarPassBean";
 import {TruckInfoBeanData} from "./HttpBean/TruckInfoBean";
 import {pageListBeanData} from "./HttpBean/PageListBean";
+import {QueryStationPassNDaysOLBeanData} from "./HttpBean/QueryStationPassNDaysOLBean";
+import {GetAccessTokenBean} from "./HttpBean/getAccessTokenBean";
+import {SuperviseInitBeanData} from "./HttpBean/SuperviseInitBean";
+import {TraceBeanData} from "./HttpBean/TraceBean";
+import {CarNativeReportBeanData} from "./HttpBean/CarNativeReportBean";
+import {GetProvinceCodeBeanData} from "./HttpBean/GetProvinceCodeBean";
+import {GetSuperviseByIdBeanData} from "./HttpBean/GetSuperviseByIdBean";
 
 @Injectable({
   providedIn: 'root'
@@ -100,10 +107,10 @@ export class HttpServiceService {
   }
 
   //  督查记录
-  superviseRecord(data: any): Observable<HttpResponse<getResourceListBean>> {
+  superviseRecord(data: any): Observable<HttpResponse<getResourceListBeanData>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< LoginBean > ( Api.superviseRecord, data, this.options)
+    return  this.http.post< getResourceListBeanData > ( Api.superviseRecord, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -120,11 +127,11 @@ export class HttpServiceService {
   }
 
   //  获取单个企业视频卡口
-  getBayonetByCode(data: any): Observable<HttpResponse<getBayonetByCodeBean>> {
+  getBayonetByCode(data: any): Observable<HttpResponse<GetBayonetByCodeBeanData>> {
     this.options.params = data;
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< getBayonetByCodeBean > ( Api.getBayonetByCode, null, this.options)
+    return  this.http.post< GetBayonetByCodeBeanData > ( Api.getBayonetByCode, null, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -144,7 +151,7 @@ export class HttpServiceService {
   entering(data: any): Observable<HttpResponse<BaseBody>> {
     this.options2.params = data;
     // @ts-ignore
-    return  this.http.post< BaseBody > ( Api.entering, data,this.options2)
+    return  this.http.post< BaseBody > ( Api.entering, data)
       .pipe(
         // catchError(this.handleError)
       );
@@ -154,17 +161,17 @@ export class HttpServiceService {
   mapListAll(data: any): Observable<HttpResponse<mapListAllBean>> {
     // this.options.params = data;
     // @ts-ignore
-    return  this.http.post< mapListAllBean > ( Api.mapListAll, data, this.options2)
+    return  this.http.post< mapListAllBean > ( Api.mapListAll, data, this.options)
       .pipe(
         // catchError(this.handleError)
       );
   }
 
   //  企业过车详情
-  enterpriseGetById(data: any): Observable<HttpResponse<enterpriseGetByIdBean>> {
+  enterpriseGetById(data: any): Observable<HttpResponse<EnterpriseGetByIdBeanData>> {
     this.options.params = data;
     // @ts-ignore
-    return  this.http.post< enterpriseGetByIdBean > ( Api.enterpriseGetById, null, this.options)
+    return  this.http.post< EnterpriseGetByIdBeanData > ( Api.enterpriseGetById, null, this.options)
       .pipe(
         // catchError(this.handleError)
       );
@@ -282,9 +289,9 @@ export class HttpServiceService {
 
   // 指挥调度-信息反馈
   infoFeedbackSubmit(data: any): Observable<HttpResponse<BaseBody>> {
-    this.options2.params = data;
+    // this.options2.params = data;
     // @ts-ignore
-    return  this.http.post< BaseBody > ( Api.infoFeedbackSubmit, data, this.options2)
+    return  this.http.post< BaseBody > ( Api.infoFeedbackSubmit, data)
       .pipe(
         // catchError(this.handleError)
       );
@@ -354,6 +361,93 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< pageListBeanData > ( Api.pageList, data, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 运行轨迹-查看数据计
+  queryStationPassNDaysOL(data: any): Observable<HttpResponse<QueryStationPassNDaysOLBeanData>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.get< QueryStationPassNDaysOLBeanData > ( Api.queryStationPassNDaysOL, this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 图表分析-7天超限率统计
+  queryPassNDaysOL(data: any): Observable<HttpResponse<QueryStationPassNDaysOLBeanData>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< QueryStationPassNDaysOLBeanData > ( Api.queryPassNDaysOL,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 萤石云token
+  getAccessToken(data: any): Observable<HttpResponse<GetAccessTokenBean>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetAccessTokenBean > ( Api.getAccessToken,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 督查情况列表初始化
+  superviseInit(data: any): Observable<HttpResponse<SuperviseInitBeanData>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< SuperviseInitBeanData > ( Api.superviseInit,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 源头督察
+  supervise(data: FormData): Observable<HttpResponse<BaseBody>> {
+    // this.options2.params = data;
+    // @ts-ignore
+    return  this.http.post< BaseBody > ( Api.supervise,data)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+
+  // 开始追踪
+  trace(data: any): Observable<HttpResponse<TraceBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TraceBeanData > ( Api.trace,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 车辆车籍地统计
+  carNativeReport(data: any): Observable<HttpResponse<CarNativeReportBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< CarNativeReportBeanData > ( Api.carNativeReport,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 车辆车籍地统计
+  getProvinceCode(data: any): Observable<HttpResponse<GetProvinceCodeBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetProvinceCodeBeanData > ( Api.getProvinceCode,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 车辆车籍地统计
+  getSuperviseById(data: any): Observable<HttpResponse<GetSuperviseByIdBeanData>> {
+    // this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetSuperviseByIdBeanData > ( Api.getSuperviseById,data,this.options)
       .pipe(
         // catchError(this.handleError)
       );

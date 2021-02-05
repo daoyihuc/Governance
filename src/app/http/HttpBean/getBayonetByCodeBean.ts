@@ -1,10 +1,19 @@
-import {BaseBody} from './BaseBody';
+import {BaseBody} from "./BaseBody";
 
-export interface getBayonetByCodeBean extends BaseBody{
-  data: getBayonetByCodeBeanData[];
+
+export interface GetBayonetByCodeBeanData extends  BaseBody{
+  data: getBayonetByCodeBean[];
 }
 
-export interface getBayonetByCodeBeanData {
-  // @ts-ignore
-  data?: string;
+export  interface getBayonetByCodeBean {
+   address?: string;
+   aliveAddress?: string;
+   enterpriseCode?: string;
+   enterpriseName?: string;
+   id?: string;
+   onlineFlag?: string;
+   serialNum?: string;
+   verificationCode?: string;
+   xzb?: string;
+   yzb?: string;
 }
