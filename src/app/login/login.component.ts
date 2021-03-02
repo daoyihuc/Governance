@@ -34,7 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    if(sessionStorage.getItem("username")){
+      this.data.username = sessionStorage.getItem("username");
+    }
+    if(sessionStorage.getItem("password")){
+      this.data.password = sessionStorage.getItem("password");
+    }
   }
   judgment(): void{
     if (this.data.username === null || this.data.username === ''){
@@ -73,6 +78,11 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('x', value.body.data.xzb);// 经度
         sessionStorage.setItem('y', value.body.data.yzb);// 纬度
         sessionStorage.setItem('name',value.body.data.realName);// 执法人姓名
+
+        if(this.remember){
+          sessionStorage.setItem("username",this.data.username);
+          sessionStorage.setItem("password",this.data.password);
+        }
 
         this.GetAccessToken();
         // this.route.navigate(['/home']);

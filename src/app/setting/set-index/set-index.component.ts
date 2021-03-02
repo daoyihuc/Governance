@@ -17,8 +17,8 @@ export class SetIndexComponent implements OnInit,Baseinterface {
 
   }
   lists = [
-      {name: '用户名', text: 'xa548153'},
-      {name: '姓名', text: '徐璈'},
+      {name: '用户名', text: sessionStorage.getItem("username")},
+      {name: '姓名', text: sessionStorage.getItem("name")},
       {name: '所属单位', text: '第二机动大队'}
       ];
   btns = [

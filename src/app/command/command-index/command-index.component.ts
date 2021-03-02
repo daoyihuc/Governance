@@ -123,7 +123,7 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
       console.log(value);
       if (value.body.code === 0){
         console.log(value);
-
+        this.cardData = [];
         value.body.data.forEach((e,i)=>{
           const a = {id: '粤HB8982', name: '超限嫌疑车', class: 1,carPassId: 'sd',
             list: [
@@ -151,7 +151,7 @@ export class CommandIndexComponent implements OnInit, DoCheck , OnDestroy, After
           a.list[4].p = e.overLimited;
           a.list[5].p = e.axisNum;
           a.list[6].p = e.overRate;
-          this.cardData = [];
+
           this.cardData.push(a);
         });
 

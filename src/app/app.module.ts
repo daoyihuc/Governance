@@ -18,6 +18,7 @@ import zh from '@angular/common/locales/zh';
 import {NgxEchartsModule} from 'ngx-echarts';
 import {MatDialogModule} from '@angular/material/dialog';
 import {LoginInterceptor} from './http/handle/login.interceptor';
+import {IsloginGuard} from "./islogin.guard";
 
 registerLocaleData(zh);
 
@@ -25,18 +26,22 @@ registerLocaleData(zh);
 const appRoute: Routes = [
   {path: 'login', component: LoginComponent, data: {animation: 'login'}},
   {path: 'home', // 主页路由
+    canActivate: [IsloginGuard],
     loadChildren: () => import('./home/home.module')
       .then(m => m.HomeModule)
   },
   {path: 'setting', // 个人中心
+    canActivate: [IsloginGuard],
     loadChildren: () => import('./setting/setting.module')
       .then(m => m.SettingModule)
   },
   {path: 'command', // 指挥调度
+    canActivate: [IsloginGuard],
     loadChildren: () => import('./command/command.module')
       .then(m => m.CommandModule)
   },
   {path: 'queryAll', // 综合查询
+    canActivate: [IsloginGuard],
     loadChildren: () => import('./Integratedquery/integrated-index.module')
       .then(m => m.IntegratedIndexModule)
   },

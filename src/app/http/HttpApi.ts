@@ -47,6 +47,8 @@ export const Api: any =
     trace : BaseUrl + '/dispatch/trace', //  指挥调度-开始追踪
     getProvinceCode : BaseUrl + '/common/getProvinceCode', //  '获取省编码'
     getSuperviseById : BaseUrl + '/enterprise/getSuperviseById', //督查记录详情
+    updatePass : BaseUrl + '/user/updatePass', //修改密码
+    getSystemInfo : BaseUrl + '/common/getSystemInfo', //查询系统信息
 
     // /illegalQuery/pageList
     // 违法记录查询

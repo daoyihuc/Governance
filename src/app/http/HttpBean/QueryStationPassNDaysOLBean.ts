@@ -8,5 +8,5 @@ export  interface QueryStationPassNDaysOLBean {
    dates?: string[];
    noCarPass?: number[];
    noOverLimit?: number[];
-   overLimitRatio?: string[];
+   overLimitRatio?: number[];
 }

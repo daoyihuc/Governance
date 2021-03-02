@@ -78,7 +78,8 @@ export class InspectorComponent implements OnInit {
     const  a= new FormData();
     for(let key in this.requestData){
       // console.log(key);
-      if(key != "files"&&key!="caseCode"&&key!="enterpriseCode"&&key!="remark"&&key!="supervisePerson"&&key!="superviseTime"){
+    // &&key!="caseCode" &&key!="remark"
+      if(key != "files"&&key!="enterpriseCode"&&key!="supervisePerson"&&key!="superviseTime"){
         console.log(key);
         a.append(key,this.requestData[key]);
       }else if(key === "files"){
@@ -121,8 +122,8 @@ export class InspectorComponent implements OnInit {
   superviseInit(): void{
     this.http.superviseInit(null).subscribe( value => {
       if(value.body.code===0){
+        this.liData = [];
         value.body.data.forEach((e,i)=>{
-          this.liData = [];
           const a= {text: '1.是否悬挂了治超宣传横幅及永久性宣传标志牌？' , isDisabled: false,code: "0"};
           a.text = e.caseName;
           a.code =e.caseCode;

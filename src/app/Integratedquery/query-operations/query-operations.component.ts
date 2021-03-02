@@ -55,7 +55,7 @@ export class QueryOperationsComponent implements OnInit {
     this.resultData[10].value=data.address;// 地址
     this.resultData[5].value=data.archiveCode;// 电子档案号
     this.resultData[9].value=data.certificateStatus;// 证书状态
-    this.resultData[6].value=data.driverIssueDate;// 驾驶证发证时间
+    // this.resultData[6].value=data.driverIssueDate;// 驾驶证发证时间
     // this.resultData[10].value=data.certificateStatus;// 驾驶证发证机关
     // this.resultData[10].value=data.driverLicenseNumber;// 驾驶证号
     this.resultData[7].value= data.endDate;// 有效期止
@@ -64,7 +64,7 @@ export class QueryOperationsComponent implements OnInit {
     this.resultData[0].value= data.name;// 姓名
     this.resultData[1].value=data.sex;// 驾驶员性别
     this.resultData[3].value= data.telephone;// 联系方式
-    // this.resultData[10].value= data.workingIssueDate;// 从业资格证发证时间
+    this.resultData[6].value= data.workingIssueDate;// 从业资格证发证时间
     // this.resultData[10].value=data.workingIssuingAuthority;// 从业资格证发证机关
     this.resultData[4].value=data.workingQualification;// 从业资格证号
     this.resultData[8].value= data.workingType;// 驾驶员从业类型

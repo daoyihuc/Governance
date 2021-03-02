@@ -62,7 +62,7 @@ export class QueryenterpriseComponent implements OnInit {
     this.resultData[4].value=data.businessCertificateNumber;// 经营许可证号
     this.resultData[2].value=data.businessIssueDate;// 经营许可证发证时间
     this.resultData[5].value= data.businessIssuingAuthority;// 经营许可证发证机关
-    this.resultData[2].value=data.corporate;// 法人代表
+    // this.resultData[2].value=data.corporate;// 法人代表
     this.resultData[3].value= data.endDate;// 有效期止
     // this.resultData[1].value=data.id;// id
     // this.resultData[3].value= data.socialCode;// 企业信用代码

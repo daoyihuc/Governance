@@ -55,14 +55,14 @@
       <div class="page-content-section">
         <div class="run-monitoring-header">
           <div class="run-header-box" (click)="onShow(1)" [class.run-header-box-no]="!runShow">
-            <div class="box-right">3</div>
+            <div class="box-right">{{zcCount}}</div>
             <div class="box-left">
               <img src="../../../assets/img/zhichaozhan.png" alt="feixcje">
               超限检测站
             </div>
           </div>
-          <div class="run-header-box run-header-box-no" (click)="onShow(2)" [class.run-header-box-no]="runShow">
-            <div class="box-right">2</div>
+          <div class="run-header-box " (click)="onShow(0)" [class.run-header-box-no]="runShow">
+            <div class="box-right">{{fzcCount}}</div>
             <div class="box-left">
               <img src="../../../assets/img/feixcje.png" alt="feixcje">
               非现场检测点
@@ -107,7 +107,7 @@
     <div class="popup" *ngIf="isPopup">
       <div class="page-card page-card-weighing">
         <div class="page-card-header">
-          <p>菁华铺超限检测站-7天超限率</p>
+          <p>{{ShowData.wn}}-7天超限率</p>
           <img src="../../../assets/img/pop-close.png" alt=""  (click)="alertShow(2)">
         </div>
         <div >

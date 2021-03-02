@@ -226,7 +226,7 @@ export class RunDiagramComponent implements OnInit {
           this.xData.push(e);
         });
         this.yData = [];
-        value.body.data.noOverLimit.forEach((e,i)=>{
+        value.body.data.overLimitRatio.forEach((e,i)=>{
           this.yData.push(e);
         });
         this.EChartOptionTwo.xAxis.data = this.xData;

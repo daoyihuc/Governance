@@ -47,6 +47,7 @@ import {TraceBeanData} from "./HttpBean/TraceBean";
 import {CarNativeReportBeanData} from "./HttpBean/CarNativeReportBean";
 import {GetProvinceCodeBeanData} from "./HttpBean/GetProvinceCodeBean";
 import {GetSuperviseByIdBeanData} from "./HttpBean/GetSuperviseByIdBean";
+import {SystemBean} from "./HttpBean/SystemBean";
 
 @Injectable({
   providedIn: 'root'
@@ -148,7 +149,7 @@ export class HttpServiceService {
   }
 
   // 执法录入
-  entering(data: any): Observable<HttpResponse<BaseBody>> {
+  entering(data: any): Observable<BaseBody> {
     this.options2.params = data;
     // @ts-ignore
     return  this.http.post< BaseBody > ( Api.entering, data)
@@ -288,7 +289,7 @@ export class HttpServiceService {
   }
 
   // 指挥调度-信息反馈
-  infoFeedbackSubmit(data: any): Observable<HttpResponse<BaseBody>> {
+  infoFeedbackSubmit(data: any): Observable<BaseBody> {
     // this.options2.params = data;
     // @ts-ignore
     return  this.http.post< BaseBody > ( Api.infoFeedbackSubmit, data)
@@ -368,7 +369,7 @@ export class HttpServiceService {
 
   // 运行轨迹-查看数据计
   queryStationPassNDaysOL(data: any): Observable<HttpResponse<QueryStationPassNDaysOLBeanData>> {
-    // this.options.params = data;
+    this.options.params = data;
     // @ts-ignore
     return  this.http.get< QueryStationPassNDaysOLBeanData > ( Api.queryStationPassNDaysOL, this.options)
       .pipe(
@@ -378,7 +379,7 @@ export class HttpServiceService {
 
   // 图表分析-7天超限率统计
   queryPassNDaysOL(data: any): Observable<HttpResponse<QueryStationPassNDaysOLBeanData>> {
-    // this.options.params = data;
+    this.options.params = data;
     // @ts-ignore
     return  this.http.post< QueryStationPassNDaysOLBeanData > ( Api.queryPassNDaysOL,data,this.options)
       .pipe(
@@ -407,7 +408,7 @@ export class HttpServiceService {
   }
 
   // 源头督察
-  supervise(data: FormData): Observable<HttpResponse<BaseBody>> {
+  supervise(data: FormData): Observable<BaseBody> {
     // this.options2.params = data;
     // @ts-ignore
     return  this.http.post< BaseBody > ( Api.supervise,data)
@@ -448,6 +449,24 @@ export class HttpServiceService {
     // this.options.params = data;
     // @ts-ignore
     return  this.http.post< GetSuperviseByIdBeanData > ( Api.getSuperviseById,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 查询系统信息
+  getSystemInfo(data: any): Observable<HttpResponse<SystemBean>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetSuperviseByIdBeanData > ( Api.getSystemInfo,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 修改密码
+  updatePass(data: any): Observable<HttpResponse<BaseBody>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< GetSuperviseByIdBeanData > ( Api.updatePass,data,this.options)
       .pipe(
         // catchError(this.handleError)
       );

@@ -20,6 +20,7 @@ export class IndexComponent implements OnInit, Baseinterface {
   ) { }
 
   ngOnInit(): void {
+    window['android'].setName("home");
   }
 
   onBack(): void {

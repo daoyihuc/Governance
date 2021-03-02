@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {WindowService} from "../../utils/window.service";
 import {Baseinterface} from "../../interface/baseinterface";
+import {HttpServiceService} from "../../http/http-service.service";
 
 @Component({
   selector: 'app-information',
@@ -13,10 +14,10 @@ export class InformationComponent implements OnInit,Baseinterface {
   constructor(
     private route: Router,
     private windowUntils: WindowService,
+    private http: HttpServiceService,
   ) { }
 
-  ngOnInit(): void {
-  }
+
   lists = [
     {name: '系统名称', text: '宁乡市科技治超综合执法应用平台'},
     {name: '版本号', text: '版本WXJTV1.0'},
@@ -31,6 +32,9 @@ export class InformationComponent implements OnInit,Baseinterface {
         '                            '}
   ];
 
+  ngOnInit(): void {
+    this.HTTP(null);
+  }
   onBack(): void {
     this.windowUntils.onBack();
   }
@@ -41,5 +45,18 @@ export class InformationComponent implements OnInit,Baseinterface {
 
   onSetting(): void { // 个人中心
     this.route.navigate(['/setting']);
+  }
+  HTTP(data): void{
+    this.http.getSystemInfo(data).subscribe( value => {
+
+      if(value.body.code === 0){
+
+        this.lists[0].text = value.body.data.systemName;
+        this.lists[1].text = value.body.data.version;
+        this.lists[2].text = value.body.data.verOwner[0];
+        this.lists[3].text = value.body.data.companyName+"\n"+value.body.data.tel;
+      }else {
+      }
+    });
   }
 }

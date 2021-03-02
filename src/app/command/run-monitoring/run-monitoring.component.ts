@@ -25,6 +25,8 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   }
 
+  mackerels: any = []; // 锚点参数
+
   jumpUrl = [
     {src: '/command/runMonitoring'},
     {src: '/command/runDiagram'},
@@ -51,7 +53,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
 
   TweightList: TweightListData[] = [];
   location: any = []; // 锚点参数
-  type = 0; // 0: all 1,治超 2： 非治超
+  type = 1; // -1: all 1,治超 0： 非治超
 
   ShowData = {
     equipmentType: null,
@@ -71,6 +73,8 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     days: "7",
     weighNumber: ""
   };
+  zcCount = 0;
+  fzcCount =0;
 
   // popup
   isPopup = false; // 弹窗控制
@@ -161,11 +165,11 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     this.getMap();
 
     for (let i = 0; i < this.location.length; i++) {
-      if(this.type === 0 ){
+      if(this.type === -1 ){
         this.addMark(this.location[i]);
         continue;
       }
-      if(this.location[i].type === this.type-1){
+      if(this.location[i].type === this.type){
         this.addMark(this.location[i]);
       }
 
@@ -239,13 +243,17 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
   addMark(obj): void {
 
     // 0 : 非治超 1： 治超
+    let type= 1;
     let img ="../../../assets/img/zhichaozhan.png";
     switch (obj.type) {
       case 0:
-        img="../../../assets/img/zhichaozhan.png";
+        img="../../../assets/img/feixcje.png";
+        type = 0;
         break
       case 1:
-        img="../../../assets/img/feixcje.png";
+
+        img="../../../assets/img/zhichaozhan.png";
+        type= 1; // 非治超
         break;
     }
 
@@ -256,17 +264,21 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
       imageSize: new AMap.Size(14, 14)   // 根据所设置的大小拉伸或压缩图片
     });
     // 创建一个 Marker 实例：
-    const marker = new AMap.Marker({
+    this.mackerels[obj.index] = new AMap.Marker({
       position: new AMap.LngLat(obj.Latitude, obj.longitude),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
       title: obj.title,
-      icon: icons,
+      // icon: icons,
+      content: `<div class="map-box ${obj.isShow ? 'map-box-show' : ''}">
+                  <div class="map-img ${obj.isShow ? 'map-img-show' : ''}"><div class="${type == 1?'img-span1':'img-span0'}"></div></div>
+                  <div class="map-text ${obj.isShow ? 'map-text-show' : ''}">${obj.title}</div>
+                </div>`, // 自定义点标记覆盖物内容
     });
 
-    marker.on('click',()=>{
+    this.mackerels[obj.index].on('click',()=>{
       this.showInfoM(obj.index);
     });
 // 将创建的点标记添加到已有的地图实例：
-    this.maps.add(marker);
+    this.maps.add(this.mackerels[obj.index]);
   }
 
   ngDoCheck(): void {
@@ -299,6 +311,37 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     // alert(text1);
     this.requestData.weighNumber =this.TweightList[e].wnm;
 
+    if (!this.location[e].isShow){
+      // this.mapList.forEach((e, i) => {
+      //   if (e.isShow){
+      //     this.maps.remove(this.mackerels[i]); // 清除
+      //     e.isShow = false; // 赋值
+      //     this.addMark(this.mapList[i]); // 渲染
+      //   }
+      // });
+      this.maps.remove(this.mackerels[e]); // 清除
+      this.location[e].isShow = true; // 赋值
+      this.addMark(this.location[e]); // 渲染
+      // 后渲染层级高
+      this.location.forEach((a, i) => {
+        if (a.index !== e){
+          this.maps.remove(this.mackerels[i]); // 清除
+          a.isShow = false; // 赋值
+
+          if(this.location[i].type === this.type){
+            this.addMark(this.location[i]); // 渲染
+          }
+
+        }
+      });
+    }else {
+      //  跳转
+      // this.selectedEnterprise.enterpriseName = this.mapList[index].enterpriseName;
+      // this.selectedEnterprise.enterpriseCode = this.mapList[index].enterpriseCode;
+      // this.onFlexJump(0);
+    }
+
+
     console.log('完成open');
   }
 
@@ -307,9 +350,12 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
     this.http.tWeighList(null).subscribe( value => {
       console.log(value);
       if(value.body.code === 0){
-        value.body.data.cxWeighPointList.forEach( (e,i) => {
+        this.zcCount =value.body.data.cxWeighPointList.length;
+          value.body.data.cxWeighPointList.forEach( (e,i) => {
           this.TweightList.push(e);
+
         });
+        this.fzcCount =value.body.data.fxcWeighPointList.length;
         value.body.data.fxcWeighPointList.forEach((e,i)=>{
           this.TweightList.push(e);
         });
@@ -319,6 +365,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
             longitude: 0,
             title: '',
             type: 0,
+            isShow: false,
             index: 0,
           };
           a.Latitude = Number(e.xpos);
@@ -345,7 +392,7 @@ export class RunMonitoringComponent implements OnInit, DoCheck, OnDestroy, After
           this.xData.push(e);
         });
         this.yData = [];
-        value.body.data.noOverLimit.forEach((e,i)=>{
+        value.body.data.overLimitRatio.forEach((e,i)=>{
           this.yData.push(e);
         });
         this.EChartOptionTwo.xAxis.data = this.xData;

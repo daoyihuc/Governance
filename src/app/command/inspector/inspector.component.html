@@ -67,7 +67,7 @@
           <div class="section-card-section-content work-section">
             <div class="work-section-li" *ngFor="let item of liData">
               <p class="p1">{{item.text}}</p>
-              <ion-toggle color="secondary" [(ngModel)]="item.isDisabled" slot="end"></ion-toggle>
+              <ion-toggle color="secondary" [(ngModel)]="item.isDisabled" slot="end" class="toggle"></ion-toggle>
             </div>
           </div>
         </div>

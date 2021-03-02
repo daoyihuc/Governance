@@ -80,10 +80,10 @@ export class LoginInterceptor implements HttpInterceptor {
         event => {
           if (event instanceof HttpResponse) {
             // console.log(event);
-            if (event.body.code === 1002) {
+            if (event.body.code === 1002 || event.body.code === 1008) {
               // 跳转错误页面
-              // sessionStorage.clear();
-              // this.router.navigate(['/login']);
+              sessionStorage.clear();
+              this.router.navigate(['/login']);
             }
           }
         },
