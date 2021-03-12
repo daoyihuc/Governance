@@ -71,8 +71,8 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
           const year=c.year.value;
           const month=c.month.value;
           const day=c.day.value;
-          const hour=c.hour.value.length>1?c.hour.value:"0"+c.hour.value;
-          const minute=c.minute.value;
+          const hour=c.hour.value.toString().length>1?c.hour.value:"0"+c.hour.value;
+          const minute=c.minute.value.toString().length>1?c.minute.value:"0"+c.minute.value;
           this.ValueTimeStart = year+month+day+hour+minute;
           // this.InputDatas[2].value = this.ValueTime;
           this.serachData[2].value = "";
@@ -87,8 +87,8 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
           const year=c.year.value;
           const month=c.month.value;
           const day=c.day.value;
-          const hour=c.hour.value.length>1?c.hour.value:"0"+c.hour.value;
-          const minute=c.minute.value;
+          const hour=c.hour.value.toString().length>1?c.hour.value:"0"+c.hour.value;
+          const minute=c.minute.value.toString().length>1?c.minute.value:"0"+c.minute.value;
           this.ValueTimeStart = year+'年'+month+'月'+day+'日'+hour+'点'+minute;
           const ValueTimeStart2 = year+'-'+month+'-'+day+' '+hour+':'+minute;
           this.serachData[2].value = this.ValueTimeStart;
@@ -108,8 +108,8 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
           const year=c.year.value;
           const month=c.month.value;
           const day=c.day.value;
-          const hour=c.hour.value.length>1?c.hour.value:"0"+c.hour.value;
-          const minute=c.minute.value;
+          const hour=c.hour.value.toString().length>1?c.hour.value:"0"+c.hour.value;
+          const minute=c.minute.value.toString().length>1?c.minute.value:"0"+c.minute.value;
           this.ValueTimeEnd = year+month+day+hour+minute;
           // this.InputDatas[2].value = this.ValueTime;
           this.serachData[3].value = "";
@@ -124,8 +124,8 @@ export class QueryPassingCarComponent implements OnInit, Baseinterface {
           const year=c.year.value;
           const month=c.month.value;
           const day=c.day.value;
-          const hour=c.hour.value.length>1?c.hour.value:"0"+c.hour.value;
-          const minute=c.minute.value;
+          const hour=c.hour.value.toString().length>1?c.hour.value:"0"+c.hour.value;
+          const minute=c.minute.value.toString().length>1?c.minute.value:"0"+c.minute.value;
           this.ValueTimeEnd = year+'年'+month+'月'+day+'日'+hour+'点'+minute;
           this.serachData[3].value = this.ValueTimeEnd;
           const ValueTimeStart2 = year+'-'+month+'-'+day+' '+hour+':'+minute;

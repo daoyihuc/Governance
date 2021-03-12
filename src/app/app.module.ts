@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {LoginInterceptor} from './http/handle/login.interceptor';
 import {IsloginGuard} from "./islogin.guard";
 
+
 registerLocaleData(zh);
 
 // 路由
@@ -53,7 +54,7 @@ const appRoute: Routes = [
     AppComponent,
     LoginComponent,
     SlideVerifyComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

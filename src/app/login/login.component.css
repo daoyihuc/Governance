@@ -52,7 +52,20 @@ html body {
           background: rgba(84, 129, 220, 0);
           border: none;
           margin-left: 10px;
-          color: white; }
+          color: white;
+          outline: none; }
+          .maxBox .card .input_box .usernameBox input::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .usernameBox input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .usernameBox input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .usernameBox input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFFFFF; }
       .maxBox .card .input_box .passwordBox {
         display: flex;
         background: rgba(84, 129, 220, 0.2);
@@ -65,7 +78,20 @@ html body {
           background: rgba(84, 129, 220, 0);
           border: none;
           margin-left: 10px;
-          color: white; }
+          color: white;
+          outline: none; }
+          .maxBox .card .input_box .passwordBox input::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .passwordBox input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .passwordBox input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #FFFFFF; }
+          .maxBox .card .input_box .passwordBox input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFFFFF; }
       .maxBox .card .input_box .orCheck {
         display: flex;
         justify-content: flex-end;

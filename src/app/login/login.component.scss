@@ -60,6 +60,14 @@ html body{
           border: none;
           margin-left: 10px;
           color: rgba(255,255,255,1);
+          outline: none;
+          &::-webkit-input-placeholder { /* WebKit, Blink, Edge */    color:    #FFFFFF; }
+
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */   color:    #FFFFFF; }
+
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */   color:    #FFFFFF; }
+
+          &:-ms-input-placeholder { /* Internet Explorer 10-11 */   color:    #FFFFFF; }
         }
       }
 
@@ -76,6 +84,14 @@ html body{
           border: none;
           margin-left: 10px;
           color: rgba(255,255,255,1);
+          outline: none;
+          &::-webkit-input-placeholder { /* WebKit, Blink, Edge */    color:    #FFFFFF; }
+
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */   color:    #FFFFFF; }
+
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */   color:    #FFFFFF; }
+
+          &:-ms-input-placeholder { /* Internet Explorer 10-11 */   color:    #FFFFFF; }
         }
       }
       .orCheck{

@@ -17,6 +17,7 @@ import {RunMonitoringComponent} from './run-monitoring/run-monitoring.component'
 import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
 import {ShowComponent} from "./show/show.component";
+import {ShowDetailsComponent} from "./show-details/show-details.component";
 
 const commandRouter: Routes = [
   {
@@ -43,6 +44,7 @@ const commandRouter: Routes = [
   {path: 'carDetails', component: CarDetailsComponent}, // 车辆详情查看
   {path: 'runMonitoring', component: RunMonitoringComponent}, // 运行监测
   {path: 'runDiagram', component: RunDiagramComponent}, // 运行监测 tubiao
+  {path: 'showDetails', component: ShowDetailsComponent}, // 图片查看 tubiao
   {path: 'show', component: ShowComponent}, // 视频查看 tubiao
   { path: '', redirectTo: 'commandIndex', pathMatch: 'full' },
   { path: '**', redirectTo: 'commandIndex' },

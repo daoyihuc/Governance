@@ -5,6 +5,8 @@ import {WindowService} from "../../utils/window.service";
 import {HttpServiceService} from "../../http/http-service.service";
 import {IllegalQueryGetByIdBean, IllegalQueryGetByIdBeanData} from "../../http/HttpBean/IllegalQueryGetByIdBean";
 import { ImgPath } from 'src/app/Base/Constans';
+import {MatDialog} from "@angular/material/dialog";
+import {ShowDetailsComponent} from "../../command/show-details/show-details.component";
 
 @Component({
   selector: 'app-illegal-details',
@@ -46,6 +48,7 @@ export class IllegalDetailsComponent implements OnInit {
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private el: ElementRef,
+    private mes: MatDialog, // 站点弹窗
     private http: HttpServiceService,//网络请求
 
   ) {
@@ -83,4 +86,9 @@ export class IllegalDetailsComponent implements OnInit {
       }
     });
   }
+  // 图片查看
+  show(src): void{
+    let matDialogRef = this.mes.open(ShowDetailsComponent,{data: src});
+  }
+
 }

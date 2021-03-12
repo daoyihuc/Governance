@@ -42,7 +42,7 @@ export class QueryOperationsComponent implements OnInit {
   Http(data: any): void{
     this.http.getDriverInfo(data).subscribe( value => {
       if (value.body.code === 0){
-        this.toast.presentToast(value.body.message);
+        // this.toast.presentToast(value.body.message);
         this.CopyData(value.body.data)
       }else{
         this.toast.presentToast(value.body.message);

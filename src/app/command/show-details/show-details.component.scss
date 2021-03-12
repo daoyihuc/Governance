@@ -1,0 +1,75 @@
+@import "../../Base/BaseCss";
+
+.page-content{
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  background-size: 100% 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+.page-box{
+  padding: 13px 13px;
+}
+.item_section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.item_s_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 297px;
+  height: 34px;
+  line-height: 34px;
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+  border-radius: 6px;
+  align-items: center;
+  padding-right: 14px;
+  padding-left: 14px;
+  box-shadow: 0 0 5px 0 #10CFE2;
+  margin-top: 22px;
+
+  .name{
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+}
+.item_s_header2{
+  @extend .item_s_header;
+  border: 1px solid #5481DC;
+  box-shadow: 0 0 0 0 #5481DC;
+  .name{
+    font-size: 11px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+}
+.item_s_section{
+  @extend .item_s_header;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+.closeBox{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.check{
+
+  //--background: rgba(31, 57, 122, 1);
+  --background-checked: #10CFE2;
+  --border-color: rgba(31, 57, 122,1);
+  --border-color-checked: #10CFE2;
+  --border-style: solid;
+  --border-width: 1px;
+  --checkmark-color: #000000;
+  --checkmark-width: 2px;
+  --size: 15px;
+}

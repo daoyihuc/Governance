@@ -5,6 +5,8 @@ import * as $ from 'jquery';
 import {HttpServiceService} from '../../http/http-service.service';
 import {ToastController} from '@ionic/angular';
 import {ToastService} from '../../utils/toast.service';
+import {MatDialog} from "@angular/material/dialog";
+import {ShowDetailsComponent} from "../show-details/show-details.component";
 
 @Component({
   selector: 'app-enterprise-details',
@@ -19,6 +21,7 @@ export class EnterpriseDetailsComponent implements OnInit {
     private windowUntils: WindowService,
     private http: HttpServiceService,
     private toast: ToastService,
+    private mes: MatDialog, // 站点弹窗
   ) { }
 
   jumpUrl = [
@@ -112,5 +115,9 @@ export class EnterpriseDetailsComponent implements OnInit {
   onClose(): void{// 关闭
     console.log('关闭');
     this.windowUntils.onBack();
+  }
+  // 图片查看
+  show(src): void{
+    let matDialogRef = this.mes.open(ShowDetailsComponent,{data: src});
   }
 }

@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {WindowService} from "../../utils/window.service";
 import {HttpServiceService} from "../../http/http-service.service";
 import {ImgPath} from "../../Base/Constans";
+import {MatDialog} from "@angular/material/dialog";
+import {ShowDetailsComponent} from "../show-details/show-details.component";
 
 @Component({
   selector: 'app-car-details',
@@ -20,6 +22,7 @@ export class CarDetailsComponent implements OnInit {
     private router: ActivatedRoute, // 路由接收者
     private windowUntils: WindowService,
     private http: HttpServiceService,
+    private mes: MatDialog, // 站点弹窗
   ) {
     this.requestData.truckId = this.router.snapshot.paramMap.get("id");
   }
@@ -93,5 +96,8 @@ export class CarDetailsComponent implements OnInit {
       }
     })
   }
-
+  // 图片查看
+  show(src): void{
+    let matDialogRef = this.mes.open(ShowDetailsComponent,{data: src});
+  }
 }

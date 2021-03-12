@@ -6,6 +6,8 @@ import {HttpServiceService} from '../../http/http-service.service';
 import {ToastController} from '@ionic/angular';
 import {ToastService} from '../../utils/toast.service';
 import {ImgPath} from "../../Base/Constans";
+import {MatDialog} from "@angular/material/dialog";
+import {ShowDetailsComponent} from "../show-details/show-details.component";
 
 declare var EZUIKit: any;
 
@@ -22,6 +24,7 @@ export class WeighingDetailsComponent implements OnInit {
     private windowUntils: WindowService,
     private http: HttpServiceService,
     private toast: ToastService,
+    private mes: MatDialog, // 站点弹窗
   ) { }
 
   AccessToken: any = sessionStorage.getItem("AccessToken");
@@ -111,5 +114,10 @@ export class WeighingDetailsComponent implements OnInit {
     console.log('1231232');
     this.windowUntils.onBack();
   }
+  // 图片查看
+  show(src): void{
+    let matDialogRef = this.mes.open(ShowDetailsComponent,{data: src});
+  }
+
 
 }

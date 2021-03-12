@@ -44,7 +44,7 @@
             <ion-content>
               <ion-slides pager="true" [options]="slideOpts">
                 <ion-slide *ngFor="let data of banner">
-                  <img [src]="ImgPath + data" alt="">
+                  <img [src]="ImgPath + data" alt="" (click)="show(ImgPath+data)">
                 </ion-slide>
               </ion-slides>
             </ion-content>

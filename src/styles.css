@@ -73,3 +73,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ant-table-tbody>tr.ant-table-row:hover>td{
   background:  rgba(31, 57, 122, 1)!important;;
 }
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  width: 145px!important;
+  background-color: rgb(27 47 86) !important;
+  border: none!important;
+}
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{
+  color: white!important;
+}

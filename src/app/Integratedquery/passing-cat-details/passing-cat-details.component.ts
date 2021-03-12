@@ -7,6 +7,8 @@ import {HttpServiceService} from "../../http/http-service.service";
 import {PassCatDetailsBean, passCatDetailsBeanData} from "../../http/HttpBean/PassCatDetailsBean";
 import {ToastService} from "../../utils/toast.service";
 import {ImgPath} from "../../Base/Constans";
+import {ShowDetailsComponent} from "../../command/show-details/show-details.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-passing-cat-details',
@@ -42,6 +44,7 @@ export class PassingCatDetailsComponent implements OnInit, Baseinterface {
     private el: ElementRef,
     private http: HttpServiceService,//网络请求
     private toast: ToastService,
+    private mes: MatDialog, // 站点弹窗
 
   ) {
     this.requestData.id = this.router.snapshot.paramMap.get("id");
@@ -79,4 +82,8 @@ export class PassingCatDetailsComponent implements OnInit, Baseinterface {
     });
   }
 
+  // 图片查看
+  show(src): void{
+    let matDialogRef = this.mes.open(ShowDetailsComponent,{data: src});
+  }
 }

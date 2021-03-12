@@ -47,12 +47,16 @@
             <p class="p1">执法人</p>
             <p class="p1">{{requestData.supervisePerson}}</p>
             <p class="p1">督查地点</p>
-            <div class="img-p" (click)="overflowShow = !overflowShow">
-              <p class="p1" [class.overflow-p1]="overflowShow">
-                {{requestData.enterpriseName}}
-              </p>
-              <img src="../../../assets/img/all-op.png" [class.overflow-img]="!overflowShow" alt="">
-            </div>
+<!--            <div class="img-p" (click)="overflowShow = !overflowShow">-->
+<!--              <p class="p1" [class.overflow-p1]="overflowShow">-->
+<!--                {{requestData.enterpriseName}}-->
+<!--              </p>-->
+<!--              <img src="../../../assets/img/all-op.png" [class.overflow-img]="!overflowShow" alt="">-->
+<!--            </div>-->
+            <nz-select [(ngModel)]="requestData.enterpriseName"   nzAllowClear nzPlaceHolder="请选择督查地点" >
+              <nz-option *ngFor="let option of optionList" [nzValue]="option.enterpriseCode" [nzLabel]="option.enterpriseName"></nz-option>
+            </nz-select>
+
           </div>
           <span class="flex-span1"></span>
           <span class="flex-span2"></span>

@@ -4,6 +4,7 @@ import {WindowService} from "../../utils/window.service";
 import {HttpServiceService} from "../../http/http-service.service";
 import {BaseBody} from "../../http/HttpBean/BaseBody";
 import {ToastService} from "../../utils/toast.service";
+import {tenterBean} from "../../http/HttpBean/tenterBean";
 
 @Component({
   selector: 'app-inspector',
@@ -22,6 +23,10 @@ export class InspectorComponent implements OnInit {
     superviseTime: new Date().getTime().toString(),//督查时间
 
   };
+
+  optionList: tenterBean[]=[];
+  selectedValue: tenterBean;
+  // tslint:disable-next-line:no-any
 
   constructor(
     private route: Router, // 路由传递
@@ -51,6 +56,7 @@ export class InspectorComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.https(null);
     this.superviseInit();
     this.requestData.supervisePerson = sessionStorage.getItem("name");
   }
@@ -131,6 +137,16 @@ export class InspectorComponent implements OnInit {
         })
       }
     });
+  }
+  https(data){
+    this.http.tenterpriseInit(data).subscribe( value => {
+      if(value.body.code===0){
+        value.body.data.forEach((item) =>{
+          this.optionList.push(item);
+        })
+
+      }
+    })
   }
 
   // 数据提交

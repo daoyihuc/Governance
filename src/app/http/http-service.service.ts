@@ -48,6 +48,7 @@ import {CarNativeReportBeanData} from "./HttpBean/CarNativeReportBean";
 import {GetProvinceCodeBeanData} from "./HttpBean/GetProvinceCodeBean";
 import {GetSuperviseByIdBeanData} from "./HttpBean/GetSuperviseByIdBean";
 import {SystemBean} from "./HttpBean/SystemBean";
+import {TenterBeanData} from "./HttpBean/tenterBean";
 
 @Injectable({
   providedIn: 'root'
@@ -467,6 +468,15 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< GetSuperviseByIdBeanData > ( Api.updatePass,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 修改密码
+  tenterpriseInit(data: any): Observable<HttpResponse<TenterBeanData>> {
+    this.options.params = data;
+    // @ts-ignore
+    return  this.http.post< TenterBeanData > ( Api.tenterpriseInit,data,this.options)
       .pipe(
         // catchError(this.handleError)
       );

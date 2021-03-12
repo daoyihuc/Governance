@@ -21,6 +21,8 @@ import {RunDiagramComponent} from './run-diagram/run-diagram.component';
 import {InspectorRecordComponent} from './inspector-record/inspector-record.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ShowComponent } from './show/show.component';
+import { ShowDetailsComponent } from './show-details/show-details.component';
+import {NzSelectModule} from "ng-zorro-antd/select";
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { ShowComponent } from './show/show.component';
     RunMonitoringComponent,
     RunDiagramComponent,
     InspectorRecordComponent,
-    ShowComponent],
+    ShowComponent,
+    ShowDetailsComponent],
   imports: [
     CommonModule,
     CommandRouterModule,
@@ -50,6 +53,7 @@ import { ShowComponent } from './show/show.component';
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
+    NzSelectModule,
   ]
 })
 export class CommandModule {

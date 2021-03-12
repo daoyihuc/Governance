@@ -99,7 +99,7 @@
           <div class="slideBox">
             <ion-slides pager="true" [options]="slideOpts">
               <ion-slide *ngFor="let item of responseData.imgFileList">
-                <img [src]="Imgpath+item"  alt="">
+                <img [src]="Imgpath+item"  alt="" (click)="show(Imgpath+item)">
               </ion-slide>
             </ion-slides>
           </div>
