@@ -1,6 +1,6 @@
 @charset "UTF-8";
 div p span {
-  font-size: 18px !important; }
+  font-size: 16px !important; }
 
 div {
   box-sizing: border-box; }
@@ -99,7 +99,7 @@ p {
 
 .section-card-section-content .p1 {
   width: 50%;
-  font-size: 8px;
+  font-size: 15px;
   font-weight: 400;
   color: #FFFFFF;
   padding-left: 15px;
@@ -136,7 +136,7 @@ p {
     z-index: 88 !important;
     padding-left: 15px; }
     .page-content-header .header-flex-source .header-flex-p1 {
-      font-size: 11px;
+      font-size: 16px;
       font-weight: 400;
       color: #FFFFFF; }
     .page-content-header .header-flex-source .transform-p1 {
@@ -204,7 +204,7 @@ p {
   margin-bottom: 13px;
   background: rgba(84, 129, 220, 0.6); }
   .weighing-header p {
-    font-size: 12px;
+    font-size: 16px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: #FFFFFF;
@@ -254,7 +254,7 @@ p {
 
 .lableTitle {
   background: #566074;
-  font-size: 11px;
+  font-size: 16px;
   font-family: Hiragino Sans GB;
   font-weight: normal;
   color: #FFFFFF;
@@ -269,9 +269,21 @@ p {
   --padding-start: 0px;
   --padding-end: 0px;
   margin-right: 10px;
-  font-size: 9px;
+  font-size: 16px;
   width: 200px;
   border-bottom: 1px solid #5481DC; }
+  .inputs input::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #FFFFFF; }
+  .inputs input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #FFFFFF; }
+  .inputs input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #FFFFFF; }
+  .inputs input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #FFFFFF; }
 
 .searchButton {
   --padding-start: 20px;
@@ -298,7 +310,7 @@ p {
     .weighing-section .warning-section-th:nth-child(2n) {
       background: rgba(31, 57, 122, 0.3); }
     .weighing-section .warning-section-th .warning-section-td {
-      font-size: 9px;
+      font-size: 15px;
       font-family: Hiragino Sans GB;
       font-weight: normal;
       color: #FFFFFF;

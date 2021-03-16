@@ -21,7 +21,7 @@
   --highlight-color-invalidL: #5481DC;
   --inner-padding-end: 0;
   .labels{
-    font-size: 9px;
+    font-size: $font-size2;
     font-family: Hiragino Sans GB;
     font-weight: normal;
     color: #1DDEFB;
@@ -32,7 +32,7 @@
     --padding-start: 0px;
     --padding-end: 0px;
     margin-right: 30px;
-    font-size: 9px;
+    font-size: $font-size2;
     width: 240px;
   }
 

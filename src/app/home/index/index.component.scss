@@ -1,4 +1,4 @@
-
+@import "../../Base/BaseCss";
 .maxbox{
   background: url("../../../assets/img/home_bg.png") no-repeat;
   background-size: 100% 100%;
@@ -127,3 +127,66 @@
   bottom: 10px;
 }
 
+.header-flex-source{
+  padding: 9px 0;
+  background: rgba(54, 93, 220, .5);
+  position: absolute;
+  top: 4px;
+  left: 0;
+  z-index: 88!important;
+  padding-left: 15px;
+  .header-flex-p1{
+    font-size: $font-size;
+    font-weight: 400;
+    color: #FFFFFF;
+
+  }
+  .transform-p1{
+    animation: 10s wordsLoop linear infinite normal;
+  }
+  .header-flex-p2{
+    display: flex;
+    margin-top: 5px;
+    span{
+      font-size: 9px;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin-right: 7px;
+      &:nth-child(1){
+        color: #11E5F7;
+      }
+    }
+  }
+}
+
+@keyframes wordsLoop {
+  0% {
+    transform: translateX(93px);
+    -webkit-transform: translateX(93px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes wordsLoop {
+  0% {
+    transform: translateX(93px);
+    -webkit-transform: translateX(93px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+.header-flex4-source{
+  right: 0;
+  left: auto;
+  background: rgba(244, 91, 91, 0.2);
+  white-space: nowrap;
+  width: 100%;
+  overflow-y: hidden;
+
+}

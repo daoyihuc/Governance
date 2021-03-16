@@ -6,7 +6,7 @@ export interface GetAlarmRecordJumpDetailsBeanData extends BaseBody{
 }
 
 export  interface GetAlarmRecordJumpDetailsBean {
-
+  alarmRecordType? : string;
    carInfo?: CarInfo;
    carPassImgInfoVO?: CarPassImgInfoVO;
    illegalStatInfo?: IllegalStatInfo;

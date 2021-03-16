@@ -17,6 +17,7 @@ export class BasicInformationComponent implements OnInit, Baseinterface {
     carNumber: "",
     carPassId: ""
   }
+  alarmRecordType='';
 
   constructor(
     private route: Router, // 路由传递
@@ -94,7 +95,9 @@ export class BasicInformationComponent implements OnInit, Baseinterface {
     this.http.getAlarmRecordJumpDetails(data).subscribe(value => {
 
       if(value.body.code === 0){
+
         const  a =value.body.data;
+        this.alarmRecordType=a.alarmRecordType;
         // banner
         this.list[0].p = a.carInfo.owner;
         this.list[1].p = a.carInfo.carNumber;

@@ -68,7 +68,7 @@ div {
   border: 1px solid #5481DC; }
 
 .page-card-header p {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: normal;
   color: #1DDEFB;
   margin: 0; }
@@ -84,13 +84,13 @@ div {
 
 .page-card-section-li .p1 {
   width: 108px;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: normal;
   color: #1DDEFB; }
 
 .page-card-section-li .p2 {
   flex-grow: 1;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: normal;
   color: #FFFFFF; }
 

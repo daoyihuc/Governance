@@ -1,83 +1,284 @@
-/*
-Error: Can't extend .imgUp
-       : can't extend nested selectors
-        on line 100 of information.component.scss
+@charset "UTF-8";
+div p span {
+  font-size: 16px !important;
+}
 
-95:     .imgUp1  {
-96:       @extend .imgUp;
-97:       margin-left: 10px;
-98:     }
-99:     .imgUp2  {
-100:       @extend .imgUp
-101:     //margin-left: 10px;
-102:   }
-103:     .imgUp3  {
-104:       @extend .imgUp;
-105:     margin-left: 10px;
+div {
+  box-sizing: border-box;
+}
 
-Backtrace:
-information.component.scss:100
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:108:in `block in populate_extends'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `each'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/selector/comma_sequence.rb:106:in `populate_extends'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:115:in `visit_extend'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:185:in `visit_rule'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `block in visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `map'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:43:in `visit_children_without_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:32:in `block in visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:54:in `with_parent'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:31:in `visit_children'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:64:in `visit_root'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:23:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:24:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/visitors/cssize.rb:6:in `visit'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:38:in `css_tree'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:387:in `run'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
-D:/UNTIlS/Ruby27-x64/lib/ruby/gems/2.7.0/gems/sass-3.7.4/bin/sass:13:in `<top (required)>'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `load'
-D:/UNTIlS/Ruby27-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Can't extend .imgUp\A        : can't extend nested selectors\A         on line 100 of information.component.scss\A \A 95:     .imgUp1  {\A 96:       @extend .imgUp;\A 97:       margin-left: 10px;\A 98:     }\A 99:     .imgUp2  {\A 100:       @extend .imgUp\A 101:     //margin-left: 10px;\A 102:   }\A 103:     .imgUp3  {\A 104:       @extend .imgUp;\A 105:     margin-left: 10px;"; }
+p {
+  margin: 0;
+}
+
+.page-content {
+  min-height: 100%;
+  background-size: 100% 100%;
+  padding: 13px 14px 24px;
+}
+
+.page-box {
+  width: 100%;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #1F397A;
+  padding: 13px 13px 0;
+}
+
+.page-card {
+  width: 100%;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0 solid #1F397A;
+  position: relative;
+}
+
+.page-card-header {
+  padding: 7px 10px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 1px solid #1F397A;
+}
+.page-card-header p {
+  margin: 0;
+}
+
+.toolbar {
+  --background: #0A0E2E;
+  --color: #fff;
+}
+.toolbar .title {
+  --color: #fff;
+  text-align: center;
+  font-size: 17px;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+.toolbar img {
+  width: 21px;
+  height: 21px;
+}
+
+.page-card-header p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #1DDEFB;
+}
+
+.page-card span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #1DDEFB;
+}
+
+.page-card .flex-span1 {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.page-card .flex-span2 {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.page-card .flex-span3 {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+
+.page-card .flex-span4 {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.page-card-section {
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid #F45B5B;
+  margin-top: 11px;
+}
+
+.page-card2-section {
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #1f397a;
+  margin-top: 11px;
+}
+
+/*详细信息排序 盒子 content*/
+.section-card-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px;
+}
+
+.section-card-section-content .p1 {
+  width: 50%;
+  font-size: 15px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 11px;
+}
+
+.section-card-section-content .p1 span {
+  min-width: 34px;
+  text-align: left;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.page-content {
+  background: url("../../../assets/img/all_bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.page-card-section {
+  background: RGBA(27, 47, 89, 0.4);
+  border: none;
+  margin-top: 0;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  --background:RGBA(27, 47, 89, 0.4);
+  --highlight-color-valid: #5481DC;
+  --border: 0px solid #5481DC;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --highlight-color-focused: #5481DC;
+  --highlight-color-invalidL: #5481DC;
+  --inner-padding-end: 0;
+}
+.items .labels {
+  font-size: 15px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  color: #1DDEFB;
+}
+.items .input {
+  --color: #ffff;
+  --placeholder-color: #ffff;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  margin-right: 30px;
+  font-size: 15px;
+  width: 240px;
+}
+
+.imgMax {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin: 10px 10px;
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #5481DC;
+}
+.imgMax .imgbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(31, 57, 122, 0.2);
+  border: 0px solid #5481DC;
+}
+.imgMax .imgbox p {
+  font-size: 8px;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.imgMax .imgbox .imgUp, .imgMax .imgbox .imgUp3, .imgMax .imgbox .imgUp2, .imgMax .imgbox .imgUp1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 44%;
+  min-height: 100px;
+  background: rgba(84, 129, 220, 0.2);
+  border: 0px solid #5481DC;
+  position: relative;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.imgMax .imgbox .imgs {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  min-height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.imgMax .imgbox .file {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 101;
+}
+.imgMax .imgbox .imgUp1 {
+  margin-left: 10px;
+}
+.imgMax .imgbox .imgUp3 {
+  margin-left: 10px;
+}
+.imgMax .add {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+}
+.imgMax .name {
+  font-size: 11px;
+  font-family: Source Han Sans CN;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.buttons {
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+.buttons .cancel {
+  --background: #1F397A;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  --color: #FFFFFF;
+  --padding-bottom: 5px;
+  --padding-end: 30px;
+  --padding-start: 30px;
+  --padding-top: 5px;
+}
+.buttons .ok {
+  font-size: 11px;
+  font-family: Hiragino Sans GB;
+  font-weight: normal;
+  --color: #FFFFFF;
+  --background: #5481DC;
+  margin-left: 10px;
+  border-radius: 3px;
+  --padding-bottom: 5px;
+  --padding-end: 26px;
+  --padding-start: 26px;
+  --padding-top: 5px;
+}
+
+/*# sourceMappingURL=information.component.css.map */

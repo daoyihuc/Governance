@@ -1,0 +1,232 @@
+
+@import "../../Base/BaseCss";
+.page-content{
+  min-height: 100%;
+  background: #000;
+}
+p{
+  margin: 0;
+}
+
+/* header */
+.page-content-header{
+  width: 100%;
+  height: 335px;
+  background: rgba(255,255,255,.4);
+  position: relative;
+  z-index: 8!important;
+}
+.map{
+  width: 100%;
+  height: 100%;
+}
+.page-content-header .header-flex-box{
+  position: absolute;
+  top: 16px;
+  left: 17px;
+  padding: 0 12px 8px;
+  z-index: 88888!important;
+  background: rgba(84, 129, 220, 0.2);
+}
+.flex-box-img1{
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+.flex-box-img2{
+  width: 73px;
+  height: 4px;
+  position: absolute;
+  top: -4px;
+  left: 0;
+}
+.page-content-header .header-flex-box .li{
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.page-content-header .header-flex-box .li:first-child{
+  padding-right: 25px;
+}
+.page-content-header .header-flex-box .li .checkbox{
+  --background:rgba(0,0,0,0);
+  --border-color:rgba(84, 129, 220, 1);
+}
+.page-content-header .header-flex-box .li p{
+  font-size: $font-size3;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0;
+  margin-left: 5px;
+}
+.page-content-header .header-flex-box .li .checkP{
+  color: rgba(29, 222, 251, 1);
+}
+
+
+/* section */
+.page-content-section{
+  margin: 0 15px;
+  background: rgba(31, 57, 122, 0.2);
+  border: 1px solid #5481DC;
+  padding: 0 8px 11px;
+  /*transform: translateY(-34px);*/
+}
+.page-content-section .section-title{
+  margin: 0 auto;
+  width: 83px;
+  height: 23px;
+  background: rgba(84, 129, 220, 0.5);
+  /*box-shadow: 0 1px 3px 0 rgba(10, 165, 180, 0.6);*/
+  text-align: center;
+  line-height: 23px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #FFFFFF;
+  position: relative;
+
+}
+.section-title:before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-bottom: 23px solid transparent;
+  border-right: 15px solid rgba(84, 129, 220, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+
+}
+.section-title:after{
+
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-bottom: 23px solid transparent;
+  border-left: 15px solid rgba(84, 129, 220, 0.5);
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+
+}
+/*card*/
+.page-content-section .section-card{
+  background: rgba(244, 91, 91, 0.2);
+  border: 1px solid rgba(244, 91, 91, 0.2);
+  margin-top: 11px;
+}
+.page-content-section .section-card2{
+  background: rgba(16, 207, 226, 0.2);
+  border: 1px solid #10CFE2;
+}
+/*card title*/
+.page-content-section .section-card2 .section-card-title{
+  background: rgba(16, 207, 226, 0.2) !important;
+}
+
+.page-content-section .section-card .section-card-title{
+  display: flex;
+  padding: 7px 0;
+  background: rgba(244, 91, 91, 0.2);
+}
+.page-content-section .section-card .section-card-title p{
+  width: 50%;
+  font-size: $font-size;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+}
+/*card content*/
+.page-content-section .section-card .section-card-content{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 11px;
+}
+
+.page-content-section .section-card .section-card-content .p1{
+  width: 50%;
+  font-size: $font-size;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+.page-content-section .section-card .section-card-content .p1 span{
+  min-width: 34px;
+  text-align: left;
+}
+
+/*footer*/
+.demo{
+  background: rgba(0,0,0,0);
+}
+.page-footer{
+  background: #000;
+  height: 100%;
+}
+.page-footer .page-footer-box{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-footer .page-footer-box img{
+  width: 24px;
+  height: 23px;
+}
+.page-footer .page-footer-box p{
+  font-size: $font-size;
+  font-weight: 400;
+  color: #F5F5F5;
+  margin-top: 8px;
+}
+
+
+
+
+
+.barBox{
+  --background: #0a162b	;
+--background-focused: #0a162b;
+--background-focused-opacity: 0.2;
+--color: #fff;
+--color-focused: #1DDEFB;
+--color-selected: #1DDEFB;
+--padding-bottom: 10px;
+--padding-end: 0;
+--padding-start: 0;
+--padding-top: 10px;
+--ripple-color: 0;
+  padding: 5px 0;
+}
+.barBox img{
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+.toolbar{
+    --background: #0A0E2E;
+    --color: #fff;
+
+}
+.toolbar .title{
+  --color: #fff;
+  text-align: center;
+}
+.toolbar img{
+  width: 21px;
+  height: 21px;
+}
+
+
+
+
+
+
+
+
+
+

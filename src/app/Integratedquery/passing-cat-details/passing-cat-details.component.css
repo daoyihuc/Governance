@@ -1,4 +1,8 @@
 @charset "UTF-8";
+div p span {
+  font-size: 16px !important;
+}
+
 div {
   box-sizing: border-box;
 }
@@ -8,6 +12,7 @@ p {
 }
 
 .page-content {
+  min-height: 100%;
   background-size: 100% 100%;
   padding: 13px 14px 24px;
 }
@@ -53,7 +58,7 @@ p {
 }
 
 .page-card-header p {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: normal;
   color: #1DDEFB;
 }
@@ -101,7 +106,7 @@ p {
 
 .page-card2-section {
   background: rgba(31, 57, 122, 0.2);
-  border: 0px solid #10CFE2;
+  border: 1px solid #1f397a;
   margin-top: 11px;
 }
 
@@ -114,7 +119,7 @@ p {
 
 .section-card-section-content .p1 {
   width: 50%;
-  font-size: 8px;
+  font-size: 15px;
   font-weight: 400;
   color: #FFFFFF;
   padding-left: 15px;
@@ -165,10 +170,12 @@ p {
   --inner-padding-end: 0;
 }
 .items .labels {
-  font-size: 9px;
+  width: 100px;
+  font-size: 13px;
   font-family: Hiragino Sans GB;
   font-weight: normal;
   color: #1DDEFB;
+  white-space: nowrap;
 }
 .items .input {
   --color: #ffff;
@@ -176,13 +183,13 @@ p {
   --padding-start: 0px;
   --padding-end: 0px;
   margin-right: 30px;
-  font-size: 9px;
+  font-size: 15px;
   width: 200px;
 }
 .items .p {
   color: #ffff;
   margin-left: 40px;
-  font-size: 9px;
+  font-size: 15px;
   width: 200px;
   padding-bottom: 5px;
   border-bottom: 1px solid #5088F9;

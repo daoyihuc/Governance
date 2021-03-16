@@ -94,7 +94,7 @@
 }
 .lableTitle{
   background: #566074;
-  font-size: 11px;
+  font-size: $font-size3;
   font-family: Hiragino Sans GB;
   font-weight: normal;
   color: #FFFFFF;
@@ -163,12 +163,11 @@
   color: white;
   white-space: nowrap;
   padding: 6px;
-
-  font-size: 9px;
+  font-size: $font-size2!important;
 }
 :host ::ng-deep .ant-table-tbody > tr > td{
   border-bottom: 1px solid rgba(18, 33, 70, 1);
-  font-size: 9px;
+  font-size: $font-size2!important;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-right: 5px;

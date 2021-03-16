@@ -13,6 +13,12 @@ export class IndexComponent implements OnInit, Baseinterface {
 
   datas = BaseConst ;
 
+  tabUrl = [
+    {src: '/command/runMonitoring'},
+    {src: '/command/sourceIndex'},
+    {src: '/command/commandIndex'},
+    {src: '/queryAll/index'},
+  ];
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
@@ -51,6 +57,10 @@ export class IndexComponent implements OnInit, Baseinterface {
 
   onHome(): void {
 
+  }
+
+  onTabJump(index): void {
+    this.route.navigate([this.tabUrl[index].src]);
   }
 
   onSetting(): void {

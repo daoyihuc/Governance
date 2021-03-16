@@ -73,12 +73,7 @@
               </div>
             </div>
           </div>
-          <footer>
-            <ion-buttons class="buttons" >
-              <ion-button class="cancel">取消</ion-button>
-              <ion-button class="ok" (click)="save()">确认录入</ion-button>
-            </ion-buttons>
-          </footer>
+
           <ion-datetime id="times"
                         displayFormat="YYYY/MM/DD/HH/mm"
                         pickerFormat="YYYY MM DD HH mm"
@@ -91,8 +86,15 @@
           <span class="flex-span3"></span>
           <span class="flex-span4"></span>
         </div>
-
+        <footer>
+          <ion-buttons class="buttons" >
+            <ion-button class="cancel" (click)="onBack()">取消</ion-button>
+            <ion-button class="ok" (click)="save()">确认录入</ion-button>
+          </ion-buttons>
+        </footer>
       </div>
+
+
     </div>
   </ion-content>
 </ion-app>

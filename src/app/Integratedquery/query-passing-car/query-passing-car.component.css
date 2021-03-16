@@ -1,4 +1,8 @@
 @charset "UTF-8";
+div p span {
+  font-size: 16px !important;
+}
+
 div {
   box-sizing: border-box;
 }
@@ -8,6 +12,7 @@ p {
 }
 
 .page-content {
+  min-height: 100%;
   background-size: 100% 100%;
   padding: 13px 14px 24px;
 }
@@ -53,7 +58,7 @@ p {
 }
 
 .page-card-header p {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: normal;
   color: #1DDEFB;
 }
@@ -101,7 +106,7 @@ p {
 
 .page-card2-section {
   background: rgba(31, 57, 122, 0.2);
-  border: 0px solid #10CFE2;
+  border: 1px solid #1f397a;
   margin-top: 11px;
 }
 
@@ -114,7 +119,7 @@ p {
 
 .section-card-section-content .p1 {
   width: 50%;
-  font-size: 8px;
+  font-size: 15px;
   font-weight: 400;
   color: #FFFFFF;
   padding-left: 15px;
@@ -226,7 +231,7 @@ p {
 
 .lableTitle {
   background: #566074;
-  font-size: 11px;
+  font-size: 13px;
   font-family: Hiragino Sans GB;
   font-weight: normal;
   color: #FFFFFF;
@@ -279,12 +284,12 @@ p {
   color: white;
   white-space: nowrap;
   padding: 6px;
-  font-size: 9px;
+  font-size: 15px !important;
 }
 
 :host ::ng-deep .ant-table-tbody > tr > td {
   border-bottom: 1px solid #122146;
-  font-size: 9px;
+  font-size: 15px !important;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-right: 5px;
