@@ -1,4 +1,7 @@
 @charset "UTF-8";
+div p span {
+  font-size: 18px !important; }
+
 div {
   box-sizing: border-box; }
 
@@ -44,7 +47,7 @@ p {
     height: 21px; }
 
 .page-card-header p {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: normal;
   color: #1DDEFB; }
 
@@ -130,7 +133,7 @@ p {
       display: flex;
       align-items: center;
       margin-bottom: 8px;
-      font-size: 9px;
+      font-size: 14px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF; }
@@ -159,7 +162,7 @@ p {
   z-index: 88;
   width: -webkit-fill-available; }
   .weighing-header p {
-    font-size: 12px;
+    font-size: 16px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: #FFFFFF;
@@ -200,7 +203,7 @@ p {
       -webkit-text-stroke: 1px #5481DB;
       text-stroke: 1px #5481DB; }
     .run-monitoring-header .run-header-box .box-left {
-      font-size: 10px;
+      font-size: 15px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF;
@@ -232,7 +235,7 @@ p {
     .basic-section-card .basic-section-card-content:last-child {
       border-right: none; }
     .basic-section-card .basic-section-card-content div {
-      font-size: 11px;
+      font-size: 16px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF;
@@ -254,11 +257,11 @@ p {
 
 .basic-page-btn {
   width: 85px;
-  height: 29px;
+  height: 31px;
   background: rgba(18, 33, 70, 0.2);
   border: 1px solid #1DDEFB;
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 16px;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #1DDEFB;

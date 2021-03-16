@@ -1,4 +1,6 @@
 @import '../../Base/BaseCss';
+
+
 .page-content{
   min-height: 100%;
   background: #000;
@@ -23,7 +25,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 8px;
-      font-size: 9px;
+      font-size: 14px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF;
@@ -64,7 +66,7 @@
   z-index: 88;
   width: -webkit-fill-available;
   p{
-    font-size: 12px;
+    font-size: 16px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: #FFFFFF;
@@ -111,7 +113,7 @@
       text-stroke: 1px #5481DB;
     }
     .box-left{
-      font-size: 10px;
+      font-size: 15px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF;
@@ -154,7 +156,7 @@
     }
     div{
 
-      font-size: 11px;
+      font-size: 16px;
       font-family: Source Han Sans CN;
       font-weight: 400;
       color: #FFFFFF;
@@ -186,11 +188,11 @@
 }
 .basic-page-btn{
   width: 85px;
-  height: 29px;
+  height: 31px;
   background: rgba(18, 33, 70, 0.2);
   border: 1px solid #1DDEFB;
   border-radius: 5px;
-  font-size: 11px;
+  font-size: 16px;
   font-family: Source Han Sans CN;
   font-weight: 400;
   color: #1DDEFB;

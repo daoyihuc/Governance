@@ -64,6 +64,7 @@
                     pickerFormat="YYYY MM DD HH mm"
                     [pickerOptions]="customPickerOptionsStart"
                     [(ngModel)]="ValueTimeStart"
+                    [max]="minTime"
                      [hidden]="true">
 
       </ion-datetime>
@@ -72,7 +73,8 @@
                     pickerFormat="YYYY MM DD HH mm"
                     [pickerOptions]="customPickerOptionsEnd"
                     [(ngModel)]="ValueTimeEnd"
-                    [max]="minTime" [hidden]="true">
+                    [max]="minTime"
+                     [hidden]="true">
 
       </ion-datetime>
     </div>

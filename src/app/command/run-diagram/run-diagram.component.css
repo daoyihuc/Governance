@@ -1,4 +1,7 @@
 @charset "UTF-8";
+div p span {
+  font-size: 18px !important; }
+
 div {
   box-sizing: border-box; }
 
@@ -44,7 +47,7 @@ p {
     height: 21px; }
 
 .page-card-header p {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: normal;
   color: #1DDEFB; }
 
@@ -151,7 +154,7 @@ p {
           background: rgba(244, 91, 91, 0.2);
           margin-bottom: 0; }
         .page-card-weighing .car-number-box .right .right-btn p {
-          font-size: 9px;
+          font-size: 13px;
           font-family: Source Han Sans CN;
           font-weight: 400;
           color: #FFFFFF; }
@@ -176,7 +179,7 @@ p {
   justify-content: space-between;
   margin-bottom: 13px; }
   .weighing-header p {
-    font-size: 12px;
+    font-size: 16px;
     font-family: Source Han Sans CN;
     font-weight: 400;
     color: #FFFFFF;
@@ -204,7 +207,7 @@ p {
     .weighing-section .warning-section-th:nth-child(2n) {
       background: rgba(31, 57, 122, 0.3); }
     .weighing-section .warning-section-th .warning-section-td {
-      font-size: 9px;
+      font-size: 15px;
       font-family: Hiragino Sans GB;
       font-weight: normal;
       color: #FFFFFF;

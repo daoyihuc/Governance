@@ -133,7 +133,7 @@ export class CsourceIndexComponent implements OnInit, DoCheck , OnDestroy, After
     };
   }
 
-  minTime = new Date().toISOString(); // 最小时间
+  minTime = new Date(new Date().getTime()+8*60*60*1000).toISOString(); // 最小时间
   customPickerOptionsStart: any; // 开始时间设置
   customPickerOptionsEnd: any; // 结束时间设置
   // 绑定时间
