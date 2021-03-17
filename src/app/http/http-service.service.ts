@@ -9,7 +9,7 @@ import {
   HttpResponse,
   HttpSentEvent, HttpUserEvent
 } from '@angular/common/http';
-import {Headers, HeadersFile, observes, reType} from './header';
+import {Headers, HeadersFile, HeadersFrom, observes, reType} from './header';
 import { Api } from './HttpApi';
 import {catchError} from 'rxjs/operators';
 import {LoginBean} from './HttpBean/LoginBean';
@@ -49,6 +49,7 @@ import {GetProvinceCodeBeanData} from "./HttpBean/GetProvinceCodeBean";
 import {GetSuperviseByIdBeanData} from "./HttpBean/GetSuperviseByIdBean";
 import {SystemBean} from "./HttpBean/SystemBean";
 import {TenterBeanData} from "./HttpBean/tenterBean";
+import {AlarmRecordCount} from "./HttpBean/AlarmRecordCount";
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,15 @@ export class HttpServiceService {
   };
   options2: any = {
     headers: new HttpHeaders(HeadersFile),
+    observe: observes,
+    params: null,
+    reportProgress: false,
+    responseType: 'json',
+    withCredentials: false,
+  };
+
+  options3: any = {
+    headers: new HttpHeaders(HeadersFrom),
     observe: observes,
     params: null,
     reportProgress: false,
@@ -477,6 +487,15 @@ export class HttpServiceService {
     this.options.params = data;
     // @ts-ignore
     return  this.http.post< TenterBeanData > ( Api.tenterpriseInit,data,this.options)
+      .pipe(
+        // catchError(this.handleError)
+      );
+  }
+  // 修改密码
+  getAlarmRecordCount(data: any): Observable<HttpResponse<AlarmRecordCount>> {
+    this.options3.params = data;
+    // @ts-ignore
+    return this.http.post<AlarmRecordCount>(Api.getAlarmRecordCount,data)
       .pipe(
         // catchError(this.handleError)
       );

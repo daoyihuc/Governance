@@ -23,7 +23,7 @@
       <div class="maxbox">
 
         <div class="header-flex-source header-flex4-source" (click)="onTabJump(2)">
-          <p class="header-flex-p1 transform-p1">平江往浏阳方向 超限嫌疑车 粤HB8982</p>
+          <p class="header-flex-p1 transform-p1" *ngFor="let a in AlarM;index as i">{{a}}</p>
         </div>
         <section class="labelbox">
           <div class="labelbox2"  (click)="GoRouter(0)">

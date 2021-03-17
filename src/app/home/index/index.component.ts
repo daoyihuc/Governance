@@ -3,6 +3,7 @@ import {BaseConst} from '../../constans/BaseConst';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Baseinterface} from '../../interface/baseinterface';
 import {WindowService} from "../../utils/window.service";
+import {HttpServiceService} from "../../http/http-service.service";
 
 @Component({
   selector: 'app-index',
@@ -19,14 +20,20 @@ export class IndexComponent implements OnInit, Baseinterface {
     {src: '/command/commandIndex'},
     {src: '/queryAll/index'},
   ];
+  AlarM=[];
+
+
   constructor(
     private route: Router, // 路由传递
     private router: ActivatedRoute, // 路由接收者
     private window: WindowService, // 系统服务
+    private http: HttpServiceService
   ) { }
 
   ngOnInit(): void {
+    this.Http();
     window['android'].setName("home");
+
   }
 
   onBack(): void {
@@ -65,6 +72,15 @@ export class IndexComponent implements OnInit, Baseinterface {
 
   onSetting(): void {
     this.route.navigate(['/setting']);
+  }
+  Http(): void{
+    this.http.getAlarmRecordCount(null).subscribe(val =>{
+      if(val.body.code===0){
+        val.body.data.forEach( (item) =>{
+          this.AlarM.push(item);
+        })
+      }
+    })
   }
 
 

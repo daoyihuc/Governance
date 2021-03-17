@@ -49,6 +49,7 @@ export const Api: any =
     getSuperviseById : BaseUrl + '/enterprise/getSuperviseById', //督查记录详情
     updatePass : BaseUrl + '/user/updatePass', //修改密码
     getSystemInfo : BaseUrl + '/common/getSystemInfo', //查询系统信息
+    getAlarmRecordContent : BaseUrl + '/dispatch/alarmRecord/getAlarmRecordContent', //指挥调度-查看是否有报警任务
 
     // /illegalQuery/pageList
     // 违法记录查询
