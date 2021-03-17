@@ -491,7 +491,7 @@ export class HttpServiceService {
         // catchError(this.handleError)
       );
   }
-  // 修改密码
+  // 修改密码00
   getAlarmRecordCount(data: any): Observable<HttpResponse<AlarmRecordCount>> {
     this.options3.params = data;
     // @ts-ignore
